@@ -2,3 +2,6 @@ site_name: MOLI Website
 site_url: https://puckbee.github.io/moli
 theme:
   name: material
+plugins:
+  - search
+      
