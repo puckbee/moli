@@ -7,7 +7,8 @@ theme:
 plugins:
   - search
 repo_url: https://github.com/squidfunk/mkdocs-material
-repo_name: squidfunk/mkdocs-material
+#repo_name: squidfunk/mkdocs-material
+repo_name: MOLI
 
 markdown_extensions:
   # Python Markdown
