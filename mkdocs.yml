@@ -1,4 +1,4 @@
-site_name: MOLI Website
+site_name: MOLI：提升实践能力的试炼之地
 site_url: https://puckbee.github.io/moli
 theme:
   name: material
@@ -6,7 +6,7 @@ theme:
     repo: fontawesome/brands/git-alt 
 plugins:
   - search
-repo_url: https://github.com/squidfunk/mkdocs-material
+repo_url: https://github.com/puckbee/moli
 #repo_name: squidfunk/mkdocs-material
 repo_name: MOLI
 
