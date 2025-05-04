@@ -10,7 +10,7 @@
     </figure>
 </div>
 
-# 课程介绍
+## 课程简介
 
 MIT6.S081 是 MIT 面向本科生的一门操作系统课程。作为一门极佳的操作系统入门课程，非常适合 **没有接触过操作系统** 、 **对操作系统基本概念理解不深** 或 **已经掌握了基础概念但缺乏实践** 的学生学习。
 
@@ -18,25 +18,32 @@ MIT6.S081 是 MIT 面向本科生的一门操作系统课程。作为一门极�
 
 由于现代主流操作系统（如：Linux，FreeBSD）的代码量已经十分巨大了，对于初学者来说通过这样的庞然大物学习起来非常困难。为此 MIT 的教授们专门开发了一个教学式的操作系统 xv6。该系统受 UNIX version 6 启发，一共不到 8000 行的 C 代码，实现了进程管理，POSIX 系统调用，内存管理，并发控制，文件系统等诸多核心功能，是一个完整的操作系统。而且源码中拥有非常详尽的注释，非常适合初学者进行学习。
 
-# 课程实验
+> 关键字：C 语言，操作系统，编程实践
 
-本课程的 lab 是完全公开的，包含 **系统调用实现** 、 **页面访问探测** ， **写时复制** 等实验。通过完成课程相应的 lab，并对 xv6 操作系统进行改进与机制添加，可以更加全面而深刻的理解操作系统的核心概念，并大幅提升动手实践能力。所有 lab 都提供有完善的本地测试。
+## 学习建议
 
-* lab&nbsp;&nbsp;&nbsp;&thinsp;: 公开  
-* 测试&nbsp;: 公开
+如果不清楚自己是否拥有足够的前置知识，可以先尝试学习，当遇到困难时再进行相关的知识补充。
 
-# 先修知识
+* 先修要求：熟悉 C 语言编程，RISC-V 计算机体系结构基础
+* 先修课程推荐：CS61C
+* 先修书籍推荐：《C 程序设计语言》
+* 学习方法：建议以课程 lab 为主，如遇困难再通过课程视频或配套书籍进行学习
 
-* 计算机体系结构基础（推荐：CS61C 课程）
-
-# 编程语言
-
-* C 语言（推荐:《C 程序设计语言》）
-
-# 课程资源
+## 课程资源
 
 * 课程网站：[https://pdos.csail.mit.edu/6.S081/2021/index.html](https://pdos.csail.mit.edu/6.S081/2021/index.html)
 * 原版视频：[https://www.youtube.com/watch?v=L6YqHxYHa7A](https://www.youtube.com/watch?v=L6YqHxYHa7A)
-* 中文字幕：[https://www.bilibili.com/video/BV166421f7D6/?spm_id_from=333.337.search-card.all.click&vd_source=79c6ce1ec30b05ff9d95e246312064d3](https://www.bilibili.com/video/BV166421f7D6/?spm_id_from=333.337.search-card.all.click&vd_source=79c6ce1ec30b05ff9d95e246312064d3)
+* 中文字幕：[https://www.bilibili.com/video/BV166421f7D6/](https://www.bilibili.com/video/BV166421f7D6)
 * 课程教材：[https://pdos.csail.mit.edu/6.S081/2021/xv6/book-riscv-rev2.pdf](https://pdos.csail.mit.edu/6.S081/2021/xv6/book-riscv-rev2.pdf)
 * 中文翻译：[https://github.com/pleasewhy/xv6-book-2020-Chinese](https://github.com/pleasewhy/xv6-book-2020-Chinese)
+
+## 交流群（志同道合的伙伴 & 解疑答惑的助教）
+
+MIT6.S081 的旅程充满挑战，但也是一次绝佳的成长机会。为了让你更好地攻克难关，我们创建了 MIT6.S081 学习交流群。在这里，你可以找到：
+
+* **并肩前行的伙伴**：与和你一样对操作系统充满热情的同学交流心得、分享经验
+* **可靠的支持者**：负责任的助教将在这里为你提供必要的指导和帮助
+
+扫描下方二维码，加入我们，一起在 MIT6.S081 中蜕变！
+
+[在此放置二维码]
