@@ -44,4 +44,5 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
+  - 南京大学"计算机系统基础"实验(PA): PA.md
   - MIT6.S081：操作系统: xv6.md
