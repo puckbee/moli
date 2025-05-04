@@ -41,4 +41,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-      
+
+nav:
+  - 首页: index.md
+  - MIT6.s081: xv6.md
