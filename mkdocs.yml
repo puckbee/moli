@@ -44,4 +44,4 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
-  - MIT6.s081: xv6.md
+  - MIT6.S081：操作系统: xv6.md
