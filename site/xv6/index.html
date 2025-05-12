@@ -8,19 +8,25 @@
       
       
       
+        <link rel="canonical" href="https://puckbee.github.io/moli/xv6/">
       
       
+        <link rel="prev" href="../PA/">
       
-      <link rel="icon" href="/moli/assets/images/favicon.png">
+      
+        <link rel="next" href="../CS61a/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
     
     
       
-        <title>MOLI：提升实践能力的试炼之地</title>
+        <title>MIT6.S081: 操作系统 - MOLI：提升实践能力的试炼之地</title>
       
     
     
-      <link rel="stylesheet" href="/moli/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -39,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL("/moli/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -69,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/moli/." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+    <a href=".." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -89,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              MIT6.S081: 操作系统
             
           </span>
         </div>
@@ -179,7 +190,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/moli/." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+    <a href=".." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -209,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/moli/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -231,7 +242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/moli/PA/" class="md-nav__link">
+      <a href="../PA/" class="md-nav__link">
         
   
   
@@ -250,10 +261,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/moli/xv6/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    MIT6.S081: 操作系统
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -264,6 +295,60 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      课程简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      学习建议
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      课程资源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      交流群（志同道合的伙伴 &amp; 解疑答惑的助教）
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -275,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/moli/CS61a/" class="md-nav__link">
+      <a href="../CS61a/" class="md-nav__link">
         
   
   
@@ -297,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/moli/CS61b/" class="md-nav__link">
+      <a href="../CS61b/" class="md-nav__link">
         
   
   
@@ -319,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/moli/CS61c/" class="md-nav__link">
+      <a href="../CS61c/" class="md-nav__link">
         
   
   
@@ -352,6 +437,50 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      课程简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      学习建议
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      课程资源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      交流群（志同道合的伙伴 &amp; 解疑答惑的助教）
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -362,8 +491,71 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+  <h1>MIT6.S081: 操作系统</h1>
+
+<div style="display: flex; justify-content: space-between;">
+    <figure>
+        <img src="images/xv6_img1.png" alt="Robert Morris" width="90%">
+        <figcaption>Robert Morris</figcaption>
+    </figure>
+
+    <figure>
+        <img src="images/xv6_img2.png" alt="Frans Kaashoek" width="98%">
+        <figcaption>Frans Kaashoek</figcaption>
+    </figure>
+</div>
+
+<h2 id="_1">课程简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>MIT6.S081 是 MIT 面向本科生的一门操作系统课程。作为一门极佳的操作系统入门课程，非常适合 <strong>没有接触过操作系统</strong> 、 <strong>对操作系统基本概念理解不深</strong> 或 <strong>已经掌握了基础概念但缺乏实践</strong> 的学生学习。</p>
+<p>课程由 Frans Kaashoek 教授和 Robert Morris 教授进行授课。Frans Kaashoek 教授是 MIT PDOS 组的负责人，Robert Morris 教授是著名的“莫里斯蠕虫”创造者。不同于其他“放 PPT 念 PPT”式的讲课方式，MIT6.S081 由教授手写板书 + 阅读源码的方式进行，带领学生通过源码去理解操作系统的众多机制与实现细节。这种方式不仅可以让学生对知识点的理解更加深刻，还可以提升学生的代码阅读与实践能力，防止空讲理论纸上谈兵。</p>
+<p>由于现代主流操作系统（如：Linux，FreeBSD）的代码量已经十分巨大了，对于初学者来说通过这样的庞然大物学习起来非常困难。为此 MIT 的教授们专门开发了一个教学式的操作系统 xv6。该系统受 UNIX version 6 启发，一共不到 8000 行的 C 代码，实现了进程管理，POSIX 系统调用，内存管理，并发控制，文件系统等诸多核心功能，是一个完整的操作系统。而且源码中拥有非常详尽的注释，非常适合初学者进行学习。</p>
+<blockquote>
+<p>关键字：C 语言，操作系统，编程实践</p>
+</blockquote>
+<h2 id="_2">学习建议<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>如果不清楚自己是否拥有足够的前置知识，可以先尝试学习，当遇到困难时再进行相关的知识补充。</p>
+<ul>
+<li>先修要求：熟悉 C 语言编程，RISC-V 计算机体系结构基础</li>
+<li>先修课程推荐：CS61C</li>
+<li>先修书籍推荐：《C 程序设计语言》</li>
+<li>学习方法：建议以课程 lab 为主，如遇困难再通过课程视频或配套书籍进行学习</li>
+</ul>
+<h2 id="_3">课程资源<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>课程网站：<a href="https://pdos.csail.mit.edu/6.S081/2021/index.html">https://pdos.csail.mit.edu/6.S081/2021/index.html</a></li>
+<li>原版视频：<a href="https://www.youtube.com/watch?v=L6YqHxYHa7A">https://www.youtube.com/watch?v=L6YqHxYHa7A</a></li>
+<li>中文字幕：<a href="https://www.bilibili.com/video/BV166421f7D6">https://www.bilibili.com/video/BV166421f7D6/</a></li>
+<li>课程教材：<a href="https://pdos.csail.mit.edu/6.S081/2021/xv6/book-riscv-rev2.pdf">https://pdos.csail.mit.edu/6.S081/2021/xv6/book-riscv-rev2.pdf</a></li>
+<li>中文翻译：<a href="https://github.com/pleasewhy/xv6-book-2020-Chinese">https://github.com/pleasewhy/xv6-book-2020-Chinese</a></li>
+</ul>
+<h2 id="_4">交流群（志同道合的伙伴 &amp; 解疑答惑的助教）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>MIT6.S081 的旅程充满挑战，但也是一次绝佳的成长机会。为了让你更好地攻克难关，我们创建了 MIT6.S081 学习交流群。在这里，你可以找到：</p>
+<ul>
+<li><strong>并肩前行的伙伴</strong>：与和你一样对操作系统充满热情的同学交流心得、分享经验</li>
+<li><strong>可靠的支持者</strong>：负责任的助教将在这里为你提供必要的指导和帮助</li>
+</ul>
+<p>扫描下方二维码，加入我们，一起在 MIT6.S081 中蜕变！</p>
+<p>[在此放置二维码]</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -399,10 +591,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/moli/", "features": [], "search": "/moli/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/moli/assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
