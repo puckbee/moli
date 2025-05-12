@@ -4,6 +4,11 @@ theme:
   name: material
   icon:
     repo: fontawesome/brands/git-alt 
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - content.code.copy
 plugins:
   - search
 repo_url: https://github.com/puckbee/moli
@@ -44,8 +49,10 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
-  - '南京大学"计算机系统基础"实验(PA)': PA.md
-  - 'MIT6.S081: 操作系统': xv6.md
-  - 'CS61A: 计算机程序的结构与解释': CS61a.md
-  - 'CS61B: 数据结构': CS61b.md
-  - 'CS61C: 计算机体系结构中的伟大思想': CS61c.md
+  - 基础阶段:
+    - 'CS61A: 计算机程序的结构与解释': CS61a.md
+    - 'CS61B: 数据结构': CS61b.md
+    - 'CS61C: 计算机体系结构中的伟大思想': CS61c.md
+  - 进阶阶段:
+    - '南京大学"计算机系统基础"实验(PA)': PA.md
+    - 'MIT6.S081: 操作系统': xv6.md

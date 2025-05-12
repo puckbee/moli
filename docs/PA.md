@@ -19,15 +19,26 @@ PA高度重视独立解决问题的能力。你会被引导学习如何高效查
 * **学习方法**: 跟随【PA课程讲义】逐步学习即可，如在学习过程中，感到困难，可以先去学习先修课程。
 
 ## 课程资源
-* 课程网站: https://ysyx.oscc.cc/docs/ics-pa/  
+* 课程网站: [https://ysyx.oscc.cc/docs/ics-pa/](https://ysyx.oscc.cc/docs/ics-pa/)
 
-* 课程视频: https://www.bilibili.com/video/BV1qa4y1j7xk/  
+* 课程视频: [https://www.bilibili.com/video/BV1qa4y1j7xk/](https://www.bilibili.com/video/BV1qa4y1j7xk/)
 
 ## 交流群(志同道合的伙伴 & 解疑答惑的助教)
 PA的旅程充满挑战，但也是一次绝佳的成长机会。为了让你更好地攻克难关，我们创建了PA学习交流群。在这里，你可以找到：
+
 *   **并肩前行的伙伴：** 与和你一样对计算机系统充满热情的同学交流心得、分享经验。
 *   **可靠的支持者：** 负责任的助教将在这里为你提供必要的指导和帮助。
 
 扫描下方二维码，加入我们，一起在PA中蜕变！
 
-[在此放置二维码]
+<div style="display: flex; justify-content: flex-start;">
+    <figure>
+        <img src="images/pa_qq.png" alt="QQ" width="100%">
+        <figcaption>QQ</figcaption>
+    </figure>
+
+    <figure>
+        <img src="images/pa_weixin.png" alt="微信" width="80%">
+        <figcaption>微信</figcaption>
+    </figure>
+</div>

@@ -1,15 +1,3 @@
-<div style="display: flex; justify-content: space-between;">
-    <figure>
-        <img src="images/xv6_img1.png" alt="Robert Morris" width="90%">
-        <figcaption>Robert Morris</figcaption>
-    </figure>
-
-    <figure>
-        <img src="images/xv6_img2.png" alt="Frans Kaashoek" width="98%">
-        <figcaption>Frans Kaashoek</figcaption>
-    </figure>
-</div>
-
 ## 课程简介
 
 MIT6.S081 是 MIT 面向本科生的一门操作系统课程。作为一门极佳的操作系统入门课程，非常适合 **没有接触过操作系统** 、 **对操作系统基本概念理解不深** 或 **已经掌握了基础概念但缺乏实践** 的学生学习。
@@ -46,4 +34,14 @@ MIT6.S081 的旅程充满挑战，但也是一次绝佳的成长机会。为了�
 
 扫描下方二维码，加入我们，一起在 MIT6.S081 中蜕变！
 
-[在此放置二维码]
+<div style="display: flex; justify-content: flex-start;">
+    <figure>
+        <img src="images/xv6_qq.png" alt="QQ" width="100%">
+        <figcaption>QQ</figcaption>
+    </figure>
+
+    <figure>
+        <img src="images/xv6_weixin.png" alt="微信" width="80%">
+        <figcaption>微信</figcaption>
+    </figure>
+</div>
