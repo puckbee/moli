@@ -8,19 +8,25 @@
       
       
       
+        <link rel="canonical" href="https://puckbee.github.io/moli/CS61b/">
       
       
+        <link rel="prev" href="../CS61a/">
       
-      <link rel="icon" href="/moli/assets/images/favicon.png">
+      
+        <link rel="next" href="../CS61c/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
     
     
       
-        <title>MOLI：提升实践能力的试炼之地</title>
+        <title>CS61B: 数据结构 - MOLI：提升实践能力的试炼之地</title>
       
     
     
-      <link rel="stylesheet" href="/moli/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -39,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL("/moli/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -69,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/moli/." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+    <a href=".." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -89,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              CS61B: 数据结构
             
           </span>
         </div>
@@ -179,7 +190,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/moli/." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+    <a href=".." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -209,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/moli/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -231,7 +242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/moli/PA/" class="md-nav__link">
+      <a href="../PA/" class="md-nav__link">
         
   
   
@@ -253,7 +264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/moli/xv6/" class="md-nav__link">
+      <a href="../xv6/" class="md-nav__link">
         
   
   
@@ -275,7 +286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/moli/CS61a/" class="md-nav__link">
+      <a href="../CS61a/" class="md-nav__link">
         
   
   
@@ -294,10 +305,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/moli/CS61b/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CS61B: 数据结构
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -308,6 +339,60 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      课程简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      学习建议
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      课程资源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      交流群（志同道合的伙伴 &amp; 解疑答惑的助教）
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -319,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/moli/CS61c/" class="md-nav__link">
+      <a href="../CS61c/" class="md-nav__link">
         
   
   
@@ -352,6 +437,50 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      课程简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      学习建议
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      课程资源
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      交流群（志同道合的伙伴 &amp; 解疑答惑的助教）
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -362,8 +491,56 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+  <h1>CS61B: 数据结构</h1>
+
+<h2 id="_1">课程简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>CS61B是紧跟61A的第⼆⻔核⼼基础课程，课程内容包括：
+* 常用数据结构：线性表，队列，树和其他链式结构。
+* 软件⼯程的基本原理。git基本操作。
+* 排序和搜索算法。</p>
+<p>凭借在61A中建⽴的能⼒和信⼼，你会在⼀两周的时间内快速⼊⻔JAVA编程语⾔。课程实验⼏乎覆盖了课程中讲授
+的所有数据结构，其难度和趣味性相⽐61A都有所提升。你会使⽤链表或数组模拟出的双端队列来实现Karplus–Strong 算法，可以合成出吉他弦乐，也会使⽤基于图的算法来实现词频统计。在课程的最后⼀个项⽬中，你将会独⽴设计和实现属于你⾃⼰的随机⼆维迷宫⽣成系统。这些项⽬的代码量都在上千⾏左右，经过这些项⽬的训练，你将逐步养成编写模块化、⻛格良好、可复⽤代码的良好习惯。</p>
+<p>与CS61A相⽐，这⻔课的测试代码量有所减少，⾮选课的校内学⽣也⽆法访问最新年份的在线测试⽹站。但幸运的
+是，课程提供了完备的测试框架供学⽣使⽤。此外，你可以充分利⽤JAVA标准库中已经实现且经过充分测试的数
+据结构，与⾃⼰实现的数据结构进⾏随机差分测试 (differential testing)对⽐。在编写这些测试⽤例的过程中，你将逐步锻炼出独⽴解决问题和上⼿复杂⼯程项⽬的能⼒，为未来更深⼊的学习和实践打下坚实的基础</p>
+<blockquote>
+<p>关键字： Java，数据结构，软件工程</p>
+</blockquote>
+<h2 id="_2">学习建议<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>TODO</p>
+<h2 id="_3">课程资源<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>课程网站：<a href="https://sp25.datastructur.es/">https://sp25.datastructur.es/</a></li>
+<li>中文字幕：<a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA/">https://www.bilibili.com/video/BV1hJ4m1M7ZA/</a></li>
+</ul>
+<h2 id="_4">交流群（志同道合的伙伴 &amp; 解疑答惑的助教）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>CS61B 的旅程充满挑战，但也是一次绝佳的成长机会。为了让你更好地攻克难关，我们创建了 CS61B 学习交流群。在这里，你可以找到：</p>
+<ul>
+<li><strong>并肩前行的伙伴</strong>：与和你一样对操作系统充满热情的同学交流心得、分享经验</li>
+<li><strong>可靠的支持者</strong>：负责任的助教将在这里为你提供必要的指导和帮助</li>
+</ul>
+<p>扫描下方二维码，加入我们，一起在 CS61B 中蜕变！</p>
+<p>[在此放置二维码]</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -399,10 +576,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/moli/", "features": [], "search": "/moli/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/moli/assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
