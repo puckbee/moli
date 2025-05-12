@@ -14,7 +14,13 @@ CS61A是伯克利本科生接触的第一门编程课程，其历史至少可以
 > **关键字**： `Python`、`程序构造`、`编程语言`
 
 ## 学习建议
-TODO
+如果不清楚自己是否拥有足够的前置知识，可以先尝试学习，当遇到困难时再进行相关的知识补充。
+
+* **先修要求**：了解Python基本语法，简单Linux命令行操作  
+
+* **先修课程推荐**：[《计算机教育缺失的一课》](https://www.bilibili.com/video/BV1uc411N7eK/?share_source=copy_web&vd_source=9a3257b49557ba0da7797b127f7dccaf)  
+
+* **先修书籍推荐**：[《笨方法学Python》](https://wizardforcel.gitbooks.io/lpthw/content/)  
 
 ## 课程资源
 * 课程网站：[https://cs61a.org/](https://cs61a.org/)

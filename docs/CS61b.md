@@ -15,7 +15,14 @@ CS61B是紧跟61A的第二门核心基础课程，课程内容包括：
 > **关键字**： `Java`、`数据结构`、`软件工程`
 
 ## 学习建议
-TODO
+如果不清楚自己是否拥有足够的前置知识，可以先尝试学习，当遇到困难时再进行相关的知识补充。
+
+* **先修要求**: Java 编程基础，面向对象编程（OOP）思想    
+
+* **先修课程推荐**：CS61A，MIT 6.092: Introduction To Programming In Java    
+
+* **先修书籍推荐**：[Hello,算法！](https://www.hello-algo.com/)   
+
 
 ## 课程资源
 * 课程网站：[https://sp25.datastructur.es/](https://sp25.datastructur.es/)
