@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://puckbee.github.io/moli/</loc>
-         <lastmod>2025-05-12</lastmod>
+         <lastmod>2025-05-16</lastmod>
     </url>
     <url>
          <loc>https://puckbee.github.io/moli/CS61a/</loc>
-         <lastmod>2025-05-12</lastmod>
+         <lastmod>2025-05-16</lastmod>
     </url>
     <url>
          <loc>https://puckbee.github.io/moli/CS61b/</loc>
-         <lastmod>2025-05-12</lastmod>
+         <lastmod>2025-05-16</lastmod>
     </url>
     <url>
          <loc>https://puckbee.github.io/moli/CS61c/</loc>
-         <lastmod>2025-05-12</lastmod>
+         <lastmod>2025-05-16</lastmod>
     </url>
     <url>
          <loc>https://puckbee.github.io/moli/PA/</loc>
-         <lastmod>2025-05-12</lastmod>
+         <lastmod>2025-05-16</lastmod>
     </url>
     <url>
          <loc>https://puckbee.github.io/moli/xv6/</loc>
-         <lastmod>2025-05-12</lastmod>
+         <lastmod>2025-05-16</lastmod>
+    </url>
+    <url>
+         <loc>https://puckbee.github.io/moli/CS61C/Labs/Lab_0/</loc>
+         <lastmod>2025-05-16</lastmod>
     </url>
 </urlset>
