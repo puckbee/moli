@@ -49,7 +49,9 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
-  - 'CS61A': CS61A.md
+  - 'CS61A': 
+      - '课程简介': CS61A.md
+      - 'Lab 00': "CS61A/Lab & Discussion/Lab 00: Getting Started.md"
   - 'CS61B': CS61B.md
   - 'CS61C': CS61C.md
   - '南京大学 ICS': PA.md
