@@ -8,10 +8,8 @@
       
       
       
-        <link rel="canonical" href="https://puckbee.github.io/moli/PA/">
+        <link rel="canonical" href="https://puckbee.github.io/moli/MIT6.S081/">
       
-      
-        <link rel="prev" href="..">
       
       
       
@@ -20,7 +18,7 @@
     
     
       
-        <title>南京大学"计算机系统基础"实验(PA) - MOLI：提升实践能力的试炼之地</title>
+        <title>MIT6.S081 - MOLI：提升实践能力的试炼之地</title>
       
     
     
@@ -96,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              南京大学"计算机系统基础"实验(PA)
+              MIT6.S081
             
           </span>
         </div>
@@ -218,13 +216,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../PA/" class="md-tabs__link">
           
   
   
@@ -428,31 +424,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -465,7 +456,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             进阶阶段
@@ -476,30 +467,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    南京大学"计算机系统基础"实验(PA)
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../PA/" class="md-nav__link">
         
   
   
@@ -510,60 +481,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      课程简介
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      学习建议
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      课程资源
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      交流群(志同道合的伙伴 &amp; 解疑答惑的助教)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -618,53 +535,46 @@
   
 
 
-  <h1>南京大学"计算机系统基础"实验(PA)</h1>
+  <h1>MIT6.S081</h1>
 
 <h2 id="_1">课程简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>你是否曾对程序的运行感到好奇？一行代码如何转化为计算机的动作？操作系统、编译器、硬件之间究竟是如何协同工作的？南京大学的“计算机系统基础”实验（PA）提出x86/mips32/riscv32(64)架构相应的教学版子集, 指导学生实现一个经过简化但功能完备的x86/mips32/riscv32(64)模拟器NEMU(NJU EMUlator), 最终在NEMU上运行游戏"仙剑奇侠传", 来让学生探究"程序在计算机上运行"的基本原理。</p>
-<p>这门课程并非简单的编程实验，它将逐步指导你亲手实现一个计算机系统模拟器（NEMU），并从最简陋的图灵机模型开始，逐步添加CPU、内存、I/O设备，搭建软件运行的基础设施（AM），并在此之上孕育出批处理系统乃至具备虚存管理的分时多任务操作系统（Nanos-lite）。</p>
-<p>通过实现指令译码执行、内存管理、异常响应、系统调用、虚存机制、上下文切换等计算机系统核心机制，你将深入理解软硬件如何协同工作，以及不同抽象层如何构建起复杂的计算机世界。最有意思的是，你将最终在自己亲手构建的系统上，运行包括《仙剑奇侠传》、ONScripter、Flappy Bird在内的一系列有意思的的真实应用程序！</p>
-<p>PA高度重视独立解决问题的能力。你会被引导学习如何高效查阅手册（RTFM）、阅读源代码（RTFSC），利用调试工具，并通过革命性的DiffTest等方法快速定位和解决bug。这过程充满挑战，但正是这些训练，能让你真正掌握计算机系统的运作原理，培养系统级视野和解决复杂问题的能力。</p>
-<p>完成PA，你不仅能彻底消除对计算机系统运作的神秘感，更将打下坚实的系统编程基础，为后续的操作系统、体系结构等课程做好准备，成为一名能应对未来复杂挑战的程序员。  </p>
+<p>MIT6.S081 是 MIT 面向本科生的一门操作系统课程。作为一门极佳的操作系统入门课程，非常适合 <strong>没有接触过操作系统</strong> 、 <strong>对操作系统基本概念理解不深</strong> 或 <strong>已经掌握了基础概念但缺乏实践</strong> 的学生学习。</p>
+<p>课程由 Frans Kaashoek 教授和 Robert Morris 教授进行授课。Frans Kaashoek 教授是 MIT PDOS 组的负责人，Robert Morris 教授是著名的“莫里斯蠕虫”创造者。不同于其他“放 PPT 念 PPT”式的讲课方式，MIT6.S081 由教授手写板书 + 阅读源码的方式进行，带领学生通过源码去理解操作系统的众多机制与实现细节。这种方式不仅可以让学生对知识点的理解更加深刻，还可以提升学生的代码阅读与实践能力，防止空讲理论纸上谈兵。</p>
+<p>由于现代主流操作系统（如：Linux，FreeBSD）的代码量已经十分巨大了，对于初学者来说通过这样的庞然大物学习起来非常困难。为此 MIT 的教授们专门开发了一个教学式的操作系统 xv6。该系统受 UNIX version 6 启发，一共不到 8000 行的 C 代码，实现了进程管理，POSIX 系统调用，内存管理，并发控制，文件系统等诸多核心功能，是一个完整的操作系统。而且源码中拥有非常详尽的注释，非常适合初学者进行学习。</p>
 <blockquote>
-<p><strong>关键字</strong>: <code>C语言</code>、<code>计算机系统基础</code>、<code>软硬件协同</code>、<code>操作系统基础</code></p>
+<p><strong>关键字</strong>：<code>C 语言</code>、<code>操作系统</code>、<code>编程实践</code></p>
 </blockquote>
 <h2 id="_2">学习建议<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>如果不清楚自己是否拥有足够的前置知识，可以先尝试学习，当遇到困难时再进行相关的知识补充。</p>
 <ul>
-<li>
-<p><strong>先修要求</strong>: 扎实的C语言水平 + GNU/Linux入门</p>
-</li>
-<li>
-<p><strong>先修课程推荐</strong>: CS61A,CS61B,CS61C</p>
-</li>
-<li>
-<p><strong>学习方法</strong>: 跟随【PA课程讲义】逐步学习即可，如在学习过程中，感到困难，可以先去学习先修课程。</p>
-</li>
+<li><strong>先修要求</strong>：熟悉 C 语言编程，RISC-V 计算机体系结构基础</li>
+<li><strong>先修课程推荐</strong>：CS61C</li>
+<li><strong>先修书籍推荐</strong>：《C 程序设计语言》</li>
+<li><strong>学习方法</strong>：建议以课程 lab 为主，如遇困难再通过课程视频或配套书籍进行学习</li>
 </ul>
 <h2 id="_3">课程资源<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>课程网站: <a href="https://ysyx.oscc.cc/docs/ics-pa/">https://ysyx.oscc.cc/docs/ics-pa/</a></p>
-</li>
-<li>
-<p>课程视频: <a href="https://www.bilibili.com/video/BV1qa4y1j7xk/">https://www.bilibili.com/video/BV1qa4y1j7xk/</a></p>
-</li>
+<li>课程网站：<a href="https://pdos.csail.mit.edu/6.S081/2021/index.html">https://pdos.csail.mit.edu/6.S081/2021/index.html</a></li>
+<li>原版视频：<a href="https://www.youtube.com/watch?v=L6YqHxYHa7A">https://www.youtube.com/watch?v=L6YqHxYHa7A</a></li>
+<li>中文字幕：<a href="https://www.bilibili.com/video/BV166421f7D6">https://www.bilibili.com/video/BV166421f7D6/</a></li>
+<li>课程教材：<a href="https://pdos.csail.mit.edu/6.S081/2021/xv6/book-riscv-rev2.pdf">https://pdos.csail.mit.edu/6.S081/2021/xv6/book-riscv-rev2.pdf</a></li>
+<li>中文翻译：<a href="https://github.com/pleasewhy/xv6-book-2020-Chinese">https://github.com/pleasewhy/xv6-book-2020-Chinese</a></li>
 </ul>
-<h2 id="_4">交流群(志同道合的伙伴 &amp; 解疑答惑的助教)<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>PA的旅程充满挑战，但也是一次绝佳的成长机会。为了让你更好地攻克难关，我们创建了PA学习交流群。在这里，你可以找到：</p>
+<h2 id="_4">交流群（志同道合的伙伴 &amp; 解疑答惑的助教）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>MIT6.S081 的旅程充满挑战，但也是一次绝佳的成长机会。为了让你更好地攻克难关，我们创建了 MIT6.S081 学习交流群。在这里，你可以找到：</p>
 <ul>
-<li><strong>并肩前行的伙伴：</strong> 与和你一样对计算机系统充满热情的同学交流心得、分享经验。</li>
-<li><strong>可靠的支持者：</strong> 负责任的助教将在这里为你提供必要的指导和帮助。</li>
+<li><strong>并肩前行的伙伴</strong>：与和你一样对操作系统充满热情的同学交流心得、分享经验</li>
+<li><strong>可靠的支持者</strong>：负责任的助教将在这里为你提供必要的指导和帮助</li>
 </ul>
-<p>扫描下方二维码，加入我们，一起在PA中蜕变！</p>
+<p>扫描下方二维码，加入我们，一起在 MIT6.S081 中蜕变！</p>
 <div style="display: flex; justify-content: flex-start;">
     <figure>
-        <img src="images/pa_qq.png" alt="QQ" width="100%">
+        <img src="images/xv6_qq.png" alt="QQ" width="100%">
         <figcaption>QQ</figcaption>
     </figure>
 
     <figure>
-        <img src="images/pa_weixin.png" alt="微信" width="80%">
+        <img src="images/xv6_weixin.png" alt="微信" width="80%">
         <figcaption>微信</figcaption>
     </figure>
 </div>

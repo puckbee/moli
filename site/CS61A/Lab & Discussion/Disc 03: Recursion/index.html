@@ -1,0 +1,820 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://puckbee.github.io/moli/CS61A/Lab%20%26%20Discussion/Disc%2003%3A%20Recursion/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+    
+    
+      
+        <title>讨论 3: 递归 disc03.pdf - MOLI：提升实践能力的试炼之地</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-disc03pdf" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOLI：提升实践能力的试炼之地
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              讨论 3: 递归 disc03.pdf
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CS61a.md" class="md-tabs__link">
+          
+  
+  
+  基础阶段
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../PA/" class="md-tabs__link">
+          
+  
+  
+  进阶阶段
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MOLI：提升实践能力的试炼之地
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    基础阶段
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            基础阶段
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61a.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CS61A: 计算机程序的结构与解释
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61b.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CS61B: 数据结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61c.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CS61C: 计算机体系结构中的伟大思想
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    进阶阶段
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            进阶阶段
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    南京大学"计算机系统基础"实验(PA)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../xv6.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MIT6.S081: 操作系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="3-disc03pdf">讨论 3: 递归 <a href="https://cs61a.org/disc/disc03/disc03.pdf">disc03.pdf</a><a class="headerlink" href="#3-disc03pdf" title="Permanent link">&para;</a></h1>
+<p>如果你们小组的人数少于3人，可以与教室里的另一个小组合并。</p>
+<p>现在切换到 Pensieve：</p>
+<ul>
+<li><strong>每个人</strong>：请访问 <a href="https://tutor.pensieve.co/student/courses/cs61a/clazzes/cs61a_sp25/assignments/65c3c19700186225a7e63bf2">pensieve.co</a>，使用你的 @berkeley.edu 邮箱登录，并将 <strong>你的小组编号</strong> 作为房间号输入（该编号在分配你们这次讨论的邮件中）。只要你们都输入相同的号码（任何号码），你们就都会使用共享文档。</li>
+</ul>
+<p>一旦你们进入 Pensieve，就不需要返回此页面；Pensieve 包含了相同的内容（但具有更多功能）。如果 Pensieve 出现问题，请返回此页面继续讨论。</p>
+<h2 id="_1">考勤<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>填写<a href="http://go.cs61a.org/discussion-attendance">考勤表</a>，输入从助教那里收到的独一无二的编号。收到编号后，请填写表格，选择 <em>到达</em>（而不是 <em>离开</em> —— 离开时再填写）。</p>
+<h2 id="_2">开始<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>说出你的名字并分享你小时候特别喜欢的一种食物。（如果你现在也喜欢那种食物，没关系。）</p>
+<details>
+<summary>学习建议</summary>
+期中考试 1 后，一些学生正在寻找更有效的学习方法。一个很好的选择是课外与讨论小组见面，一起复习练习题。现在是安排时间和地点进行一些额外的组内练习，复习期中考试 1 问题的好时机。这是可选的，不是每个人都需要参加，但如果有些期中考试 1 的内容还没有完全掌握，这个周末是一个很好的复习时机。
+
+这门课程的所有内容都是建立在先前的知识基础上的，如果没有扎实掌握期中考试 1 的内容，之后很难跟上进度。
+
+记住，如果有同学还没有学会所有内容，并且需要更多时间掌握课程材料，也是可以的。课程的核心目的是让学生学习他们之前不知道的知识。请在这个过程中互相支持。
+</details>
+
+<h2 id="_3">递归<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>许多学生发现本次讨论很有挑战性，随着练习增多，问题会变得更加简单。请互相帮助学习。</p>
+<p><strong>非常重要</strong>：在本次讨论中，不要在你们小组确认答案之前检查自己的答案。通过思考代码会执行什么，来解决问题并检查自己的工作。你们的目标应该是在第一次运行时就让所有检查都通过！如果你需要帮助，请提问。</p>
+<h2 id="1swipe">问题 1：Swipe<a class="headerlink" href="#1swipe" title="Permanent link">&para;</a></h2>
+<p>实现一个 <code>swipe</code> 函数，它将参数 <code>n</code> 的数字打印出来，每个数字一行，<strong>先是倒序再是正序</strong>。最左边的数字只打印一次。<strong>不允许使用 <code>while</code> 或 <code>for</code> 或 <code>str</code></strong>。（当然，要使用递归！）</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">swipe</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print the digits of n, one per line, first backward then forward.</span>
+
+<span class="sd">    &gt;&gt;&gt; swipe(2837)</span>
+<span class="sd">    7</span>
+<span class="sd">    3</span>
+<span class="sd">    8</span>
+<span class="sd">    2</span>
+<span class="sd">    8</span>
+<span class="sd">    3</span>
+<span class="sd">    7</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="s2">&quot;*** YOUR CODE HERE ***&quot;</span>
+</code></pre></div>
+<details>
+<summary>提示</summary>
+首先打印输出的第一行，然后进行递归调用，最后打印输出的最后一行。
+</details>
+
+<h3 id="2">问题 2：跳过阶乘<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>定义 <code>skip_factorial</code> 函数的基本情况，该函数返回从 n 开始的每隔一个正整数的乘积。</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">skip_factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the product of positive integers n * (n - 2) * (n - 4) * ...</span>
+
+<span class="sd">    &gt;&gt;&gt; skip_factorial(5) # 5 * 3 * 1</span>
+<span class="sd">    15</span>
+<span class="sd">    &gt;&gt;&gt; skip_factorial(8) # 8 * 6 * 4 * 2</span>
+<span class="sd">    384</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">___</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">___</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">skip_factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<details>
+<summary>提示</summary>
+如果 <code>n</code> 是偶数，那么基准情况将是 2。如果 <code>n</code> 是奇数，那么基准情况将是 1。试着写一个条件来处理这两种情况。
+</details>
+
+<h3 id="3">问题 3：是否为质数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>实现 <code>is_prime</code> 函数，该函数接受一个大于 1 的整数 <code>n</code>。如果 <code>n</code> 是质数，则返回 <code>True</code>，否则返回 <code>False</code>。尝试按照以下方法进行，但使用递归实现，而不是使用 <code>while</code>（或 <code>for</code>）语句。</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+<p>你需要定义一个“辅助”函数（一个仅用于帮助实现此函数的函数）。在 <code>is_prime</code> 内部定义该函数，还是作为全局函数单独定义是否重要？尝试定义该辅助函数，以便传递尽可能少的参数。</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns True if n is a prime number and False otherwise.</span>
+<span class="sd">    &gt;&gt;&gt; is_prime(2)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; is_prime(16)</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; is_prime(521)</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="s2">&quot;*** YOUR CODE HERE ***&quot;</span>
+</code></pre></div>
+<details>
+<summary>提示</summary>
+<p>定义一个内部函数，检查从 i 到 n 之间的某个整数是否能整除 n。然后，你可以从 i=2 开始调用它：</p>
+<pre>
+def is_prime(n):
+    def f(i):
+        if n % i == 0:
+            return ____
+        elif ____:
+            return ____
+        else:
+            return f(____)
+    return f(2)
+</pre>
+<p>文档：为辅助函数编写一句话的文档字符串，描述它的功能。不要只是写“它帮助实现 is_prime”。相反，描述它的行为。如果你需要帮助，随时问！</p>
+</details>
+
+<h3 id="4-hailstone">问题 4: 递归 Hailstone<a class="headerlink" href="#4-hailstone" title="Permanent link">&para;</a></h3>
+<p>回顾一下作业 1 中的 <code>hailstone</code> 函数。首先，选择一个正整数 <code>n</code> 作为起始值。如果 <code>n</code> 是偶数，将它除以 2。如果 <code>n</code> 是奇数，将它乘以 3 并加 1。重复这个过程直到 <code>n</code> 变为 1。完成这个递归版本的 <code>hailstone</code>，它会打印出序列中的值，并返回步骤的数量。</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hailstone</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print out the hailstone sequence starting at n, </span>
+<span class="sd">    and return the number of elements in the sequence.</span>
+<span class="sd">    &gt;&gt;&gt; a = hailstone(10)</span>
+<span class="sd">    10</span>
+<span class="sd">    5</span>
+<span class="sd">    16</span>
+<span class="sd">    8</span>
+<span class="sd">    4</span>
+<span class="sd">    2</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; a</span>
+<span class="sd">    7</span>
+<span class="sd">    &gt;&gt;&gt; b = hailstone(1)</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; b</span>
+<span class="sd">    1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">even</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">odd</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">____</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">odd</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s2">&quot;*** YOUR CODE HERE ***&quot;</span>
+</code></pre></div>
+<details>
+<summary>提示</summary>
+<p>偶数永远不是基本情况，因此 <code>even</code> 总是会调用 <code>hailstone</code> 函数，并返回比其余 hailstone 序列长度大 1。</p>
+<p>奇数可能是 1（基本情况），也可能大于 1（递归情况）。只有递归情况才应该调用 <code>hailstone</code>。</p>
+</details>
+
+<p><strong>建议</strong>：一旦你们小组达成了一个解决方案，是时候练习描述自己代码的能力了。指定一个人来向小组描述你的解决方案。如果你愿意，你甚至可以将你的描述分享给你的助教。</p>
+<h2 id="_4">文档记录<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>让你的助教知道你完成了任务，这样你们每个人都可以得到一个 <strong>离开</strong> 号码，并重新填写<a href="http://go.cs61a.org/discussion-attendance">考勤表</a>（这次选择 <em>离开</em> 而不是 <em>到达</em>）。如果你的助教不在房间，去隔壁找他们。</p>
+<h2 id="_5">额外问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>以下第一个问题是 <strong>强烈推荐但不是必需的</strong>。如果你没有完成它也没关系（但至少阅读一下并尝试游戏，因为它非常有趣）。</p>
+<p>第二个问题相当困难。</p>
+<h3 id="57">问题 5：7<a class="headerlink" href="#57" title="Permanent link">&para;</a></h3>
+<p><strong>七的游戏</strong>：玩家围成一圈，按顺时针方向从 1 开始计数。（起始玩家说 1，左边的玩家说 2，以此类推。）如果一个数字可以被 7 整除或包含数字 7（或两者都有），则改变方向。数字必须在<a href="https://www.youtube.com/watch?v=ymJIXzvDvj4">每分钟 60 次的节拍</a>上说出。如果有人在不该自己说的轮次说了数字，或者有人错过了轮次的节拍，游戏结束。</p>
+<p>例如，5 个人会像这样数到 20：</p>
+<div class="highlight"><pre><span></span><code>玩家 1 说 1
+玩家 2 说 2
+玩家 3 说 3
+玩家 4 说 4
+玩家 5 说 5
+玩家 1 说 6  # 一圈回来
+玩家 2 说 7  # 方向改为逆时针
+玩家 1 说 8
+玩家 5 说 9  # 逆时针继续
+玩家 4 说 10
+玩家 3 说 11
+玩家 2 说 12
+玩家 1 说 13
+玩家 5 说 14 # 方向改为顺时针
+玩家 1 说 15
+玩家 2 说 16
+玩家 3 说 17 # 方向改为逆时针
+玩家 2 说 18
+玩家 1 说 19
+玩家 5 说 20
+</code></pre></div>
+<p>玩几局游戏。将你们小组最高的分数发布到 Discord 上。</p>
+<p>然后，实现在 <code>sevens</code> 函数中，它接收一个正整数 <code>n</code> 和一个玩家数 <code>k</code>，返回第 <code>k</code> 个玩家在第 <code>n</code> 回合时说了哪个数字。你可以调用 <code>has_seven</code> 函数。</p>
+<p>解决此问题的有效方法是模拟游戏，直到第 <code>n</code> 轮。实现过程中必须跟踪当前的数字 <code>n</code>、当前数字 <code>i</code>、玩家 <code>who</code> 说的 <code>i</code> 以及决定下一个玩家的方向 <code>direction</code>（顺时针或逆时针）。使用整数来表示所有这些内容非常有效，方向 <code>direction</code> 在 1（顺时针）和 -1（逆时针）之间切换。</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">sevens</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the (clockwise) position of who says n among k players.</span>
+
+<span class="sd">    &gt;&gt;&gt; sevens(2, 5)</span>
+<span class="sd">    2</span>
+<span class="sd">    &gt;&gt;&gt; sevens(6, 5)</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; sevens(7, 5)</span>
+<span class="sd">    2</span>
+<span class="sd">    &gt;&gt;&gt; sevens(8, 5)</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; sevens(9, 5)</span>
+<span class="sd">    5</span>
+<span class="sd">    &gt;&gt;&gt; sevens(18, 5)</span>
+<span class="sd">    2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">who</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">who</span>
+        <span class="s2">&quot;*** YOUR CODE HERE ***&quot;</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">has_seven</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">has_seven</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+<details>
+<summary>提示</summary>
+首先检查 <code>i</code> 是否是 7 的倍数或包含数字 7，如果是，则改变方向。然后，将方向加到 <code>who</code> 上，并确保 <code>who</code> 不小于 1 或大于 <code>k</code>。
+</details>
+
+<h3 id="q6-karel">Q6: Karel 机器人<a class="headerlink" href="#q6-karel" title="Permanent link">&para;</a></h3>
+<p><a href="https://compedu.stanford.edu/karel-reader/docs/python/en/chapter1.html">Karel 机器人</a>从一个未知大小的 <code>n</code> x <code>n</code> 方格的角落开始。Karel 只响应以下四个函数：</p>
+<ul>
+<li><code>move()</code>：如果前方没有墙壁，Karel 会向前移动一格；如果前方有墙壁，则会报错。</li>
+<li><code>turn_left()</code>：Karel 将其方向左转 90 度。</li>
+<li><code>front_is_blocked()</code>：返回前方是否有墙壁。</li>
+<li><code>front_is_clear()</code>：返回前方是否没有墙壁。</li>
+</ul>
+<p>实现一个 <code>main()</code> 函数，使 Karel 停在底行的中间位置。例如，如果方格是 7 x 7 且 Karel 从 (1, 1) 位置开始（即底部左侧），那么 Karel 应该停在 (1, 4) 位置（底部行从两侧各走三步）。Karel 在结束时可以朝向任意方向。如果底行长度为偶数，Karel 可以停在 (1, <code>n // 2</code>) 或 (1, <code>n // 2 + 1</code>) 位置。</p>
+<p><strong>重要</strong> 在 <code>main()</code> 函数体内只能写 <code>if</code> 或 <code>if/else</code> 语句和函数调用。不能写赋值语句、def 语句、lambda 表达式或 while/for 语句。</p>
+<details>
+<summary>提示</summary>
+每走两步，退后一步，以便最终停在中间。
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

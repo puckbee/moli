@@ -1,5 +1,5 @@
 site_name: MOLI：提升实践能力的试炼之地
-site_url: https://puckbee.github.io/moli
+site_url: https://nightlanding.github.io/moli
 theme:
   name: material
   icon:
@@ -11,7 +11,7 @@ theme:
     - content.code.copy
 plugins:
   - search
-repo_url: https://github.com/puckbee/moli
+repo_url: https://github.com/nightlanding/moli
 #repo_name: squidfunk/mkdocs-material
 repo_name: MOLI
 
@@ -49,10 +49,8 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
-  - 基础阶段:
-    - 'CS61A: 计算机程序的结构与解释': CS61a.md
-    - 'CS61B: 数据结构': CS61b.md
-    - 'CS61C: 计算机体系结构中的伟大思想': CS61c.md
-  - 进阶阶段:
-    - '南京大学"计算机系统基础"实验(PA)': PA.md
-    - 'MIT6.S081: 操作系统': xv6.md
+  - 'CS61A': CS61A.md
+  - 'CS61B': CS61B.md
+  - 'CS61C': CS61C.md
+  - '南京大学 ICS': PA.md
+  - 'MIT6.S081': MIT6.S081.md
