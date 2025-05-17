@@ -106,7 +106,7 @@ $ sudo apt install curl git openjdk-17-jre openssh-client python3 python3-pip
 
 你将使用 Hive machine 作为课程作业的教学服务器。你可以使用 SSH（安全登录协议）连接到这些机器。让我们来设置一下！   
 
-> Hive machine 是Berkeley EECS提供的一个专用的教学与研究集群。
+> Hive machine 是Berkeley EECS提供的一个专用的教学与研究集群。  
 
 你可以使用 Hivemind 来检查每台 Hive machine 是否繁忙或离线。请注意，Hivemind 会显示不以 hive 开头的机器；这些机器无法使用 61C。
 
@@ -223,6 +223,7 @@ $ sudo apt install curl git openjdk-17-jre openssh-client python3 python3-pip
 
 以后（完成本练习后），你可以运行 `ssh hive#` 连接到 Hive machine。 从 hive1 到 hive30 共有30台 Hive machine。使用哪一台并不重要，因为所有Hive machine都共享相同的文件。
 
+
 ### 在不输入密码的情况下连接Hive machine
 
 1. 打开一个新的终端窗口。
@@ -337,3 +338,21 @@ $ sudo apt install curl git openjdk-17-jre openssh-client python3 python3-pip
 7. 运行 `exit` 退出 SSH 会话。
 
 </details>
+
+## 练习 5: 试试看 Git
+
+在本练习中，你将获取用于实验课的 Git 仓库（"repo"），并使用各种 Git 命令。
+
+本练习的说明假设你使用 Vim 来编辑文本文件。如需 Vim 快速入门指南，请查阅[附录的 Vim 基础部分](https://cs61c.org/sp25/labs/lab00/#vim-basics)。
+
+<!-- 此处附录连接在完成附录汉化后应该替换为MOLI连接 -->
+
+如果你想使用其他文本编辑器，当然可以。但是，助教将无法为除 Vim 以外的编辑器提供支持。一些例子：
+
+* **Nano:** 简单且比 Vim 对初学者更友好。它在界面底部提供了一个有用的命令列表（^ 表示 Ctrl 键）。随许多 UNIX 发行版（例如 macOS, Ubuntu Linux）一同提供。使用 `nano file.txt` 打开。
+* **Visual Studio Code (VSCode):** 花哨的图形化文本编辑器。它有一些非常有用的扩展，包括一个 Remote SSH 扩展，允许你在 VSCode 本身而不是基于终端的编辑器中通过 SSH 编辑文件。但是，过去有些学生遇到过复杂的设置问题。
+
+> Lab 讲义中提到的"助教"为 Berkeley 校内的课程助教（TA），但MOLI的助教们**可能**掌握多种编辑器，欢迎交流。
+
+在继续 Lab 1 之前，请确保你能够熟练地使用你选择的文本编辑器在 hive 上编辑你的文件。
+
