@@ -217,17 +217,18 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../../CS61B/" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="../../../CS61B/" class="md-tabs__link">
+          
+  
   
   CS61B
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -236,17 +237,18 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
   
   CS61C
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -459,9 +461,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../CS61B/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -470,7 +488,42 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            CS61B
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -481,9 +534,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -492,7 +561,42 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CS61C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -671,7 +775,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>
 
 你将使用 Hive machine 作为课程作业的教学服务器。你可以使用 SSH（安全登录协议）连接到这些机器。让我们来设置一下！   
 
-> Hive machine 是Berkeley EECS提供的一个专用的教学与研究集群。
+> Hive machine 是Berkeley EECS提供的一个专用的教学与研究集群。  
 
 你可以使用 Hivemind 来检查每台 Hive machine 是否繁忙或离线。请注意，Hivemind 会显示不以 hive 开头的机器；这些机器无法使用 61C。
 
@@ -779,6 +883,7 @@ Match Host *.cs.berkeley.edu,*.eecs.berkeley.edu
 
 以后（完成本练习后），你可以运行 `ssh hive#` 连接到 Hive machine。 从 hive1 到 hive30 共有30台 Hive machine。使用哪一台并不重要，因为所有Hive machine都共享相同的文件。
 
+
 ### 在不输入密码的情况下连接Hive machine
 
 1. 打开一个新的终端窗口。
@@ -883,6 +988,21 @@ Match Host *.cs.berkeley.edu,*.eecs.berkeley.edu
 7. 运行 `exit` 退出 SSH 会话。
 
 </details>
+
+<h2 id="5-git">练习 5: 试试看 Git<a class="headerlink" href="#5-git" title="Permanent link">&para;</a></h2>
+<p>在本练习中，你将获取用于实验课的 Git 仓库（"repo"），并使用各种 Git 命令。</p>
+<p>本练习的说明假设你使用 Vim 来编辑文本文件。如需 Vim 快速入门指南，请查阅<a href="https://cs61c.org/sp25/labs/lab00/#vim-basics">附录的 Vim 基础部分</a>。</p>
+<!-- 此处附录连接在完成附录汉化后应该替换为MOLI连接 -->
+
+<p>如果你想使用其他文本编辑器，当然可以。但是，助教将无法为除 Vim 以外的编辑器提供支持。一些例子：</p>
+<ul>
+<li><strong>Nano:</strong> 简单且比 Vim 对初学者更友好。它在界面底部提供了一个有用的命令列表（^ 表示 Ctrl 键）。随许多 UNIX 发行版（例如 macOS, Ubuntu Linux）一同提供。使用 <code>nano file.txt</code> 打开。</li>
+<li><strong>Visual Studio Code (VSCode):</strong> 花哨的图形化文本编辑器。它有一些非常有用的扩展，包括一个 Remote SSH 扩展，允许你在 VSCode 本身而不是基于终端的编辑器中通过 SSH 编辑文件。但是，过去有些学生遇到过复杂的设置问题。</li>
+</ul>
+<blockquote>
+<p>Lab 讲义中提到的"助教"为 Berkeley 校内的课程助教（TA），但MOLI的助教们**可能**掌握多种编辑器，欢迎交流。</p>
+</blockquote>
+<p>在继续 Lab 1 之前，请确保你能够熟练地使用你选择的文本编辑器在 hive 上编辑你的文件。</p>
 
 
 

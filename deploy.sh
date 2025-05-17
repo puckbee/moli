@@ -6,4 +6,6 @@ git pull
 
 git push origin main
 
+./merge
+
 mkdocs gh-deploy
