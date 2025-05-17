@@ -1,4 +1,5 @@
-#!/bin/lua
+#!/bin/env lua
+-- vim:foldmethod=marker
 
 --------------- 配置文件路径 ---------------
 local files = {
@@ -11,6 +12,7 @@ local files = {
 }
 --------------------------------------------
 
+-- {{{
 function read_file(file_path, isnav)
 	local file = io.open(file_path, "r")
 	if not file then
@@ -50,3 +52,4 @@ if output_file then
 else
 	print("无法创建 mkdocs.yml 文件。")
 end
+-- }}}
