@@ -14,11 +14,11 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
     
     
       
-        <title>Lab 0: 课程介绍与环境配置 - MOLI：提升实践能力的试炼之地</title>
+        <title>实验 0: 课程介绍与环境配置 - MOLI：提升实践能力的试炼之地</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-0" class="md-skip">
+        <a href="#0" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 0: 课程介绍与环境配置
+              实验 0: 课程介绍与环境配置
             
           </span>
         </div>
@@ -347,7 +347,6 @@
   
 
       
-<<<<<<< HEAD
         
   
   
@@ -367,8 +366,6 @@
   
 
       
-=======
->>>>>>> refs/remotes/origin/main
     </ul>
   </div>
 </nav>
@@ -789,8 +786,6 @@
 
               
             
-<<<<<<< HEAD
-=======
               
                 
   
@@ -985,7 +980,6 @@
 
               
             
->>>>>>> refs/remotes/origin/main
           </ul>
         </nav>
       
@@ -1227,7 +1221,6 @@
   
 
     
-<<<<<<< HEAD
       
       
   
@@ -1250,8 +1243,6 @@
   
 
     
-=======
->>>>>>> refs/remotes/origin/main
   </ul>
 </nav>
                   </div>
@@ -1271,7 +1262,7 @@
   
 
 
-<h1 id="lab-0">Lab 0: 课程介绍与环境配置<a class="headerlink" href="#lab-0" title="Permanent link">&para;</a></h1>
+<h1 id="0">实验 0: 课程介绍与环境配置<a class="headerlink" href="#0" title="Permanent link">&para;</a></h1>
 <p>你好！欢迎来到 CS61C！我们非常欢迎你的加入 :D</p>
 <p>请注意聆听，接下来我们将为你演示本次“航班”的安全须知。
 本次实验可能稍微有点长，但请你认真阅读；它包含了许多重要内容，将为你接下来的学习打下坚实基础！</p>
@@ -1410,7 +1401,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>
 
     * 如果出现 `Connection timeout` 或其他连接错误，请确保你不是在 CalVisitor 或其他阻止 SSH 的网络上，并确保你已连接到校园 VPN。
 
-    * 如果你收到 `Connection refused` 或 `Connection timeout` 或其他连接错误，机器可能暂时宕机或拒绝连接。请尝试使用其他蜂巢机器（例如，将 hive2 替换为 hive3 ）。
+    * 如果你收到 `Connection refused` 或 `Connection timeout` 或其他连接错误，机器可能暂时宕机或拒绝连接。请尝试使用其他 hive 机器（例如，将 hive2 替换为 hive3 ）。
 
 3. 连接成功后，系统可能会提示你输入一些信息，包括姓名和电子邮件，如果没有，请跳至下一步。
 
@@ -1454,7 +1445,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>
     <div class="highlight"><pre><span></span><code>$<span class="w"> </span>vim<span class="w"> </span>~/.ssh/config
 </code></pre></div>
 
-4. 按下 `i` 进入插入模式，左下方应出现 `-- INSERT --`。
+4. 按下 <kbd>i</kbd> 进入插入模式，左下方应出现 `-- INSERT --`。
 
 5. 如果你看到下面两行在一起，它们来自61B。如果不再需要它们，请使用箭头键和退格键删除他们。
 
@@ -1476,11 +1467,11 @@ Match Host *.cs.berkeley.edu,*.eecs.berkeley.edu
 
     记住将 ``cs61c-???`` 替换为你的教学账户用户名。 ``Host s330-? s330-?? hive? hive??`` 中的问号保持不变。
 
-7. 按下 `Esc` 退出插入模式，`-- INSERT --` 应消失。
+7. 按下 <kbd>Esc</kbd> 退出插入模式，`-- INSERT --` 应消失。
 
-8. 输入 `:w` ,然后按下 `Enter` 保存文件。
+8. 输入 `:w` ,然后按下 <kbd>Enter</kbd> 保存文件。
 
-9. 退出 Vim，键入 `:q` ，然后键入 `Enter`。
+9. 退出 Vim，键入 `:q` ，然后按下 <kbd>Enter</kbd>。
 
 10. 现在就尝试通过 SSH 连接到 Hive machine。
     <div class="highlight"><pre><span></span><code>$ ssh hive7
@@ -1815,8 +1806,194 @@ Automatic merge failed; fix conflicts and then commit the result.
 <p><code>"fix conflicts and then commit the result"</code> : 看来我们需要手动解决合并冲突！</p>
 </li>
 </ul>
+<p>您可以检查 <code>git status</code> ：
+<div class="highlight"><pre><span></span><code>On branch main
+Your branch and &#39;origin/main&#39; have diverged,
+and have 1 and 1 different commits each, respectively.
+(use &quot;git pull&quot; to merge the remote branch into yours)
+
+You have unmerged paths.
+(fix conflicts and run &quot;git commit&quot;)
+(use &quot;git merge --abort&quot; to abort the merge)
+
+Unmerged paths:
+(use &quot;git add &lt;file&gt;...&quot; to mark resolution)
+both modified:   code.py
+</code></pre></div></p>
+<p>用 Vim 打开有冲突的文件。你会看到类似的内容</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fizzbuzz</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="n">HEAD</span>
+<span class="s2">&quot;your code&quot;</span>
+<span class="o">===</span>
+<span class="s2">&quot;not your code&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">remote</span><span class="o">-</span><span class="n">commit</span><span class="o">-</span><span class="nb">hash</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+</code></pre></div>
+<p>看起来你的虚拟搭档 Oski 也尝试修复了这个错误，但没有告诉你。真是气死我了，Oski！Oski 的代码看起来有点……效率不高，所以你想保留自己的修复方案。不过，Oski 也做了一些有用的事情：多了一个 if 分支，这样对于 15 的倍数，只会打印一行 “fizzbuzz”，而不是分两行打印 “fizz” 和 “buzz”。换句话说，Oski 和你都对代码做了修改，而且你们都希望保留对方的改动！</p>
+<p>现在，考虑到上述情况，请将两个版本合并成一个完整的 fizzbuzz(num) 函数，并删除多余的合并冲突标记（&lt;&lt;&lt; HEAD、===、&gt;&gt;&gt; commit-hash）。修复后的函数大致应如下伪代码所示：</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fizzbuzz</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="k">if</span> <span class="n">是</span> <span class="mi">15</span> <span class="n">的倍数</span><span class="p">:</span>
+    <span class="c1"># 打印 num: fizzbuzz</span>
+<span class="k">elif</span> <span class="n">是</span> <span class="mi">3</span> <span class="n">的倍数</span><span class="p">:</span>
+    <span class="c1"># 打印 num: fizz</span>
+<span class="k">elif</span> <span class="n">是</span> <span class="mi">5</span> <span class="n">的倍数</span><span class="p">:</span>
+    <span class="c1"># 打印 num: buzz</span>
+</code></pre></div>
+<p>完成后，保存、更改、提交你的工作。现在如果你推送代码，应该不会再出现冲突了。合并冲突解决成功！</p>
+</li>
+<li>
+<p>在你本地机器上（不是通过 SSH 登录的教学账号），克隆你的实验仓库（记得用上面演示过的 SSH 方式克隆，而不是 HTTPS），然后进入 lab00 文件夹。接着，运行以下命令：</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>gen-debug.sh
+</code></pre></div>
+<p>这会生成一个名为 debug.txt 的文件，用来记录自动评分程序的调试信息。将该文件添加、提交并推送。</p>
+</li>
+<li>
+<p>依然在本地机器上，进入你的实验仓库中的 tools 文件夹，运行以下命令：</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>download_tools.sh
+</code></pre></div>
+<p>如果你看到有关 Illegal date format for -z 或 Disabling time condition 的警告，这属于预期现象，无需担心。</p>
+<p>该命令会下载 Logisim 和 Venus，这两个工具我们后续会用到。确认 Logisim 是否能正常运行：</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>java<span class="w"> </span>-jar<span class="w"> </span>logisim-evolution.jar
+</code></pre></div>
+<p>如果弹出窗口，说明运行成功！你可以关闭它，暂时不需要继续使用。</p>
 </li>
 </ol>
+<h3 id="6">练习 6： 欢迎问卷<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>最后，请填写这份<a href="https://docs.google.com/forms/d/e/1FAIpQLSfnptSUQ4uRN8ophmkmGGfHWseAk-efcISEYqrGqRkEmzanwg/viewform?usp=sharing">欢迎调查表</a>。 请确保在提交 Gradescope 上的 <code>Lab 0</code> 之前提交调查问卷。</p>
+<h2 id="_6">提交<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>你完成啦！这可是相当一大段内容，要花不少时间思考，不过现在你对本学期接下来要用到的工具已经有了初步了解，值得的！</p>
+<p>每个实验都会包含自动评分的练习。要提交给自动评分系统，你需要把作业推送到 GitHub 上你的实验仓库。然后登录 Gradescope，找到对应的作业（比如这个实验就是 <code>Lab 0</code>），选择你的实验仓库，提交作业。等一会儿，页面上就会显示自动评分的成绩。</p>
+<p>记住，为了获得实验的学分，一定要确保在截止日期之前完成所有练习，并通过所有自动评分的测试！</p>
+<h2 id="_7">附录<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>这些工具可能会对您有所帮助，但绝不是本课程的必修内容：)</p>
+<h3 id="vim">Vim 基础<a class="headerlink" href="#vim" title="Permanent link">&para;</a></h3>
+<p><code>vim</code> 是一个文本编辑器，包含在 hive 和许多基于 UNIX 的发行版中。</p>
+<p>注意：我们将在大部分示例和文档中使用 Vim，但我们并不硬性要求你使用哪种文本编辑器；你可以选择任何你熟悉的编辑器，但你至少应该会使用一种基于终端的文本编辑器。</p>
+<p>要打开当前目录下的文件，请将文件名传递给 Vim：</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>vim<span class="w"> </span>filename
+</code></pre></div>
+<p>要从其他目录打开文件，请使用相对路径或绝对路径：</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>vim<span class="w"> </span>../other-folder/filename
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>Esc</kbd> <code>':q'</code></td>
+<td>关闭（退出）Vim，不保存</td>
+</tr>
+<tr>
+<td><kbd>Esc</kbd> <code>':wq'</code></td>
+<td>保存文件后关闭 Vim</td>
+</tr>
+<tr>
+<td><kbd>Esc</kbd> <code>':w'</code></td>
+<td>保存文件</td>
+</tr>
+<tr>
+<td><kbd>Esc</kbd> <code>':q!'</code></td>
+<td>强制退出 Vim（放弃已做的修改，不保存）</td>
+</tr>
+<tr>
+<td><kbd>Esc</kbd> <code>'i'</code></td>
+<td>进入插入模式，允许编辑文件</td>
+</tr>
+<tr>
+<td><kbd>Esc</kbd> <code>'/cats'</code></td>
+<td>搜索文件中最近的字符串 “cats”，按 n 查找下一个，按 N 查找上一个</td>
+</tr>
+<tr>
+<td><kbd>Esc</kbd> <code>':set nu'</code></td>
+<td>显示文件中的行号</td>
+</tr>
+<tr>
+<td><kbd>Esc</kbd> <code>':tabe &lt;filepath&gt;'</code></td>
+<td>在新标签页打开指定路径的文件，支持 Tab 补全</td>
+</tr>
+<tr>
+<td><kbd>Esc</kbd> <code>':tabn'</code></td>
+<td>切换到标签栏中的下一个标签页</td>
+</tr>
+<tr>
+<td><kbd>Esc</kbd> <code>':tabp'</code></td>
+<td>切换到标签栏中的上一个标签页</td>
+</tr>
+</tbody>
+</table>
+<p>注意：这些命令前面都带有 <kbd>Esc</kbd>，是因为你需要先按键盘上的 Escape 键才能从当前模式切换出来。例如，如果你正在插入模式（输入文本），想保存文件，就得先按 <kbd>Esc</kbd> 退出插入模式，然后输入 <code>:w</code> 来保存文件。如果你当前不在任何模式（比如刚打开文件时），就不需要先按 Esc，不过按了也没坏处 :)</p>
+<p>默认情况下，Vim 不启用鼠标支持和行号显示。如果你想开启这些功能：</p>
+<p>打开 <code>~/.vimrc</code> 文件（命令：<code>vim ~/.vimrc</code>）
+启用鼠标，添加一行：<code>set mouse=a</code>
+启用行号，添加一行：<code>set number</code>
+保存并退出。然后再打开你的 vimrc 文件试试看。</p>
+<p>Vim 还有许多其他配置选项，欢迎你去网上找资料多多尝试！</p>
+<p>我们也准备了一个 <a href="https://docs.google.com/document/d/1WQF6hQK8CXtlGynSAIX7Rts6q8lykarrqX-zkb9ZDyc/view">CS61C 专用的 Vim 使用指南</a>，供你参考。感谢 Yijie 的贡献！</p>
+<h3 id="_8">命令行基础<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>如果你之前学过 CS61A 和 CS61B，可能已经对命令行界面（CLI）和终端命令有一定了解。本课程会大量使用命令行，所以先花点时间复习一下基础知识。</p>
+<p>示例命令通常写成这样：
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello<span class="w"> </span>world
+</code></pre></div></p>
+<p>这里 <code>echo</code> 是命令，<code>Hello</code> 和 <code>world</code> 是参数。在终端输入这行命令后，就会执行它，这里会把 <code>Hello world</code> 打印到终端上。</p>
+<p>命令行中的选项 (flags) 通常用来指定程序行为或参数，通常以一个或两个短横线开头，并且可以带有参数。</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>--version<span class="w"> </span><span class="p">|</span><span class="w"> </span>cat
+$<span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print(&quot;Hello world&quot;)&#39;</span>
+</code></pre></div>
+<p>一般建议用单引号将本应是单一参数的字符串包起来（例如 "带 *&amp;)_@#(&amp;$! 符号的较长字符串"），否则可能会出现意想不到的行为--如果不加引号/反引号，这些符号中的很多实际上都会发挥作用！</p>
+<p>查看 <a href="https://inst.eecs.berkeley.edu/%7Ecs61b/fa21/materials/lab/lab1/index.html#essential-terminal-commands">61B 的常用 CLI 命令列表</a>可能会对您有所帮助。</p>
+<h3 id="cli">CLI 键盘快捷键<a class="headerlink" href="#cli" title="Permanent link">&para;</a></h3>
+<p>输入命令或文件路径时：</p>
+<p><kbd>Tab</kbd> 会尝试根据你已输入的内容自动补全当前词条。
+例如，如果当前目录有 filename1.txt 和 filename2.txt，输入 f 后按 <kbd>Tab</kbd> 会补全成 filename，继续输入 1 后再按 <kbd>Tab</kbd> 就会补全成 filename1.txt。</p>
+<p><kbd>↑</kbd> 和 <kbd>↓</kbd>（上箭头和下箭头）可以让你浏览之前用过的命令，这样不用重复输入。</p>
+<p><kbd>Ctrl</kbd> + <kbd>a</kbd> 会将光标移动到当前行的开头（方便修改错误）。</p>
+<p><kbd>Ctrl</kbd> + <kbd>e</kbd> 会将光标移动到当前行的末尾（同样方便修改错误）。</p>
+<p><kbd>Ctrl</kbd> + <kbd>r</kbd> 允许你搜索最近使用过的命令。</p>
+<h3 id="hello-world">Hello World<a class="headerlink" href="#hello-world" title="Permanent link">&para;</a></h3>
+<p><code>echo</code> 会重复你给它的任何参数：</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello<span class="w"> </span>World
+</code></pre></div>
+<p>如果字符串包含特殊字符，用单/双引号将其包围起来可避免触发意外的 shell 功能：</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;It&#39;s morbin time!&quot;</span>
+</code></pre></div>
+<h3 id="_9">文件操作<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><code>touch</code> 将创建一个空白文件，文件名由您提供。</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>touch<span class="w"> </span>example.txt
+</code></pre></div>
+<p>这将创建一个名为 <code>example.txt</code> 的文件，文件中没有任何内容。</p>
+<p>如果您想一次性创建文件并添加文本，可以使用：
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Your contents here&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>example.txt
+</code></pre></div></p>
+<p>这将在当前目录下创建一个文件，文件名为 <code>example.txt</code>。 如果该文件已经存在，则会被覆盖。 文件将包含 <code>Your contents here</code> ，不含引号。 <code>&gt;</code> 符号包含一个参数，用于重定向打印到 stdout 的数据的发送位置。 在这里，我们将 <code>echo</code> 的输出重定向到名为 <code>example.txt</code> 的文件。</p>
+<p>您可以使用 <code>cat</code> 或 <code>less</code> 命令查看文件内容。</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>example.txt
+$<span class="w"> </span>less<span class="w"> </span>example.txt
+</code></pre></div>
+<p><code>cat</code> 将 <code>example.txt</code> 的内容打印到终端。 <code>less</code> 打开一个基本的查看器，允许你滚动和搜索。</p>
+<h3 id="scp-">scp - "安全复制"<a class="headerlink" href="#scp-" title="Permanent link">&para;</a></h3>
+<p><code>scp</code> 程序用于使用 SSH 协议在计算机之间复制文件。</p>
+<p>有时，您可能希望将 hive 中的单个文件或整个文件夹导入本地系统，反之亦然。您可以使用 <code>scp</code> ：</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>scp<span class="w"> </span>&lt;source&gt;<span class="w"> </span>&lt;destination&gt;
+</code></pre></div>
+<p>要指定远程源或目的地，请使用 <code>username@host:path</code> 。要指定本地目的地，只需使用 <code>path</code> 。举个例子：</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>scp<span class="w"> </span>hive1:~/some-folder/example.txt<span class="w"> </span>~/Downloads/
+</code></pre></div>
+<p>假设我的用户名是 <code>cs61c-???</code> ，上述命令将连接到 <code>hive1</code> ，并将我的指导账户上的 <code>~/some-folder/example.txt</code> 复制到本地计算机上的 <code>~/Downloads/example.txt</code> 。</p>
+<p>如果我想从另一个方向复制（从本地计算机复制到 hive 计算机），我会使用
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>scp<span class="w"> </span>~/Downloads/example.txt<span class="w"> </span>hive1:~/some-folder/
+</code></pre></div></p>
+<p><code>scp</code> 默认情况下只对文件有效。要复制文件夹，需要告诉 scp " 递归 (recursively) "复制文件夹及其所有内容，可以使用 <code>-r</code> 标志来实现：</p>
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>-r<span class="w"> </span>hive1:~/some-folder<span class="w"> </span>~/Downloads/
+</code></pre></div>
+<p>注意斜线：写入 <code>some-folder</code> 将复制文件夹本身和里面的文件，而 <code>some-folder/</code> 只复制里面的文件。</p>
+<blockquote>
+<p>警告：在蜂巢计算机上运行 <code>scp</code> （例如，当您在 SSH 会话中）通常是不可取的行为。在 hive 机器上运行 <code>scp example.txt hive4:~/example.txt</code> 会将 <code>example.txt</code> 复制到......相同的位置。你可能希望在本地终端会话中运行它！</p>
+</blockquote>
 
 
 

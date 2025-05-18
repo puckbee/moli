@@ -1,2 +1,6 @@
 - 'CS61C':
   - '课程简介': CS61C.md
+
+  - 实验:
+    - 'Lab 0': "CS61A/Labs/Lab_0.md"
+    - 'Lab 2': "CS61A/Labs/Lab_2.md"

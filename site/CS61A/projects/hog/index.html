@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
     
     
       
@@ -347,6 +347,25 @@
     
   
   联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../AboutMOLI/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于 MOLI
 
       </a>
     </li>
@@ -1059,7 +1078,7 @@
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      入门视频（有删减）
+      入门视频
     </span>
   </a>
   
@@ -1090,21 +1109,6 @@
       问题 1（2 分）
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="问题 1（2 分）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      调试技巧
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1150,7 +1154,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       插曲：用户界面
     </span>
@@ -1160,7 +1164,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       打印游戏内的事件
     </span>
@@ -1169,7 +1173,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       接受用户输入
     </span>
@@ -1192,7 +1196,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       第二阶段：策略
     </span>
@@ -1238,7 +1242,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       运行实验
     </span>
@@ -1270,7 +1274,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       项目提交（有删减）
     </span>
@@ -1536,6 +1540,28 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AboutMOLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1556,8 +1582,11 @@
 
 
 <h1 id="_1">猪的游戏<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p><img alt="" src="https://cs61a.org/proj/hog/assets/icon.gif" /></p>
-<center>我懂了！我要用高阶函数摇出更高的点数。</center>
+<p align="center">
+  <img src="https://cs61a.org/proj/hog/assets/icon.gif" alt="icon">
+</p>
+
+<center>我懂啦！我要用高阶函数摇出更高的点数。</center>
 
 <h2 id="_2">简介<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -1572,48 +1601,75 @@
 <ul>
 <li><strong>”猪的悲伤“（Sow Sad）规则</strong>：如果有任何一个骰子的结果是1，那么当前玩家的回合得分为 <code>1</code> ，无论其他骰子的值是多少。</li>
 </ul>
-<hr />
-<p>例子</p>
-<ul>
-<li>示例 1：当前玩家掷了7颗骰子，其中有5颗是1。所以他们这一轮得分为1分。</li>
-<li>示例 2：当前玩家掷了4个骰子，全部都是3。由于没有触发Sow Sad规则，所以他们在这一轮中得分为12分。</li>
-</ul>
-<hr />
+<details>
+  <summary>例子</summary>
+  <ul>
+    <li>示例 1：当前玩家掷了 7 颗骰子，其中有 5 颗是 1。所以他们这一轮得分为 1 分。</li>
+    <li>示例 2：当前玩家掷了 4 个骰子，全部都是 3。由于没有触发 Sow Sad 规则，所以他们在这一轮中得分为 12 分。</li>
+  </ul>
+</details>
+
 <p>在一场正常的Hog游戏中，这些就是所有的规则了。为了让游戏更有趣一点，我们再加入一些特殊规则：</p>
 <ul>
 <li><strong>“野猪混战”（Boar Brawl）规则</strong>：若玩家选择掷零个骰子，那么他将获得：对手总分的十位数 与 当前玩家总分的个位数 之差的绝对值的3倍，或者获得1分，两者需要取较大值。</li>
 </ul>
-<hr />
-<p>例子</p>
-<ul>
-<li>示例 1</li>
-<li>当前玩家有 <code>21</code> 分，对手有 <code>46</code> 分，并且当前玩家选择掷零个骰子。</li>
-<li>那么，对手得分的十位数就是 <code>4</code> ，而当前玩家得分的个位数是 <code>1</code> 。</li>
-<li>因此，玩家获得 <code>3 * abs(4 - 1) = 9</code> 分。</li>
-<li>示例 2</li>
-<li>当前玩家有 <code>45</code> 分，对手有 <code>52</code> 分，并且当前玩家选择掷零个骰子。</li>
-<li>那么，对手得分的十位数就是 <code>5</code> ，而当前玩家得分的个位数是 <code>5</code> 。</li>
-<li>由于 <code>3 * abs(5 - 5) = 0</code> ，玩家获得 <code>1</code> 分。</li>
-<li>示例 3</li>
-<li>当前玩家有 <code>2</code> 分，对手有 <code>5</code> 分，并且当前玩家选择掷零个骰子。</li>
-<li>那么，对手得分的十位数就是 <code>0</code> ，而当前玩家得分的个位数是 <code>2</code> 。</li>
-<li>因此，玩家获得 <code>3 * abs(0 - 2) = 6</code> 分。</li>
-</ul>
-<hr />
+<details>
+  <summary>例子</summary>
+  <ul>
+    <li>
+      <p>示例 1</p>
+      <ul>
+        <li>当前玩家有 <code>21</code> 分，对手有 <code>46</code> 分，并且当前玩家选择掷零个骰子。</li>
+        <li>那么，对手得分的十位数就是 <code>4</code>，而当前玩家得分的个位数是 <code>1</code>。</li>
+        <li>因此，玩家获得 <code>3 * abs(4 - 1) = 9</code> 分。</li>
+      </ul>
+    </li>
+    <li>
+      <p>示例 2</p>
+      <ul>
+        <li>当前玩家有 <code>45</code> 分，对手有 <code>52</code> 分，并且当前玩家选择掷零个骰子。</li>
+        <li>那么，对手得分的十位数就是 <code>5</code>，而当前玩家得分的个位数是 <code>5</code>。</li>
+        <li>由于 <code>3 * abs(5 - 5) = 0</code>，玩家获得 <code>1</code> 分。</li>
+      </ul>
+    </li>
+    <li>
+      <p>示例 3</p>
+      <ul>
+        <li>当前玩家有 <code>2</code> 分，对手有 <code>5</code> 分，并且当前玩家选择掷零个骰子。</li>
+        <li>那么，对手得分的十位数就是 <code>0</code>，而当前玩家得分的个位数是 <code>2</code>。</li>
+        <li>因此，玩家获得 <code>3 * abs(0 - 2) = 6</code> 分。</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
 <ul>
 <li><strong>“野猪恐慌”（Sus Fuss）规则</strong>：如果一个数正好有3个或4个因数（包括1和它本身），我们就称这个数为<a href="https://en.wikipedia.org/wiki/Sus_%28genus%29">猪数（sus number）</a>。如果投掷后当前玩家的得分是猪数，则得分就增加到当前得分以上最近的质数。</li>
 </ul>
-<hr />
-<p>例子</p>
-<ul>
-<li>示例 1</li>
-<li>一位玩家有14分，掷出两个骰子获得了7分。那么他的新分数就会是21，而21有4个因数：1、3、7和21，即21是猪数，因此玩家的分数立即增加到23（离得最近的下一个质数）。</li>
-<li>示例 2</li>
-<li>一位63分的玩家掷出了五个骰子，然后在这一轮中只获得了1分。他们的新分数就会是64（猪的悲伤😢），64有7个因数：1、2、4、8、16、32和64。由于64不是猪数，玩家的分数保持不变。</li>
-<li>示例 3</li>
-<li>一名玩家有49分，掷了5个骰子，总分为18分。他的新分数会是67，而这是一个质数，它有2个因数：1和67。但由于67不是猪数，玩家的分数保持不变。</li>
-</ul>
-<hr />
+<details>
+  <summary>例子</summary>
+  <ul>
+    <li>
+      <p>示例 1</p>
+      <ul>
+        <li>一位玩家有 14 分，掷出两个骰子获得了 7 分。那么他的新分数就会是 21，而 21 有 4 个因数：1、3、7 和 21。由于 21 是猪数，因此玩家的分数立即增加到 23（离得最近的下一个质数）。</li>
+      </ul>
+    </li>
+    <li>
+      <p>示例 2</p>
+      <ul>
+        <li>一位 63 分的玩家掷出了五个骰子，然后在这一轮中只获得了 1 分。他们的新分数就会是 64（猪的悲伤😢），64 有 7 个因数：1、2、4、8、16、32 和 64。由于 64 不是猪数，玩家的分数保持不变。</li>
+      </ul>
+    </li>
+    <li>
+      <p>示例 3</p>
+      <ul>
+        <li>一名玩家有 49 分，掷了 5 个骰子，总分为 18 分。他的新分数会是 67，而这是一个质数，它有 2 个因数：1 和 67。但由于 67 不是猪数，玩家的分数保持不变。</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
 <h2 id="_4">下载启动文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>为了开始项目，请将项目的所有代码下载为一个zip存档文件。解压缩后的文件列表如下。对于这个项目，你只需要修改 <code>hog.py</code> 。</p>
 <ul>
@@ -1630,7 +1686,7 @@
 <h2 id="_5">课程安排（有删减）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>不能使用AI来帮助你完成这个项目，也不能参考在网上找到的解决方案。</p>
 <p>对于我们要求你完成的函数，我们可能会提供一些初始代码。如果你不想使用这些代码，可以自行删除然后从头开始写。或者你也可以根据需要，添加新的函数定义。</p>
-<p>**但是，请不要修改任何其他函数，或者编辑上述文件之外的任何文件。**这可能会导致你的代码在我们的自动评分器测试中运行失败。另外，请不要更改任何函数签名（名称、参数顺序或参数数量）。</p>
+<p><strong>但是，请不要修改任何其他函数，或者编辑上述文件之外的任何文件。</strong> 这可能会导致你的代码在我们的自动评分器测试中运行失败。另外，请不要更改任何函数签名（名称、参数顺序或参数数量）。</p>
 <p>在整个项目中，你应该测试你的代码的正确性。经常测试是一个好习惯，这样更容易将问题隔离。但是，为留出时间多思考问题，你不应该测试得太频繁。</p>
 <p>我们提供了一个名为 <code>ok</code> 的自动评分器来帮助你测试代码。</p>
 <p><code>ok</code> 的主要目的是测试你的实现。</p>
@@ -1638,19 +1694,23 @@
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="o">[</span>question<span class="w"> </span>number<span class="o">]</span><span class="w"> </span>-i<span class="w"> </span>
 </code></pre></div>
 <p>添加适当的问题编号（例如 <code>01</code> ）来使用。这将运行该问题的测试，直到第一次运行失败，然后就可以交互式地测试你编写的函数。</p>
-<p>你也可以通过在OK中编写：</p>
+<p>你也可以通过在ok中编写：</p>
 <div class="highlight"><pre><span></span><code> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DEBUG:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
 </code></pre></div>
-<p>这将在你的终端中产生输出，而不会因为额外的输出，导致OK测试失败。</p>
+<p>这将在你的终端中产生输出，而不会因为额外的输出，导致ok测试失败。</p>
 <h2 id="_6">图形用户界面<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>我们为你提供了一个图形用户界面（简称 GUI）。但目前它还无法工作，因为还没有实现游戏逻辑。一旦完成了play函数，你就能够玩一个完全交互式的Hog版本！</p>
 <p>完成之后，你可以从终端运行GUI，然后在浏览器中玩Hog：</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>hog_gui.py
 </code></pre></div>
-<h2 id="_7">入门视频（有删减）<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<ul>
-<li><iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
-</ul>
+<h2 id="_7">入门视频<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>这些视频可能会为解决本次作业中的编程问题提供一些有用的指导。</p>
+<blockquote>
+<p>要观看这些视频，您需要登录您的 berkeley.edu 邮箱。</p>
+</blockquote>
+<iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZfpHDDcEnevQqlX4wTxuMAD" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label="hog-getstarted" allowfullscreen="" style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: &quot;Work Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"></iframe>
+
+<p><a href="https://youtu.be/playlist?list=PLx38hZJ5RLZfpHDDcEnevQqlX4wTxuMAD">YouTube 链接</a></p>
 <h2 id="_8">第一阶段：游戏规则<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <h3 id="00">问题 0（0分）<a class="headerlink" href="#00" title="Permanent link">&para;</a></h3>
 <p><code>dice.py</code> 文件使用非纯且零参数的函数来表示骰子。由于每次调用时，这些函数都可能返回不同的值，所以这些函数是非纯的。因此调用这些函数的一个副作用是改变下次调用函数时返回的内容。</p>
@@ -1695,14 +1755,15 @@
 <ul>
 <li><strong>”猪的悲伤“（Sow Sad）规则</strong>：如果有任何一个骰子的结果是1，那么当前玩家的回合得分为 <code>1</code> ，无论其他骰子的值是多少。</li>
 </ul>
-<hr />
-<p>例子</p>
-<ul>
-<li>示例 1：当前玩家掷7颗骰子，其中5颗是1。他们这一轮得分为 <code>1</code> 分。</li>
-<li>示例 2：当前玩家掷了4个骰子，全部都是3。由于没有触发Sow Sad规则，他们在这一轮中得分为 <code>12</code> 分。</li>
-</ul>
-<hr />
-<p>要获得一次掷骰子的结果，请调用 <code>dice()</code> 。你应该在 <code>roll_dice</code> 的函数体中**恰好调用 <code>num_rolls</code> 次 <code>dice()</code> **。</p>
+<details>
+  <summary>例子</summary>
+  <ul>
+    <li>示例 1：当前玩家掷 7 颗骰子，其中 5 颗是 1。他们这一轮得分为 <code>1</code> 分。</li>
+    <li>示例 2：当前玩家掷了 4 个骰子，全部都是 3。由于没有触发 Sow Sad 规则，他们在这一轮中得分为 <code>12</code> 分。</li>
+  </ul>
+</details>
+
+<p>要获得一次掷骰子的结果，请调用 <code>dice()</code> 。你应该在 <code>roll_dice</code> 的函数体中 <strong>恰好调用 <code>num_rolls</code> 次 <code>dice()</code></strong> 。</p>
 <p>请记住，<strong>即使在中途触发Sow Sad规则的情况下</strong>，也要恰好调用 <code>dice()</code> 次 <code>num_rolls</code> 。这样做才能正确模拟掷所有骰子（用户界面也才会正常工作）。</p>
 <blockquote>
 <p><strong>注意</strong>： <code>roll_dice</code> 函数，以及整个项目中许多其他函数，都使用了默认参数值——你可以在函数头中看到这一点。</p>
@@ -1722,56 +1783,61 @@
 <p>解锁测试用例后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">01</span>
 </code></pre></div>
-<hr />
-<p>调试技巧</p>
-<p>查看<a href="https://cs61a.org/articles/debugging/">调试指南</a>！</p>
-<h4 id="_9">调试技巧<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<p>如果测试没有通过，那就到调试的时候了。你可以直接使用Python来观察你的函数的行为。首先，启动Python解释器并加载 <code>hog.py</code> 文件。</p>
-<div class="highlight"><pre><span></span><code><span class="n">python3</span> <span class="o">-</span><span class="n">i</span> <span class="n">hog</span><span class="o">.</span><span class="n">py</span>
-</code></pre></div>
-<p>然后，你可以调用你的 <code>roll_dice</code> 函数，并传入任何你想要的骰子数量作为参数。</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">roll_dice</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</code></pre></div>
-<p>你会发现在每次调用时，之前的表达式都可能会有不同的结果，因为它是在模拟随机骰子投掷。你也可以使用固定了骰子结果的测试骰子。比如，当你知道骰子会显示3和4时，两次投掷的总结果应该是7。</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">fixed_dice</span> <span class="o">=</span> <span class="n">make_test_dice</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">roll_dice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">fixed_dice</span><span class="p">)</span>
-<span class="mi">7</span>
-</code></pre></div>
-<blockquote>
-<p>在大多数系统上，你可以通过按上箭头键，然后按回车键或者返回键，来重新计算相同的表达式。若要重新计算先前的命令，请反复按上箭头键。</p>
-<p>如果你发现了一个问题，那么你首先需要更改你的 <code>hog.py</code> 文件来修复问题，再保存文件。然后，为了检查你的修复是否有效，你必须使用 <code>exit()</code> 或 <code>Ctrl^D</code> 退出Python解释器，再重新运行解释器来测试你的更改。即使重新启动了 Python，在终端和Python解释器中按上箭头键都应该可以访问你以前输入过的表达式。</p>
-<p>继续调试你的代码并运行 <code>ok</code> 测试，直到测试全部通过。</p>
-<p>另一个调试技巧：为了在 <code>ok</code> 测试失败时，可以自动启动交互式解释器，请使用 <code>-i</code> 。例如， <code>python3 ok -q 01 -i</code> 将运行问题 1 的测试，如果测试失败，就会将 <code>hog.py</code> 加载到交互式解释器中运行。</p>
-</blockquote>
-<hr />
+<details>
+  <summary>调试技巧</summary>
+  <p>请查看 <a href="https://cs61a.org/articles/debugging/">调试指南</a>！</p>
+  <h4>调试技巧</h4>
+  <p>如果测试没有通过，那就到调试的时候了。你可以直接使用 Python 来观察你的函数的行为。首先，启动 Python 解释器并加载 <code>hog.py</code> 文件。</p>
+  <pre><code>python3 -i hog.py</code></pre>
+  <p>然后，你可以调用你的 <code>roll_dice</code> 函数，并传入任何你想要的骰子数量作为参数。</p>
+  <pre><code>>> roll_dice(4)</code></pre>
+  <p>你会发现在每次调用时，之前的表达式都可能会有不同的结果，因为它是在模拟随机骰子投掷。你也可以使用固定了骰子结果的测试骰子。比如，当你知道骰子会显示 3 和 4 时，两次投掷的总结果应该是 7。</p>
+  <pre><code>>> fixed_dice = make_test_dice(3, 4)
+>>> roll_dice(2, fixed_dice)
+7</code></pre>
+  <blockquote>
+    <p>在大多数系统上，你可以通过按上箭头键，然后按回车键或者返回键，来重新计算相同的表达式。若要重新计算先前的命令，请反复按上箭头键。</p>
+    <p>如果你发现了一个问题，那么你首先需要更改你的 <code>hog.py</code> 文件来修复问题，再保存文件。然后，为了检查你的修复是否有效，你必须使用 <code>exit()</code> 或 <code>Ctrl+D</code> 退出 Python 解释器，再重新运行解释器来测试你的更改。即使重新启动了 Python，在终端和 Python 解释器中按上箭头键都应该可以访问你以前输入过的表达式。</p>
+    <p>继续调试你的代码并运行 <code>ok</code> 测试，直到测试全部通过。</p>
+    <p>另一个调试技巧：为了在 <code>ok</code> 测试失败时，可以自动启动交互式解释器，请使用 <code>-i</code>。例如， <code>python3 ok -q 01 -i</code> 将运行问题 1 的测试，如果测试失败，就会将 <code>hog.py</code> 加载到交互式解释器中运行。</p>
+  </blockquote>
+</details>
+
 <h3 id="22">问题 2（2分）<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <p>实现 <code>boar_brawl</code> ，它接受玩家的当前分数 <code>player_score</code> 和对手的当前分数 <code>opponent_score</code> ，并返回当玩家掷0个骰子且Boar Brawl规则被触发时获得的分数。</p>
 <ul>
 <li><strong>“野猪混战”（Boar Brawl）规则</strong>：若玩家选择掷零个骰子，那么他将获得：对手总分的十位数 与 当前玩家总分的个位数 之差的绝对值的3倍，或者获得1分，两者需要取较大值。</li>
 </ul>
-<hr />
-<ul>
-<li>例子</li>
-<li>示例 1<ul>
-<li>当前玩家有 <code>21</code> 分，对手有 <code>46</code> 分，并且当前玩家选择掷零个骰子。</li>
-<li>那么，对手得分的十位数就是 <code>4</code> ，而当前玩家得分的个位数是 <code>1</code> 。</li>
-<li>因此，玩家获得 <code>3 * abs(4 - 1) = 9</code> 分。</li>
-</ul>
-</li>
-<li>示例 2<ul>
-<li>当前玩家有 <code>45</code> 分，对手有 <code>52</code> 分，并且当前玩家选择掷零个骰子。</li>
-<li>那么，对手得分的十位数就是 <code>5</code> ，而当前玩家得分的个位数是 <code>5</code> 。</li>
-<li>由于 <code>3 * abs(5 - 5) = 0</code> ，玩家获得 <code>1</code> 分。</li>
-</ul>
-</li>
-<li>示例 3<ul>
-<li>当前玩家有 <code>2</code> 分，对手有 <code>5</code> 分，并且当前玩家选择掷零个骰子。</li>
-<li>那么，对手得分的十位数就是 <code>0</code> ，而当前玩家得分的个位数是 <code>2</code> 。</li>
-<li>因此，玩家获得 <code>3 * abs(0 - 2) = 6</code> 分。</li>
-</ul>
-</li>
-</ul>
-<hr />
+<details>
+  <summary>例子</summary>
+  <ul>
+    <li>
+      <p>示例 1</p>
+      <ul>
+        <li>当前玩家有 <code>21</code> 分，对手有 <code>46</code> 分，并且当前玩家选择掷零个骰子。</li>
+        <li>那么，对手得分的十位数就是 <code>4</code>，而当前玩家得分的个位数是 <code>1</code>。</li>
+        <li>因此，玩家获得 <code>3 * abs(4 - 1) = 9</code> 分。</li>
+      </ul>
+    </li>
+    <li>
+      <p>示例 2</p>
+      <ul>
+        <li>当前玩家有 <code>45</code> 分，对手有 <code>52</code> 分，并且当前玩家选择掷零个骰子。</li>
+        <li>那么，对手得分的十位数就是 <code>5</code>，而当前玩家得分的个位数是 <code>5</code>。</li>
+        <li>由于 <code>3 * abs(5 - 5) = 0</code>，玩家获得 <code>1</code> 分。</li>
+      </ul>
+    </li>
+    <li>
+      <p>示例 3</p>
+      <ul>
+        <li>当前玩家有 <code>2</code> 分，对手有 <code>5</code> 分，并且当前玩家选择掷零个骰子。</li>
+        <li>那么，对手得分的十位数就是 <code>0</code>，而当前玩家得分的个位数是 <code>2</code>。</li>
+        <li>因此，玩家获得 <code>3 * abs(0 - 2) = 6</code> 分。</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
 <blockquote>
 <p>不要假定分数低于 100。编写你的 <code>boar_brawl</code> 函数，让它能够正确处理任何非负分数。</p>
 <p><strong>重要提示</strong>：你的实现不应该使用 <code>str</code> 、列表或包含方括号 <code>[</code> <code>]</code> 。测试用例将检查这些是否被使用。</p>
@@ -1812,17 +1878,30 @@
 <ul>
 <li><strong>“野猪恐慌”（Sus Fuss）规则</strong>：如果一个数正好有3个或4个因数（包括1和它本身），我们就称这个数为<a href="https://en.wikipedia.org/wiki/Sus_%28genus%29">猪数（sus number）</a>。如果投掷后当前玩家的得分是猪数，则得分就增加到当前得分以上最近的质数。</li>
 </ul>
-<hr />
-<p>例子</p>
-<ul>
-<li>示例 1</li>
-<li>一位玩家有14分，掷出两个骰子获得了7分。那么他的新分数就会是21，而21有4个因数：1、3、7和21，即21是猪数，因此玩家的分数立即增加到23（离得最近的下一个质数）。</li>
-<li>示例 2</li>
-<li>一位63分的玩家掷出了五个骰子，然后在这一轮中只获得了1分。他们的新分数就会是64（猪的悲伤😢），64有7个因数：1、2、4、8、16、32和64。由于64不是猪数，玩家的分数保持不变。</li>
-<li>示例 3</li>
-<li>一名玩家有49分，掷了5个骰子，总分为18分。他的新分数会是67，而这是一个质数，它有2个因数：1和67。但由于67不是猪数，玩家的分数保持不变。</li>
-</ul>
-<hr />
+<details>
+  <summary>例子</summary>
+  <ul>
+    <li>
+      <p>示例 1</p>
+      <ul>
+        <li>一位玩家有 <code>14</code> 分，掷出两个骰子获得了 <code>7</code> 分。那么他的新分数就会是 <code>21</code>，而 21 有 4 个因数：1、3、7 和 21。由于 21 是猪数，因此玩家的分数立即增加到 23（离得最近的下一个质数）。</li>
+      </ul>
+    </li>
+    <li>
+      <p>示例 2</p>
+      <ul>
+        <li>一位 <code>63</code> 分的玩家掷出了五个骰子，然后在这一轮中只获得了 <code>1</code> 分。他们的新分数就会是 <code>64</code>（猪的悲伤😢），64 有 7 个因数：1、2、4、8、16、32 和 64。由于 64 不是猪数，玩家的分数保持不变。</li>
+      </ul>
+    </li>
+    <li>
+      <p>示例 3</p>
+      <ul>
+        <li>一名玩家有 <code>49</code> 分，掷了 5 个骰子，总分为 <code>18</code> 分。他的新分数会是 <code>67</code>，而这是一个质数，它有 2 个因数：1 和 67。但由于 67 不是猪数，玩家的分数保持不变。</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
 <p>在编写任何代码之前，解锁测试以验证你对问题的理解：</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">04</span><span class="w"> </span>-u
 </code></pre></div>
@@ -1858,13 +1937,13 @@
 </code></pre></div>
 <p>当你运行 <code>ok</code> 命令时，你会看到一些测试仍被锁定，这是因为你还没有完成整个项目。如果你完成了到此为止的所有问题，你将获得检查点的全额积分。</p>
 <p><strong>恭喜！你已完成此项目的第一阶段！</strong></p>
-<h2 id="_10">插曲：用户界面<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_9">插曲：用户界面<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>项目的这个部分没有必做题，就只有一些供你阅读和理解的示例。阅读项目的剩余问题，请查看第二阶段。</p>
 </blockquote>
 <p><img alt="" src="https://cs61a.org/proj/hog/assets/hog_animation.gif" /></p>
 <p><em>动画由 Tristan &amp; Tyler Roath 创作</em></p>
-<h3 id="_11">打印游戏内的事件<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h3 id="_10">打印游戏内的事件<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>我们为游戏构建了一个模拟器，但是还没有添加任何代码，来描述游戏事件应该怎么对人显示。因此，我们构建了一个无人能玩的电脑游戏。（太无聊了！）</p>
 <p>然而，模拟器是以小型函数的形式来表达的，我们可以用新的函数版本来替换每个函数，这个新版本可以打印出调用时发生的事情的。通过使用这样的高阶函数，我们才能在不改变大部分原始代码的情况下做到这种效果。在 <code>hog_ui.py</code> 有一个例子，我们鼓励你去阅读它。</p>
 <p><code>play_and_print</code> 函数调用了刚刚实现的相同 <code>play</code> 函数，但是却使用了：</p>
@@ -1875,7 +1954,7 @@
 </ul>
 <p>注意一下有多少模拟器的原始代码可以被重用。</p>
 <p>从终端运行 <code>python3 hog_ui.py</code> 会调用 <code>play_and_print(always_roll_5, always_roll_5)</code> 。</p>
-<h3 id="_12">接受用户输入<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_11">接受用户输入<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>python内置的 <code>input</code> 函数可以等待用户输入一行文本，然后将其作为字符串返回。内置的 <code>int</code> 函数可以接受一个包含整数数字的字符串并返回该整数。</p>
 <p><code>interactive_strategy</code> 函数返回一个策略，通过调用 <code>input</code> ，允许一个玩家来选择每轮掷多少个骰子。</p>
 <p>在终端运行 <code>python3 hog_ui.py -n 1</code> 时，会调用 <code>play_and_print(interactive_strategy(0), always_roll_5)</code>，这个指令创建了一个人类玩家（玩家0）和一个每次都选择掷5个骰子的电脑策略之间的对战游戏。</p>
@@ -1887,7 +1966,7 @@
 </code></pre></div>
 <p>就像 <code>hog_ui.py</code> 一样，GUI依赖于你的模拟器实现，因此如果你代码中存在任何错误，这些错误也会反映在GUI中。这意味着你也可以使用GUI作为调试工具；不过，最好先运行测试。</p>
 <p>Hog GUI的源代码<a href="https://github.com/Cal-CS-61A-Staff/cs61a-apps/tree/master/hog">在Github上公开可用</a>，但涉及几种其他编程语言：JavaScript、HTML和CSS。</p>
-<h2 id="_13">第二阶段：策略<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h2 id="_12">第二阶段：策略<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p>在这一阶段，你将会尝试改进始终掷五颗骰子的 <code>always_roll_five</code> 简单策略。策略是一个函数，它接受两个参数：当前玩家的得分和对手的得分。然后它会返回玩家将掷出的骰子数量，范围从0到10（闭区间）。</p>
 <h3 id="62">问题 6（2分）<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
 <p>实现 <code>always_roll</code> ，这是一个高阶函数，它接受一个骰子数量 <code>n</code> ，然后返回一个总是掷 <code>n</code> 个骰子的策略函数。所以 <code>always_roll(5)</code> 就等同于 <code>always_roll_5</code> 。</p>
@@ -1986,7 +2065,7 @@
 <p>解锁完成后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">09</span>
 </code></pre></div>
-<h3 id="_14">运行实验<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h3 id="_13">运行实验<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>提供的 <code>run_experiments</code> 函数会调用 <code>max_scoring_num_rolls(six_sided)</code> 并打印结果。你会发现使用六面骰子时，掷6个骰子可以最大化 <code>roll_dice</code> 的结果。</p>
 <p>要调用此函数并查看结果，请运行 <code>hog.py</code> 并使用 <code>-r</code> 标志：</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>hog.py<span class="w"> </span>-r
@@ -2028,7 +2107,7 @@
 <p>你可以通过运行 <code>ok</code> 来检查你的最终策略是否有效。</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">12</span>
 </code></pre></div>
-<h2 id="_15">项目提交（有删减）<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h2 id="_14">项目提交（有删减）<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <p>在所有问题上运行 <code>ok</code> 以确保所有测试都已解锁并通过：</p>
 <div class="highlight"><pre><span></span><code><span class="n">python3</span> <span class="n">ok</span>
 </code></pre></div>

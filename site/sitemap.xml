@@ -3,13 +3,10 @@
     <url>
          <loc>https://nightlanding.github.io/moli/</loc>
          <lastmod>2025-05-18</lastmod>
-<<<<<<< HEAD
     </url>
     <url>
          <loc>https://nightlanding.github.io/moli/AboutMOLI/</loc>
          <lastmod>2025-05-18</lastmod>
-=======
->>>>>>> refs/remotes/origin/main
     </url>
     <url>
          <loc>https://nightlanding.github.io/moli/CS61A/</loc>
@@ -60,12 +57,6 @@
          <lastmod>2025-05-18</lastmod>
     </url>
     <url>
-<<<<<<< HEAD
-         <loc>https://nightlanding.github.io/moli/CS61A/labs/lab00/</loc>
-         <lastmod>2025-05-18</lastmod>
-    </url>
-    <url>
-=======
          <loc>https://nightlanding.github.io/moli/CS61A/homeworks/homework01/</loc>
          <lastmod>2025-05-18</lastmod>
     </url>
@@ -82,23 +73,23 @@
          <lastmod>2025-05-18</lastmod>
     </url>
     <url>
->>>>>>> refs/remotes/origin/main
          <loc>https://nightlanding.github.io/moli/CS61A/labs/lab01/</loc>
          <lastmod>2025-05-18</lastmod>
     </url>
     <url>
          <loc>https://nightlanding.github.io/moli/CS61A/labs/lab02/</loc>
          <lastmod>2025-05-18</lastmod>
-<<<<<<< HEAD
-=======
     </url>
     <url>
          <loc>https://nightlanding.github.io/moli/CS61A/projects/hog/</loc>
          <lastmod>2025-05-18</lastmod>
->>>>>>> refs/remotes/origin/main
     </url>
     <url>
          <loc>https://nightlanding.github.io/moli/CS61C/Labs/Lab_0/</loc>
+         <lastmod>2025-05-18</lastmod>
+    </url>
+    <url>
+         <loc>https://nightlanding.github.io/moli/CS61C/Labs/Lab_2/</loc>
          <lastmod>2025-05-18</lastmod>
     </url>
 </urlset>

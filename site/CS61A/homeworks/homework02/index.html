@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
     
     
       
@@ -347,6 +347,25 @@
     
   
   联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../AboutMOLI/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于 MOLI
 
       </a>
     </li>
@@ -914,15 +933,6 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      入门视频
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
       高阶函数
     </span>
   </a>
@@ -963,7 +973,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       检查你的得分
     </span>
@@ -1329,6 +1339,28 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AboutMOLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1349,11 +1381,13 @@
 
 
 <h1 id="_1">必答题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<hr />
-<h2 id="_2">入门视频<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<details><summary> 入门视频 </summary>
+<br>
+<h1> 入门视频 </h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<hr />
+</details>
+
 <p>一些doctest引用了这些函数：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">add</span><span class="p">,</span> <span class="n">mul</span>
 
@@ -1365,7 +1399,7 @@
 
 <span class="n">increment</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 </code></pre></div>
-<h2 id="_3">高阶函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_2">高阶函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="q1">Q1：乘积<a class="headerlink" href="#q1" title="Permanent link">&para;</a></h3>
 <p>编写一个名为 <code>product</code> 的函数，该函数返回序列的前 <code>n</code> 项的乘积。具体来说， <code>product</code> 接收一个整数 <code>n</code> 和 <code>term</code> ，<code>term</code> 是一个单参数函数，该函数确定一个序列。（也就是说， <code>term(i)</code> 给出序列的第 <code>i</code> 项。） <code>product(n, term)</code> 应该返回 <code>term(1) * ... * term(n)</code> 。</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">product</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">term</span><span class="p">):</span>
@@ -1492,7 +1526,7 @@ python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </sp
 <p>使用 Ok 来测试你的代码：</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>make_repeater
 </code></pre></div>
-<h2 id="_4">检查你的得分<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">检查你的得分<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>运行得到本次作业中每个问题的分数。</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>--score
 </code></pre></div>
