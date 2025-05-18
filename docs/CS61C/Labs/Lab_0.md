@@ -1,4 +1,4 @@
-# Lab 0: 课程介绍与环境配置
+# 实验 0: 课程介绍与环境配置
 
 你好！欢迎来到 CS61C！我们非常欢迎你的加入 :D
 
@@ -135,7 +135,7 @@ $ sudo apt install curl git openjdk-17-jre openssh-client python3 python3-pip
 
     * 如果出现 `Connection timeout` 或其他连接错误，请确保你不是在 CalVisitor 或其他阻止 SSH 的网络上，并确保你已连接到校园 VPN。
 
-    * 如果你收到 `Connection refused` 或 `Connection timeout` 或其他连接错误，机器可能暂时宕机或拒绝连接。请尝试使用其他蜂巢机器（例如，将 hive2 替换为 hive3 ）。
+    * 如果你收到 `Connection refused` 或 `Connection timeout` 或其他连接错误，机器可能暂时宕机或拒绝连接。请尝试使用其他 hive 机器（例如，将 hive2 替换为 hive3 ）。
 
 3. 连接成功后，系统可能会提示你输入一些信息，包括姓名和电子邮件，如果没有，请跳至下一步。
     
@@ -184,7 +184,7 @@ $ sudo apt install curl git openjdk-17-jre openssh-client python3 python3-pip
     $ vim ~/.ssh/config
     ```
 
-4. 按下 `i` 进入插入模式，左下方应出现 `-- INSERT --`。
+4. 按下 <kbd>i</kbd> 进入插入模式，左下方应出现 `-- INSERT --`。
 
 5. 如果你看到下面两行在一起，它们来自61B。如果不再需要它们，请使用箭头键和退格键删除他们。
 
@@ -208,11 +208,11 @@ $ sudo apt install curl git openjdk-17-jre openssh-client python3 python3-pip
     
     记住将 ``cs61c-???`` 替换为你的教学账户用户名。 ``Host s330-? s330-?? hive? hive??`` 中的问号保持不变。
 
-7. 按下 `Esc` 退出插入模式，`-- INSERT --` 应消失。
+7. 按下 <kbd>Esc</kbd> 退出插入模式，`-- INSERT --` 应消失。
 
-8. 输入 `:w` ,然后按下 `Enter` 保存文件。
+8. 输入 `:w` ,然后按下 <kbd>Enter</kbd> 保存文件。
 
-9. 退出 Vim，键入 `:q` ，然后键入 `Enter`。
+9. 退出 Vim，键入 `:q` ，然后按下 <kbd>Enter</kbd>。
 
 10. 现在就尝试通过 SSH 连接到 Hive machine。
     ```
@@ -589,3 +589,242 @@ $ bash init.sh
     * `"Automatic merge failed"` : Git 试图找出整合提交的方法，但无法实现
 
     * `"fix conflicts and then commit the result"` : 看来我们需要手动解决合并冲突！
+
+    您可以检查 `git status` ：
+    ```
+    On branch main
+    Your branch and 'origin/main' have diverged,
+    and have 1 and 1 different commits each, respectively.
+    (use "git pull" to merge the remote branch into yours)
+
+    You have unmerged paths.
+    (fix conflicts and run "git commit")
+    (use "git merge --abort" to abort the merge)
+
+    Unmerged paths:
+    (use "git add <file>..." to mark resolution)
+    both modified:   code.py
+    ```
+
+    用 Vim 打开有冲突的文件。你会看到类似的内容
+
+    ```python
+    def fizzbuzz(num):
+    <<< HEAD
+    "your code"
+    ===
+    "not your code"
+    >>> remote-commit-hash
+
+    for i in range(0, 20):
+    ```
+
+    看起来你的虚拟搭档 Oski 也尝试修复了这个错误，但没有告诉你。真是气死我了，Oski！Oski 的代码看起来有点……效率不高，所以你想保留自己的修复方案。不过，Oski 也做了一些有用的事情：多了一个 if 分支，这样对于 15 的倍数，只会打印一行 “fizzbuzz”，而不是分两行打印 “fizz” 和 “buzz”。换句话说，Oski 和你都对代码做了修改，而且你们都希望保留对方的改动！
+
+    现在，考虑到上述情况，请将两个版本合并成一个完整的 fizzbuzz(num) 函数，并删除多余的合并冲突标记（<<< HEAD、===、>>> commit-hash）。修复后的函数大致应如下伪代码所示：
+
+    ```python
+    def fizzbuzz(num):
+    if 是 15 的倍数:
+        # 打印 num: fizzbuzz
+    elif 是 3 的倍数:
+        # 打印 num: fizz
+    elif 是 5 的倍数:
+        # 打印 num: buzz
+    ```
+
+    完成后，保存、更改、提交你的工作。现在如果你推送代码，应该不会再出现冲突了。合并冲突解决成功！
+
+4. 在你本地机器上（不是通过 SSH 登录的教学账号），克隆你的实验仓库（记得用上面演示过的 SSH 方式克隆，而不是 HTTPS），然后进入 lab00 文件夹。接着，运行以下命令：
+
+    ```bash
+    $ bash gen-debug.sh
+    ```
+
+    这会生成一个名为 debug.txt 的文件，用来记录自动评分程序的调试信息。将该文件添加、提交并推送。
+
+5. 依然在本地机器上，进入你的实验仓库中的 tools 文件夹，运行以下命令：
+
+    ```bash
+    $ bash download_tools.sh
+    ```
+
+    如果你看到有关 Illegal date format for -z 或 Disabling time condition 的警告，这属于预期现象，无需担心。
+
+    该命令会下载 Logisim 和 Venus，这两个工具我们后续会用到。确认 Logisim 是否能正常运行：
+
+    ```bash
+    $ java -jar logisim-evolution.jar
+    ```
+
+    如果弹出窗口，说明运行成功！你可以关闭它，暂时不需要继续使用。
+
+### 练习 6： 欢迎问卷
+
+最后，请填写这份[欢迎调查表](https://docs.google.com/forms/d/e/1FAIpQLSfnptSUQ4uRN8ophmkmGGfHWseAk-efcISEYqrGqRkEmzanwg/viewform?usp=sharing)。 请确保在提交 Gradescope 上的 `Lab 0` 之前提交调查问卷。
+
+## 提交
+
+你完成啦！这可是相当一大段内容，要花不少时间思考，不过现在你对本学期接下来要用到的工具已经有了初步了解，值得的！
+
+每个实验都会包含自动评分的练习。要提交给自动评分系统，你需要把作业推送到 GitHub 上你的实验仓库。然后登录 Gradescope，找到对应的作业（比如这个实验就是 `Lab 0`），选择你的实验仓库，提交作业。等一会儿，页面上就会显示自动评分的成绩。
+
+记住，为了获得实验的学分，一定要确保在截止日期之前完成所有练习，并通过所有自动评分的测试！
+
+## 附录
+
+这些工具可能会对您有所帮助，但绝不是本课程的必修内容：\)
+
+### Vim 基础
+
+`vim` 是一个文本编辑器，包含在 hive 和许多基于 UNIX 的发行版中。
+
+注意：我们将在大部分示例和文档中使用 Vim，但我们并不硬性要求你使用哪种文本编辑器；你可以选择任何你熟悉的编辑器，但你至少应该会使用一种基于终端的文本编辑器。
+
+要打开当前目录下的文件，请将文件名传递给 Vim：
+
+```bash
+$ vim filename
+```
+
+要从其他目录打开文件，请使用相对路径或绝对路径：
+
+```bash
+$ vim ../other-folder/filename
+```
+
+| 命令                            | 说明                                        |
+|---------------------------------|---------------------------------------------|
+| <kbd>Esc</kbd> <code>':q'</code>         | 关闭（退出）Vim，不保存                      |
+| <kbd>Esc</kbd> <code>':wq'</code>        | 保存文件后关闭 Vim                           |
+| <kbd>Esc</kbd> <code>':w'</code>         | 保存文件                                    |
+| <kbd>Esc</kbd> <code>':q!'</code>        | 强制退出 Vim（放弃已做的修改，不保存）       |
+| <kbd>Esc</kbd> <code>'i'</code>           | 进入插入模式，允许编辑文件                    |
+| <kbd>Esc</kbd> <code>'/cats'</code>       | 搜索文件中最近的字符串 “cats”，按 n 查找下一个，按 N 查找上一个 |
+| <kbd>Esc</kbd> <code>':set nu'</code>    | 显示文件中的行号                            |
+| <kbd>Esc</kbd> <code>':tabe &lt;filepath&gt;'</code> | 在新标签页打开指定路径的文件，支持 Tab 补全             |
+| <kbd>Esc</kbd> <code>':tabn'</code>       | 切换到标签栏中的下一个标签页                  |
+| <kbd>Esc</kbd> <code>':tabp'</code>       | 切换到标签栏中的上一个标签页                  |
+
+
+注意：这些命令前面都带有 <kbd>Esc</kbd>，是因为你需要先按键盘上的 Escape 键才能从当前模式切换出来。例如，如果你正在插入模式（输入文本），想保存文件，就得先按 <kbd>Esc</kbd> 退出插入模式，然后输入 `:w` 来保存文件。如果你当前不在任何模式（比如刚打开文件时），就不需要先按 Esc，不过按了也没坏处 :)
+
+默认情况下，Vim 不启用鼠标支持和行号显示。如果你想开启这些功能：
+
+打开 `~/.vimrc` 文件（命令：`vim ~/.vimrc`）
+启用鼠标，添加一行：`set mouse=a`
+启用行号，添加一行：`set number`
+保存并退出。然后再打开你的 vimrc 文件试试看。
+
+Vim 还有许多其他配置选项，欢迎你去网上找资料多多尝试！
+
+我们也准备了一个 [CS61C 专用的 Vim 使用指南](https://docs.google.com/document/d/1WQF6hQK8CXtlGynSAIX7Rts6q8lykarrqX-zkb9ZDyc/view)，供你参考。感谢 Yijie 的贡献！
+
+### 命令行基础
+
+如果你之前学过 CS61A 和 CS61B，可能已经对命令行界面（CLI）和终端命令有一定了解。本课程会大量使用命令行，所以先花点时间复习一下基础知识。
+
+示例命令通常写成这样：
+```bash
+$ echo Hello world
+```
+
+这里 `echo` 是命令，`Hello` 和 `world` 是参数。在终端输入这行命令后，就会执行它，这里会把 `Hello world` 打印到终端上。
+
+命令行中的选项 (flags) 通常用来指定程序行为或参数，通常以一个或两个短横线开头，并且可以带有参数。
+
+```bash
+$ git --version | cat
+$ python3 -c 'print("Hello world")'
+```
+
+一般建议用单引号将本应是单一参数的字符串包起来（例如 "带 *&)_@#(&$! 符号的较长字符串"），否则可能会出现意想不到的行为--如果不加引号/反引号，这些符号中的很多实际上都会发挥作用！
+
+查看 [61B 的常用 CLI 命令列表](https://inst.eecs.berkeley.edu/%7Ecs61b/fa21/materials/lab/lab1/index.html#essential-terminal-commands)可能会对您有所帮助。
+
+### CLI 键盘快捷键
+
+输入命令或文件路径时：
+
+<kbd>Tab</kbd> 会尝试根据你已输入的内容自动补全当前词条。
+例如，如果当前目录有 filename1.txt 和 filename2.txt，输入 f 后按 <kbd>Tab</kbd> 会补全成 filename，继续输入 1 后再按 <kbd>Tab</kbd> 就会补全成 filename1.txt。
+
+<kbd>↑</kbd> 和 <kbd>↓</kbd>（上箭头和下箭头）可以让你浏览之前用过的命令，这样不用重复输入。
+
+<kbd>Ctrl</kbd> + <kbd>a</kbd> 会将光标移动到当前行的开头（方便修改错误）。
+
+<kbd>Ctrl</kbd> + <kbd>e</kbd> 会将光标移动到当前行的末尾（同样方便修改错误）。
+
+<kbd>Ctrl</kbd> + <kbd>r</kbd> 允许你搜索最近使用过的命令。
+
+### Hello World
+
+`echo` 会重复你给它的任何参数：
+
+```bash
+$ echo Hello World
+```
+
+如果字符串包含特殊字符，用单/双引号将其包围起来可避免触发意外的 shell 功能：
+
+```bash
+$ echo "It's morbin time!"
+```
+
+### 文件操作
+
+`touch` 将创建一个空白文件，文件名由您提供。
+
+```bash
+$ touch example.txt
+```
+
+这将创建一个名为 `example.txt` 的文件，文件中没有任何内容。
+
+如果您想一次性创建文件并添加文本，可以使用：
+```bash
+$ echo 'Your contents here' > example.txt
+```
+
+这将在当前目录下创建一个文件，文件名为 `example.txt`。 如果该文件已经存在，则会被覆盖。 文件将包含 `Your contents here` ，不含引号。 `>` 符号包含一个参数，用于重定向打印到 stdout 的数据的发送位置。 在这里，我们将 `echo` 的输出重定向到名为 `example.txt` 的文件。
+
+您可以使用 `cat` 或 `less` 命令查看文件内容。
+
+```bash
+$ cat example.txt
+$ less example.txt
+```
+
+`cat` 将 `example.txt` 的内容打印到终端。 `less` 打开一个基本的查看器，允许你滚动和搜索。
+
+### scp - "安全复制"
+`scp` 程序用于使用 SSH 协议在计算机之间复制文件。
+
+有时，您可能希望将 hive 中的单个文件或整个文件夹导入本地系统，反之亦然。您可以使用 `scp` ：
+
+```bash
+$ scp <source> <destination>
+```
+
+要指定远程源或目的地，请使用 `username@host:path` 。要指定本地目的地，只需使用 `path` 。举个例子：
+
+```bash
+$ scp hive1:~/some-folder/example.txt ~/Downloads/
+```
+
+假设我的用户名是 `cs61c-???` ，上述命令将连接到 `hive1` ，并将我的指导账户上的 `~/some-folder/example.txt` 复制到本地计算机上的 `~/Downloads/example.txt` 。
+
+如果我想从另一个方向复制（从本地计算机复制到 hive 计算机），我会使用
+```bash
+$ scp ~/Downloads/example.txt hive1:~/some-folder/
+```
+
+`scp` 默认情况下只对文件有效。要复制文件夹，需要告诉 scp " 递归 (recursively) "复制文件夹及其所有内容，可以使用 `-r` 标志来实现：
+
+```bash
+scp -r hive1:~/some-folder ~/Downloads/
+```
+
+注意斜线：写入 `some-folder` 将复制文件夹本身和里面的文件，而 `some-folder/` 只复制里面的文件。
+
+>警告：在蜂巢计算机上运行 `scp` （例如，当您在 SSH 会话中）通常是不可取的行为。在 hive 机器上运行 `scp example.txt hive4:~/example.txt` 会将 `example.txt` 复制到......相同的位置。你可能希望在本地终端会话中运行它！
