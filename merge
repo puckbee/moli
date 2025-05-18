@@ -4,11 +4,14 @@
 --------------- 配置文件路径 ---------------
 local files = {
 	"nav/HomePage.yml",
+	"nav/LearningPath.yml",
 	"nav/CS61A.yml",
 	"nav/CS61B.yml",
 	"nav/CS61C.yml",
 	"nav/PA.yml",
 	"nav/MIT6.S081.yml",
+	"nav/Recruitment.yml",
+	"nav/Contact.yml",
 }
 --------------------------------------------
 
