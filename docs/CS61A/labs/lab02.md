@@ -24,7 +24,7 @@
 True or 1 / 0
 ```
 
-它的结果是 `True`，因为 Python 中的 `and` 和 `or` 操作符是 *短路求值*。也就是说，它们不一定会计算每个操作数。
+它的结果是 `True`，因为 Python 中的 `and` 和 `or` 操作符是 *短路求值*。也就是说，他们不一定会计算每个操作数。
 
 | 操作符 | 检查是否： | 从左到右计算结果直到： | 示例 |
 |-|-|-|-|
@@ -33,7 +33,7 @@ True or 1 / 0
 
 短路发生在操作符遇到一个能够让他们得出表达式结果的操作数时。例如，`and` 会在遇到第一个假值时短路，因为它知道并非所有值都为真。
 
-如果 `and` 和 `or` 不是 *短路求值*，他们将直接返回最后一个值；另一种记住这一点的方法是，`and` 和 `or` 总是返回他们计算的最后一个值，无论它们是否短路。记住，当使用 `True` 和 `False` 以外的值时，`and` 和 `or` 不一定总是返回布尔值。
+如果 `and` 和 `or` 不是 *短路求值*，他们将直接返回最后一个值；另一种记住这一点的方法是，`and` 和 `or` 总是返回他们计算的最后一个值，无论他们是否短路。记住，当使用 `True` 和 `False` 以外的值时，`and` 和 `or` 不一定总是返回布尔值。
 
 如果你需要复习本实验的材料，可以参考这一部分。你可以直接跳到[问题部分](https://cs61a.org/lab/lab02/#required-questions)，并在卡住的时候再回来查看这里的内容。
 
@@ -54,7 +54,7 @@ True or 1 / 0
 True or 1 / 0
 ```
 
-它的结果是 <code>True</code>，因为 Python 中的 <code>and</code> 和 <code>or</code> 操作符是短路求值。也就是说，它们不一定会计算每个操作数。
+它的结果是 <code>True</code>，因为 Python 中的 <code>and</code> 和 <code>or</code> 操作符是短路求值。也就是说，他们不一定会计算每个操作数。
 
 <table border="1">
   <thead>
@@ -83,7 +83,7 @@ True or 1 / 0
 
 短路发生在操作符遇到一个能够让他们得出表达式结果的操作数时。例如，`and` 会在遇到第一个假值时短路，因为它知道并非所有值都为真。
 
-如果 <code>and</code> 和 <code>or</code> 不是短路求值，他们将直接返回最后一个值；另一种记住这一点的方法是，<code>and</code> 和 <code>or</code> 总是返回他们计算的最后一个值，无论它们是否短路。记住，当使用 <code>True</code> 和 <code>False</code> 以外的值时，<code>and</code> 和 <code>or</code> 不一定总是返回布尔值。
+如果 <code>and</code> 和 <code>or</code> 不是短路求值，他们将直接返回最后一个值；另一种记住这一点的方法是，<code>and</code> 和 <code>or</code> 总是返回他们计算的最后一个值，无论他们是否短路。记住，当使用 <code>True</code> 和 <code>False</code> 以外的值时，<code>and</code> 和 <code>or</code> 不一定总是返回布尔值。
 
 </details>
 
@@ -137,7 +137,7 @@ def scale(f, x, k):
 
 返回函数的函数：
 
-因为函数是值，它们也可以作为返回值！下面是一个例子：
+因为函数是值，他们也可以作为返回值！下面是一个例子：
 
 ```python
 def multiply_by(m):
@@ -184,7 +184,7 @@ Lambda 表达式是通过指定两项内容来求值为函数的表达式：参�
 lambda <parameters>: <return expression>
 ```
 
-虽然 <code>lambda</code> 表达式和 <code>def</code> 语句都创建函数对象，但它们之间有一些显著的区别。<code>lambda</code> 表达式像其他表达式一样工作；就像数学表达式评估为一个数字并且不会改变当前环境一样，<code>lambda</code> 表达式评估为一个函数而不会改变当前环境。让我们仔细看看：
+虽然 <code>lambda</code> 表达式和 <code>def</code> 语句都创建函数对象，但他们之间有一些显著的区别。<code>lambda</code> 表达式像其他表达式一样工作；就像数学表达式评估为一个数字并且不会改变当前环境一样，<code>lambda</code> 表达式评估为一个函数而不会改变当前环境。让我们仔细看看：
 
 <table border="1">
   <thead>
@@ -287,7 +287,7 @@ square(3)
 
 <h2>Lambda 表达式</h2>
 
-<p><strong>注意：</strong>正如我们在上面的 <code>lambda</code> 表达式部分所看到的，<code>lambda</code> 函数没有固有名称。在环境图中绘制 <code>lambda</code> 函数时，它们被标记为 <code>lambda</code> 或小写希腊字母 <code>λ</code>。当环境图中有多个 <code>lambda</code> 函数时，这可能会造成混淆，因此你可以通过编号或者写出定义它们的行号来区分它们。</p>
+<p><strong>注意：</strong>正如我们在上面的 <code>lambda</code> 表达式部分所看到的，<code>lambda</code> 函数没有固有名称。在环境图中绘制 <code>lambda</code> 函数时，他们被标记为 <code>lambda</code> 或小写希腊字母 <code>λ</code>。当环境图中有多个 <code>lambda</code> 函数时，这可能会造成混淆，因此你可以通过编号或者写出定义他们的行号来区分他们。</p>
 
 <ol>
   <li>绘制 <code>lambda</code> 函数对象，并标注为 <code>λ</code>、其形式参数以及其父框架。函数的父框架是定义该函数的框架。</li>
@@ -419,11 +419,11 @@ ______
 >
 > 提醒一下，以下两行代码执行时将不会在交互式 Python 解释器中显示任何输出：
 >
-> `>>> x = None`
->
-> `>>> x`
->
-> `>>>`
+> ```python
+> >>> x = None
+> >>> x
+> >>>
+> ```
 
 ```python
 >>> lambda x: x  # A lambda expression with one parameter x
@@ -647,11 +647,11 @@ g = (lambda y: y())(f)
 
 ## 可选问题
 
-> 这些问题是可选的。如果你没有完成它们，你仍然会获得此作业的学分。它们是很好的练习，所以还是做一下吧！
+> 这些问题是可选的。如果你没有完成他们，你仍然会获得此作业的学分。他们是很好的练习，所以还是做一下吧！
 
 ### 问题 7: 最小公倍数
 
-编写一个函数，该函数接收两个数字并返回它们的最小公倍数。
+编写一个函数，该函数接收两个数字并返回他们的最小公倍数。
 
 ```python
 def multiple(a, b):
