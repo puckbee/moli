@@ -1,3 +1,11 @@
 - 'CS61A': 
   - '课程简介': CS61A.md
-  - 'Lab 00': "CS61A/Lab & Discussion/Lab 00: Getting Started.md"
+  - 讨论:
+    - 'Disc 00': "CS61A/discussions/disc00.md"
+    - 'Disc 01': "CS61A/discussions/disc01.md"
+    - 'Disc 02': "CS61A/discussions/disc02.md"
+    - 'Disc 03': "CS61A/discussions/disc03.md"
+  - 实验:
+    - 'Lab 00': "CS61A/labs/lab00.md"
+    - 'Lab 01': "CS61A/labs/lab01.md"
+    - 'Lab 02': "CS61A/labs/lab02.md"
