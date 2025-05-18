@@ -1,0 +1,2093 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nightlanding.github.io/moli/CS61A/projects/hog/">
+      
+      
+        <link rel="prev" href="../../homeworks/homework03/">
+      
+      
+        <link rel="next" href="../../../CS61B/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Project 00 - MOLI：提升实践能力的试炼之地</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOLI：提升实践能力的试炼之地
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Project 00
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nightlanding/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../LearnPath/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  学习路线
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  CS61A
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CS61B/" class="md-tabs__link">
+          
+  
+  
+  CS61B
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CS61C/" class="md-tabs__link">
+          
+  
+  
+  CS61C
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../PA/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  南京大学 ICS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../MIT6.S081/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MIT6.S081
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Recruitment/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  招聘公告
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Contact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  联系我们
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MOLI：提升实践能力的试炼之地
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nightlanding/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LearnPath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    学习路线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61A
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            CS61A
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    讨论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            讨论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/disc00/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Disc 00
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/disc01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Disc 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/disc02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Disc 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discussions/disc03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Disc 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    实验
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            实验
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab00/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 00
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    作业
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            作业
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homeworks/homework01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Homework 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homeworks/homework02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Homework 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homeworks/homework03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Homework 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    项目
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            项目
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Project 00
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 00
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      规则
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      下载启动文件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      课程安排（有删减）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      图形用户界面
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      入门视频（有删减）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一阶段：游戏规则
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一阶段：游戏规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#00" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 0（0分）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 1（2 分）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="问题 1（2 分）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      调试技巧
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 2（2分）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 3 (2分)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 4（2分）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 5（4分）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      插曲：用户界面
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="插曲：用户界面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      打印游戏内的事件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      接受用户输入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      图形用户界面（GUI）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二阶段：策略
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二阶段：策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 6（2分）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 7（2分）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 8（2分）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 9（2分）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行实验
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 10 (2分)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题 11 (2分)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      项目提交（有删减）
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61B
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CS61B
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            CS61C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    南京大学 ICS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MIT6.S081/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MIT6.S081
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Recruitment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    招聘公告
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">猪的游戏<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="https://cs61a.org/proj/hog/assets/icon.gif" /></p>
+<center>我懂了！我要用高阶函数摇出更高的点数。</center>
+
+<h2 id="_2">简介<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>按顺序尝试问题，包括每次完成问题后运行 <code>ok</code> 测试，因为后续的一些问题会依赖于早期的实现。</p>
+</blockquote>
+<p>在这个项目中，你需要为骰子游戏 Hog 来开发一个模拟器，并在其中实现多种策略。你需要结合使用*控制语句*和*高阶函数*，正如<a href="https://www.composingprograms.com/">《组合程序》</a>第1.2节到1.6节中所述。</p>
+<blockquote>
+<p>在尝试实现功能时，没有仔细阅读问题的学生经常会遇到问题。😱 <strong>所以在开始编码之前，请仔细阅读问题的描述</strong>。</p>
+</blockquote>
+<h2 id="_3">规则<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在Hog游戏中，两名玩家轮流进行，首先在回合结束时获得 <code>GOAL</code> 以上总分的玩家获胜，其中 <code>GOAL</code> 默认为100。每个回合中，当前玩家可以选择一些骰子一起掷，骰子一次性最多选择10个。该玩家的回合得分等于骰子结果的和。然而，掷太多骰子也有风险：</p>
+<ul>
+<li><strong>”猪的悲伤“（Sow Sad）规则</strong>：如果有任何一个骰子的结果是1，那么当前玩家的回合得分为 <code>1</code> ，无论其他骰子的值是多少。</li>
+</ul>
+<hr />
+<p>例子</p>
+<ul>
+<li>示例 1：当前玩家掷了7颗骰子，其中有5颗是1。所以他们这一轮得分为1分。</li>
+<li>示例 2：当前玩家掷了4个骰子，全部都是3。由于没有触发Sow Sad规则，所以他们在这一轮中得分为12分。</li>
+</ul>
+<hr />
+<p>在一场正常的Hog游戏中，这些就是所有的规则了。为了让游戏更有趣一点，我们再加入一些特殊规则：</p>
+<ul>
+<li><strong>“野猪混战”（Boar Brawl）规则</strong>：若玩家选择掷零个骰子，那么他将获得：对手总分的十位数 与 当前玩家总分的个位数 之差的绝对值的3倍，或者获得1分，两者需要取较大值。</li>
+</ul>
+<hr />
+<p>例子</p>
+<ul>
+<li>示例 1</li>
+<li>当前玩家有 <code>21</code> 分，对手有 <code>46</code> 分，并且当前玩家选择掷零个骰子。</li>
+<li>那么，对手得分的十位数就是 <code>4</code> ，而当前玩家得分的个位数是 <code>1</code> 。</li>
+<li>因此，玩家获得 <code>3 * abs(4 - 1) = 9</code> 分。</li>
+<li>示例 2</li>
+<li>当前玩家有 <code>45</code> 分，对手有 <code>52</code> 分，并且当前玩家选择掷零个骰子。</li>
+<li>那么，对手得分的十位数就是 <code>5</code> ，而当前玩家得分的个位数是 <code>5</code> 。</li>
+<li>由于 <code>3 * abs(5 - 5) = 0</code> ，玩家获得 <code>1</code> 分。</li>
+<li>示例 3</li>
+<li>当前玩家有 <code>2</code> 分，对手有 <code>5</code> 分，并且当前玩家选择掷零个骰子。</li>
+<li>那么，对手得分的十位数就是 <code>0</code> ，而当前玩家得分的个位数是 <code>2</code> 。</li>
+<li>因此，玩家获得 <code>3 * abs(0 - 2) = 6</code> 分。</li>
+</ul>
+<hr />
+<ul>
+<li><strong>“野猪恐慌”（Sus Fuss）规则</strong>：如果一个数正好有3个或4个因数（包括1和它本身），我们就称这个数为<a href="https://en.wikipedia.org/wiki/Sus_%28genus%29">猪数（sus number）</a>。如果投掷后当前玩家的得分是猪数，则得分就增加到当前得分以上最近的质数。</li>
+</ul>
+<hr />
+<p>例子</p>
+<ul>
+<li>示例 1</li>
+<li>一位玩家有14分，掷出两个骰子获得了7分。那么他的新分数就会是21，而21有4个因数：1、3、7和21，即21是猪数，因此玩家的分数立即增加到23（离得最近的下一个质数）。</li>
+<li>示例 2</li>
+<li>一位63分的玩家掷出了五个骰子，然后在这一轮中只获得了1分。他们的新分数就会是64（猪的悲伤😢），64有7个因数：1、2、4、8、16、32和64。由于64不是猪数，玩家的分数保持不变。</li>
+<li>示例 3</li>
+<li>一名玩家有49分，掷了5个骰子，总分为18分。他的新分数会是67，而这是一个质数，它有2个因数：1和67。但由于67不是猪数，玩家的分数保持不变。</li>
+</ul>
+<hr />
+<h2 id="_4">下载启动文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>为了开始项目，请将项目的所有代码下载为一个zip存档文件。解压缩后的文件列表如下。对于这个项目，你只需要修改 <code>hog.py</code> 。</p>
+<ul>
+<li><code>hog.py</code> : Hog的初始实现</li>
+<li><code>dice.py</code> : 制作骰子和掷骰子的函数</li>
+<li><code>hog_gui.py</code> : Hog的图形用户界面（GUI）（已更新）</li>
+<li><code>ucb.py</code> : CS61A的工具函数</li>
+<li><code>hog_ui.py</code> : Hog的文本用户界面（UI）</li>
+<li><code>ok</code> : CS61A的自动评分器</li>
+<li><code>tests</code> : <code>ok</code> 使用的测试目录</li>
+<li><code>gui_files</code> : Web GUI需要使用的各种东西的目录</li>
+</ul>
+<p>你可能会发现除了上面列出的文件以外，还有其他文件。那些是让自动评分器和GUI部分正常工作的文件。所以，请不要修改任何除了 <code>hog.py</code> 以外的文件。</p>
+<h2 id="_5">课程安排（有删减）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>不能使用AI来帮助你完成这个项目，也不能参考在网上找到的解决方案。</p>
+<p>对于我们要求你完成的函数，我们可能会提供一些初始代码。如果你不想使用这些代码，可以自行删除然后从头开始写。或者你也可以根据需要，添加新的函数定义。</p>
+<p>**但是，请不要修改任何其他函数，或者编辑上述文件之外的任何文件。**这可能会导致你的代码在我们的自动评分器测试中运行失败。另外，请不要更改任何函数签名（名称、参数顺序或参数数量）。</p>
+<p>在整个项目中，你应该测试你的代码的正确性。经常测试是一个好习惯，这样更容易将问题隔离。但是，为留出时间多思考问题，你不应该测试得太频繁。</p>
+<p>我们提供了一个名为 <code>ok</code> 的自动评分器来帮助你测试代码。</p>
+<p><code>ok</code> 的主要目的是测试你的实现。</p>
+<p>如果你想交互式地测试你的代码，你可以运行：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="o">[</span>question<span class="w"> </span>number<span class="o">]</span><span class="w"> </span>-i<span class="w"> </span>
+</code></pre></div>
+<p>添加适当的问题编号（例如 <code>01</code> ）来使用。这将运行该问题的测试，直到第一次运行失败，然后就可以交互式地测试你编写的函数。</p>
+<p>你也可以通过在OK中编写：</p>
+<div class="highlight"><pre><span></span><code> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DEBUG:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
+</code></pre></div>
+<p>这将在你的终端中产生输出，而不会因为额外的输出，导致OK测试失败。</p>
+<h2 id="_6">图形用户界面<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>我们为你提供了一个图形用户界面（简称 GUI）。但目前它还无法工作，因为还没有实现游戏逻辑。一旦完成了play函数，你就能够玩一个完全交互式的Hog版本！</p>
+<p>完成之后，你可以从终端运行GUI，然后在浏览器中玩Hog：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>hog_gui.py
+</code></pre></div>
+<h2 id="_7">入门视频（有删减）<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li><iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></li>
+</ul>
+<h2 id="_8">第一阶段：游戏规则<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="00">问题 0（0分）<a class="headerlink" href="#00" title="Permanent link">&para;</a></h3>
+<p><code>dice.py</code> 文件使用非纯且零参数的函数来表示骰子。由于每次调用时，这些函数都可能返回不同的值，所以这些函数是非纯的。因此调用这些函数的一个副作用是改变下次调用函数时返回的内容。</p>
+<p>为了便于你在这个项目中模拟骰子，这里给出你需要阅读的 <code>dice.py</code> 文档。</p>
+<div class="highlight"><pre><span></span><code><span class="n">骰子函数不接受任何参数</span><span class="err">，</span><span class="n">并且它返回一个从1到n</span><span class="err">（</span><span class="n">闭区间</span><span class="err">）</span><span class="n">的数字</span><span class="err">，</span><span class="n">其中n是骰子的面数</span><span class="err">。</span>
+
+<span class="n">公平的骰子需要以相等的概率产生每种可能的结果</span><span class="err">。</span>
+<span class="n">这里已经定义了两个公平的骰子</span><span class="err">，</span><span class="n">分别是四面骰和六面骰</span><span class="err">，</span><span class="n">它们是通过make_fair_dice函数生成的</span><span class="err">。</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">make_fair_dice</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;返回一个生成从1到SIDES的值的骰子，每个值有相等的可能性。&quot;&quot;&quot;</span>
+    <span class="o">...</span>
+
+<span class="n">four_sided</span> <span class="o">=</span> <span class="n">make_fair_dice</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">six_sided</span> <span class="o">=</span> <span class="n">make_fair_dice</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">用于测试的骰子是具备确定性的</span><span class="err">：</span><span class="n">因为它们一定会遍历一个固定的值序列</span><span class="err">，</span><span class="n">而这些值是作为参数被传入的</span><span class="err">。</span>
+<span class="n">测试骰子是由make_test_dice函数生成的</span><span class="err">。</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">make_test_dice</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;返回一个可以确定性地遍历结果（OUTCOMES）的骰子。&quot;&quot;&quot;</span>
+
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">dice</span> <span class="o">=</span> <span class="n">make_test_dice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">dice</span><span class="p">()</span>
+    <span class="mi">1</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">dice</span><span class="p">()</span>
+    <span class="mi">2</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">dice</span><span class="p">()</span>
+    <span class="mi">3</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">dice</span><span class="p">()</span>
+    <span class="mi">1</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">dice</span><span class="p">()</span>
+    <span class="mi">2</span>
+</code></pre></div>
+<p>通过解锁以下测试用例来检查你的理解：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">00</span><span class="w"> </span>-u
+</code></pre></div>
+<p>可以通过输入 <code>exit()</code> 退出解锁器。</p>
+<p><strong>已知在 Windows 上按 Ctrl-C 退出解锁器会导致问题，因此要避免这样做。</strong></p>
+<h3 id="12">问题 1（2 分）<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>在 <code>hog.py</code> 中实现 <code>roll_dice</code> 函数。该函数需要接受两个参数：一个正整数 <code>num_rolls</code> ，用来指定掷骰子的次数，以及一个 <code>dice</code> 函数。该函数返回一个点数，这个点数是在回合中掷骰子 <code>num_rolls</code> 次的得分：要么是结果的和，要么是 1（Sow Sad规则）。</p>
+<ul>
+<li><strong>”猪的悲伤“（Sow Sad）规则</strong>：如果有任何一个骰子的结果是1，那么当前玩家的回合得分为 <code>1</code> ，无论其他骰子的值是多少。</li>
+</ul>
+<hr />
+<p>例子</p>
+<ul>
+<li>示例 1：当前玩家掷7颗骰子，其中5颗是1。他们这一轮得分为 <code>1</code> 分。</li>
+<li>示例 2：当前玩家掷了4个骰子，全部都是3。由于没有触发Sow Sad规则，他们在这一轮中得分为 <code>12</code> 分。</li>
+</ul>
+<hr />
+<p>要获得一次掷骰子的结果，请调用 <code>dice()</code> 。你应该在 <code>roll_dice</code> 的函数体中**恰好调用 <code>num_rolls</code> 次 <code>dice()</code> **。</p>
+<p>请记住，<strong>即使在中途触发Sow Sad规则的情况下</strong>，也要恰好调用 <code>dice()</code> 次 <code>num_rolls</code> 。这样做才能正确模拟掷所有骰子（用户界面也才会正常工作）。</p>
+<blockquote>
+<p><strong>注意</strong>： <code>roll_dice</code> 函数，以及整个项目中许多其他函数，都使用了默认参数值——你可以在函数头中看到这一点。</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">roll_dice</span><span class="p">(</span><span class="n">num_rolls</span><span class="p">,</span> <span class="n">dice</span><span class="o">=</span><span class="n">six_sided</span><span class="p">):</span> <span class="o">...</span>
+</code></pre></div>
+<p>参数 <code>dice=six_sided</code> 表示 <code>roll_dice</code> 函数中的 <code>dice</code> 参数是可选的。如果没有给 <code>dice</code> 提供值，则默认使用 <code>six_sided</code> 。</p>
+<p>例如，调用 <code>roll_dice(3, four_sided)</code> 将模拟掷3个四面骰子，而调用 <code>roll_dice(3)</code> 由于默认参数将模拟掷3个六面骰子。</p>
+</blockquote>
+<p><strong>理解问题</strong>：</p>
+<p>在编写任何代码之前，请解锁测试用例来验证你对问题的理解：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">01</span><span class="w"> </span>-u
+</code></pre></div>
+<blockquote>
+<p><strong>注意</strong>：在解锁相应问题的测试用例之后，你才能使用 <code>ok</code> 测试你的代码。</p>
+</blockquote>
+<p><strong>编写代码并检查你的工作</strong>：</p>
+<p>解锁测试用例后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">01</span>
+</code></pre></div>
+<hr />
+<p>调试技巧</p>
+<p>查看<a href="https://cs61a.org/articles/debugging/">调试指南</a>！</p>
+<h4 id="_9">调试技巧<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>如果测试没有通过，那就到调试的时候了。你可以直接使用Python来观察你的函数的行为。首先，启动Python解释器并加载 <code>hog.py</code> 文件。</p>
+<div class="highlight"><pre><span></span><code><span class="n">python3</span> <span class="o">-</span><span class="n">i</span> <span class="n">hog</span><span class="o">.</span><span class="n">py</span>
+</code></pre></div>
+<p>然后，你可以调用你的 <code>roll_dice</code> 函数，并传入任何你想要的骰子数量作为参数。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">roll_dice</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+<p>你会发现在每次调用时，之前的表达式都可能会有不同的结果，因为它是在模拟随机骰子投掷。你也可以使用固定了骰子结果的测试骰子。比如，当你知道骰子会显示3和4时，两次投掷的总结果应该是7。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">fixed_dice</span> <span class="o">=</span> <span class="n">make_test_dice</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">roll_dice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">fixed_dice</span><span class="p">)</span>
+<span class="mi">7</span>
+</code></pre></div>
+<blockquote>
+<p>在大多数系统上，你可以通过按上箭头键，然后按回车键或者返回键，来重新计算相同的表达式。若要重新计算先前的命令，请反复按上箭头键。</p>
+<p>如果你发现了一个问题，那么你首先需要更改你的 <code>hog.py</code> 文件来修复问题，再保存文件。然后，为了检查你的修复是否有效，你必须使用 <code>exit()</code> 或 <code>Ctrl^D</code> 退出Python解释器，再重新运行解释器来测试你的更改。即使重新启动了 Python，在终端和Python解释器中按上箭头键都应该可以访问你以前输入过的表达式。</p>
+<p>继续调试你的代码并运行 <code>ok</code> 测试，直到测试全部通过。</p>
+<p>另一个调试技巧：为了在 <code>ok</code> 测试失败时，可以自动启动交互式解释器，请使用 <code>-i</code> 。例如， <code>python3 ok -q 01 -i</code> 将运行问题 1 的测试，如果测试失败，就会将 <code>hog.py</code> 加载到交互式解释器中运行。</p>
+</blockquote>
+<hr />
+<h3 id="22">问题 2（2分）<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>实现 <code>boar_brawl</code> ，它接受玩家的当前分数 <code>player_score</code> 和对手的当前分数 <code>opponent_score</code> ，并返回当玩家掷0个骰子且Boar Brawl规则被触发时获得的分数。</p>
+<ul>
+<li><strong>“野猪混战”（Boar Brawl）规则</strong>：若玩家选择掷零个骰子，那么他将获得：对手总分的十位数 与 当前玩家总分的个位数 之差的绝对值的3倍，或者获得1分，两者需要取较大值。</li>
+</ul>
+<hr />
+<ul>
+<li>例子</li>
+<li>示例 1<ul>
+<li>当前玩家有 <code>21</code> 分，对手有 <code>46</code> 分，并且当前玩家选择掷零个骰子。</li>
+<li>那么，对手得分的十位数就是 <code>4</code> ，而当前玩家得分的个位数是 <code>1</code> 。</li>
+<li>因此，玩家获得 <code>3 * abs(4 - 1) = 9</code> 分。</li>
+</ul>
+</li>
+<li>示例 2<ul>
+<li>当前玩家有 <code>45</code> 分，对手有 <code>52</code> 分，并且当前玩家选择掷零个骰子。</li>
+<li>那么，对手得分的十位数就是 <code>5</code> ，而当前玩家得分的个位数是 <code>5</code> 。</li>
+<li>由于 <code>3 * abs(5 - 5) = 0</code> ，玩家获得 <code>1</code> 分。</li>
+</ul>
+</li>
+<li>示例 3<ul>
+<li>当前玩家有 <code>2</code> 分，对手有 <code>5</code> 分，并且当前玩家选择掷零个骰子。</li>
+<li>那么，对手得分的十位数就是 <code>0</code> ，而当前玩家得分的个位数是 <code>2</code> 。</li>
+<li>因此，玩家获得 <code>3 * abs(0 - 2) = 6</code> 分。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p>不要假定分数低于 100。编写你的 <code>boar_brawl</code> 函数，让它能够正确处理任何非负分数。</p>
+<p><strong>重要提示</strong>：你的实现不应该使用 <code>str</code> 、列表或包含方括号 <code>[</code> <code>]</code> 。测试用例将检查这些是否被使用。</p>
+</blockquote>
+<p>在编写任何代码之前，解锁测试用例以验证你对问题的理解：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">02</span><span class="w"> </span>-u
+</code></pre></div>
+<p>解锁完成后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">02</span>
+</code></pre></div>
+<p>你也可以通过从终端运行 <code>python3 -i hog.py</code> 并调用 <code>boar_brawl</code> 在各种输入上交互式地测试 <code>boar_brawl</code> 。</p>
+<h3 id="3-2">问题 3 (2分)<a class="headerlink" href="#3-2" title="Permanent link">&para;</a></h3>
+<p>实现 <code>take_turn</code> 函数，该函数通过掷 <code>dice</code> <code>num_rolls</code> 次骰子来返回一回合的得分。</p>
+<p>你的实现中应该调用 <code>take_turn</code> 和 <code>roll_dice</code> 函数，而不是重复实现它们。</p>
+<p>在编写任何代码之前，解锁测试以验证你对问题的理解：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">03</span><span class="w"> </span>-u
+</code></pre></div>
+<p>解锁完成后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">03</span>
+</code></pre></div>
+<h3 id="42">问题 4（2分）<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>首先，实现 <code>num_factors</code> ，它接收一个正整数 <code>n</code> 并确定 <code>n</code> 有多少个因数。</p>
+<blockquote>
+<p>1 和 <code>n</code> 都是 <code>n</code> 的因数！</p>
+</blockquote>
+<p>接着，实现 <code>sus_points</code> 和 <code>sus_update</code> 。</p>
+<ul>
+<li><code>sus_points</code> 接收一个玩家的分数并返回触发Sus Fuss规则后的玩家新分数，就算分数保持不变。例如， <code>sus_points(5)</code> 应该返回 <code>5</code> ， <code>sus_points(21)</code> 应该返回 <code>23</code> 。你应该使用 <code>num_factors</code> 和我们提供的 <code>is_prime</code> 函数来实现。</li>
+<li><code>sus_update</code> 返回玩家投掷 <code>num_rolls</code> 颗骰子后的总得分，同时也考虑了Boar Brawl和Sus Fuss规则。在这个函数中，你应该使用 <code>sus_points</code> 。</li>
+</ul>
+<blockquote>
+<p><strong>提示</strong>：</p>
+<ul>
+<li>你可以看看 <code>hog.py</code> 中提供的 <code>simple_update</code> 实现，你可以将它作为 <code>sus_update</code> 函数的起点。</li>
+<li>记住， <code>take_turn</code> 内部已经考虑了Boar Brawl规则！</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>“野猪恐慌”（Sus Fuss）规则</strong>：如果一个数正好有3个或4个因数（包括1和它本身），我们就称这个数为<a href="https://en.wikipedia.org/wiki/Sus_%28genus%29">猪数（sus number）</a>。如果投掷后当前玩家的得分是猪数，则得分就增加到当前得分以上最近的质数。</li>
+</ul>
+<hr />
+<p>例子</p>
+<ul>
+<li>示例 1</li>
+<li>一位玩家有14分，掷出两个骰子获得了7分。那么他的新分数就会是21，而21有4个因数：1、3、7和21，即21是猪数，因此玩家的分数立即增加到23（离得最近的下一个质数）。</li>
+<li>示例 2</li>
+<li>一位63分的玩家掷出了五个骰子，然后在这一轮中只获得了1分。他们的新分数就会是64（猪的悲伤😢），64有7个因数：1、2、4、8、16、32和64。由于64不是猪数，玩家的分数保持不变。</li>
+<li>示例 3</li>
+<li>一名玩家有49分，掷了5个骰子，总分为18分。他的新分数会是67，而这是一个质数，它有2个因数：1和67。但由于67不是猪数，玩家的分数保持不变。</li>
+</ul>
+<hr />
+<p>在编写任何代码之前，解锁测试以验证你对问题的理解：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">04</span><span class="w"> </span>-u
+</code></pre></div>
+<p>解锁完成后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">04</span>
+</code></pre></div>
+<h3 id="54">问题 5（4分）<a class="headerlink" href="#54" title="Permanent link">&para;</a></h3>
+<p>实现 <code>play</code> 函数，该函数模拟一整局Hog游戏。玩家轮流掷骰子，直到其中一个玩家达到 <code>goal</code> 分数。然后函数返回两个玩家的最终得分。</p>
+<p>要确定每回合掷多少骰子，请调用当前玩家的策略函数（玩家0使用 <code>strategy0</code> ，玩家1使用 <code>strategy1</code> ）。这里的一个*策略*是指一个函数，它接受玩家的分数和对手的分数，然后返回当前玩家在该回合需要掷的骰子数。上面出现的 <code>always_roll_5</code> 就是一个简单策略的示例。</p>
+<p>要确定玩家在回合结束后要更新的分数，请调用 <code>update</code> 函数。一个 <code>update</code> 函数接受掷骰子的数量、当前玩家的分数、对手的分数以及用于模拟掷骰子的骰子函数。它返回当前玩家在回合结束后要更新的分数。 <code>simple_update</code> 和 <code>sus_update</code> 是两个 <code>update</code> 函数的示例。记住，这个update函数会返回玩家回合后的总分，而不仅仅只是分数的改变。</p>
+<p>当玩家在应用所有适用规则后，且在其回合结束时达到或超过目标分数时，游戏结束。 <code>play</code> 将返回两位玩家的最终总分，玩家0的分数在前，玩家1的分数在后。</p>
+<p>调用 <code>play</code> 的一些示例：</p>
+<ul>
+<li><code>play(always_roll_5, always_roll_5, simple_update)</code> 模拟两名玩家，每回合都掷5个骰子，仅使用Sow Sad和Boar Brawl规则进行游戏。</li>
+<li><code>play(always_roll_5, always_roll_5, sus_update)</code> 模拟两名玩家，每回合都掷5个骰子，除了Sow Sad和Boar Brawl规则外，还使用Sus Fuss规则（即所有规则）。</li>
+</ul>
+<blockquote>
+<p><strong>重要提示</strong>：为了使用户界面正常工作，每次回合应只调用一次策略函数。仅在玩家 0 的回合中调用 <code>strategy0</code> ，仅在玩家 1 的回合中调用 <code>strategy1</code> 。</p>
+<p><strong>提示</strong>：</p>
+<ul>
+<li>如果 <code>who</code> 是当前玩家，那么下一个玩家就是 <code>1 - who</code> 。</li>
+<li>如果要调用 <code>play(always_roll_5, always_roll_5, sus_update)</code> 并打印出每一步发生的情况，请从终端运行 <code>python3 hog_ui.py</code> 。</li>
+</ul>
+</blockquote>
+<p>在编写任何代码之前，解锁测试以验证你对问题的理解：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">05</span><span class="w"> </span>-u
+</code></pre></div>
+<p>解锁完成后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">05</span>
+</code></pre></div>
+<p>检查一下，确保你已经完成了第一阶段的全部问题：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>--score
+</code></pre></div>
+<p>当你运行 <code>ok</code> 命令时，你会看到一些测试仍被锁定，这是因为你还没有完成整个项目。如果你完成了到此为止的所有问题，你将获得检查点的全额积分。</p>
+<p><strong>恭喜！你已完成此项目的第一阶段！</strong></p>
+<h2 id="_10">插曲：用户界面<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>项目的这个部分没有必做题，就只有一些供你阅读和理解的示例。阅读项目的剩余问题，请查看第二阶段。</p>
+</blockquote>
+<p><img alt="" src="https://cs61a.org/proj/hog/assets/hog_animation.gif" /></p>
+<p><em>动画由 Tristan &amp; Tyler Roath 创作</em></p>
+<h3 id="_11">打印游戏内的事件<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>我们为游戏构建了一个模拟器，但是还没有添加任何代码，来描述游戏事件应该怎么对人显示。因此，我们构建了一个无人能玩的电脑游戏。（太无聊了！）</p>
+<p>然而，模拟器是以小型函数的形式来表达的，我们可以用新的函数版本来替换每个函数，这个新版本可以打印出调用时发生的事情的。通过使用这样的高阶函数，我们才能在不改变大部分原始代码的情况下做到这种效果。在 <code>hog_ui.py</code> 有一个例子，我们鼓励你去阅读它。</p>
+<p><code>play_and_print</code> 函数调用了刚刚实现的相同 <code>play</code> 函数，但是却使用了：</p>
+<ul>
+<li>新的策略函数（例如， <code>printing_strategy(0, always_roll_5)</code> ），用于输出分数和掷骰子的次数。</li>
+<li>新的更新函数（ <code>sus_update_and_print</code> ），用于输出每轮的结果。</li>
+<li>新的掷骰子函数（ <code>printing_dice(six_sided)</code> ），用于输出掷骰子的结果。</li>
+</ul>
+<p>注意一下有多少模拟器的原始代码可以被重用。</p>
+<p>从终端运行 <code>python3 hog_ui.py</code> 会调用 <code>play_and_print(always_roll_5, always_roll_5)</code> 。</p>
+<h3 id="_12">接受用户输入<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>python内置的 <code>input</code> 函数可以等待用户输入一行文本，然后将其作为字符串返回。内置的 <code>int</code> 函数可以接受一个包含整数数字的字符串并返回该整数。</p>
+<p><code>interactive_strategy</code> 函数返回一个策略，通过调用 <code>input</code> ，允许一个玩家来选择每轮掷多少个骰子。</p>
+<p>在终端运行 <code>python3 hog_ui.py -n 1</code> 时，会调用 <code>play_and_print(interactive_strategy(0), always_roll_5)</code>，这个指令创建了一个人类玩家（玩家0）和一个每次都选择掷5个骰子的电脑策略之间的对战游戏。</p>
+<p>在终端中运行 <code>python3 hog_ui.py -n 2</code> 命令会调用 <code>play_and_print(interactive_strategy(0), interactive_strategy(1))</code>，从而在两个人类玩家之间进行一局游戏。</p>
+<p>你可以随意更改 <code>hog_ui.py</code> ，比如使用和 <code>always_roll_5</code> 不一样的策略。</p>
+<h3 id="gui">图形用户界面（GUI）<a class="headerlink" href="#gui" title="Permanent link">&para;</a></h3>
+<p>我们还为游戏提供了一个基于Web的图形用户界面，其实现方式与 <code>hog_ui.py</code> 类似，叫做 <code>hog_gui.py</code> 。你可以通过终端运行该界面：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>hog_gui.py
+</code></pre></div>
+<p>就像 <code>hog_ui.py</code> 一样，GUI依赖于你的模拟器实现，因此如果你代码中存在任何错误，这些错误也会反映在GUI中。这意味着你也可以使用GUI作为调试工具；不过，最好先运行测试。</p>
+<p>Hog GUI的源代码<a href="https://github.com/Cal-CS-61A-Staff/cs61a-apps/tree/master/hog">在Github上公开可用</a>，但涉及几种其他编程语言：JavaScript、HTML和CSS。</p>
+<h2 id="_13">第二阶段：策略<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>在这一阶段，你将会尝试改进始终掷五颗骰子的 <code>always_roll_five</code> 简单策略。策略是一个函数，它接受两个参数：当前玩家的得分和对手的得分。然后它会返回玩家将掷出的骰子数量，范围从0到10（闭区间）。</p>
+<h3 id="62">问题 6（2分）<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<p>实现 <code>always_roll</code> ，这是一个高阶函数，它接受一个骰子数量 <code>n</code> ，然后返回一个总是掷 <code>n</code> 个骰子的策略函数。所以 <code>always_roll(5)</code> 就等同于 <code>always_roll_5</code> 。</p>
+<p>在编写任何代码之前，解锁测试以验证你对问题的理解：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">06</span><span class="w"> </span>-u
+</code></pre></div>
+<p>解锁完成后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">06</span>
+</code></pre></div>
+<h3 id="72">问题 7（2分）<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<p>策略函数中，参数值的数量是固定多的。例如，在一个 <code>goal</code> 为100的游戏里，只有100个可能的 <code>score</code> 值（0-99）和100个可能的 <code>opponent_score</code> 值（0-99），这导致1个策略函数就会有10,000种可能的参数组合。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>玩家得分</strong></th>
+<th><strong>对手得分的组合</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0</td>
+<td>(0,0), (0,1), (0,2), ..., (0,99)</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td>(1,0), (1,1), (1,2), ..., (1,99)</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td>(2,0), (2,1), (2,2), ..., (2,99)</td>
+</tr>
+<tr>
+<td style="text-align: left;">...</td>
+<td>...</td>
+</tr>
+<tr>
+<td style="text-align: left;">98</td>
+<td>(98,0), (98,1), (98,2), ..., (98,99)</td>
+</tr>
+<tr>
+<td style="text-align: left;">99</td>
+<td>(99,0), (99,1), (99,2), ..., (99,99)</td>
+</tr>
+</tbody>
+</table>
+<p>实现 <code>is_always_roll</code> ，它接受一个策略函数，然后返回：在每种可能的参数组合中，该策略是否总是能投掷相同数量的骰子，其中每个得分最多为 <code>goal</code> 分。</p>
+<blockquote>
+<p><strong>提示</strong>：某位玩家达到 <code>goal</code> 分后，游戏才会停止（虽然在上面的例子中 <code>goal</code> 被设为 <code>100</code> ，但它可以是任何数字）。为了满足特定的 <code>goal</code> ，在你的解决方案中，你需要保证考虑了 <code>score</code> 和 <code>opponent_score</code> 的所有可能组合。</p>
+</blockquote>
+<p>在编写任何代码之前，解锁测试以验证你对问题的理解：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">07</span><span class="w"> </span>-u
+</code></pre></div>
+<p>解锁完成后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">07</span>
+</code></pre></div>
+<h3 id="82">问题 8（2分）<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
+<p>实现 <code>make_averaged</code> ，这是一个高阶函数，它接受一个函数 <code>original_function</code> 作为参数。</p>
+<p><code>make_averaged</code> 的返回值是一个函数，该函数接受与 <code>original_function</code> 相同的参数。当使用特定参数调用该函数时，它应该在这些相同参数上重复调用 <code>original_function</code> （调用次数为 <code>times_called</code> 次），并返回结果的平均值。请查看 <code>make_averaged</code> 的doctest。务必注意跟踪传入函数的值！</p>
+<blockquote>
+<p><strong>Doctest 分步解析</strong>： 仔细查看 <code>make_averaged</code> 的doctest。本例中 <code>original_function</code> 被赋值为 <code>roll_dice</code>。请注意这行代码 <code>averaged_dice(1, dice)</code>。这暗示着 <code>roll_dice</code> 的输入参数应为 <code>(1, dice)</code> （想想为什么！），观察 <code>averaged_dice</code> 是如何接收与 <code>roll_dice</code> 相同的参数。这些参数并非直接传递给 <code>roll_dice</code>，而是传递给 <code>averaged_dice</code>。（思考这是如何实现的！）请谨记，<code>make_averaged</code> 需要兼容任何与返回函数具有相同参数结构的 <code>original_function</code>。在此示例中，投掷单个骰子被视为一次采样<code>（roll_dice(1, dice)）</code>。由于 <code>times_called</code> 被设置为40，这一采样过程会被重复执行40次。最终 <code>make_averaged</code> 函数将计算这40次 <code>roll_dice</code> 调用的平均结果。</p>
+<p><strong>重要提示</strong>：要实现此功能，你需要使用一项新的Python语法特性。我们需要编写一个能够接收任意数量参数的函数，并精准使用这些参数来调用另一个函数。其工作原理如下。</p>
+<p>定义函数时，无需一一列出形式参数（formal parameters），你可以直接使用*args来接收传入的所有实际参数（arguments）。这样我们就能直接将这些参数原封不动地传递给其他函数进行调用。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span><span class="w"> </span><span class="nf">printed</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span><span class="w"> </span><span class="nf">print_and_return</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="o">...</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Result:&#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="n">result</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">print_and_return</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">printed_pow</span> <span class="o">=</span> <span class="n">printed</span><span class="p">(</span><span class="nb">pow</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">printed_pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>  <span class="c1"># *args代表了参数(2, 8)</span>
+<span class="n">Result</span><span class="p">:</span> <span class="mi">256</span>
+<span class="mi">256</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">printed_abs</span> <span class="o">=</span> <span class="n">printed</span><span class="p">(</span><span class="nb">abs</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">printed_abs</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># *args代表了参数(-10)</span>
+<span class="n">Result</span><span class="p">:</span> <span class="mi">10</span>
+<span class="mi">10</span>
+</code></pre></div>
+<p>在这里，我们可以通过*args语法向 <code>print_and_return</code> 传递任意数量的参数。我们还可以在 <code>print_and_return</code> 函数内部使用*args语法，用相同的参数进行另一个函数调用。</p>
+</blockquote>
+<p>在编写任何代码之前，解锁测试以验证你对问题的理解：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">08</span><span class="w"> </span>-u
+</code></pre></div>
+<p>解锁完成后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">08</span>
+</code></pre></div>
+<h3 id="92">问题 9（2分）<a class="headerlink" href="#92" title="Permanent link">&para;</a></h3>
+<p>实现 <code>max_scoring_num_rolls</code> ，它使用一个具有固定面数的骰子来运行实验，以确定（从 1 到 10）给出每轮最大平均分数的投掷次数。你的实现应该使用 <code>make_averaged</code> 和 <code>roll_dice</code> 。</p>
+<p>如果两个投掷次数的分数相同，则返回较小的数字。例如，如果 3 和 6 都达到了相同的最大平均分数，则返回 3。</p>
+<p>在进行解锁测试之前，你可能觉得阅读这个问题的 doctest 以及 <code>make_averaged</code> （问题 8）会很有用。</p>
+<blockquote>
+<p><strong>重要提示</strong>：为了通过我们所有的测试，请确保你测试骰子投掷是从1到10，而不是从10到1。</p>
+</blockquote>
+<p>在编写任何代码之前，解锁测试以验证你对问题的理解：</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">09</span><span class="w"> </span>-u
+</code></pre></div>
+<p>解锁完成后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">09</span>
+</code></pre></div>
+<h3 id="_14">运行实验<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>提供的 <code>run_experiments</code> 函数会调用 <code>max_scoring_num_rolls(six_sided)</code> 并打印结果。你会发现使用六面骰子时，掷6个骰子可以最大化 <code>roll_dice</code> 的结果。</p>
+<p>要调用此函数并查看结果，请运行 <code>hog.py</code> 并使用 <code>-r</code> 标志：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>hog.py<span class="w"> </span>-r
+</code></pre></div>
+<p>此外，<code>run_experiments</code> 函数会将各种策略与 <code>always_roll(6)</code> 进行比较。你可以随意更改 <code>run_experiments</code> 函数的实现。请注意，在接下来的两个问题中实现 <code>boar_strategy</code> 和 <code>sus_strategy</code> 之前，使用它们运行实验不会得到准确的结果。</p>
+<p>部分实验可能需要长达一分钟才能完成。你随时可以通过在调用<code>make_averaged</code>时减少试验次数来加快实验速度。</p>
+<p>运行实验不会影响你的项目得分。</p>
+<h3 id="10-2">问题 10 (2分)<a class="headerlink" href="#10-2" title="Permanent link">&para;</a></h3>
+<p>有一种策略是在收益最大时，通过掷0次骰子来利用Boar Brawl规则。请实现 <code>boar_strategy</code> 函数：当掷0次骰子**至少**可以取得 <code>threshold</code> 分时才返回0，否则返回给定的掷骰次数。该策略**不应该**考虑Sus Fuss规则。</p>
+<blockquote>
+<p><strong>提示</strong>：你可以使用你在问题 2 中定义的 <code>boar_brawl</code> 函数。</p>
+</blockquote>
+<p>在编写任何代码之前，解锁测试以验证你对问题的理解：</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">10</span><span class="w"> </span>-u
+</code></pre></div>
+<p>解锁完成后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">10</span>
+</code></pre></div>
+<p>你应该能发现目前运行 <code>python3 hog.py -r</code> 时，显示 <code>boar_strategy</code> 的胜率接近 66-67%。</p>
+<h3 id="11-2">问题 11 (2分)<a class="headerlink" href="#11-2" title="Permanent link">&para;</a></h3>
+<p>更好的策略会结合利用Boar Brawl和Sus Fuss规则。例如，如果一个玩家有53分，而他们的对手有60分，掷出0将使他们达到62分，而这是一个猪数，因此他们将在本回合结束时获得67分：收益为67-53=14！</p>
+<p>当掷出0导致得分至少比回合开始时玩家的得分多 <code>threshold</code> 分时， <code>sus_strategy</code> 会返回0。</p>
+<blockquote>
+<p>提示：你可以使用在问题4中定义的 <code>sus_update</code> 函数。</p>
+</blockquote>
+<p>在编写任何代码之前，解锁测试以验证你对问题的理解：</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">11</span><span class="w"> </span>-u
+</code></pre></div>
+<p>解锁完成后，开始实现你的解决方案。你可以通过以下方式检查你的正确性：</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">11</span>
+</code></pre></div>
+<p>你应该能发现目前运行 <code>python3 hog.py -r</code> 时，显示 <code>boar_strategy</code> 的胜率接近 67-69%。</p>
+<p>问题 11（0分）</p>
+<p>请编写 <code>final_strategy</code> 函数，该函数需综合上述思路以及你所能想到的其他方法，以实现针对基准策略的高胜率。</p>
+<ul>
+<li>如果你知道目标分数（默认为100），超过该分数并无额外优势。检查你是否可以通过掷0、1或2个骰子获胜。如果处于领先地位，你可能会决定去采取更为保守的策略。</li>
+<li>与其设定一个阈值，不如在平均收益高于掷出6点的情况下选择得0分。</li>
+</ul>
+<p>你可以通过运行 <code>ok</code> 来检查你的最终策略是否有效。</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span><span class="m">12</span>
+</code></pre></div>
+<h2 id="_15">项目提交（有删减）<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>在所有问题上运行 <code>ok</code> 以确保所有测试都已解锁并通过：</p>
+<div class="highlight"><pre><span></span><code><span class="n">python3</span> <span class="n">ok</span>
+</code></pre></div>
+<p>你也可以检查项目每个部分的得分：</p>
+<div class="highlight"><pre><span></span><code><span class="n">python3</span> <span class="n">ok</span> <span class="o">--</span><span class="n">score</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

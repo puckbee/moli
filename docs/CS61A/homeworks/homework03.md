@@ -1,20 +1,25 @@
 # 必填问题
 
----
+<details>
+  <summary>入门视频</summary>
+  <h2>入门视频</h2>
+  <p>这些视频可能会为解决本次作业中的编程问题提供一些有用的指导。</p>
+  <blockquote>
+    <p>要观看这些视频，您需要登录您的 berkeley.edu 邮箱。</p>
+  </blockquote>
+  <iframe
+    width="560"
+    height="315"
+    src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZfTmV97imfuOKeTdjhZRFYr"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    aria-label="hw3-getstarted"
+    allowfullscreen
+    style="box-sizing: border-box;">
+  </iframe>
+  <p><a href="https://youtu.be/playlist?list=PLx38hZJ5RLZfTmV97imfuOKeTdjhZRFYr">YouTube 链接</a></p>
+</details>
 
-入门视频
-
-##  入门视频
-
-这些视频可能会为解决本次作业中的编程问题提供一些有用的指导。
-
-> 要观看这些视频，您需要登录您的 berkeley.edu 邮箱。
-
-<iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZfTmV97imfuOKeTdjhZRFYr" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label="hw3-getstarted" allowfullscreen="" style="box-sizing: border-box;"></iframe>
-
-[ YouTube 链接](https://youtu.be/playlist?list=PLx38hZJ5RLZfTmV97imfuOKeTdjhZRFYr)
-
----
 
 
 
@@ -311,37 +316,25 @@ python3 ok -q count_dollars_upward
 
 > **提示**：在纸上绘制出不同 `n` 值时的游戏过程，尝试找出适用于任意 `n` 值的圆盘移动规律。在解决方案中，当需要移动少于 `n` 个圆盘时，可直接采用递归思维进行处理。如需更多帮助，请参考以下提示。
 
----
+<details>
+  <summary>提示 1</summary>
+  <p>请查看 <a href="https://commons.wikimedia.org/wiki/File:Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif">Wikimedia 上的汉诺塔动画</a>，由用户 <a href="https://commons.wikimedia.org/wiki/User:Trixx">Trixx</a> 提供。</p>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif"
+    alt="Iterative algorithm solving a 6 disks Tower of Hanoi"
+    style="max-width:100%; height:auto; box-sizing: border-box;"
+  />
+</details>
 
-提示 1
+<details>
+  <summary>提示 2</summary>
+  <p>汉诺塔问题的解决策略是：首先将除最底层圆盘外的所有圆盘移至第二根杆，接着将最底层圆盘移至第三根杆，最后将第二根杆上除底层外的所有圆盘移至第三根杆。</p>
+</details>
 
-请查看 [Wikimedia](https://commons.wikimedia.org/wiki/File:Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif) 上由用户 [Trixx](https://commons.wikimedia.org/wiki/User:Trixx) 找到的汉诺塔动画。
-
-![img](https://upload.wikimedia.org/wikipedia/commons/8/8d/Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif)
-
----
-
-
-
----
-
-提示 2
-
-汉诺塔问题的解决策略是：首先将除最底层圆盘外的所有圆盘移至第二根杆，接着将最底层圆盘移至第三根杆，最后将第二根杆上除底层外的所有圆盘移至第三根杆。
-
----
-
-
-
----
-
-提示 3
-
-一件你不需要担心的事情是收集所有步骤。 `print` 实际上会“收集”终端中的所有结果，只要你确保移动按顺序打印。
-
----
-
-
+<details>
+  <summary>提示 3</summary>
+  <p>你无需担心怎么去收集所有步骤。只要你确保移动步骤是按顺序打印的，<code>print</code> 就能有效地在终端中"收集"所有结果。</p>
+</details>
 
 ```python
 def print_move(origin, destination):
