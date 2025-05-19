@@ -12,7 +12,7 @@ Lab 04的常见问题解答在[这里](https://sp25.datastructur.es/labs/lab04/f
 
     请不要跳过实验中的任何部分，也不要在遇到问题时随意运行网上找到的命令（这可能会导致实验中的问题）。在进行这个实验时，仔细阅读命令和说明，确保自己理解每个步骤！
 
-!!! INFO
+!!! TIP
 
     请确保从你的 `sp25-s***` 仓库中拉取骨架代码，以获取所需的文件。在这个实验中，我们只有一个文件：`magic_word.txt`。
 
@@ -146,7 +146,7 @@ git restore --source=[commitID] [path_to_file]
 !!! DANGER
     这项任务是在你的本地计算机上完成的，但 **不在** 你的 `sp25-s***` 仓库中进行。确保你不要在 `sp25-s***` 仓库中初始化新的仓库！
 
-!!! INFO
+!!! TIP
 
     如果你需要帮助来创建目录、创建文件、切换目录等，可以参考 [如何使用终端](https://sp25.datastructur.es/labs/lab04/terminal)。
 
@@ -192,7 +192,7 @@ git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp25.git
 git remote add [remtoe-name] [remote-url]
 ```
 
-!!! INFO
+!!! TIP
 
     你可以运行 `git remote -v` 来查看当前仓库中已添加的远程仓库。
 
@@ -216,7 +216,7 @@ git switch [branch-name]
 
 在这个例子中，我们将运行 `git switch master`。注意，HEAD 标签现在指向回 `master` 上的最新提交。
 
-!!! INFO
+!!! TIP
 
     我们在这里不会详细讲解如何创建分支，但你可以随时查找如何创建分支的信息。
 
