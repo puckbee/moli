@@ -1,4 +1,4 @@
-# 讨论 0：入门指引[disc00.pdf](https://cs61a.org/disc/disc00/disc00.pdf)
+# 讨论 0：入门指引 [disc00.pdf](https://cs61a.org/disc/disc00/disc00.pdf)
 
 恭喜你，找到了讨论 0 的工作表！
 
