@@ -1,6 +1,10 @@
 - "CS61B":
   - "课程简介": CS61B/CS61B.md
 
+  - "实验":
+    - "实验 1": "CS61B/labs/lab01.md"
+
+
   - "项目":
     - "Project 1A": "CS61B/projects/proj1a.md"
     - "Project 1B": "CS61B/projects/proj1b.md"
