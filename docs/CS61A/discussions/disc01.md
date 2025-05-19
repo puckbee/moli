@@ -1,4 +1,4 @@
-# 讨论 1：控制与环境结构图[disc01.pdf](https://cs61a.org/disc/disc01/disc01.pdf)
+# 讨论 1：控制与环境结构图 [disc01.pdf](https://cs61a.org/disc/disc01/disc01.pdf)
 
 找到你的小组，然后按照伯克利时间开始此工作表。最好每位成员都有办法查看此工作表（手机或平板也可以，但是最好是笔记本电脑）。
 
