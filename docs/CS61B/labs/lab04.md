@@ -295,13 +295,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 ```java
 public Planet(Planet p) {
-<<<<<<< HEAD
-    this.xPos = p.xPos;
-    this.yPos = p.yPos;
-=======
     this.xxPos = p.xxPos;
     this.yyPos = p.yyPos;
->>>>>>> 27ddd0c71515e5cfc7f58a43bcf0e2144c127aed
 ```
 
 `<<<<<<< HEAD` 和 `=======` 之间的是你本地版本的内容，`=======` 和 `27ddd0c71515e5cfc7f58a43bcf0e2144c127aed` 之间的是远程仓库的内容。在这两者之间，选择你想要保留的修改。一旦解决了所有冲突，使用 `git add` 和 `git commit` 提交更改。使用 `git status` 查看仓库状态。
