@@ -1,16 +1,16 @@
-# 实验 2：C 语言调试
+# Lab 2：C 语言调试
 
 截止日期：太平洋时间 2 月 6 日星期四晚上 11:59:59
 
 在本次实验中，请按照列出的顺序完成各个练习。练习之间可能互相依赖。
 
-[实验幻灯片](https://docs.google.com/presentation/d/1rJ81qVQORpyaox744ocJ66UrQPZl6FvrNl1giFQWJHk/edit?usp=sharing)
+[实验幻灯片（Berkeley校内）](https://docs.google.com/presentation/d/1rJ81qVQORpyaox744ocJ66UrQPZl6FvrNl1giFQWJHk/edit?usp=sharing)
 
 ------
 
 ## 环境准备
 
-你必须在 hive 机器上完成本次实验。有关使用 hive 机器的复习，请参见 [实验 0](https://cs61c.org/sp25/labs/lab00/)。
+你必须在 hive 机器上完成本次实验。有关使用 hive 机器的复习，请参见 [Lab 0](https://cs61c.org/sp25/labs/lab00/)。
 
 在你的 `labs` 目录中，使用以下命令拉取本次实验的文件：
 
@@ -683,7 +683,7 @@ Translate to Bork: "hefllof"
 
 1. **尝试解释** 为什么 `bad_vector_new()` 是错误的。我们在此提供了答案，方便你核对理解。
 
-   <details style="box-sizing: border-box; margin-bottom: 1em; border: 1px solid currentcolor; border-radius: 0.25em; padding: 0.25em 0.5em;"><summary style="box-sizing: border-box; display: list-item; cursor: pointer;">bad_vector_new()</summary></details>
+   <details style="box-sizing: border-box; margin-bottom: 1em; border: 1px solid currentcolor; border-radius: 0.25em; padding: 0.25em 0.5em;"><summary style="box-sizing: border-box; display: list-item; cursor: pointer;">bad_vector_new()</summary> 向量是在栈而不是堆上创建的。 一旦该函数运行完毕，栈中存储的所有内存都会被释放，因此当函数返回时，我们就会丢失构建的向量。 </details>
 
 2. **填写** `ex7_vector.c` 中的 `vector_new()` 和 `vector_delete()` 函数，使我们的测试代码 `ex7_test_vector.c` 能在没有任何内存管理错误的情况下运行。
 
@@ -774,7 +774,7 @@ GDB 使用 readline/emacs 风格导航：按 `Ctrl + X` 然后 `O` 可在窗口�
 b 73
 ```
 
-输入 `commands` 并跟上断点号：
+输入 `commands` ，然后输入断点号：
 
 ```txt
 commands 1

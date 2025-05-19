@@ -1,34 +1,41 @@
-# 实验 0: 课程介绍与环境配置
+# Lab 0: 课程介绍与环境配置
 
 你好！欢迎来到 CS61C！我们非常欢迎你的加入 :D
 
 请注意聆听，接下来我们将为你演示本次“航班”的安全须知。
 本次实验可能稍微有点长，但请你认真阅读；它包含了许多重要内容，将为你接下来的学习打下坚实基础！
 
-## 练习1：访问课程服务平台
-> 本小节主要针对UC Berkely在校生，MOLI 学员可以跳过。    
+> Lab 0的大部分内容主要面向UC Berkely在校生，MOLI 学员可以选择性阅读（Git, Vim, SSH相关的部分仍然值得学习）。  
+
+## 练习1：访问课程服务平台  
 
 <details>
 <summary>点击展开 / 折叠</summary>
 
-不幸的是，本课程的注册确实需要进行一些（可能有点无聊的）前期设置。在学期正式开始前，让我们先把这些准备工作搞定。以下是一个清单：  
+<p>不幸的是，本课程的注册确实需要进行一些（可能有点无聊的）前期设置。在学期正式开始前，让我们先把这些准备工作搞定。以下是一个清单：</p>
 
-1. Ed：确认你加入了61C的Ed课程。Ed将是我们主要的交流方式。
-2. Gradescope：确认你在Gradescope上加入了61C课程
-3. PrairieLearn：访问PrairieLearn。单击`Add or remove courses`按钮，然后注册CS61C 2025 春季课程
-4. OH Queue：访问61C的OH(Office Hours) Queue。确认你可以登录。
-5. Youtube：确认你可以观看此私有测试Youtube视频。
-6. Zoom：下载Zoom。单击`Sign In with SSO`，根据提示输入`berkeley`，然后根据提示登录。    
+<ol>
+  <li><strong>Ed</strong>：确认你加入了61C的Ed课程。Ed将是我们主要的交流方式。</li>
+  <li><strong>Gradescope</strong>：确认你在Gradescope上加入了61C课程</li>
+  <li><strong>PrairieLearn</strong>：访问PrairieLearn。单击<code>Add or remove courses</code>按钮，然后注册CS61C 2025 春季课程</li>
+  <li><strong>OH Queue</strong>：访问61C的OH(Office Hours) Queue。确认你可以登录。</li>
+  <li><strong>Youtube</strong>：确认你可以观看此私有测试Youtube视频。</li>
+  <li><strong>Zoom</strong>：下载Zoom。单击<code>Sign In with SSO</code>，根据提示输入<code>berkeley</code>，然后根据提示登录。</li>
+</ol>
 
-### 访问Gradar
-1. 前往Gradar并使用你的伯克利 Google 账户登录。
-2. 在主屏幕上，确认可以看到`CS 61C Spring 2025`课程。
-3. 在右上角单击你的姓名，然后单击`Profile`。
-4. 在`GitHub: Login`下，单击`Link Account`，然后使用要用于61C的GitHub账户登录。
+<h3>访问Gradar</h3>
+<ol>
+  <li>前往Gradar并使用你的伯克利 Google 账户登录。</li>
+  <li>在主屏幕上，确认可以看到<code>CS 61C Spring 2025</code>课程。</li>
+  <li>在右上角单击你的姓名，然后单击<code>Profile</code>。</li>
+  <li>在<code>GitHub: Login</code>下，单击<code>Link Account</code>，然后使用要用于61C的GitHub账户登录。</li>
+</ol>
 
-### 注：校园VPN
-遗憾的是，有些地区和组织会阻止访问我们的教学材料和工具。如果由于互联网访问限制而无法访问任何服务或资源，可以使用伯克利校园 VPN（稍后将在本实验室中安装）。
+<h3>注：校园VPN</h3>
+<p>遗憾的是，有些地区和组织会阻止访问我们的教学材料和工具。如果由于互联网访问限制而无法访问任何服务或资源，可以使用伯克利校园 VPN（稍后将在本实验室中安装）。</p>
+
 </details>
+
 
 ## 练习2：安装软件
 以下小节包含针对特定 OS（操作系统）的说明。请遵循针对你的特定操作系统的说明；针对错误操作系统的命令可能会破坏你的操作系统！
@@ -42,24 +49,24 @@ $ sudo apt install curl git openjdk-17-jre openssh-client python3 python3-pip
 任何终端和任何现代网络浏览器都能满足 61C 的要求。
 
 ### macOS
-1. [ ] 打开 `终端` 应用程序。 
-2. [ ] 安装 Xcode Command Line Tools。    
+1.  打开 `终端` 应用程序。 
+2.  安装 Xcode Command Line Tools。    
     ```zsh
     $ xcode-select --install
     ```
-3. [ ] 检查你的Java版本：
+3.  检查你的Java版本：
     ```zsh  
     $ java -version  
     ```  
-4. [ ] 如果尚未安装 Java 16 或更高版本，请下载并安装 [Adoptium OpenJDK 17](https://adoptium.net/zh-CN/temurin/releases/)。  
+4.  如果尚未安装 Java 16 或更高版本，请下载并安装 [Adoptium OpenJDK 17](https://adoptium.net/zh-CN/temurin/releases/)。  
     * 我们推荐使用 .pkg 安装程序。  
     * 如果你使用的是 Apple Silicon CPU（M系列），则需要安装 aarch64 版本。否则，你可能使用的是英特尔/AMD CPU，需要安装 x64 版本。  
-5. [ ] 检查你的 Python 版本：
+5.  检查你的 Python 版本：
     ```zsh
     $ python3 --version
     ```  
-6. [ ] 如果尚未安装 Python 3.6 或更高版本，请下载并安装 Python 3。   
-7. [ ] 检查你的Python安装是否具有有效的SSL证书：
+6.  如果尚未安装 Python 3.6 或更高版本，请下载并安装 Python 3。   
+7.  检查你的Python安装是否具有有效的SSL证书：
     ```zsh
     $ python3 -c 'import urllib.request; urllib.request.urlopen("https://inst.eecs.berkeley.edu")'
     ```
@@ -73,22 +80,22 @@ $ sudo apt install curl git openjdk-17-jre openssh-client python3 python3-pip
         5. 再次运行 `python3` SSL检查命令
 
 ### Windows
-1. [ ] 下载并安装 Git Bash。
+1.  下载并安装 Git Bash。
     * 如果安装程序提示，请选择 `"Use Windows' default console window"` 选项，而不是 `"Use MinTTY"` 选项。
-2. [ ] 打开 Git Bash 终端(开始菜单 => Git Bash)。
+2.  打开 Git Bash 终端(开始菜单 => Git Bash)。
     * 对于61C，请使用 Git Bash 而不是 `cmd.exe` 或 Powershell
-3. [ ] 检查你的Java版本：
+3.  检查你的Java版本：
     ```bash
     $ java -version
     ```
-4. [ ] 如果尚未安装Java 16或更高版本，请下载并安装 [Adoptium OpenJDK 17 或 21](https://adoptium.net/zh-CN/temurin/releases/)
+4.  如果尚未安装Java 16或更高版本，请下载并安装 [Adoptium OpenJDK 17 或 21](https://adoptium.net/zh-CN/temurin/releases/)
     * 我们推荐使用 `.msi` 安装程序。
-5. [ ] 检查你的Python版本：
+5.  检查你的Python版本：
     ```bash
     $ python3 --version
     ```
     如果它启动了 Microsoft 商店，则Python可能未安装。
-6. [ ] 如果尚未安装 Python 3.6 或更高版本，请[下载并安装 Python3](https://www.python.org/downloads/)。    
+6.  如果尚未安装 Python 3.6 或更高版本，请[下载并安装 Python3](https://www.python.org/downloads/)。    
 
 ### 其他操作系统
 如果你使用的是其他 Linux 发行版（Alpine/Arch/Asahi/Debian/Fedora/NixOS/等），我们的大多数程序在有依赖关系的情况下都可以正常运行，但我们没有资源在 Ubuntu 之外的发行版上进行测试。如果你遇到问题，可以尝试联系 Ed 或访问 OH，但请注意我们的员工在这方面经验有限。
@@ -104,154 +111,142 @@ $ sudo apt install curl git openjdk-17-jre openssh-client python3 python3-pip
 <details>
 <summary>点击展开 / 折叠</summary>
 
-你将使用 Hive machine 作为课程作业的教学服务器。你可以使用 SSH（安全登录协议）连接到这些机器。让我们来设置一下！   
+<p>你将使用 Hive machine 作为课程作业的教学服务器。你可以使用 SSH（安全登录协议）连接到这些机器。让我们来设置一下！</p>
 
-> Hive machine 是Berkeley EECS提供的一个专用的教学与研究集群。  
+<blockquote>
+Hive machine 是Berkeley EECS提供的一个专用的教学与研究集群。
+</blockquote>
 
-你可以使用 Hivemind 来检查每台 Hive machine 是否繁忙或离线。请注意，Hivemind 会显示不以 hive 开头的机器；这些机器无法使用 61C。
+<p>你可以使用 Hivemind 来检查每台 Hive machine 是否繁忙或离线。请注意，Hivemind 会显示不以 hive 开头的机器；这些机器无法使用 61C。</p>
 
-### 校园VPN设置
-按照[此处](https://security.berkeley.edu/services/bsecure/bsecure-remote-access-vpn)的说明安装和设置 bSecure Remote Access VPN。确保安装过程中没有错误。从现在起，我们将把此 VPN 称为 "校园 VPN"。
+<h3>校园VPN设置</h3>
+<p>按照<a href="https://security.berkeley.edu/services/bsecure/bsecure-remote-access-vpn">此处</a>的说明安装和设置 bSecure Remote Access VPN。确保安装过程中没有错误。从现在起，我们将把此 VPN 称为 "校园 VPN"。</p>
+<p>在本实验的剩余时间内，请保持与校园 VPN 的连接。</p>
 
-在本实验的剩余时间内，请保持与校园 VPN 的连接。    
+<p>这是我们使用此系统的首个学期，所以如果你遇到任何问题，请在 Lab 0 Ed 帖子中跟进或在 Ed 上提出私人问题。</p>
 
-这是我们使用此系统的首个学期，所以如果你遇到任何问题，请在 Lab 0 Ed 帖子中跟进或在 Ed 上提出私人问题。
+<h3>教学账户设置</h3>
+<ol>
+<li>
+<p>在 WebAccount 上注册 <code>cs61c</code> 教学账户。</p>
+<ul>
+<li>在接下来的练习中，你需要输入密码。</li>
+<li>注册/候补注册后可能需要一两天时间才能创建账户。</li>
+<li>如果你是待录取的同期入学学生，或者填写了 "计划稍后入学 "表格，我们将为你申请账户，你应能在提交申请或表格后 5 天内创建账户。</li>
+</ul>
+</li>
+<li>
+<p>尝试通过 SSH 连接到 Hive machine（确保已连接到校园 VPN）：</p>
+<pre><code>$ ssh cs61c-???@hive2.cs.berkeley.edu
+</code></pre>
+<p>请记住将 cs61c-??? 替换为你的教学账户用户名。输入密码时，不会出现任何提示；这对许多终端程序来说都是正常的。</p>
+<ul>
+<li>如果出现 <code>Permission denied, please try again</code> ，请检查输入的用户名/密码是否正确。如果密码是复制粘贴的，请尝试手动输入。</li>
+<li>如果出现 <code>Connection timeout</code> 或其他连接错误，请确保你不是在 CalVisitor 或其他阻止 SSH 的网络上，并确保你已连接到校园 VPN。</li>
+<li>如果你收到 <code>Connection refused</code> 或 <code>Connection timeout</code> 或其他连接错误，机器可能暂时宕机或拒绝连接。请尝试使用其他 hive 机器（例如，将 hive2 替换为 hive3 ）。</li>
+</ul>
+</li>
+<li>
+<p>连接成功后，系统可能会提示你输入一些信息，包括姓名和电子邮件，如果没有，请跳至下一步。</p>
+<ul>
+<li>请输入你的Berkeley电子邮件。</li>
+<li>请仔细检查你的电子邮件、SID 和姓名的拼写。</li>
+</ul>
+</li>
+<li>
+<p>输入你的信息后，为了确保你的信息正确无误，运行：</p>
+<pre><code>$ check-register
+</code></pre>
+<p>如果发生错误，运行：</p>
+<pre><code>$ re-register
+</code></pre>
+</li>
+<li>
+<p>连接成功后，请检查是否出现类似的红黄色提示：</p>
+<pre>
+(<font color="#ae543d"> 00:00:00 Thu Nov 30 2434 </font> <font color="#b5b744">cs61c-lol@hive42 Linux x86_64 </font>)
+</pre>
+<p>如果提示是白色，请运行：</p>
+<pre><code>$ /home/ff/cs61c/bin/fix-dotfiles && exit
+</code></pre>
+<p>然后再从第2步开始。</p>
+</li>
+<li>
+<p>运行 <code>exit</code> 退出 SSH 会话。</p>
+</li>
+</ol>
 
-### 教学账户设置
-1. 在 WebAccount 上注册 `cs61c` 教学账户。
-    * 在接下来的练习中，你需要输入密码。
+<h3>使用快捷方式连接 Hive machines</h3>
+<p>我们可以配置 SSH 主机别名，这样就可以使用 <code>ssh hive#</code> 代替 <code>ssh cs61c-???@hive#.cs.berkeley.edu</code></p>
+<p>本节还将介绍基于终端的文本编辑器 Vim。</p>
 
-    * 注册/候补注册后可能需要一两天时间才能创建账户。
+<ol>
+<li>打开一个新的终端窗口。</li>
+<li>创建 <code>~/.ssh</code> 文件夹：
+<pre><code>$ mkdir -p ~/.ssh
+</code></pre>
+</li>
+<li>在 Vim 中打开 <code>~/.ssh/config</code>：
+<pre><code>$ vim ~/.ssh/config
+</code></pre>
+</li>
+<li>按下 <kbd>i</kbd> 进入插入模式，左下方应出现 <code>-- INSERT --</code>。</li>
+<li>如果你看到下面两行在一起，它们来自61B。如果不再需要它们，请使用箭头键和退格键删除他们。
+<pre><code>Host *.cs.berkeley.edu *.eecs.berkeley.edu
+IdentityFile ~/.ssh/cs61b_id_rsa
+</code></pre>
+<p>如果你仍然需要使用 61B 设置，请联系 61C 课程的工作人员。</p>
+</li>
+<li>将以下文本复制到文件中：
+<pre><code>
+# Begin CS61C hive machine config v2.0.3
+Host s330-? s330-?? hive? hive??
+    HostName %h.cs.berkeley.edu
+Match Host *.cs.berkeley.edu,*.eecs.berkeley.edu
+    Port 22
+    User cs61c-???
+    ServerAliveInterval 60
+# End CS61C hive machine config v2.0.3
+</code></pre>
+<p>记住将 <code>cs61c-???</code> 替换为你的教学账户用户名。 <code>Host s330-? s330-?? hive? hive??</code> 中的问号保持不变。</p>
+</li>
+<li>按下 <kbd>Esc</kbd> 退出插入模式，<code>-- INSERT --</code> 应消失。</li>
+<li>输入 <code>:w</code> ,然后按下 <kbd>Enter</kbd> 保存文件。</li>
+<li>退出 Vim，键入 <code>:q</code> ，然后按下 <kbd>Enter</kbd>。</li>
+<li>现在就尝试通过 SSH 连接到 Hive machine。
+<pre><code>$ ssh hive7
+</code></pre>
+</li>
+<li>运行 <code>Exit</code> 退出 SSH 会话。</li>
+</ol>
+<p>以后（完成本练习后），你可以运行 <code>ssh hive#</code> 连接到 Hive machine。 从 hive1 到 hive30 共有30台 Hive machine。使用哪一台并不重要，因为所有Hive machine都共享相同的文件。</p>
 
-    * 如果你是待录取的同期入学学生，或者填写了 "计划稍后入学 "表格，我们将为你申请账户，你应能在提交申请或表格后 5 天内创建账户。
+<h3>在不输入密码的情况下连接Hive machine</h3>
 
-2. 尝试通过 SSH 连接到 Hive machine（确保已连接到校园 VPN）：
-    ```bash
-    $ ssh cs61c-???@hive2.cs.berkeley.edu
-    ```
-    请记住将 cs61c-??? 替换为你的教学账户用户名。输入密码时，不会出现任何提示；这对许多终端程序来说都是正常的。
+<ol>
+<li>打开一个新的终端窗口。</li>
+<li>运行以下命令，它将打印出你拥有的 SSH 密钥，如果没有，会生成一个新的。
+<pre><code>
+$ curl -sS https://raw.githubusercontent.com/61c-teach/sp25-lab-starter/main/lab00/get-ssh-key.sh | bash
+</code></pre>
+<p>记下 SSH 密钥的位置，稍后将在实验室中使用。</p>
+</li>
+<li>将你的公钥复制到你的教学账户：
+<pre><code>
+$ ssh-copy-id hive3
+</code></pre>
+</li>
+<li>现在就尝试通过 SSH 连接到Hive machine：
+<pre><code>
+$ ssh hive5
+</code></pre>
+</li>
+<li>运行 <code>exit</code> 退出 SSH 会话。</li>
+</ol>
 
-    * 如果出现 `Permission denied, please try again` ，请检查输入的用户名/密码是否正确。如果密码是复制粘贴的，请尝试手动输入。
+<p>如果你读得累了，不妨休息一会儿；有人想玩<a href="https://www.xarg.org/project/html5-snake/">贪吃蛇</a>吗？</p>
 
-    * 如果出现 `Connection timeout` 或其他连接错误，请确保你不是在 CalVisitor 或其他阻止 SSH 的网络上，并确保你已连接到校园 VPN。
-
-    * 如果你收到 `Connection refused` 或 `Connection timeout` 或其他连接错误，机器可能暂时宕机或拒绝连接。请尝试使用其他 hive 机器（例如，将 hive2 替换为 hive3 ）。
-
-3. 连接成功后，系统可能会提示你输入一些信息，包括姓名和电子邮件，如果没有，请跳至下一步。
-    
-    * 请输入你的Berkeley电子邮件。
-
-    * 请仔细检查你的电子邮件、SID 和姓名的拼写。
-
-4. 输入你的信息后，为了确保你的信息正确无误，运行：
-    ```bash
-    $ check-register
-    ```
-
-    如果发生错误，运行：
-    ```bash
-    $ re-register
-    ```
-
-5. 连接成功后，请检查是否出现类似的红黄色提示：
-    
-    (<font color=#ae543d> 00:00:00 Thu Nov 30 2434 </font> <font color=#b5b744>cs61c-lol@hive42 Linux x86_64 </font>)
-    
-    如果提示是白色，请运行：
-
-    ```bash
-    $ /home/ff/cs61c/bin/fix-dotfiles && exit
-    ```
-
-    然后再从第2步开始。
-
-6. 运行 `exit` 退出 SSH 会话。
-
-### 使用快捷方式连接 Hive machines
-我们可以配置 SSH 主机别名，这样就可以使用 `ssh hive#` 代替 `ssh cs61c-???@hive#.cs.berkeley.edu`
-
-本节还将介绍基于终端的文本编辑器 Vim。
-
-1. 打开一个新的终端窗口。
-
-2. 创建 `~/.ssh` 文件夹：
-    ```bash
-    $ mkdir -p ~/.ssh
-    ```
-
-3. 在 Vim 中打开 `~/.ssh/config`：
-    ```bash
-    $ vim ~/.ssh/config
-    ```
-
-4. 按下 <kbd>i</kbd> 进入插入模式，左下方应出现 `-- INSERT --`。
-
-5. 如果你看到下面两行在一起，它们来自61B。如果不再需要它们，请使用箭头键和退格键删除他们。
-
-    ```
-    Host *.cs.berkeley.edu *.eecs.berkeley.edu
-    IdentityFile ~/.ssh/cs61b_id_rsa
-    ```
-    如果你仍然需要使用 61B 设置，请联系 61C 课程的工作人员。
-
-6. 将以下文本复制到文件中：
-    ```
-    # Begin CS61C hive machine config v2.0.3
-    Host s330-? s330-?? hive? hive??
-        HostName %h.cs.berkeley.edu
-    Match Host *.cs.berkeley.edu,*.eecs.berkeley.edu
-        Port 22
-        User cs61c-???
-        ServerAliveInterval 60
-    # End CS61C hive machine config v2.0.3
-    ```
-    
-    记住将 ``cs61c-???`` 替换为你的教学账户用户名。 ``Host s330-? s330-?? hive? hive??`` 中的问号保持不变。
-
-7. 按下 <kbd>Esc</kbd> 退出插入模式，`-- INSERT --` 应消失。
-
-8. 输入 `:w` ,然后按下 <kbd>Enter</kbd> 保存文件。
-
-9. 退出 Vim，键入 `:q` ，然后按下 <kbd>Enter</kbd>。
-
-10. 现在就尝试通过 SSH 连接到 Hive machine。
-    ```
-    $ ssh hive7
-    ```
-
-11. 运行 `Exit` 退出 SSH 会话。
-
-以后（完成本练习后），你可以运行 `ssh hive#` 连接到 Hive machine。 从 hive1 到 hive30 共有30台 Hive machine。使用哪一台并不重要，因为所有Hive machine都共享相同的文件。
-
-
-### 在不输入密码的情况下连接Hive machine
-
-1. 打开一个新的终端窗口。
-
-2. 运行以下命令，它将打印出你拥有的 SSH 密钥，如果没有，会生成一个新的。
-
-    ```bash
-    $ curl -sS https://raw.githubusercontent.com/61c-teach/sp25-lab-starter/main/lab00/get-ssh-key.sh | bash
-    ```
-    记下 SSH 密钥的位置，稍后将在实验室中使用。
-
-3.  将你的公钥复制到你的教学账户：
-
-    ```bash
-    $ ssh-copy-id hive3
-    ```
-
-4. 现在就尝试通过 SSH 连接到Hive machine：
-
-    ```
-    $ ssh hive5
-    ```
-
-5. 运行 `exit` 退出 SSH 会话。
-
-如果你读得累了，不妨休息一会儿；有人想玩[贪吃蛇](https://www.xarg.org/project/html5-snake/)吗？
-
-</details>  
+</details>
 
 ## 练习4：GitHub 设置
 
@@ -295,47 +290,40 @@ $ sudo apt install curl git openjdk-17-jre openssh-client python3 python3-pip
 <details>
 <summary>点击展开 / 折叠</summary>
 
-让我们配置你的教学账户，使用 SSH 密钥验证 GitHub。
+让我们配置你的教学账户，使用 SSH 密钥验证 GitHub。<br><br>
 
+1. 打开一个新的终端窗口。<br><br>
 
-1. 打开一个新的终端窗口。
+2. 通过 SSH 连接到 Hive machine:<br>
+<pre><code>$ ssh hive11
+</code></pre>
+你应该会再一次看到红黄相间的提示。<br><br>
 
-2. 通过 SSH 连接到 Hive machine:
-    ```
-    $ ssh hive11
-    ```
-    你应该会再一次看到红黄相间的提示。
+3. 运行以下命令，它将打印出你拥有的任何 SSH 密钥，如果没有，则生成一个新的：<br>
+<pre><code>$ curl -sS https://raw.githubusercontent.com/61c-teach/sp25-lab-starter/main/lab00/get-ssh-key.sh | bash
+</code></pre>
+记下 SSH 密钥的位置，稍后将在实验室中使用。<br><br>
 
-3. 运行以下命令，它将打印出你拥有的任何 SSH 密钥，如果没有，则生成一个新的：
-    ```
-    $ curl -sS https://raw.githubusercontent.com/61c-teach/sp25-lab-starter/main/lab00/get-ssh-key.sh | bash
-    ```
-    记下 SSH 密钥的位置，稍后将在实验室中使用。
+4. 打印公钥（确保将 <code>path_to_ssh_key</code> 替换为上面打印出的位置，并添加 .pub 后缀）：<br>
+<pre><code>$ cat path_to_ssh_key.pub
+</code></pre>
+打印出的内容格式应该如下所示(长度可能不同)：<br>
+<pre><code>ssh-ed25519 AAAAC3NzaC1lZDI1N6jpH3Bnbebi7Xz7wMr20LxZCKi3U8UQTE5AAAAIBTc2HwlbOi8T your_email@example.com
+</code></pre>
+<br>
 
-4. 打印公钥（确保将 `path_to_ssh_key` 替换为上面打印出的位置，并添加 .pub 后缀）：
-    ```
-    $ cat path_to_ssh_key.pub
-    ```
+5. 在浏览器中，转到 GitHub =&gt; 设置 =&gt; SSH 和 GPG 密钥 =&gt; 新 SSH 密钥，然后添加公钥。<br>
+* 将 Title 设置为可以帮助你记住此密钥在你的教学账户中的名称（如 CS61C Hive）。<br><br>
 
-    打印出的内容格式应该如下所示(长度可能不同)：
-    ```
-    ssh-ed25519 AAAAC3NzaC1lZDI1N6jpH3Bnbebi7Xz7wMr20LxZCKi3U8UQTE5AAAAIBTc2HwlbOi8T your_email@example.com
-    ```
+6. 尝试用 SSH 连接到 GitHub：<br>
+<pre><code>$ ssh -T git@github.com
+</code></pre>
+如果一切顺利，你应该会看到类似的内容：<br>
+<pre><code>Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+<br>
 
-5. 在浏览器中，转到 GitHub => 设置 => SSH 和 GPG 密钥 => 新 SSH 密钥，然后添加公钥。
-    * 将 Title 设置为可以帮助你记住此密钥在你的教学账户中的名称（如 CS61C Hive）。
-
-6. 尝试用 SSH 连接到 GitHub：
-    ```
-    $ ssh -T git@github.com
-    ```
-
-    如果一切顺利，你应该会看到类似的内容：
-    ```
-    Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
-    ```
-
-7. 运行 `exit` 退出 SSH 会话。
+7. 运行 <code>exit</code> 退出 SSH 会话。<br>
 
 </details>
 
@@ -556,13 +544,13 @@ $ bash init.sh
     hint: See the 'Note about fast-forwards' in 'git push --help' for details.
     ```
 
-    如果您没有遇到错误，请尝试从步骤 1 重新开始，或者如果错误持续发生，请联系课程工作人员。
+    如果你没有遇到错误，请尝试从步骤 1 重新开始，或者如果错误持续发生，请联系课程工作人员。
 
     整个学期，你可能会遇到很多奇怪的错误。把它们分解成小块，看看能不能找出每个块的含义，这会对你很有帮助。举个例子，我们来分解一下：
 
     * `"failed to push some refs to REPO_URL"` ：推送失败
 
-    * `"the tip of your current branch is behind its remote counterpart"` ：远程版本库（GitHub 上）有您本地版本库没有的 commit 内容
+    * `"the tip of your current branch is behind its remote counterpart"` ：远程版本库（GitHub 上）有你本地版本库没有的 commit 内容
 
     * `"Integrate the remote changes (e.g. 'git pull ...') before pushing again"` ：我们需要告诉 Git 如何整合神秘的 commit 们
 
@@ -574,7 +562,7 @@ $ bash init.sh
 
     * 如果显示 `"fatal: Need to specify how to reconcile diverent branches"` ，请尝试 `git pull --ff`
 
-    如果一切顺利，您应该会遇到另一个错误：
+    如果一切顺利，你应该会遇到另一个错误：
 
     ```
     Auto-merging lab00/code.py
@@ -590,7 +578,7 @@ $ bash init.sh
 
     * `"fix conflicts and then commit the result"` : 看来我们需要手动解决合并冲突！
 
-    您可以检查 `git status` ：
+    你可以检查 `git status` ：
     ```
     On branch main
     Your branch and 'origin/main' have diverged,
@@ -673,7 +661,7 @@ $ bash init.sh
 
 ## 附录
 
-这些工具可能会对您有所帮助，但绝不是本课程的必修内容：\)
+这些工具可能会对你有所帮助，但绝不是本课程的必修内容：\)
 
 ### Vim 基础
 
@@ -740,7 +728,7 @@ $ python3 -c 'print("Hello world")'
 
 一般建议用单引号将本应是单一参数的字符串包起来（例如 "带 *&)_@#(&$! 符号的较长字符串"），否则可能会出现意想不到的行为--如果不加引号/反引号，这些符号中的很多实际上都会发挥作用！
 
-查看 [61B 的常用 CLI 命令列表](https://inst.eecs.berkeley.edu/%7Ecs61b/fa21/materials/lab/lab1/index.html#essential-terminal-commands)可能会对您有所帮助。
+查看 [61B 的常用 CLI 命令列表](https://inst.eecs.berkeley.edu/%7Ecs61b/fa21/materials/lab/lab1/index.html#essential-terminal-commands)可能会对你有所帮助。
 
 ### CLI 键盘快捷键
 
@@ -773,7 +761,7 @@ $ echo "It's morbin time!"
 
 ### 文件操作
 
-`touch` 将创建一个空白文件，文件名由您提供。
+`touch` 将创建一个空白文件，文件名由你提供。
 
 ```bash
 $ touch example.txt
@@ -781,14 +769,14 @@ $ touch example.txt
 
 这将创建一个名为 `example.txt` 的文件，文件中没有任何内容。
 
-如果您想一次性创建文件并添加文本，可以使用：
+如果你想一次性创建文件并添加文本，可以使用：
 ```bash
 $ echo 'Your contents here' > example.txt
 ```
 
 这将在当前目录下创建一个文件，文件名为 `example.txt`。 如果该文件已经存在，则会被覆盖。 文件将包含 `Your contents here` ，不含引号。 `>` 符号包含一个参数，用于重定向打印到 stdout 的数据的发送位置。 在这里，我们将 `echo` 的输出重定向到名为 `example.txt` 的文件。
 
-您可以使用 `cat` 或 `less` 命令查看文件内容。
+你可以使用 `cat` 或 `less` 命令查看文件内容。
 
 ```bash
 $ cat example.txt
@@ -800,7 +788,7 @@ $ less example.txt
 ### scp - "安全复制"
 `scp` 程序用于使用 SSH 协议在计算机之间复制文件。
 
-有时，您可能希望将 hive 中的单个文件或整个文件夹导入本地系统，反之亦然。您可以使用 `scp` ：
+有时，你可能希望将 hive 中的单个文件或整个文件夹导入本地系统，反之亦然。你可以使用 `scp` ：
 
 ```bash
 $ scp <source> <destination>
@@ -827,4 +815,4 @@ scp -r hive1:~/some-folder ~/Downloads/
 
 注意斜线：写入 `some-folder` 将复制文件夹本身和里面的文件，而 `some-folder/` 只复制里面的文件。
 
->警告：在蜂巢计算机上运行 `scp` （例如，当您在 SSH 会话中）通常是不可取的行为。在 hive 机器上运行 `scp example.txt hive4:~/example.txt` 会将 `example.txt` 复制到......相同的位置。你可能希望在本地终端会话中运行它！
+>警告：在 hive 计算机上运行 `scp` （例如，当你在 SSH 会话中）通常是不可取的行为。在 hive 机器上运行 `scp example.txt hive4:~/example.txt` 会将 `example.txt` 复制到......相同的位置。你可能希望在本地终端会话中运行它！
