@@ -1,2 +1,5 @@
-- 'CS61B': 
-  - '课程简介': CS61B/CS61B.md
+- "CS61B":
+  - "课程简介": CS61B/CS61B.md
+
+  - "项目":
+    - "Project 1A": "CS61B/projects/proj1a.md"
