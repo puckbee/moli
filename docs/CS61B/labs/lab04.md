@@ -24,9 +24,9 @@ Lab 04的常见问题解答在[这里](https://sp25.datastructur.es/labs/lab04/f
 
 Git 是一个版本控制系统，它是免费的开源软件（这意味着其源代码对用户和开发者开放）。作为一个版本控制系统，我们使用 Git 来帮助管理代码的不同版本，并跟踪源代码中所做的更改。如果有多个开发者在一个程序上工作， Git 就显得尤为重要。如果没有版本控制系统，开发者之间的沟通会变得困难，源代码的更改也无法为其他开发者所知。
 
- Git 的核心数据模型或表示方式主要基于链表结构。稍后我们会深入讨论这个话题，但每当我们想保存代码库的快照时，我们就会提交（就像我们到目前为止在提交作业时所做的那样）。这些提交在某种程度上是相互连接的。以下是这种结构的可视化示意图： 
+ Git 的核心数据模型或表示方式主要基于链表结构。稍后我们会深入讨论这个话题，但每当我们想保存代码库的快照时，我们就会提交（就像我们到目前为止在提交作业时所做的那样）。这些提交在某种程度上是相互连接的。以下是这种结构的可视化示意图：
 
-![image](images/lab04_1.png)
+![image](images/lab04/image1.png)
 
 这些提交链表展示了您所做的更改历史。最最近的提交/快照是上方的绿色圆圈。
 
@@ -164,18 +164,19 @@ git restore --source=[commitID] [path_to_file]
 9. **只使用 Git** 恢复 `61b.txt` 文件至最新提交的版本。
 10. **只使用 Git** 恢复 `61b.txt` 文件至第一次提交的版本。
 
-![image](images/lab04_2.png)
+![image](images/lab04/image2.png)
 
 在完成上述操作后，确保保存该仓库和目录，直到你完成 [Beacon](https://sp25.beacon.datastructur.es/) 上的表格。
 
 !!! TASK
+
     完成以上步骤，并填写第一个 Google 表格。填写完表格后，还有第二个 Google 表格需要填写，才能获得“魔法词”。
 
 ## Git 命令继续学习
 
 让我们继续深入了解 Git 的一些概念，包括远程仓库和分支。
 
-### `remote add`  
+### `remote add`
 
 有时候，我们希望能够从另一个仓库拉取更新，特别是从 Github 上托管的仓库。为此，我们可以将该仓库添加为一个“远程仓库”。例如，在 Lab01 中，我们使用以下命令将骨架仓库添加到个人仓库：
 
@@ -192,9 +193,10 @@ git remote add [remtoe-name] [remote-url]
 ```
 
 !!! INFO
+
     你可以运行 `git remote -v` 来查看当前仓库中已添加的远程仓库。
 
-### `switch`  
+### `switch`
 
 我们还没有详细讨论 Git 的另一个功能——分支（branch）！虽然在这门课程中你不会频繁使用分支（除了这次实验），但它是一个很有用的概念。
 
@@ -202,7 +204,7 @@ git remote add [remtoe-name] [remote-url]
 
 让我们考虑一个可视化的解释。
 
-![image](images/lab04_3.png)
+![image](images/lab04/image3.png)
 
 在上面的图像中，有两个分支，`master` 和 `cool_branch`。注意，我们已经进行了多个提交。在某个时刻，我们从 `master` 分支上“分叉”出来（在提交信息为“diverge commit”的地方），并从该特定分支上开始了分叉。如果我们想停止当前分支（`cool_branch`）的工作，可以切换回 `master` 分支。我们可以通过运行以下命令来完成这个操作：
 
@@ -210,11 +212,12 @@ git remote add [remtoe-name] [remote-url]
 git switch [branch-name]
 ```
 
-![image](images/lab04_4.png)
+![image](images/lab04/image4.png)
 
 在这个例子中，我们将运行 `git switch master`。注意，HEAD 标签现在指向回 `master` 上的最新提交。
 
 !!! INFO
+
     我们在这里不会详细讲解如何创建分支，但你可以随时查找如何创建分支的信息。
 
 如果你在尝试切换分支时收到 `.idea` 文件夹未被跟踪的错误，你可以使用 `git add` 和 `git commit` 命令将 `.idea` 文件夹包括在内并创建一个新的提交。你不需要推送这些更改。
@@ -241,11 +244,11 @@ git push [remote-name] [branch]
 
 下面是一个可视化的示例，展示了我们尚未推送的几个本地提交。左边是本地仓库，右边是远程仓库。
 
-![image](images/lab04_5.png)
+![image](images/lab04/image5.png)
 
 在推送之后，我们的提交将保存在我们的远程仓库中：
 
-![image](images/lab04_6.png)
+![image](images/lab04/image6.png)
 
 ### `pull`
 
@@ -257,17 +260,18 @@ git pull [remote-name] [branch]
 
 我们之前在从骨架仓库拉取时已经做过类似的操作：`git pull skeleton main`。下面是一个可视化示例，展示了我们尚未从远程仓库拉取的几个提交：
 
-![image](images/lab04_7.png)
+![image](images/lab04/image7.png)
 
 在拉取之后，我们远程提交现在已经在我们的本地仓库了：
 
-![image](images/lab04_8.png)
+![image](images/lab04/image8.png)
 
 ## 常见的 Git 问题
 
 在本节中，我们将介绍一些你可能遇到的常见 Git 问题。这并不是所有可能遇到的问题的全面列表。你可以在我们的[使用 Git 指南](https://sp25.datastructur.es/resources/guides/git/) 以及 [Git WTFs](https://sp25.datastructur.es/troubleshooting/git-wtfs/) 里阅读更多关于 Git 问题的内容。
 
 !!! DANGER
+
     虽然这篇文章旨在帮助你诊断 Git 问题并介绍一些常见的解决方法，但如果你不确定，记得寻求帮助！
 
 ### 致命错误: 拒绝合并无关的历史
@@ -319,6 +323,7 @@ public Planet(Planet p) {
 在这个练习中，我们将让你克隆一个 Git 仓库，并使用你学到的一些命令来找出隐藏在仓库中的密码。复制并粘贴以下命令以克隆你的仓库，**确保它位于你在 1.1 部分创建的 `sp25-s***` 仓库和 `lab04-checkoff` 仓库之外**。仓库的具体位置无关紧要，只要不在另一个仓库内或者之前提到的仓库中即可。
 
 !!! DANGER
+
     在运行命令之前，**再次确保你不在个人仓库或 `lab04-checkoff` 仓库内。** 如果你在这些仓库中，系统会阻止你将仓库克隆到 `sp25-s***` 和 `lab04-checkoff` 仓库内。
 
 ```bash
@@ -340,6 +345,7 @@ curl -sS https://sp25.datastructur.es/labs/lab04/lab04.sh | bash
 完成任务 1 后，让我们尝试找出第二个密码。你克隆的仓库有多个分支，但 `erik` 分支可能包含我们想要的内容。试着切换到该分支，看看密码是否在其中。
 
 !!! TASK
+
     找到任务 2 的密码后，你可以通过检查当前提交的提交消息来验证密码。当你找到密码后，将其存储在 `magic_word.txt` 文件的第三行。找到密码后，切换回 `main` 分支。
 
 ### 第 2.3 部分
@@ -359,9 +365,11 @@ git pull [remote-name] main --allow-unrelated-histories --no-rebase
 我们添加 `--allow-unrelated-histories` 和 `--no-rebase` 标志是因为我们的两个仓库没有相关历史记录，因此我们将尝试合并这两个分支（本地分支和远程分支）。
 
 !!! DANGER
+
     如果不确定是否需要添加这些标志，请不要使用它。如果错误地使用了这些标志，可能会让你进入交互式重置并丢失一些工作。在大多数情况下，从个人仓库拉取时，不应该添加这些标志，直接运行 `git pull skeleton main` 就可以了。
 
 !!! TASK
+
     一旦拉取成功，你将看到 Git 尝试合并分支。去合并它，最后的密码应该会出现在 IntelliJ 中。你可以将密码存储在 `magic_word.txt` 文件的 **第四行**。
 
 ## 提交
