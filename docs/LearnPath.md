@@ -110,7 +110,7 @@
         <!-- Level 3 - Advanced Courses -->
         <div class="level level-3">
             <div class="level-title">高级课程</div>
-            <div class="description">TODO</div>
+            <div class="description"> TODO </div>
             <div class="courses-container">
                 <!-- Example courses can be added here -->
             </div>
