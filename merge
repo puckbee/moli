@@ -1,5 +1,5 @@
 #!/bin/env lua
--- vim:foldmethod=marker
+-- vim:fdm=marker:fdl=0
 
 --------------- 配置文件路径 ---------------
 local files = {
