@@ -1,6 +1,10 @@
-# 必答题
+# 作业 1：函数、控制 [hw01.zip](https://cs61a.org/hw/hw01/hw01.zip)
 
-## Q1: A加B的绝对值
+下载 [hw01.zip](https://cs61a.org/hw/hw01/hw01.zip)
+
+## 必答题
+
+### Q1: A加B的绝对值
 
 Python的`operator`模块包含两个参数的函数，例如`add`和`sub`，用于Python的内置算术运算符。例如，`add(2,3)`的计算结果是5，就像表达式`2+3`一样。
 
@@ -40,7 +44,7 @@ python3 ok -q a_plus_abs_b_syntax_check
 
 
 
-## Q2: 三者中的两者
+### Q2: 三者中的两者
 
 编写一个函数，该函数接受三个*正数*作为参数，并返回两个最小数的平方和。**只使用一行代码作为函数体**。
 
@@ -83,7 +87,7 @@ python3 ok -q two_of_three_syntax_check
 
 
 
-## Q3: 最大因数
+### Q3: 最大因数
 
 编写一个函数，该函数接受一个**大于 1** 的整数 `n` ，并返回小于 `n` 且能被 `n` 整除的最大整数。
 
@@ -111,7 +115,7 @@ python3 ok -q largest_factor
 
 
 
-## Q4: 冰雹
+### Q4: 冰雹
 
 道格拉斯·霍夫斯塔特（Douglas Hofstadter），在他获得普利策奖的书籍《哥德尔、埃舍尔、巴赫》（Gödel, Escher, Bach）中，提出了以下数学谜题：
 
@@ -166,7 +170,7 @@ python3 ok -q hailstone
 
 
 
-## 检查你的得分
+### 检查你的得分
 
 运行得到本次作业中每个问题的分数。
 

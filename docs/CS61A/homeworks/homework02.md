@@ -1,4 +1,8 @@
-# 必答题
+# 作业 2：高阶函数 [hw02.zip](https://cs61a.org/hw/hw02/hw02.zip)
+
+下载 [hw02.zip](https://cs61a.org/hw/hw02/hw02.zip)
+
+## 必答题
 
 <details><summary> 入门视频 </summary>
 <br>
@@ -25,9 +29,9 @@ increment = lambda x: x + 1
 
 
 
-## 高阶函数
+### 高阶函数
 
-###  Q1：乘积
+####  Q1：乘积
 
 编写一个名为 `product` 的函数，该函数返回序列的前 `n` 项的乘积。具体来说， `product` 接收一个整数 `n` 和 `term` ，`term` 是一个单参数函数，该函数确定一个序列。（也就是说， `term(i)` 给出序列的第 `i` 项。） `product(n, term)` 应该返回 `term(1) * ... * term(n)` 。
 
@@ -62,7 +66,7 @@ python3 ok -q product
 
 
 
-### Q2：累积
+#### Q2：累积
 
 我们来了解一下 `product` 是如何作为更通用的 `accumulate` 函数的实例，我们想要实现：
 
@@ -152,7 +156,7 @@ python3 ok -q product_using_accumulate
 
 
 
-###  Q3：制作重复器
+####  Q3：制作重复器
 
 实现函数 `make_repeater`，该函数接收一个单参数函数 `f` 和一个正整数 `n`。它还返回一个新的单参数函数，使得 `make_repeater(f, n)(x)` 的返回值是对 `x` 连续应用 `n` 次函数 `f` 的结果，也就是 `f(f(...f(x)...))`。
 
@@ -186,7 +190,7 @@ python3 ok -q make_repeater
 
 
 
-## 检查你的得分
+### 检查你的得分
 
 运行得到本次作业中每个问题的分数。
 
