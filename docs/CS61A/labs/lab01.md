@@ -1,14 +1,8 @@
 # 实验 1：函数 [lab01.zip](https://cs61a.org/lab/lab01/lab01.zip)
 
-*截止日期：1 月 29 日，星期三，晚上 11:59*
-
 ## 开始文件
 
 下载 [lab01.zip](https://cs61a.org/lab/lab01/lab01.zip)
-
-## 考勤说明
-
-如果你参加的是 CS 61A 的常规实验课，去找助教领取一个 **到达** 编号，然后添加这个[实验考勤表](https://go.cs61a.org/lab-attendance)。（如果你是大班实验课，你不需要填写这个表）除了考勤表之外，你还需要提交实验课的问题才能获得本次实验的分数。
 
 ## 需要完成的题目
 
@@ -16,38 +10,36 @@
 
 > **重要**：如果你的 `python3` 命令没有生效，请尝试使用 `python` 或 `py`。
 
-<details>
-<summary>使用 Python</summary>
+??? "使用 Python"
 
-以下是运行 Python 文件中最常用的方式：
+    以下是运行 Python 文件中最常用的方式：
 
-1. 不使用如何命令行选项去运行你提供的文件中的代码，然后返回到命令行。如果你的文件只包含了一个函数定义，除非你有一个语法错误你将不会看到任何输出。
+    1. 不使用如何命令行选项去运行你提供的文件中的代码，然后返回到命令行。如果你的文件只包含了一个函数定义，除非你有一个语法错误你将不会看到任何输出。
 
-```bash
-python3 lab00.py
-```
-2. `-i`：`-i` 选项可以在运行你提供的文件中的代码后，进入交互式环境（伴随着一个 `>>>` 提示符）。你可以进行表达式求值，比如调用你已定义的函数等。可以通过 `exit()` 来退出。你也可以在 Linux/Mac 上使用键盘快捷键 `Ctrl-D` 或在 Windows 上使用 `Ctrl-z Enter` 来进行退出。如果你在运行着交互环境时编写了 Python 文件，你需要退出并重启解释器才能使更改生效。
+    ```bash
+    python3 lab00.py
+    ```
+    2. `-i`：`-i` 选项可以在运行你提供的文件中的代码后，进入交互式环境（伴随着一个 `>>>` 提示符）。你可以进行表达式求值，比如调用你已定义的函数等。可以通过 `exit()` 来退出。你也可以在 Linux/Mac 上使用键盘快捷键 `Ctrl-D` 或在 Windows 上使用 `Ctrl-z Enter` 来进行退出。如果你在运行着交互环境时编写了 Python 文件，你需要退出并重启解释器才能使更改生效。
 
-以下是我们应该如何在交互环境中运行 `lab00.py`：
-```bash
-python3 -i lab00.py
-```
-3. `-m doctest`：运行文件中的文档测试，即函数中的文档字符串。每个测试都由 `>>>` 和一些 Python 代码以及期望的输出组成。
+    以下是我们应该如何在交互环境中运行 `lab00.py`：
+    ```bash
+    python3 -i lab00.py
+    ```
+    3. `-m doctest`：运行文件中的文档测试，即函数中的文档字符串。每个测试都由 `>>>` 和一些 Python 代码以及期望的输出组成。
 
-以下是我们应该如何运行 `lab00.py` 中的文档测试：
-```bash
-python3 -m doctest lab00.py
-```
+    以下是我们应该如何运行 `lab00.py` 中的文档测试：
+    ```bash
+    python3 -m doctest lab00.py
+    ```
 
-当我们的代码通过了所有的测试时，不会有任何输出。否则，会有测试失败的信息显示。
-</details>
+    当我们的代码通过了所有的测试时，不会有任何输出。否则，会有测试失败的信息显示。
 
 <details>
 <summary>使用 <code>OK</code></summary>
 
 在 CS 61A 中，我们使用一个称为 <code>Ok</code> 的程序自动测试实验、作业和项目。当需要使用 <code>Ok</code> 去测试一个函数时，运行以下的命令（用函数名代替 <code>FUNCTION</code>）：
 ```bash
-python3 ok -q FUNCTION
+python3 ok -q FUNCTION --local
 ```
 
 如果你的函数包含了开头为 <code>"DEBUG:</code> 的 <code>print</code> 的调用，那么 <code>OK</code> 程序就会忽略这一行（否则，包含额外的 <code>print</code> 调用会由于额外的输出而导致测试失败）。
@@ -150,7 +142,7 @@ Hello World!
 
 > 在 "What Would Python Display?" （Python 会显示什么？）下，使用 Ok 去测试你的知识掌握程度：
 >
-> `python3 ok -q return-and-print -u`
+> `python3 ok -q return-and-print -u --local`
 
 ```python
 >>> def welcome():
@@ -176,7 +168,7 @@ ______
 
 使用 Ok 去测试你的理解：
 ```bash
-python3 ok -q debugging-quiz -u
+python3 ok -q debugging-quiz -u --local
 ```
 
 #### 问题 3：提取数字位
@@ -202,7 +194,7 @@ def digit(n, k):
 使用 Ok 去测试你的代码：
 
 ```bash
-python3 ok -q digit
+python3 ok -q digit --local
 ```
 
 #### 问题 4：中间值
@@ -212,8 +204,6 @@ python3 ok -q digit
 **提示**：尝试求出三个数字的总和，然后通过内置函数 `min` 和 `max` 减去你不希望返回的值。
 
 ```python
-
-
 def middle(a, b, c):
     """Return the number among a, b, and c that is not the smallest or largest.
     Assume a, b, and c are all different numbers.
@@ -234,7 +224,7 @@ def middle(a, b, c):
 
 使用 Ok 去测试你的代码：
 ```bash
-python3 ok -q middle
+python3 ok -q middle --local
 ```
 
 ### 课程大纲测试
@@ -247,16 +237,8 @@ python3 ok -q middle
 
 你可以本地检查每个作业问题的得分：
 ```bash
-python3 ok --score
+python3 ok --score --local
 ```
-
-**此操作不会提交作业！** 当你对分数满意后，你需要在 Gradescope 平台上提交作业以获取分数
-
-## 提交作业
-
-如果你是 CS 61A 的常规实验课成员，让你的助教知道你已经完成，然后你就可以获取一个 **离开** 号码，添加[实验考勤表](https://go.cs61a.org/lab-attendance)后就可以离开了（如果你是大班实验课成员，你不需要填写这个表）。
-
-之后上传你编辑过的文件上传到 **Gradescope作业区**。[实验00](https://cs61a.org/lab/lab00/#submit-with-gradescope)中有详细的说明。
 
 ## 选做题
 
@@ -286,7 +268,7 @@ def falling(n, k):
 
 使用 Ok 去测试你的代码：
 ```bash
-python3 ok -q falling
+python3 ok -q falling --local
 ```
 
 ### 问题 7：被 k 整除
@@ -319,7 +301,7 @@ def divisible_by_k(n, k):
 
 使用 Ok 去测试你的代码：
 ```bash
-python3 ok -q divisible_by_k
+python3 ok -q divisible_by_k --local
 ```
 
 ### 问题 8：数字之和
@@ -344,13 +326,15 @@ def sum_digits(y):
 
 使用 Ok 测试你的代码：
 ```bash
-python3 ok -q sum_digits
+python3 ok -q sum_digits --local
 ```
 
 ### 题目 9：会发生什么？
 
 > 使用 Ok 去测试一下你对“Python 会显示什么”问题的理解：
-> `python3 ok -q if-statements -u`
+> ```
+> python3 ok -q if-statements -u --local
+> ```
 > **提示：**`print`（与 `return` 不同）*不会* 引起函数退出。
 
 ```python
@@ -406,5 +390,5 @@ def double_eights(n):
 
 使用 Ok 去测试你的代码：
 ```bash
-python3 ok -q double_eights
+python3 ok -q double_eights --local
 ```

@@ -1,17 +1,21 @@
 - 'CS61A': 
   - '课程简介': CS61A/CS61A.md
+  - '时间表': CS61A/Schedule.md
+  - 实验与作业:
+    - '课程 1: 欢迎':
+      - 'Lab 00': "CS61A/labs/lab00.md"
+    - '课程 2: 函数':
+      - 'HW 01': "CS61A/homeworks/homework01.md"
+    - '课程 3: 控制':
+      - 'Lab 01': "CS61A/labs/lab01.md"
+    - '课程 4: 高阶函数':
+      - 'Hog': "CS61A/projects/hog.md"
+    - '课程 5: 环境':
+      - 'HW 02': "CS61A/homeworks/homework02.md"
+    - '课程 6: 函数抽象':
+      - 'Lab 02': "CS61A/labs/lab02.md"
   - 讨论:
     - 'Disc 00': "CS61A/discussions/disc00.md"
     - 'Disc 01': "CS61A/discussions/disc01.md"
     - 'Disc 02': "CS61A/discussions/disc02.md"
     - 'Disc 03': "CS61A/discussions/disc03.md"
-  - 实验:
-    - 'Lab 00': "CS61A/labs/lab00.md"
-    - 'Lab 01': "CS61A/labs/lab01.md"
-    - 'Lab 02': "CS61A/labs/lab02.md"
-  - 作业:
-    - 'Homework 01': "CS61A/homeworks/homework01.md"
-    - 'Homework 02': "CS61A/homeworks/homework02.md"
-    - 'Homework 03': "CS61A/homeworks/homework03.md"
-  - 项目:
-    - 'Project 00': "CS61A/projects/hog.md"
