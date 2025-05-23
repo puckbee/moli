@@ -1,10 +1,8 @@
 # 猪的游戏
 
-<p align="center">
-  <img src="https://cs61a.org/proj/hog/assets/icon.gif" alt="icon">
-</p>
-
-
+<figure>
+  <img src="../../images/hog_icon.gif" alt="icon">
+</figure>
 
 <center>我懂啦！我要用高阶函数摇出更高的点数。</center>
 
@@ -151,19 +149,6 @@ python3 ok -q [question number] -i
 ```shell
 python3 hog_gui.py
 ```
-
-
-
-## 入门视频
-
-这些视频可能会为解决本次作业中的编程问题提供一些有用的指导。
-
-> 要观看这些视频，您需要登录您的 berkeley.edu 邮箱。
-
-<iframe width="560" height="315" src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZfpHDDcEnevQqlX4wTxuMAD" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" aria-label="hog-getstarted" allowfullscreen="" style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: &quot;Work Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"></iframe>
-
-[YouTube 链接](https://youtu.be/playlist?list=PLx38hZJ5RLZfpHDDcEnevQqlX4wTxuMAD)
-
 
 
 ## 第一阶段：游戏规则
@@ -478,7 +463,7 @@ python3 ok --score
 
 > 项目的这个部分没有必做题，就只有一些供你阅读和理解的示例。阅读项目的剩余问题，请查看第二阶段。
 
-![](https://cs61a.org/proj/hog/assets/hog_animation.gif)
+![](../images/hog_animation.gif)
 
 *动画由 Tristan & Tyler Roath 创作*
 

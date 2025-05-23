@@ -2,16 +2,16 @@
 
 下载 [hw02.zip](https://cs61a.org/hw/hw02/hw02.zip)
 
+!!! info "MOLI：本次作业你将会学到什么"
+    - 函数是“一等公民”：体会函数抽象带来的灵活性
+    - Lambda 表达式：理解在高阶函数调用中，匿名函数如何简化代码
+    - 函数迭代与闭包：初步接触函数迭代的概念，为理解更高级的函数式设计（如组合子）打基础
+    - 选择递归还是迭代：虽然可用循环完成作业中的累乘、累加、重复调用，但本节作业探索了“用递归来实现”的思路，锻炼大家对两种思路进行对比与选择
+    - 边界处理：练习写出对n=0、n=1等边界的正确处理，培养对边界情况的敏感性
+    - 泛化与抽象：利用“融合函数”，来锻炼编写通用函数的思维
+    - 组合与重用：锻炼用已有的函数解决新问题
+
 ## 必答题
-
-<details><summary> 入门视频 </summary>
-<br>
-<h1> 入门视频 </h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-</details>
-
-
 
 一些doctest引用了这些函数：
 
@@ -61,7 +61,7 @@ def product(n, term):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q product
+python3 ok -q product --local
 ```
 
 
@@ -146,12 +146,12 @@ def product_using_accumulate(n, term):
     return ____
 ```
 
-使用 Ok 来测试你的代码：
+使用ok来测试你的代码：
 
 ```shell
-python3 ok -q accumulate
-python3 ok -q summation_using_accumulate
-python3 ok -q product_using_accumulate
+python3 ok -q accumulate --local
+python3 ok -q summation_using_accumulate --local
+python3 ok -q product_using_accumulate --local
 ```
 
 
@@ -182,10 +182,10 @@ def make_repeater(f, n):
     "*** 在这里填写你的代码 ***"
 ```
 
-使用 Ok 来测试你的代码：
+使用ok来测试你的代码：
 
 ```shell
-python3 ok -q make_repeater
+python3 ok -q make_repeater --local
 ```
 
 
@@ -195,5 +195,5 @@ python3 ok -q make_repeater
 运行得到本次作业中每个问题的分数。
 
 ```shell
-python3 ok --score
+python3 ok --score --local
 ```
