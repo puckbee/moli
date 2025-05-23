@@ -158,7 +158,7 @@
                 <td>7</td>
                 <td>对象</td>
                 <td></td>
-                <td>作业 05: 生成器<br>蚂蚁</td>
+                <td>作业 05: 生成器<br><br>蚂蚁</td>
             </tr>
             <tr>
                 <td>8</td>
@@ -230,7 +230,7 @@
                 <td>12</td>
                 <td>解释器</td>
                 <td></td>
-                <td>作业 08: Scheme 列表<br>Scheme</td>
+                <td>作业 08: Scheme 列表<br><br>Scheme</td>
             </tr>
             <tr>
                 <td>13</td>
@@ -284,7 +284,7 @@
                 <td>15</td>
                 <td>总结</td>
                 <td></td>
-                <td>作业 11: 期末总结<br>Scheme 项目展示库</td>
+                <td>作业 11: 期末总结<br><br>Scheme 项目展示库</td>
             </tr>
             <tr>
                 <td>16</td>

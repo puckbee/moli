@@ -1,5 +1,10 @@
 # 实验 2：高阶函数，Lambda 表达式 [lab02.zip](https://cs61a.org/lab/lab02/lab02.zip)
 
+!!! info "MOLI：本次实验你将会学到什么"
+    * Python 短路求值
+    * Python 高阶函数
+    * Python `lambda` 表达式用法
+
 **开始文件：**
 
 下载 [lab02.zip](https://cs61a.org/lab/lab02/lab02.zip)

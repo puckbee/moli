@@ -1,5 +1,10 @@
 # 实验 0：入门指引 [Lab00.zip](https://cs61a.org/lab/lab00/lab00.zip)
 
+!!! info "MOLI：本次实验你将会学到什么"
+    * Python 环境搭建
+    * Python 表达式、函数的基本用法
+    * Python 常用命令行参数
+
 ## 开始文件
 
 下载 [lab00.zip](https://cs61a.org/lab/lab00/lab00.zip)

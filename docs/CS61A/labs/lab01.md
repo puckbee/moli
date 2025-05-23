@@ -1,5 +1,9 @@
 # 实验 1：函数 [lab01.zip](https://cs61a.org/lab/lab01/lab01.zip)
 
+!!! info "MOLI：本次实验你将会学到什么"
+    * Python 基本的算术运算
+    * Python 调试技巧
+
 ## 开始文件
 
 下载 [lab01.zip](https://cs61a.org/lab/lab01/lab01.zip)
