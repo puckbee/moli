@@ -18,7 +18,7 @@
         line-height: 1.6;
         padding: 20px;
     }
-    h1 { 
+    h1 {
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
         font-size: 2.5rem;
@@ -35,14 +35,21 @@
         color: #fff;
     }
     td {
+        background-color:GhostWhite;
         padding: 12px 15px;
         text-align: center;
         border-right: 1px solid #ccc;
     }
+    /* 带有rowspan的单元格样式 */
     tbody td[rowspan]:first-child {
         text-align: center !important;
         vertical-align: middle !important;
         font-size:20px;
+    }
+    /* 不带有rowspan的单元格样式 */
+    tbody tr:hover td:not([rowspan]) {
+        background-color: #e9ecef;
+        transition: background-color 0.3s ease;
     }
     th:last-child, td:last-child {
         border-right: none;
@@ -52,15 +59,6 @@
         text-transform: uppercase;
         letter-spacing: 0.03em;
     }
-    tbody tr {
-        transition: background 0.3s;
-    }
-    tbody tr:nth-child(odd) {
-        background: #f7f9fc;
-    }
-    tbody tr:hover {
-        background: #e2e8f0;
-    }
     a {
         color: #4e73df;
         text-decoration: none;
@@ -69,7 +67,8 @@
     a:hover {
         text-decoration: underline;
     }
-    @media (max-width: 768px) {
+    /* 响应式 */
+     @media (max-width: 768px) {
         th, td {
             padding: 8px;
             font-size: 0.9rem;
