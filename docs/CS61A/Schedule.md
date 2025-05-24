@@ -6,17 +6,6 @@
   <title>时间表</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    body {
-        font-family: 'Noto Sans SC', sans-serif;
-        background: #f9fafb;
-        color: #333;
-        line-height: 1.6;
-    }
     h1 {
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
@@ -25,6 +14,10 @@
         color: #2c3e50;
     }
     table {
+        font-family: 'Noto Sans SC', sans-serif;
+        background: #f9fafb;
+        color: #333;
+        line-height: 1.6;
         width: 100%;
         border-collapse: collapse;
         border-radius: 0.5rem !important;
