@@ -16,7 +16,6 @@
         background: #f9fafb;
         color: #333;
         line-height: 1.6;
-        padding: 20px;
     }
     h1 {
         font-family: 'Roboto', sans-serif;
@@ -40,13 +39,11 @@
         text-align: center;
         border-right: 1px solid #ccc;
     }
-    /* 带有rowspan的单元格样式 */
     tbody td[rowspan]:first-child {
         text-align: center !important;
         vertical-align: middle !important;
         font-size:20px;
     }
-    /* 不带有rowspan的单元格样式 */
     tbody tr:hover td:not([rowspan]) {
         background-color: #e9ecef;
         transition: background-color 0.3s ease;
@@ -59,16 +56,10 @@
         text-transform: uppercase;
         letter-spacing: 0.03em;
     }
-    a {
-        color: #4e73df;
-        text-decoration: none;
-        font-weight: 500;
-    }
     a:hover {
         text-decoration: underline;
     }
-    /* 响应式 */
-     @media (max-width: 768px) {
+    @media (max-width: 768px) {
         th, td {
             padding: 8px;
             font-size: 0.9rem;
