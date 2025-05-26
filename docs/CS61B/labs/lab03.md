@@ -255,7 +255,3 @@ Debug `PalindromeStage`
 - `SpeciesListStage`（1.25 分）
 - `PalindromeStage`（1.25 分）
 - `MachineStage`（1.25 分）
-
-## 提交
-
-就像之前的作业一样，将你的实验 03 代码添加、提交，然后推送到 GitHub。随后，提交到 Gradescope 以测试你的代码。如果你需要复习相关操作，可以查看[实验 1 说明文档](https://sp25.datastructur.es/labs/lab01/)以及[作业工作流程指南](https://sp25.datastructur.es/resources/guides/assignment-workflow/#opening-in-intellij)中的说明。

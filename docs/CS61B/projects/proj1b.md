@@ -4,8 +4,6 @@
 
 每个作业都会在顶部提供一个 FAQ 链接。你也可以通过在网址末尾添加“/faq”来访问它。项目 1B 的 FAQ 位于[此处](https://sp25.datastructur.es/projects/proj1b/faq/)。
 
-注意这个项目有有限的提交令牌。更多细节请参阅[提交到自动评分器](#submit-to-the-autograder)。
-
 ## 简介
 
 在项目 1A 中，我们构建了 `LinkedListDeque61B` 。现在我们将看到一个使用后备数组（而非链式节点）实现的 `Deque61B` 接口的不同方式。
@@ -40,9 +38,9 @@
 
 ### 代码风格
 
-和项目 1A 一样， **我们将严格检查代码风格** 。你必须遵守[样式指南](https://sp25.datastructur.es/resources/guides/style/)，否则会在自动评分器中被扣分。
-
+和项目 1A 一样， **我们将严格检查代码风格** 。你必须遵守[样式指南](https://sp25.datastructur.es/resources/guides/style/)。
 你可以使用 CS
+
 61B 插件在本地检查代码风格。 **我们不会因为未检查风格而解除提交限制。**
 
 ### 获取框架代码
@@ -493,7 +491,7 @@ Karplus-Strong 算法的两个核心组成部分是环形缓冲区的反馈机�
 ### `GuitarHeroLite`
 
 现在你也可以使用 `GuitarHeroLite` 类了。运行它会弹出图形界面，使用 `gh2` 包里的 `GuitarString` 类与用户（你！）实时交互，演奏音符。
-
+<!-- 
 ### 提交给自动评分器
 
 在本地写完测试并全部通过后，就可以提交给自动评分器。可能全过，也可能有测试未过：
@@ -502,7 +500,7 @@ Karplus-Strong 算法的两个核心组成部分是环形缓冲区的反馈机�
 
 2.  如果功能正确性测试没过，说明本地测试虽然覆盖了大部分情况，但有些行为没断言到。这很正常，覆盖率只是近似评估，不保证涵盖所有边界。[这里](https://sp25.datastructur.es/projects/proj1b/flags/)列出了相关标记。
 
-3.  如果性能测试没过，说明实现不满足上文描述的时间要求。你有每 24 小时 4 次提交令牌。因代码、风格等原因多次提交导致令牌耗尽，不会补发。自动评分器输出里可能会看到 `WARNING: A terminally deprecated method in java.lang.System has been called` 之类警告，可以放心忽略。
+3.  如果性能测试没过，说明实现不满足上文描述的时间要求。你有每 24 小时 4 次提交令牌。因代码、风格等原因多次提交导致令牌耗尽，不会补发。自动评分器输出里可能会看到 `WARNING: A terminally deprecated method in java.lang.System has been called` 之类警告，可以放心忽略。 -->
 
 ### 评分标准
 

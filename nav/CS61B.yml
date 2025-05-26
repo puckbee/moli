@@ -1,6 +1,8 @@
 - "CS61B":
   - "课程简介": CS61B/CS61B.md
   - '时间表': CS61B/Schedule.md
+  - "作业工作流程": "CS61B/assignment-workflow.md"
+  
   - 实验:
     - "实验 1": "CS61B/labs/lab01.md"
     - "实验 2": "CS61B/labs/lab02.md"
@@ -11,3 +13,23 @@
     - "Project 0": "CS61B/projects/proj0.md"
     - "Project 1A": "CS61B/projects/proj1a.md"
     - "Project 1B": "CS61B/projects/proj1b.md"
+  
+  - "作业":
+    - "作业 0a": "CS61B/homework/hw0/hw0a.md"
+    - "作业 0b": "CS61B/homework/hw0/hw0b.md"
+    
+  - "讨论":
+    - "常规讨论":
+      - "讨论 01": "CS61B/discus/regular01.md"
+      - "讨论 01 解答": "CS61B/discus/regular01sol.md"
+      - "讨论 02": "CS61B/discus/regular02.md"
+      - "讨论 02 解答": "CS61B/discus/regular02sol.md"
+      - "讨论 03": "CS61B/discus/regular03.md"
+      - "讨论 03 解答": "CS61B/discus/regular03sol.md"
+    - "考试讨论":
+      - "考试 01": "CS61B/discus/examlevel01.md"
+      - "考试 01 解答": "CS61B/discus/examlevel01sol.md"
+      - "考试 02": "CS61B/discus/examlevel02.md"
+      - "考试 02 解答": "CS61B/discus/examlevel02sol.md"
+      - "考试 03": "CS61B/discus/examlevel03.md"
+      - "考试 03 解答": "CS61B/discus/examlevel03sol.md"

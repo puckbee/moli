@@ -378,6 +378,4 @@ git_exercise_2.2_password
 git_exercise_2.3_password
 ```
 
-当你准备好后，请 **仅** 提交 `magic_word.txt` 到 Gradescope。你不需要提交 `lab04-checkoff` 或 `git-exercise-sp25` 仓库。
-
 如果你想尝试我们用来制作本实验中某些图像的可视化工具，你可以在[这里](https://git-school.github.io/visualizing-git/#free-remote)找到它。

@@ -186,11 +186,7 @@ System.out.println(lst.print());
 
 本次实验满分为 5 分。
 
-- 找出 `BombMain.java` 中所有阶段的密码，并在提交到 Gradescope 之前，确保本地所有测试都能通过。
-
-## 提交
-
-和实验 1 一样，先将实验 2 的代码添加到版本控制，再提交，然后推送到 GitHub 。接着，提交到 Gradescope 进行代码测试。如果你需要复习相关操作，可以查看[实验 1 说明文档](https://sp25.datastructur.es/labs/lab01/#submitting-to-gradescope)以及[作业工作流程指南](https://sp25.datastructur.es/resources/guides/assignment-workflow/#opening-in-intellij)中的说明。
+- 找出 `BombMain.java` 中所有阶段的密码。
 
 ## 致谢
 

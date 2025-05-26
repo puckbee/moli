@@ -1,7 +1,7 @@
 # 作业布置
 请按照 [作业流程指南](https://sp25.datastructur.es/resources/guides/assignment-workflow/) 开始本次作业。本次作业名称为 hw0b。
 # 代码风格
-从这次作业开始，我们将**严格要求代码风格**。你必须遵循 [代码风格指南](https://sp25.datastructur.es/resources/guides/style/) ，否则自动评分时会被扣分。
+从这次作业开始，我们将 **严格要求代码风格** 。你必须遵循 [代码风格指南](https://sp25.datastructur.es/resources/guides/style/) ，否则自动评分时会被扣分。
 
 你应该使用 CS 61B 插件在本地检查代码风格。
 # 语言结构
