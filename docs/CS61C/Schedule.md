@@ -110,7 +110,7 @@
           <td>C语言: 泛型</td>
           <td>讨论 2: C语言</td>
           <td></td>
-          <td rowspan="5">项目 1: snek</td>
+          <td rowspan="5"><a href="../Projects/Project_1/index.html">项目 1: snek</a></td>
         </tr>
         <tr>
           <td>浮点运算</td>
