@@ -1,13 +1,17 @@
-# 必答题
+# 作业 2：高阶函数 [hw02.zip](https://cs61a.org/hw/hw02/hw02.zip)
 
-<details><summary> 入门视频 </summary>
-<br>
-<h1> 入门视频 </h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+下载 [hw02.zip](https://cs61a.org/hw/hw02/hw02.zip)
 
-</details>
+!!! info "MOLI：本次作业你将会学到什么"
+    - 函数是“一等公民”：体会函数抽象带来的灵活性
+    - Lambda 表达式：理解在高阶函数调用中，匿名函数如何简化代码
+    - 函数迭代与闭包：初步接触函数迭代的概念，为理解更高级的函数式设计（如组合子）打基础
+    - 选择递归还是迭代：虽然可用循环完成作业中的累乘、累加、重复调用，但本节作业探索了“用递归来实现”的思路，锻炼大家对两种思路进行对比与选择
+    - 边界处理：练习写出对n=0、n=1等边界的正确处理，培养对边界情况的敏感性
+    - 泛化与抽象：利用“融合函数”，来锻炼编写通用函数的思维
+    - 组合与重用：锻炼用已有的函数解决新问题
 
-
+## 必答题
 
 一些doctest引用了这些函数：
 
@@ -25,9 +29,9 @@ increment = lambda x: x + 1
 
 
 
-## 高阶函数
+### 高阶函数
 
-###  Q1：乘积
+####  Q1：乘积
 
 编写一个名为 `product` 的函数，该函数返回序列的前 `n` 项的乘积。具体来说， `product` 接收一个整数 `n` 和 `term` ，`term` 是一个单参数函数，该函数确定一个序列。（也就是说， `term(i)` 给出序列的第 `i` 项。） `product(n, term)` 应该返回 `term(1) * ... * term(n)` 。
 
@@ -57,12 +61,12 @@ def product(n, term):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q product
+python3 ok -q product --local
 ```
 
 
 
-### Q2：累积
+#### Q2：累积
 
 我们来了解一下 `product` 是如何作为更通用的 `accumulate` 函数的实例，我们想要实现：
 
@@ -142,17 +146,17 @@ def product_using_accumulate(n, term):
     return ____
 ```
 
-使用 Ok 来测试你的代码：
+使用ok来测试你的代码：
 
 ```shell
-python3 ok -q accumulate
-python3 ok -q summation_using_accumulate
-python3 ok -q product_using_accumulate
+python3 ok -q accumulate --local
+python3 ok -q summation_using_accumulate --local
+python3 ok -q product_using_accumulate --local
 ```
 
 
 
-###  Q3：制作重复器
+####  Q3：制作重复器
 
 实现函数 `make_repeater`，该函数接收一个单参数函数 `f` 和一个正整数 `n`。它还返回一个新的单参数函数，使得 `make_repeater(f, n)(x)` 的返回值是对 `x` 连续应用 `n` 次函数 `f` 的结果，也就是 `f(f(...f(x)...))`。
 
@@ -178,18 +182,18 @@ def make_repeater(f, n):
     "*** 在这里填写你的代码 ***"
 ```
 
-使用 Ok 来测试你的代码：
+使用ok来测试你的代码：
 
 ```shell
-python3 ok -q make_repeater
+python3 ok -q make_repeater --local
 ```
 
 
 
-## 检查你的得分
+### 检查你的得分
 
 运行得到本次作业中每个问题的分数。
 
 ```shell
-python3 ok --score
+python3 ok --score --local
 ```

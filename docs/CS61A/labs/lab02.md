@@ -1,14 +1,13 @@
 # 实验 2：高阶函数，Lambda 表达式 [lab02.zip](https://cs61a.org/lab/lab02/lab02.zip)
 
-*截止日期：2 月 5 日星期三晚上 11:59。*
+!!! info "MOLI：本次实验你将会学到什么"
+    * Python 短路求值
+    * Python 高阶函数
+    * Python `lambda` 表达式用法
 
 **开始文件：**
 
 下载 [lab02.zip](https://cs61a.org/lab/lab02/lab02.zip)
-
-## 考勤
-
-如果你参加的是 CS 61A 的常规实验组，请从你的助教那里获取 **到达** 编号，并填写此[实验考勤表](https://go.cs61a.org/lab-attendance)。（如果你参加的是大班实验课，则不需要填写该表格）。除了考勤表，你还需要提交实验问题才能获得实验学分。
 
 ## 主题
 
@@ -35,7 +34,7 @@ True or 1 / 0
 
 如果 `and` 和 `or` 不是 *短路求值*，他们将直接返回最后一个值；另一种记住这一点的方法是，`and` 和 `or` 总是返回他们计算的最后一个值，无论他们是否短路。记住，当使用 `True` 和 `False` 以外的值时，`and` 和 `or` 不一定总是返回布尔值。
 
-如果你需要复习本实验的材料，可以参考这一部分。你可以直接跳到[问题部分](https://cs61a.org/lab/lab02/#required-questions)，并在卡住的时候再回来查看这里的内容。
+如果你需要复习本实验的材料，可以参考这一部分。你可以直接跳到[问题部分](#问题)，并在卡住的时候再回来查看这里的内容。
 
 <details>
 <summary>短路求值</summary>
@@ -296,18 +295,8 @@ square(3)
 <p>这是唯一的步骤。我们包含这一部分是为了强调 <code>lambda</code> 表达式与 <code>def</code> 语句之间的区别：<code>lambda</code> 表达式不会在环境中创建任何新的绑定。</p>
 </details>
 
+<a id="问题"></a>
 ## 需要回答的问题
-
-<details>
-<summary>获取开始视频</summary>
-<h1>获取开始视频</h1>
-
-<p>这些视频可能会为解决这份作业中的编码问题提供一些有用的指导。</p>
-
-<p>要查看这些视频，您需要登录您的 berkeley.edu 邮箱。</p>
-
-<a href="https://youtu.be/playlist?list=PLx38hZJ5RLZe3y57961XyBIvQoyT0IaqF" target="_blank">YouTube link</a>
-</details>
 
 ### Python 会显示什么？
 
@@ -315,7 +304,7 @@ square(3)
 
 > 使用 Ok 来测试你的知识，以下是一些“Python 会显示什么？”的问题：
 >
->`python3 ok -q short-circuit -u`
+>`python3 ok -q short-circuit -u --local`
 
 ```python
 >>> True and 13
@@ -371,7 +360,7 @@ ______
 
 > 使用 Ok 来测试你的知识，以下是一些“Python 会显示什么？”的问题：
 >
->`python3 ok -q hof-wwpd -u`
+>`python3 ok -q hof-wwpd -u --local`
 
 ```python
 >>> def cake():
@@ -415,7 +404,7 @@ ______
 
 > 使用 Ok 来测试你的知识，以下是一些“Python 会显示什么？”的问题：
 >
->`python3 ok -q lambda -u`
+>`python3 ok -q lambda -u --local`
 >
 > 提醒一下，以下两行代码执行时将不会在交互式 Python 解释器中显示任何输出：
 >
@@ -500,7 +489,7 @@ def composite_identity(f, g):
 
 使用 Ok 去测试你的代码：
 ```bash
-python3 ok -q composite_identity
+python3 ok -q composite_identity --local
 ```
 
 #### 问题 5: 条件计数
@@ -596,7 +585,7 @@ def count_cond(condition):
 使用 Ok 去测试你的代码：
 
 ```bash
-python3 ok -q count_cond
+python3 ok -q count_cond --local
 ```
 
 ### 本地查看分数
@@ -604,22 +593,10 @@ python3 ok -q count_cond
 你可以通过运行以下命令本地查看每个问题的分数：
 
 ```bash
-python3 ok --score
+python3 ok --score --local
 ```
 
-**这不会提交作业！** 当你对分数满意时，可以将作业提交到 Gradescope 以获得学分。
-
-## 提交作业
-
-如果你在 CS 61A 的常规实验室中，请让你的助教知道你完成了作业，这样你就可以获得 **离开** 号码，然后在离开之前填写这个[实验考勤表](https://go.cs61a.org/lab-attendance)。（如果你在大实验室中，则无需填写表格。）
-
-然后，通过将你编辑过的文件上传到 **适当的 Gradescope 作业区** 来提交此作业。[实验室 00](https://cs61a.org/lab/lab00/#submit-with-gradescope) 有详细的说明。
-
-## 环境图练习
-
-**这个部分没有 Gradescope 提交。**
-
-然而，我们仍然鼓励你在纸上做这个题目，以便熟悉环境图，这种题型可能会以其他形式出现在考试中。你可以尝试将代码放入 PythonTutor 来检查你的作业。
+## 环境图练习(附加题)
 
 ### 问题 6: 高阶函数环境图练习
 
@@ -667,7 +644,7 @@ def multiple(a, b):
 
 使用 Ok 去测试你的代码：
 ```bash
-python3 ok -q multiple
+python3 ok -q multiple --local
 ```
 
 ### 问题 8: 我听说你喜欢函数...
@@ -717,5 +694,5 @@ def cycle(f1, f2, f3):
 
 使用 Ok 去测试你的代码：
 ```bash
-python3 ok -q cycle
+python3 ok -q cycle --local
 ```

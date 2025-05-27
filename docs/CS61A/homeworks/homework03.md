@@ -1,27 +1,16 @@
-# 必填问题
+# 作业 3：递归、树形递归 [hw03.zip](https://cs61a.org/hw/hw03/hw03.zip)
 
-<details>
-  <summary>入门视频</summary>
-  <h2>入门视频</h2>
-  <p>这些视频可能会为解决本次作业中的编程问题提供一些有用的指导。</p>
-  <blockquote>
-    <p>要观看这些视频，您需要登录您的 berkeley.edu 邮箱。</p>
-  </blockquote>
-  <iframe
-    width="560"
-    height="315"
-    src="https://youtube.com/embed/videoseries?list=PLx38hZJ5RLZfTmV97imfuOKeTdjhZRFYr"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    aria-label="hw3-getstarted"
-    allowfullscreen
-    style="box-sizing: border-box;">
-  </iframe>
-  <p><a href="https://youtu.be/playlist?list=PLx38hZJ5RLZfTmV97imfuOKeTdjhZRFYr">YouTube 链接</a></p>
-</details>
+下载 [hw03.zip](https://cs61a.org/hw/hw03/hw03.zip)
+
+!!! info "MOLI：本次作业你将会学到什么"
+    - 基础递归：锻炼大家真正理解递归控制流的本质：每一次函数调用都在解决一个更小规模的同类问题
+    - 互斥递归与辅助函数：通过定义内部辅助函数或互相调用的递归，掌握“交替执行”与“状态传递”技巧
+    - 树形递归：递归的结果会产生一棵递归树，锻炼大家完整枚举这棵树所有解
+    - 无状态与有状态递归：锻炼大家在复杂场景下，在递归中记录每个状态
+    - 问题抽象与分解：学会如何用递归，来解“组合计数”类问题，并推广到其他问题
 
 
-
+## 必答题
 
 ###  Q1：数字8的个数
 
@@ -61,7 +50,7 @@ def num_eights(n):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q num_eights
+python3 ok -q num_eights --local
 ```
 
 
@@ -104,7 +93,7 @@ def digit_distance(n):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q digit_distance
+python3 ok -q digit_distance --local
 ```
 
 
@@ -148,7 +137,7 @@ def interleaved_sum(n, odd_func, even_func):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q interleaved_sum
+python3 ok -q interleaved_sum --local
 ```
 
 
@@ -213,22 +202,22 @@ def count_dollars(total):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q count_dollars
+python3 ok -q count_dollars --local
 ```
 
 
 
-## 检查你的得分
+### 检查你的得分
 
 运行得到本次作业中每个问题的分数。
 
 ```shell
-python3 ok --score
+python3 ok --score --local
 ```
 
 
 
-#  可选问题
+##  可选问题
 
 > 这些问题可自行选做。即使不完成也不会影响作业的得分。但它们是非常好的练习材料，建议还是认真完成！
 
@@ -280,12 +269,12 @@ def count_dollars_upward(total):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q count_dollars_upward
+python3 ok -q count_dollars_upward --local
 ```
 
 
 
-#  考试练习
+##  考试练习
 
 作业也会包含之前的考试级别问题供你参考。这些问题不需要提交；如果你喜欢挑战，那就可以尝试它们！
 
@@ -296,7 +285,7 @@ python3 ok -q count_dollars_upward
 
 
 
-# 仅供娱乐的问题
+## 仅供娱乐的问题
 
 以下问题不在61A课程范围内。如果你想挑战自我可以尝试，但这些题目只是趣味谜题，并非课程要求。绝大多数学生都会跳过这些问题，这完全没有问题。我们不会在Ed平台或答疑时间优先支持这些问题的解答。
 
@@ -374,7 +363,7 @@ def move_stack(n, start, end):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q move_stack
+python3 ok -q move_stack --local
 ```
 
 
@@ -421,5 +410,5 @@ def make_anonymous_factorial():
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q make_anonymous_factorial
+python3 ok -q make_anonymous_factorial --local
 ```

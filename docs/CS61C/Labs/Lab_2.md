@@ -1,5 +1,10 @@
 # Lab 2：C 语言调试
 
+!!! info "MOLI：本次实验你将会学到什么"
+    * GDB 基础操作  
+    * Valgrind 基础操作 
+    * 调试段错误、内存泄漏
+
 在本次实验中，请按照列出的顺序完成各个练习。练习之间可能互相依赖。
 
 [实验幻灯片（Berkeley校内）](https://docs.google.com/presentation/d/1rJ81qVQORpyaox744ocJ66UrQPZl6FvrNl1giFQWJHk/edit?usp=sharing)

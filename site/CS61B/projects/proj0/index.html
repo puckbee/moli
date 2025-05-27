@@ -1,0 +1,3576 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nightlanding.github.io/moli/CS61B/projects/proj0/">
+      
+      
+        <link rel="prev" href="../../labs/lab04/">
+      
+      
+        <link rel="next" href="../proj1a/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Project 0 - MOLI：提升实践能力的试炼之地</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#02048" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOLI：提升实践能力的试炼之地
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Project 0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nightlanding/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  学习路线
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CS61A/CS61A/" class="md-tabs__link">
+          
+  
+  
+  CS61A
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../CS61B/" class="md-tabs__link">
+          
+  
+  
+  CS61B
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CS61C/CS61C/" class="md-tabs__link">
+          
+  
+  
+  CS61C
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../PA/PA/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  南京大学 ICS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../MIT6.S081/MIT6.S081/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MIT6.S081
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Contact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../AboutMOLI/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于 MOLI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MOLI：提升实践能力的试炼之地
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nightlanding/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    学习路线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61A
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            CS61A
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/CS61A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/Schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    时间表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    实验与作业
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            实验与作业
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 1: 欢迎
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            课程 1: 欢迎
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/labs/lab00/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验 00
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 2: 函数
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            课程 2: 函数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/homeworks/homework01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    作业 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 3: 控制
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            课程 3: 控制
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/labs/lab01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_4" id="__nav_3_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 4: 高阶函数
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            课程 4: 高阶函数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/projects/hog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    猪
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_5" id="__nav_3_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 5: 环境
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            课程 5: 环境
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/homeworks/homework02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    作业 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 6: 函数抽象
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            课程 6: 函数抽象
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/labs/lab02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_7" id="__nav_3_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 10: 递归、树形递归
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            课程 10: 递归、树形递归
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/homeworks/homework03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    作业 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    讨论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            讨论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/discussions/disc00/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    讨论 00
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/discussions/disc01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    讨论 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/discussions/disc02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    讨论 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61A/discussions/disc03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    讨论 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61B
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CS61B
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS61B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    实验
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            实验
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验 4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    项目
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            项目
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 0
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proj1a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 1A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proj1b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project 1B
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            CS61C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/CS61C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    时间表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    实验
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            实验
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_1" id="__nav_5_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 2: 数值表示
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            课程 2: 数值表示
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Labs/Lab_0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验 0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 4: C语言: 指针、数组、字符串
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            课程 4: C语言: 指针、数组、字符串
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Labs/Lab_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_3" id="__nav_5_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 6: C语言: 泛型
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            课程 6: C语言: 泛型
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Projects/Project_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    项目 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_4" id="__nav_5_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 7: 浮点运算
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            课程 7: 浮点运算
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Labs/Lab_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_5" id="__nav_5_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程 10: RISC-V: 条件分支
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            课程 10: RISC-V: 条件分支
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Labs/Lab_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    实验 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    讨论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            讨论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_1" id="__nav_5_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    讨论 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            讨论 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Discussion/Discussion_1_pre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    预习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Discussion/Discussion_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    作业
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PA/PA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    南京大学 ICS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MIT6.S081/MIT6.S081/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MIT6.S081
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AboutMOLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="02048">项目 0：2048<a class="headerlink" href="#02048" title="Permanent link">&para;</a></h1>
+<h1 id="_1">高难度模式项目<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>如果你是一名能力强的程序员，你可能会对<a href="https://sp25.datastructur.es/projects/proj0/hardmode">本项目的高难度版本</a>感兴趣。在高难度版本中，你将解决与本项目标准版本相同的问题，但没有指导，你需要自行设计。</p>
+<p>完成高难度版本而不是标准版本没有额外加分。</p>
+<h2 id="_2">常见问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>每个作业都会在顶部链接一个常见问题页面。你也可以通过在网址末尾添加 <code>/faq</code> 来访问。项目 0 的常见问题页面位于<a href="https://sp25.datastructur.es/projects/proj0/faq/">此处</a>。</p>
+<p>请注意，此项目的提交次数有限。请查看<a href="https://sp25.datastructur.es/projects/proj0/#submission-and-grading">提交与评分</a>以了解更多详情。</p>
+<h2 id="_3">概览<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>先修要求：</p>
+<ul>
+<li>
+<p><a href="https://sp25.datastructur.es/labs/lab01/">实验 1</a>（必需）</p>
+</li>
+<li>
+<p><a href="https://sp25.datastructur.es/homeworks/hw0/hw0a/">HW0A</a>（推荐，了解 Java 语法）</p>
+</li>
+<li>
+<p><a href="https://sp25.datastructur.es/homeworks/hw0/hw0b/">HW0B</a>（推荐，了解 Java 语法）</p>
+</li>
+<li>
+<p>讲座 1-2</p>
+</li>
+<li>
+<p><a href="https://sp25.datastructur.es/resources/guides/style/">61B 代码风格指南</a>（自动评分时会检查你的风格！）</p>
+</li>
+<li>
+<p><a href="https://sp25.datastructur.es/labs/lab02/">实验 2</a>（可选但推荐的先修课程 - 有助于调试）</p>
+</li>
+</ul>
+<p>在这个小项目中，你将通过创建一个可玩的 2048 游戏来练习 Java。我们已经为你实现了图形和用户交互代码，所以你的任务是实现游戏的逻辑。注意：这个版本的项目比以前版本要简单得多。如果你找到了以前学期 61B 的在线资源（例如视频），它们不适用于这个版本的项目。</p>
+<p>如果你不熟悉 2048，<a href="http://gabrielecirulli.github.io/2048">你可以在此链接尝试一个演示</a>。</p>
+<p>有很多使用你可能没见过的 Java 语法的起始代码，但这没关系！在现实世界中，你经常会处理自己不完全理解的代码库。理想情况下，系统被设计成模块化的，这样在系统的某个部分工作的人不需要了解系统其余部分的细节。</p>
+<p>事实上，对于这个项目，我们已经设置好了一切，你只需要打开 <code>GameLogic.java</code> 文件，尽管你也可以自由浏览其他文件。</p>
+<h3 id="git">使用 Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
+<p>重要的是你要 <em>在频繁的间隔内</em> 将工作提交到你的代码库。版本控制是一个强大的工具，当你搞砸了或你的狗吃掉了你的项目时，它可以拯救你，但你必须经常使用它才能发挥作用。每 15 分钟提交一次是可以的；Git 只保存更改的部分，尽管它表现得好像拍摄了整个项目的快照。</p>
+<p>命令 <code>git status</code> 会告诉你自上次提交以来修改、删除或可能添加了哪些文件。它还会告诉你有多少还没有发送到你的 GitHub 代码库。</p>
+<p>典型的命令如下：</p>
+<div class="highlight"><pre><span></span><code>git status                          # 查看有哪些文件需要添加或提交。
+git add &lt;文件或文件夹路径&gt;         # 添加或暂存任何已修改的文件。
+git commit -m &quot;提交信息&quot;           # 提交更改。使用描述性的消息。
+git push origin main               # 将你的本地更改反映到GitHub上，以便Gradescope可以看到它们。
+</code></pre></div>
+<p>然后你可以继续工作，直到准备好再次提交和推送，在这种情况下你将重复上述步骤。最好养成频繁提交并附有说明性提交信息的习惯，这样在需要恢复到旧版本的代码时，不仅可能，而且很容易。我们建议你每次添加一部分重要代码或达到某个里程碑（例如通过一个新测试）时进行提交。</p>
+<h3 id="2048">2048 规则：基本规则<a class="headerlink" href="#2048" title="Permanent link">&para;</a></h3>
+<p>2048 在一个方格网格上进行。每个方格可以是空的或包含编号的方块。</p>
+<p>玩家选择一个方向（使用方向键）来 <em>倾斜</em> 棋盘：北、南、东、西。所有方块在这个方向上滑动，直到运动方向没有空格为止。当一个方块滑动时，它可能与另一个具有相同编号的方块 <em>合并</em> 。你将在任务 2-7 中实现这一点。</p>
+<p>每次两个方块合并形成一个更大的方块时，玩家会获得新方块上的分数。我们已经实现了得分追踪。</p>
+<p>游戏开始时会随机生成一个值为 2 或 4 的方块。每次倾斜后，一个随机生成的方块将被添加到棋盘上的一个空方格中。注意，如果倾斜没有改变棋盘状态，则不会随机生成新的方块。你的代码不会添加任何新方块！我们已经为你实现了这部分。</p>
+<p>游戏在当前玩家没有可用移动（没有倾斜可以改变棋盘）或某个移动形成一个包含 2048 的方格时结束。</p>
+<p>如果你想亲自尝试这个游戏，欢迎<a href="https://play2048.co/">在这里</a>尝试。</p>
+<h2 id="_4">设置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">获取框架文件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>请按照<a href="https://sp25.datastructur.es/resources/guides/assignment-workflow/">作业工作流程指南</a>中的说明获取框架代码并在 IntelliJ 中打开。在这个项目中，我们将在 <code>proj0/</code> 目录下工作。</p>
+<blockquote>
+<p>如果遇到某种错误，请停止操作，并通过仔细阅读<a href="https://sp25.datastructur.es/resources/guides/git/wtfs/">git WTFs</a>解决问题，或在 OH 或 Ed 上寻求帮助。与其使用 git 命令的猜测和检查，不如这样做可以为您节省很多麻烦。如果您发现自己试图使用 Google 推荐的命令（如强制推送），<a href="https://twitter.com/heathercmiller/status/526770571728531456">请不要这样做</a>。<strong>即使您在 Stack Overflow 上找到的帖子建议这样做，也不要使用 <code>git push -f</code> ！</strong></p>
+<p>如果您无法让 Git 正常工作，请将<a href="https://www.youtube.com/watch?v=Squ8TmG5mX0">这段视频</a>作为最后的手段来提交您的作业。</p>
+</blockquote>
+<h3 id="_6">文件结构<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><code>proj0</code> 文件夹分为两个 <em>包</em> ， <code>game2048logic</code> 和 <code>game2048rendering</code> 。虽然在 61B 中我们不会过多讨论它们，但包是一种将代码组织到不同文件夹中的方式。例如，所有图形代码都在 <code>game2048rendering</code> 包中，所有游戏逻辑代码都在 <code>game2048logic</code> 包中。您可以在下面的文件结构中看到这一点：</p>
+<div class="highlight"><pre><span></span><code>proj0
+├── game2048logic
+|   ├── GameLogic.java
+|   ├── MatrixUtils.java
+├── game2048rendering
+    ├── Board.java
+    ... (其他一些文件) ...
+    ├── Main.java
+    ├── Side.java
+    ├── Tile.java
+</code></pre></div>
+<blockquote>
+<p>在整个项目中，您只需要阅读和修改 <code>game2048logic/GameLogic.java</code> 文件。对其他文件的更改不会被 Gradescope 识别。</p>
+<p>您无需阅读 <code>game2048rendering</code> 中的任何代码，不过如果愿意，可以随意阅读。</p>
+</blockquote>
+<h3 id="_7">运行游戏<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>您可以通过运行 <code>game2048rendering</code> 包中的 <code>Main.java</code> 文件来运行您的游戏。可以通过右键单击该文件并选择 “Run ‘Main.main()’” 来执行此操作：</p>
+<p><img alt="运行主程序" src="https://sp25.datastructur.es/projects/proj0/img/run-main.png" /></p>
+<p>如果一切设置正确，您应该会得到如下图所示的内容：</p>
+<p><img alt="2048开始" src="https://sp25.datastructur.es/projects/proj0/img/2048-start.png" /></p>
+<p>现在，当您按下方向键时，您的游戏不会有任何动作，但到本项目结束时，您将拥有一个完整的 2048 实现！</p>
+<h2 id="1">任务 1：理解倾斜<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>在本项目中，您将实现倾斜棋盘的逻辑。</p>
+<h3 id="_8">规则：倾斜<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><img alt="2048 示例" src="https://sp25.datastructur.es/projects/proj0/img/example-2048.gif" /></p>
+<p>上面的动画展示了几个倾斜操作。以下是图像中显示的合并发生时的完整规则。</p>
+<ol>
+<li>两个相同值的方块 <em>合并</em> 为一个包含初始数字两倍的方块。</li>
+<li>作为合并结果的方块不会在该次倾斜中再次合并。例如，如果我们有[X, 2, 2, 4]，其中 X 表示空格，并且我们将方块向左移动，我们应该得到[4, 4, X, X]，而不是[8, X, X, X]。这是因为最左边的 4 已经是合并的一部分，因此不应再次合并。</li>
+<li>当在运动方向上有三个相邻方块具有相同的数字时，运动方向上的两个前导方块合并，而尾随方块不合并。例如，如果我们有[X, 2, 2, 2]并将方块向左移动，我们应该得到[4, 2, X, X]而不是[2, 4, X, X]。</li>
+</ol>
+<p>根据这些规则的推论，如果在运动方向上有四个相邻方块具有相同的数字，它们会形成两个合并后的方块。例如，如果我们有[4, 4, 4, 4]，然后向左移动，我们得到[8, 8, X, X]。这是因为前导两个方块将根据规则 3 合并，然后尾随两个方块将合并，但由于规则 2，这些合并后的方块（在我们的例子中为 8）在该次倾斜中不会再次合并。</p>
+<p>您将在上面的动画 GIF 中找到上述 3 条规则的应用，因此请多次观看以充分理解这些规则。</p>
+<h3 id="_9">倾斜规则测验<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>您的任务：完成这个可选的<a href="https://forms.gle/xW74vQnK7dZAjS6eA">Google Form 测验</a>，以检查您对倾斜规则的理解。</p>
+<p>这个测验（和这个任务）不是您 61B 课程成绩的一部分。</p>
+<h3 id="_10">实现倾斜<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>实现倾斜出人意料地具有挑战性。我们必须考虑四个不同的可能方向，三个不同的合并规则，等等。</p>
+<p>计算机科学本质上只有一件事：管理复杂性。为了实现这种复杂的功能，我们需要将问题分解成更小的部分，并逐一解决。</p>
+<p>在未来的作业中，您将需要自己找出如何将问题分解成更小的部分。对于这个项目，这里是我们决定解决倾斜问题的方法：</p>
+<ul>
+<li><strong>四个方向：</strong> 与其同时担心四个方向的倾斜，不如先从上方向开始。稍后，在最后一个任务（任务 6）中，我们将向您展示一个巧妙的技巧，以概括您的代码，并通过仅几行代码来处理其他三个方向。</li>
+<li><strong>关键观察：</strong> 当您将棋盘向上倾斜时，每列可以独立处理。一个列中的方块不会影响到不同列中的方块。受此观察启发，我们将编写一个 *辅助方法*用于倾斜一列。然后，要向上倾斜整个棋盘（任务 5），我们将调用该辅助方法逐一倾斜每列。</li>
+<li><strong>另一个关键观察：</strong> 当您将一列向上倾斜时，我们需要计算该列中每个方块的最终着陆方格。我们可以在一个方法中完成所有这些，但这样很快就会变得复杂。相反，让我们编写另一个 *辅助方法*用于移动单个方块。然后，要倾斜整个列（任务 4），我们将调用该辅助方法逐一移动每个方块。</li>
+<li><strong>合并规则：</strong> 在我们甚至处理合并之前，让我们尝试实现方块向上倾斜。然后，一旦方块正确向上倾斜，我们可以添加逻辑以实现合并（任务 3）。</li>
+</ul>
+<h2 id="2">任务 2：移动方块向上（不合并）<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>在 <code>GameLogic.java</code> 中，填写 <code>moveTileUpAsFarAsPossible(int[][] board, int r, int c, int minR)</code> 方法。不要修改该文件中的其他文件或函数。</p>
+<p>此方法应将位置为 <code>(r, c)</code> 的方块尽可能向上移动。在此任务中，您应该完全忽略 <code>minR</code> 参数。</p>
+<p>请记住，方块可以通过空格向上移动，直到方块到达顶行，或者方块到达一个空格，上面直接有另一个方块。</p>
+<p>对于此任务，不必担心合并。我们将在下一个任务中添加合并逻辑。</p>
+<p>以下是四组 <strong>前后对比</strong> 棋盘对，说明了 <code>moveTileUpAsFarAsPossible(int[][] board, int r, int c, int minR)</code> 函数的行为。对于每个示例，第一个表是 <strong>方法调用前</strong> 的棋盘，第二个表是 <strong>方法调用后</strong> 的棋盘。 <code>r</code> 和 <code>c</code> 的值被明确说明以便于理解。请记住，对于此任务， <strong>合并被忽略</strong> ，并且 <strong>也应忽略 <code>minR</code></strong> 。</p>
+<hr />
+<h3 id="1_1">示例 1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p><strong>方法调用</strong> ： <code>moveTileUpAsFarAsPossible(board, r=3, c=0, minR=0)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>2</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>位置 <code>(3, 0)</code> 的方块直接移动到顶行 <code>(0, 0)</code> 。</p>
+<hr />
+<h3 id="2_1">示例 2<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p><strong>方法调用</strong> ： <code>moveTileUpAsFarAsPossible(board, r=2, c=1, minR=0)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>4</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>4</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>位置 <code>(2, 1)</code> 的方块向上移动到 <code>4</code> 的正下方，即落在 <code>(1, 1)</code> 。</p>
+<hr />
+<h3 id="3">示例 3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><strong>方法调用</strong> ： <code>moveTileUpAsFarAsPossible(board, r=0, c=2, minR=0)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>0</th>
+<th>4</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>0</th>
+<th>4</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>位置 <code>(0, 2)</code> 的方块已经在顶行，因此不移动。</p>
+<h3 id="_11">测试与调试<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>要测试您的方法，请在 <code>TestTask2.java</code> 中运行测试，方法是右键单击该文件并选择 “Run ‘TestTask2’” 。</p>
+<p><img alt="test-task2" src="https://sp25.datastructur.es/projects/proj0/img/test-task2.png" /></p>
+<p>（您也可以通过右键单击 <code>tester2048</code> &gt; “Run ‘Tests in ‘tester2048’’” 来运行整个文件夹中的所有测试。）</p>
+<p>或者，您可以打开 <code>TestTask2.java</code> 文件并单击 <code>public class TestTask2</code> 旁边的绿色箭头来运行测试。以下是上学期的示例动画。文件略有不同，但过程相同：</p>
+<p><img alt="run-test-empty-space-2" src="https://sp25.datastructur.es/projects/proj0/img/test-task1-play.gif" /></p>
+<p>您也可以以同样的方式运行单个测试。</p>
+<p>您将在整个项目（以及课程）中以相同的方式运行所有测试！</p>
+<p>运行提供的测试将测试上述三个示例。如果您的实现正确，所有测试都应该通过。</p>
+<p>以下是如果您未通过测试时的错误消息示例：</p>
+<p><img alt="TestTask2-fail" src="https://sp25.datastructur.es/projects/proj0/img/task2-fail.png" /></p>
+<p>在左侧，您会看到运行的所有测试列表。红色感叹号表示程序出错，黄色 X 表示我们未通过测试（程序运行但给出了错误的输出），绿色勾号表示我们通过了测试。在右侧，您将看到一些有用的错误消息。要单独查看单个测试及其错误消息，请单击左侧的测试。例如，假设我们要查看 <code>two tiles, different values</code> 测试。</p>
+<p><img alt="test-task2-two-tiles" src="https://sp25.datastructur.es/projects/proj0/img/task2-two-tiles.png" /></p>
+<p>右侧现在是此测试的独立错误消息。顶行有一个有用的消息： <code>Boards should match</code> ，后跟 <code>String</code> 表示的预期（应该发生的）和实际（您的代码生成的）棋盘。您会看到，2 留在了其位置，即使它本应该移动到 4 的下方位置，这导致了该测试失败。代码顶部的 javadoc 注释也有一些有用的信息，以防您未通过测试。您可以单击蓝色下划线的文字以查看测试内容。</p>
+<p>您可能会遇到的一个常见错误是 <code>ArrayIndexOutOfBoundsException</code> 。以下是 <code>ArrayIndexOutOfBoundsException</code> 错误消息的示例：</p>
+<p><img alt="ArrayIndexOutOfBoundsException" src="https://sp25.datastructur.es/projects/proj0/img/index-oob-error.png" /></p>
+<p><code>ArrayIndexOutOfBoundsException</code> 发生在我们尝试访问非法索引的值时。例如，数组 <code>arr = [4, 2, 2, 4]</code> 的合法索引为 0、1、2 和 3。尝试访问 <code>arr[4]</code> 或 <code>arr[-1]</code> 将抛出 <code>ArrayIndexOutOfBoundsException</code> 。</p>
+<p>我们可以通过检查测试输出中提供的堆栈跟踪来评估 <code>ArrayIndexOutOfBoundsException</code> 发生的位置。仔细查看上一个示例：</p>
+<p><img alt="StackTrace" src="https://sp25.datastructur.es/projects/proj0/img/stack-trace.png" /></p>
+<p>堆栈跟踪显示了导致错误的代码执行行，最顶行是最近的。 <code>at game2048logic.GameLogic.moveTileUpAsFarAsPossible(GameLogic.java:30)</code> 这一行告诉我们关于错误的一些信息。首先，我们可以看到我们的 <code>ArrayIndexOutOfBoundsException</code> 是在 <code>game2048logic.GameLogic</code> 类中的 <code>moveTileUpAsFarAsPossible</code> 方法中触发的。 <code>GameLogic.java:30</code> 指定了触发错误的行。这是由 <code>TestTask2</code> 类中的 <code>testOneTile</code> 方法的第 33 行调用的，依此类推。</p>
+<p>堆栈跟踪是调试的有用起点。您可以单击堆栈跟踪中的蓝色下划线部分以直接跳转到该行代码。</p>
+<h2 id="3_1">任务 3：合并方块<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h2>
+<p>修改 <code>moveTileUpAsFarAsPossible</code> 方法，以便其考虑方块合并的可能性。</p>
+<p>请记住，方块可以通过空格向上移动。当方块看到一个非空方格时，如果该格子包含另一个相同值的方块，则两个方块应合并。</p>
+<p>如果发生合并， <code>moveTileUpAsFarAsPossible</code> 应返回 1 + 合并发生的行号。如果没有合并，则应返回 0。这看起来可能相当任意。我们将在任务 4 中看到这为什么有用。</p>
+<p>与任务 2 一样，您应该忽略 <code>minR</code> 参数。</p>
+<p><strong>方法调用</strong> ： <code>moveTileUpAsFarAsPossible(board, r=3, c=0, minR=0)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>2</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>4</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>相同值的方块（2 和 2）合并成列顶部的 4。由于发生了合并，该方法应返回 1，因为合并发生在行 0。</p>
+<hr />
+<p><strong>方法调用</strong> ： <code>moveTileUpAsFarAsPossible(board, r=2, c=0, minR=0)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>8</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>8</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>位置 <code>(2, 0)</code> 的 <code>8</code> 无法与 <code>(0, 0)</code> 合并，因为中间有一个 <code>4</code> 。该方法应返回 0，因为没有发生合并。</p>
+<hr />
+<p><strong>方法调用</strong> ： <code>moveTileUpAsFarAsPossible(board, r=3, c=2, minR=0)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>0</th>
+<th>2</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>0</th>
+<th>2</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>底部的方块 <code>(3, 2)</code> 与 <code>(2, 2)</code> 合并，形成 4。在这一次移动中，它不能再次合并。该方法应返回 3，因为合并发生在行 2。</p>
+<hr />
+<p><strong>方法调用</strong> ： <code>moveTileUpAsFarAsPossible(board, r=2, c=2, minR=0)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>0</th>
+<th>2</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>0</th>
+<th>2</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>位置 <code>(2, 2)</code> 的方块与 <code>(1, 2)</code> 合并形成 <code>4</code> 。位置 <code>(3, 2)</code> 的方块保持为底部的 <code>4</code> ，直到它可能稍后移动。该方法应返回 2，因为合并发生在行 1。</p>
+<h3 id="_12">测试与调试<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>要测试您的方法，请在 <code>TestTask3.java</code> 中运行测试，这将测试上述示例。如果您的实现正确，所有测试都应通过。</p>
+<h2 id="4-minr">任务 4：合并方块到达 minR<a class="headerlink" href="#4-minr" title="Permanent link">&para;</a></h2>
+<p>在 <code>GameLogic.java</code> 中，修改您的 <code>moveTileUpAsFarAsPossible(int[][] board, int r, int c, int minR)</code> 方法，使得方块不能移动到比 <code>minR</code> 更高的行。</p>
+<p>注意：现在还不清楚 <code>minR</code> 在以后为什么会有用。您将在任务 5 中看到它的用处！</p>
+<h4 id="1_2">示例 1<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h4>
+<p><strong>方法调用</strong> ： <code>moveTileUpAsFarAsPossible(board, r=3, c=0, minR=0)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>2</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>4</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明</strong> ：底部的方块 <code>(3,0)</code> 移动到 <code>(0,0)</code> 并与 <code>2</code> 合并成 <code>4</code> 。由于发生了合并，返回值为 <code>1</code> 。</p>
+<hr />
+<h4 id="2_2">示例 2<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h4>
+<p><strong>方法调用</strong> ： <code>moveTileUpAsFarAsPossible(board, r=3, c=0, minR=1)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>2</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>2</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明</strong> ：由于 <code>minR = 1</code> ，位置 <code>(3,0)</code> 的方块只能移动到 <code>(1,0)</code> 而未与位置 <code>(0,0)</code> 的方块合并。由于没有发生合并，该方法返回 <code>0</code> 。</p>
+<hr />
+<h4 id="3_2">示例 3<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h4>
+<p><strong>方法调用</strong> ： <code>moveTileUpAsFarAsPossible(board, r=3, c=0, minR=3)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>2</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>2</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明</strong> ：由于 <code>minR = 3</code> ，位置 <code>(3,0)</code> 的方块不能移动，因此棋盘保持不变，并且没有合并发生。该方法应返回 <code>0</code> 。</p>
+<h3 id="_13">测试与调试<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>要测试您的方法，请运行 <code>TestTask4.java</code> 中的测试。如果您的实现正确，所有测试都应通过。测试文件包含的测试比上面显示的更多。如果您未通过这些测试，您可能需要查看这些测试的代码以了解问题所在。</p>
+<h2 id="5">任务 5：倾斜列<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>现在我们已经完全实现了 <code>moveTileUpAsFarAsPossible</code> ，我们可以使用它来实现 <code>GameLogic.java</code> 中的 <code>tiltColumn</code> 。此函数将向上倾斜整个列。</p>
+<p>该方法应倾斜坐标 <code>x</code> 处的给定列，移动该列中的所有方块到它们应在的位置，并合并该列中需要合并的任何方块。</p>
+<p>记得使用您的 <code>moveTileUpAsFarAsPossible</code> 辅助方法以保持简单！考虑：您应该在什么顺序上调用此辅助方法？如何使用 <code>moveTileUpAsFarAsPossible</code> 的返回值来避免重复合并？</p>
+<p>注意： <code>moveTileUpAsFarAsPossible</code> 的巧妙设计将使这项任务的代码相对简短简单。我的 <code>tiltColumn</code> 实现只有 8 行，包括括号和定义。您会在整个课程中发现，如果您有一个清晰的设计，例如 <code>moveTileUpAsFarAsPossible</code> 这样的辅助方法，实现系统要容易得多，因为它自然地避免了重复合并。</p>
+<h4 id="1_3">示例 1：无合并<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h4>
+<p><strong>方法调用</strong> ： <code>tiltColumn(board, 0)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>4</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明</strong> ：方块 <code>4</code> 和 <code>2</code> 在第 <code>0</code> 列中简单地向上移动而不合并。</p>
+<hr />
+<h4 id="2_3">示例 2：需要一次合并<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h4>
+<p><strong>方法调用</strong> ： <code>tiltColumn(board, 1)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>8</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明</strong> ：只有第 <code>1</code> 列被处理。位置 <code>(2,1)</code> 的 <code>4</code> 和位置 <code>(3,1)</code> 的 <code>4</code> 合并成位置 <code>(0,1)</code> 的 <code>8</code> 。第 3 行的其余部分在第 <code>2</code> 和 <code>3</code> 列中保持不变。</p>
+<hr />
+<h4 id="3_3">示例 3：相同的方块被分隔，无法通过中间方块合并<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h4>
+<p><strong>方法调用</strong> ： <code>tiltColumn(board, 3)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>8</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>8</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明</strong> ：只有第 <code>3</code> 列向上倾斜。方块尽可能向上堆叠，但位置 <code>(0,3)</code> 的 <code>4</code> 不会与位置 <code>(2,3)</code> 的 <code>8</code> 合并。同样，位置 <code>(2,3)</code> 和位置 <code>(3,3)</code> 的两个 <code>4</code> 也不会合并，因为其中一个实际上是 <code>8</code> 。</p>
+<hr />
+<h4 id="4">示例 4：未与合并的方块合并<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<p><strong>方法调用</strong> ： <code>tiltColumn(board, 2)</code></p>
+<p><strong>之前</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>之后</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明</strong> ：第 <code>2</code> 列向上倾斜。位置 <code>(0,2)</code> 的 <code>2</code> 和位置 <code>(1,2)</code> 的 <code>2</code> 合并为位置 <code>(0,2)</code> 的 <code>4</code> 。然而，生成的 <code>4</code> 不会与位置 <code>(2,2)</code> 的现有 <code>4</code> 在同一次移动中合并，因此它们堆叠在 <code>0</code> 和 <code>1</code> 行。</p>
+<h3 id="_14">测试与调试<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>要测试您的方法，请运行 <code>TestTask5.java</code> 中的测试。如果您的实现正确，所有测试都应通过。</p>
+<h2 id="6">任务 6：向上倾斜<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<p>在 <code>GameLogic.java</code> 中，填写 <code>tiltUp(int[][] board)</code> 方法。</p>
+<p>此方法应将整个棋盘向上倾斜，移动所有列中的所有方块到其应在的位置，并合并需要合并的任何方块。</p>
+<h3 id="_15">测试与调试<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>要测试您的方法，请运行 <code>TestTask6.java</code> 中的测试。如果您的实现正确，所有测试都应通过。与之前的任务不同，我们在此规范中不提供任何示例。请参阅 <code>TestTask6.java</code> 代码以获取这些示例。</p>
+<h2 id="7">任务 7：四个方向的倾斜<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>既然我们已经为向上方向编写了 <code>tiltUp</code> ，我们的游戏应该可以工作，但仅在用户按上键时。我们需要实现其他三个方向。</p>
+<p>一种可能的方法是创建另外三个函数 <code>moveTileRightAsFarAsPossible</code> 、 <code>moveTileDownAsFarAsPossible</code> 和 <code>moveTileLeftAsFarAsPossible</code> ，我们可以用它们来最终实现 <code>tiltRight</code> 、 <code>tiltDown</code> 和 <code>tiltLeft</code> 。这是个糟糕的主意。这会导致代码混乱且难以阅读，容易引入晦涩的错误，例如，如果您在一个副本中修复了某些问题，但没有在其他三个副本中修复呢？</p>
+<p>相反，我们将利用提供的 <code>rotateLeft</code> 和 <code>rotateRight</code> 方法，旋转棋盘。</p>
+<p>填写提供的 <code>tilt</code> 方法，使其能够正确处理所有四个方向。</p>
+<h3 id="_16">测试与调试<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>要测试您的方法，请运行 <code>TestTask7.java</code> 中的测试。如果您的实现正确，所有测试都应通过。</p>
+<p>测试文件，例如 <code>TestIntegration.java</code> ，测试您编写的所有内容的协调性。这样的测试称为集成测试，在测试中非常重要。单元测试在隔离中运行，而集成测试则全部一起运行，旨在捕捉由于您编写的不同功能之间的交互而导致的晦涩错误。在通过其余测试之前，请勿尝试调试 <code>TestIntegration.java</code> ！</p>
+<h2 id="_17">玩游戏<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>既然您已经实现了游戏的逻辑，您可以通过运行 <code>Main.java</code> 来玩游戏！</p>
+<p>注意：如果您没有通过所有测试，游戏可能会出现异常行为或崩溃。</p>
+<h2 id="_18">风格<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>从这个项目开始， <strong>我们将强制执行风格要求</strong> 。您必须遵循<a href="https://sp25.datastructur.es/resources/guides/style/">风格指南</a>，否则将受到自动评分器的处罚。</p>
+<p>您可以并且应该使用 CS 61B 插件在本地检查您的风格。 <strong>我们不会因为未检查风格而移除速度限制。</strong></p>
+<h2 id="_19">提交和评分<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>我们不会因为未添加、提交或推送正确的文件而移除速度限制。您已被警告。</p>
+<h3 id="_20">速度限制<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>对于这个项目，我们将限制您提交代码到自动评分器的次数。您将获得 4 个提交 “令牌” ，每次再生时间为 24 小时。</p>
+<h3 id="_21">评分概述<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p>您的代码将根据我们提供的测试是否通过进行评分。没有隐藏测试；您在 Gradescope 上看到的分数就是您在该项目上的分数。</p>
+<p>Gradescope 将只对您的 <code>GameLogic.java</code> 文件进行评分。如果您编辑了其他文件，您的编辑将不会被识别，因此请不要编辑其他文件。</p>
+<p>测试在其各自的领域是 “全有或全无” 的。如果您在测试类别中未能通过一个子测试，您将不会获得该类别的信用，尽管您可能已经通过了不同的测试用例。例如，您将在 Gradescope 中看到 <code>TestModel</code> 类别的 5 个子测试。</p>
+<p>以下是每个部分的权重分布：</p>
+<ol>
+<li><code>TestTask2</code> : 15%</li>
+<li><code>TestTask3</code> : 20%</li>
+<li><code>TestTask4</code> : 20%</li>
+<li><code>TestTask5</code> : 8%</li>
+<li><code>TestTask6</code> : 4%</li>
+<li><code>TestTask7</code> : 8%</li>
+<li><code>TestIntegration</code> : 25%</li>
+</ol>
+<p>一旦您将代码推送到 GitHub（即您已运行 <code>git push</code> ），您可以访问 Gradescope，找到 <code>proj0</code> 项目，并在此提交代码。请记住，Gradescope 使用的代码版本是您推送的最新提交版本，因此如果您在 Gradescope 上提交之前没有运行 <code>git push</code> ，旧代码将被测试，而不是您计算机上的最新代码。</p>
+<p>没有隐藏测试。您在 Gradescope 上看到的分数就是您在该项目上的分数。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

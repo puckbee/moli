@@ -1,6 +1,17 @@
-# 必答题
+# 作业 1：函数、控制 [hw01.zip](https://cs61a.org/hw/hw01/hw01.zip)
 
-## Q1: A加B的绝对值
+下载 [hw01.zip](https://cs61a.org/hw/hw01/hw01.zip)
+
+!!! info "MOLI：本次作业你将会学到什么"
+    - Python的函数定义与调用、条件判断、循环控制
+    - Python的函数式编程思路：体会“把运算符当作对象”传递给另一个函数的思想
+    - 锻炼“用最精简的表达式完成任务”的能力，同时学习阅读并信赖内置库
+    - 测试与自动化检查：利用课程提供的`ok`程序，熟悉“持续集成”理念，即写完就测，保持代码的正确性和整洁性
+    - 调试和输入输出：练习追踪程序运行过程、阅读打印输出帮助发现错误
+
+## 必答题
+
+### Q1: A加B的绝对值
 
 Python的`operator`模块包含两个参数的函数，例如`add`和`sub`，用于Python的内置算术运算符。例如，`add(2,3)`的计算结果是5，就像表达式`2+3`一样。
 
@@ -29,18 +40,18 @@ def a_plus_abs_b(a, b):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q a_plus_abs_b
+python3 ok -q a_plus_abs_b --local
 ```
 
 使用ok来运行本地语法检查器（它会检查你除了两个空格之外，没有修改提供的任何代码）：
 
 ```shell
-python3 ok -q a_plus_abs_b_syntax_check
+python3 ok -q a_plus_abs_b_syntax_check --local
 ```
 
 
 
-## Q2: 三者中的两者
+### Q2: 三者中的两者
 
 编写一个函数，该函数接受三个*正数*作为参数，并返回两个最小数的平方和。**只使用一行代码作为函数体**。
 
@@ -72,18 +83,18 @@ def two_of_three(i, j, k):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q two_of_three
+python3 ok -q two_of_three --local
 ```
 
 使用ok来运行本地语法检查器（它会检查你是否只使用了一行代码作为函数体）：
 
 ```shell
-python3 ok -q two_of_three_syntax_check
+python3 ok -q two_of_three_syntax_check --local
 ```
 
 
 
-## Q3: 最大因数
+### Q3: 最大因数
 
 编写一个函数，该函数接受一个**大于 1** 的整数 `n` ，并返回小于 `n` 且能被 `n` 整除的最大整数。
 
@@ -106,21 +117,21 @@ def largest_factor(n):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q largest_factor
+python3 ok -q largest_factor --local
 ```
 
 
 
-## Q4: 冰雹
+### Q4: 冰雹
 
 道格拉斯·霍夫斯塔特（Douglas Hofstadter），在他获得普利策奖的书籍《哥德尔、埃舍尔、巴赫》（Gödel, Escher, Bach）中，提出了以下数学谜题：
 
 1. 选择一个正整数 `n` 作为起始。
-2. 如果 `n` 是偶数，将其除以 2。
-3. 如果 `n` 是奇数，将其乘以 3 并加 1。
-4. 继续这个过程，直到 `n` 为 1。
+2. 如果 `n` 是偶数，将其除以2。
+3. 如果 `n` 是奇数，将其乘以3并加1。
+4. 继续这个过程，直到 `n` 为1。
 
-数字 `n` 会计算的过程中上下波动，但最终会以1结束（至少对于所有已经尝试过的数字来说——没人证明过这个序列会终止）。类似地，冰雹在大气中上下波动，最终会落在地球上。
+数字 `n` 会计算的过程中上下波动，但最终会以1结束（至少对于所有已经尝试过的数字来说——因为没人证明过这个序列必定会终止）。类似于冰雹在大气中上下波动，而最终会落在地球上一样。
 
 这个 `n` 的值序列常被称为冰雹序列（Hailstone Sequences）。写一个函数，它接受一个名为 `n` 的参数。该函数打印出从 `n` 开始的冰雹序列，并返回计算序列所执行的步数：
 
@@ -155,7 +166,7 @@ def hailstone(n):
 使用ok来测试你的代码：
 
 ```shell
-python3 ok -q hailstone
+python3 ok -q hailstone --local
 ```
 
 
@@ -166,11 +177,11 @@ python3 ok -q hailstone
 
 
 
-## 检查你的得分
+### 检查你的得分
 
 运行得到本次作业中每个问题的分数。
 
 ```shell
-python3 ok --score
+python3 ok --score --local
 ```
 
