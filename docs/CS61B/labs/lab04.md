@@ -1,5 +1,13 @@
 # 实验 04：Git
 
+
+!!! info "MOLI：本次实验你将会学到什么"
+    * Git 的基本概念和用途
+    * Git 常用命令的使用
+    * Git 分支管理和合并
+    * GitHub 远程仓库操作
+
+
 ## FAQ
 
 Lab 04的常见问题解答在[这里](https://sp25.datastructur.es/labs/lab04/faq/)。
