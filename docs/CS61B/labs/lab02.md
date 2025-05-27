@@ -1,5 +1,11 @@
 # Lab 02: Debugging (Part 1)
 
+!!! info "MOLI：本次实验你将会学到什么"
+    * Java 调试技术
+    * 使用 IntelliJ 调试器
+
+
+
 ## 常见问题解答（FAQ）
 
 每项作业顶部都会有一个常见问题解答的链接。你也可以在网址末尾添加 “/faq” 来访问。实验 2 的常见问题解答可在[此处](https://sp25.datastructur.es/labs/lab02/faq)找到。
