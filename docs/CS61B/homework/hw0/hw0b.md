@@ -1,5 +1,14 @@
 # 作业布置
 请按照 [作业流程指南](https://sp25.datastructur.es/resources/guides/assignment-workflow/) 开始本次作业。本次作业名称为 hw0b。
+
+!!! info "MOLI：本次实验你将会学到什么"
+
+    - Java 数据结构使用（数组、列表、集合、映射）
+    - 类与对象的定义与实现
+    - 泛型编程与引用类型
+    - 异常处理机制
+    - Java 编码风格与最佳实践
+
 # 代码风格
 从这次作业开始，我们将 **严格要求代码风格** 。你必须遵循 [代码风格指南](https://sp25.datastructur.es/resources/guides/style/) ，否则自动评分时会被扣分。
 
