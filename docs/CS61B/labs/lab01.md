@@ -18,12 +18,6 @@
 
     一般来说，在等待时， **尽可能进行作业的下一步** 。
 
-### 合作
-
-CS 61B 课程的实验是 **单人** 进行的。这意味着你需要独立编写并提交自己的代码。特别是对于实验 1，你需要自行配置电脑。
-
-不过，我们强烈鼓励你与其他同学合作！线下实验课是寻找合作小组的绝佳场合。
-
 ### 目标与工作流程
 
 在本次实验中，我们将着手配置本课程会用到的软件。包括介绍终端、Git、Java 和 IntelliJ。我们还会完成一个小型 Java 程序，以便熟悉 Java 语言！
@@ -57,39 +51,6 @@ CS 61B 课程的实验是 **单人** 进行的。这意味着你需要独立编�
 !!! TASK
 
     请通读终端指南并熟悉所有命令！也欢迎收藏本页面以供日后参考。
-
-## GitHub 和 Beacon 帐户
-
-### 概述
-
-CS 61B 课程不使用 bCourses，而是采用一个名为 Beacon 的内部系统来集中管理你的成绩和学生信息。
-
-在这部分内容中，我们将为你设置 Beacon 账户，以及 CS 61B 课程的 GitHub 代码库（ “repo” ），你需要通过它提交所有编程作业。
-
-### 任务：设置账户
-
-1. 在[GitHub](https://github.com/)上创建一个账户。如果你已经有账户，则无需创建新账户。
-
-2. 前往[Beacon](https://sp25.beacon.datastructur.es/)，并按照步骤完成你的 GitHub 代码库注册。你必须登录伯克利账户才能完成谷歌表单形式的课程大纲测验。
-3. 完成所有步骤后，你应该会收到一封邀请你参与课程 GitHub 代码库协作的邮件。接受邮件邀请，以获取对课程代码库的访问权限。 **此邮件将发送到你用于创建 GitHub 账户的邮箱，不一定是你的伯克利邮箱。 **
-
-!!! WARNING
-
-    不要按照 GitHub 提供的说明操作。在本实验的后面部分，我们会提供自己的一套说明。
-
-!!! TASK
-
-    按照上述步骤创建您的 GitHub 和 Beacon 帐户，并连接它们。
-
-### 你的仓库
-
-你的代码仓库名称中会包含一个对你而言独一无二的数字。例如，如果你的代码库名为 `sp25-s1` ，登录 GitHub 后，你可以通过[https://github.com/Berkeley-CS61B-Student/sp25-s1](https://github.com/Berkeley-CS61B-Student/sp25-s1)访问你的私有代码库。 **如果你的学号不是 “1” ，这个链接对你不可用。请将 “1” 替换为你自己的数字，以便在 GitHub 上查看你的代码库。**
-
-此外， **课程工作人员可以查看你的代码库。** 这意味着当你在 Ed 或 Gitbugs 上私下询问调试问题时，你可以（也应该！）附上代码链接。其他学生无法查看你的代码库。
-
-!!! DANGER
-
-    提醒一下，即使课程结束，你也不得公开本课程的代码。这样做违反我们的课程规定，你可能会受到纪律处分。
 
 ## Git
 
@@ -229,14 +190,15 @@ Hi USERNAME! You've successfully authenticated, but GitHub does not provide shel
 
     请勿将你的代码库放在 library-sp25 文件夹内。这会在日后带来麻烦。例如，它应位于 cs61b 文件夹内，但不在 library-sp25 文件夹中（可能与库文件夹处于同一层级 ）。
 
-**确保将 `\***` 替换为你的课程代码库编号（你可以在 Beacon 上找到此代码库编号）。\*\* 然后运行以下命令：
+**确保将 `***` 替换为你的课程代码库编号（你可以在 Beacon 上找到此代码库编号）**。然后运行以下命令：
 
 ```bash
 git clone git@github.com:Berkeley-CS61B-Student/sp25-s***.git
 ```
 
 !!! TIP
-克隆完成后，你的终端会报告 `warning: You appear to have cloned an empty repository` 。这不是问题，只是 Git 在告知你代码库中没有文件。
+
+    克隆完成后，你的终端会报告 `warning: You appear to have cloned an empty repository` 。这不是问题，只是 Git 在告知你代码库中没有文件。
 
 进入新创建的代码库：
 
@@ -380,7 +342,8 @@ IntelliJ 是一款集成开发环境（IDE）。IDE 是一种综合性程序，�
 
 ![image6](images/lab01/image6.png)
 
-??? 还有其他方式可以运行 `main`
+
+??? 还有其他方式可以运行main
 
     ![image7t](images/lab01/image7.png)
 
@@ -436,41 +399,7 @@ git push origin main
 
 基本上，当你在代码仓库中工作时，首先执行 `git pull` ，确保你使用的是最新代码。在工作过程中，频繁提交。完成工作后，执行 `git push origin main` ，这样你所有的更改都会上传，并且下次可以再次拉取。
 
-## 提交到 Gradescope
-
-虽然我们使用 GitHub 来存储编程作业，但实际评分是通过 Gradescope 进行的。最后一步是将作业提交到 Gradescope，我们用它来对编程作业进行自动评分。
-
-!!! TIP
-
-    在实验课的第一天，我们已将每个人在 CalCentral 上的邮箱添加到了 Gradescope。请务必使用 CalCentral 上列出的邮箱地址登录。
-    如果你在 Gradescope 上访问课程时遇到问题，或者想用不同的邮箱地址登录，请咨询助教！
-
-!!! TASK
-
-    如果还没有完成，确保你已添加、提交并推送了更改。为方便起见，以下重复相关步骤：
-
-1. 使用 `git add` 命令添加作业目录。例如，对于实验 1，在代码库根目录（ `sp25-s***` ）下，你可以使用 `git add lab01` 。
-
-2. 使用 `git commit -m "<提交信息>"` 命令提交文件。提交信息是必填项。例如， `git commit -m "Finished Lab 1"` 。
-
-3. 使用 `git push origin main` 命令将代码推送到远程代码库。你可以访问 GitHub 上的个人代码库，查看更改是否已反映出来，以此验证更改是否已推送。
-
-4. 在 Gradescope 上打开作业。选择 GitHub，然后选择你的 `sp25-s***` 代码库和主分支，接着提交作业。你会收到一封确认邮件，自动评分系统将自动运行。Gradescope 会使用 GitHub 上你代码的最新版本。如果你认为评分的代码不对，请检查你是否已执行添加、提交和推送操作，可使用 `git status` 命令查看 。
-
-## 交付内容
-
-提醒一下，本次作业设有常见问题解答（FAQ）页面。只有一个必需文件，位于 `lab01` 目录中：
-`Arithmetic.java`
-
-你应修复其中的错误，使测试能够通过。我们会使用自动评分器检查此文件！对于本次实验，自动评分器的测试与你在自己计算机上运行的测试相同。
-
-!!! TASK
-
-    如果还没有完成，确保你已按照上述工作流程，将更改添加、提交并推送到 GitHub。如果你通过了 `ArithmeticTest.java` 中的所有测试，本次实验应能获得满分。
-
 **恭喜你完成第一个 CS 61B 实验！**
-
-如果你需要复习如何提交作业，可以参考[作业工作流程指南](https://sp25.datastructur.es/resources/guides/assignment-workflow/#opening-in-intellij)。
 
 ## 选做：乔希·胡格（Josh Hug）的配色方案
 

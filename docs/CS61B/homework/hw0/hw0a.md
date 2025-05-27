@@ -8,7 +8,7 @@
 | ```i = 0``` | ```int i = 0;``` |
 
 
-- 与Python一样，Java变量具有**类型**。在Java中，声明变量时必须显式指定其类型。变量声明的类型永远不能更改。有关“静态类型”的更多信息，请参阅第1讲。
+- 与Python一样，Java变量具有 **类型** 。在Java中，声明变量时必须显式指定其类型。变量声明的类型永远不能更改。有关“静态类型”的更多信息，请参阅第1讲。
 - 语句末尾还必须加上分号。 
 
 ## 类型
@@ -81,7 +81,7 @@ for (initialization; termination; increment) {
 | `==` | `==` |
 
 - 注意`elif`和`else if`之间的区别。
-- 注意：在Java中，`==`用于判断对象的**同一性（即是否为同一个对象，比较内存地址 ）** ，而`.equals()`用于判断对象的**相等性（比较对象的值 ）**。对于基本数据类型，这两者效果相同，但对于引用数据类型，情况可能有所不同。在本次作业中，你无需了解这一区别，我们稍后会进一步学习。 
+- 注意：在Java中，`==`用于判断对象的 **同一性（即是否为同一个对象，比较内存地址 ）** ，而`.equals()`用于判断对象的 **相等性（比较对象的值 ）** 。对于基本数据类型，这两者效果相同，但对于引用数据类型，情况可能有所不同。在本次作业中，你无需了解这一区别，我们稍后会进一步学习。 
 ## 指数运算
 | Python | Java |
 | ---- | ---- |
@@ -114,7 +114,7 @@ for (initialization; termination; increment) {
 | ---- | ---- |
 | <pre><code><span style="color:blue">print</span>("Hello World")</code></pre> | <pre><code><span style="color:green">public</span> <span style="color:green">class</span> Helloworld {<br>    <span style="color:green">public</span> <span style="color:green">static</span> <span style="color:blue">void</span> main(<span style="color:blue">String</span>[] args) {<br>        <span style="color:blue">System.out.println</span>("Hello World");<br>    }<br>}</code></pre> |
 
-- 所有Java代码都必须位于**class**中。稍后我们会学习到更多关于类的东西。
+- 所有Java代码都必须位于 **class** 中。稍后我们会学习到更多关于类的东西。
 
 - 当执行Java程序时，会运行`public static void main(String[] args)` 方法 。这与 Python 不同，Python 中的代码可以在函数外部执行。
 
@@ -141,66 +141,58 @@ for (initialization; termination; increment) {
 
 如果你在做练习时遇到困难，一种方法是先在Python中解决问题，然后再将其转换为Java代码。如果你在Python中解决问题也有困难，这也没关系，这不是本练习的重点。如果你想参考Python解决方案，请查看下面的下拉菜单。 
 
-<details>
-<summary style="background-color: #e6f3ff; padding: 8px; border: 1px solid #aac8ff; border-radius: 4px; cursor: pointer;">starTriangle </summary>
 
-```python
-for i in range(5):
-    line = ""
-    for j in range(5 - i - 1):
-        line += " "
-    for k in range(i + 1):
-        line += "*"
-    print(line)
-```
-</details>
-<br>
+??? starTriangle
 
-<details>
-<summary style="background-color: #e6f3ff; padding: 8px; border: 1px solid #aac8ff; border-radius: 4px; cursor: pointer;">printIndexed </summary>
+    ```
+    for i in range(5):
+        line = ""
+        for j in range(5 - i - 1):
+            line += " "
+        for k in range(i + 1):
+            line += "*"
+        print(line)
 
-```python
-def printIndexed(s):
-    output = ""
-    for i in range(len(s)):
-        output += s[i]
-        output += str(len(s) - 1 - i)
-    print(output)
-```
-</details>
+    ```
 
-<br>
+??? printIndexed
 
-<details>
-<summary style="background-color: #e6f3ff; padding: 8px; border: 1px solid #aac8ff; border-radius: 4px; cursor: pointer;">stutter </summary>
+    ```python
+    def printIndexed(s):
+        output = ""
+        for i in range(len(s)):
+            output += s[i]
+            output += str(len(s) - 1 - i)
+        print(output)
+    ```
 
-```python
-def stutter(s):
-    output = ""
-    for i in range(len(s)):
-        output += s[i]
-        output += s[i]
-    return output
-```
-</details>
-<br>
-<details>
-<summary style="background-color: #e6f3ff; padding: 8px; border: 1px solid #aac8ff; border-radius: 4px; cursor: pointer;">quadrant </summary>
 
-```python
-def quadrant(x, y):
-    if x == 0 or y == 0:
-        return 0
-    elif y > 0 and x > 0:
-        return 1
-    elif y > 0 and x < 0:
-        return 2
-    elif y < 0 and x < 0:
-        return 3
-    else:
-        return 4
-```
-</details>
+??? stutter
+
+    ```python
+    def stutter(s):
+        output = ""
+        for i in range(len(s)):
+            output += s[i]
+            output += s[i]
+        return output
+    ```
+
+??? quadrant
+
+    ```python
+    def quadrant(x, y):
+        if x == 0 or y == 0:
+            return 0
+        elif y > 0 and x > 0:
+            return 1
+        elif y > 0 and x < 0:
+            return 2
+        elif y < 0 and x < 0:
+            return 3
+        else:
+            return 4
+    ```
 
 
 # 作业提交
@@ -208,7 +200,7 @@ def quadrant(x, y):
 - 向hw0A：提交可运行的代码实现。
 - 向hw0A：提交截图。
 
-**如果你是首次完成作业0A，**必须在框架文件中完成练习。将工作提交并推送到远程仓库后，可将代码提交至Gradescope上的“作业0A：代码”。若通过所有自动评分测试，即完成作业。
+**如果你是首次完成作业0A** 必须在框架文件中完成练习。将工作提交并推送到远程仓库后，可将代码提交至Gradescope上的“作业0A：代码”。若通过所有自动评分测试，即完成作业。
 
 **如果你之前已经完成过作业0A**（例如，你之前学期选修过61B但退课了 ），可以提交之前完成Practice - It练习时的截图，显示之前的完成日期。你无需再做其他事，但我们强烈建议你重新练习不熟悉的内容以巩固知识。
 
@@ -216,6 +208,6 @@ def quadrant(x, y):
 
 恭喜！你已为后续几节课做好准备，并且完成了作业0。上完第2节课后，你就可以开始阅读作业0B了，如果你愿意，现在也可以提前开始。
 
-编程语言与自然语言并无太大不同——尤其是，你编写的代码越多，就会越熟练。PracticeIt网站上有**许多**练习题，你可以自由尝试更多（不过，它们的内容编排与我们的课程不完全匹配——如果你遇到涉及`Scanner` 或需要生成随机数的题目，可以跳过 ）。
+编程语言与自然语言并无太大不同——尤其是，你编写的代码越多，就会越熟练。PracticeIt网站上有 **许多** 练习题，你可以自由尝试更多（不过，它们的内容编排与我们的课程不完全匹配——如果你遇到涉及`Scanner` 或需要生成随机数的题目，可以跳过 ）。
 
 我们还推荐[https://codingbat.com/java/AP - 1](https://codingbat.com/java/AP-1) ，上面有更多进阶的Java练习题。 
