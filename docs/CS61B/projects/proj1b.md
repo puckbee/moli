@@ -1,5 +1,14 @@
 # 项目 1B: ArrayDeque61B
 
+!!! info "MOLI：本次实验你将会学到什么"
+    
+    - 设计并实现循环数组结构
+    - 分析操作的时间复杂度和空间效率
+    - 使用泛型编程和处理边界条件
+    - 实践面向接口编程和多态
+    - 掌握单元测试与调试技巧
+
+
 ## [常见问题](https://sp25.datastructur.es/projects/proj1b/faq/)
 
 每个作业都会在顶部提供一个 FAQ 链接。你也可以通过在网址末尾添加“/faq”来访问它。项目 1B 的 FAQ 位于[此处](https://sp25.datastructur.es/projects/proj1b/faq/)。
@@ -223,7 +232,7 @@ public T getRecursive(int index) {
 
 !!! TASK
 
-    请先实现 `addFirst` 和 `addLast` ，并编写测试用例验证其正确性。确保添加足够多的元素触发后备数组调整！关于调整大小的更多信息，请参考[这些幻灯片](https://docs.google.com/presentation/d/1AUaNTKX0f-nFqmqEWEEecLxIQh9hrpTDtz_lWVMl5Fw/edit#slide=id.g625dc7e36_0943)。
+    请先实现 `addFirst` 和 `addLast` ，并编写测试用例验证其正确性。确保添加足够多的元素触发后备数组调整！关于调整大小的更多信息，请参考[这些幻灯片](https://docs.google.com/presentation/d/1AUaNTKX0f-nFqmqEWEEecLxIQh9hrpTDtz_lWVMl5Fw/edit#slide=id.g625dc7e36b_0943)。
 
 #### 调整大小（缩容）
 
@@ -399,130 +408,5 @@ System.out.println(lld1);
 public String toString() {
     return getClass().getName() + "@" + Integer.toHexString(hashCode());
 }
+
 ```
-
-此外，默认的 `hashCode()` 方法会返回对象的内存地址（例如示例中的 `1a04f701` ）。
-
-!!! TASK
-
-    **任务** ：在 `LinkedListDeque61B` 和 `ArrayDeque61B` 类中覆盖 `toString()` 方法，使其输出形如 `[front, middle, back]` 的字符串。
-
-!!! WARNING
-
-    提示：Java 的 `List` 接口已有 `toString()` 实现。
-
-    提示：存在一行代码的解决方案（见提示1）。
-
-    提示： `LinkedListDeque61B` 和 `ArrayDeque61B` 的实现应完全一致。
-
-### 对象方法测试
-
-我们未提供针对这三个方法的测试文件，但 **强烈建议你使用已学技术编写自己的测试用例** 。你可以自由设计测试结构，建议在 `tests` 目录中创建 `LinkedListDeque61BTest` 文件，为每个实现类单独编写测试文件。
-
-## `Maximizer61B`
-
-!!! WARNING
-
-    本节内容需要了解第9讲：子类型多态、比较器和第10讲：迭代器、对象方法。
-
-在项目的最后部分，你将构建 `Maximizer61B` 类。这个类与你之前编写的 `ArrayDeque61B` 部分是独立的。
-
-这部分项目内容虽然与之前的部分关联不大，但能帮助你练习处理 Iterable、Comparable 和 Comparator。
-
-`Maximizer61B` 类有两个静态方法：
-
-- `public static <T extends Comparable<T>> T max(Iterable<T> iterable)` ：返回给定迭代器中的最大元素。
-- `public static <T> T max(Iterable<T> iterable, Comparator<T> comp)` ：根据指定的比较器返回迭代器中的最大元素。
-
-如果迭代器为空，直接返回 `null` 。
-
-## Guitar Hero（可选）
-
-现在你已经创建了双端队列（deque），让我们用它来做一些有趣的事情！在本项目这部分，我们将创建另一个包来使用 `deque` 包生成合成乐器。我们有机会用数据结构实现一个算法来模拟吉他弦的拨动。
-
-### GH2 包
-
-`gh2` 包只有一个主要组件需要修改：
-
-- `GuitarString` ，一个使用 `Deque61B<Double>` 实现[Karplus-Strong 算法](http://en.wikipedia.org/wiki/Karplus%E2%80%93Strong_string_synthesis)的类，用于合成吉他弦声音。
-
-我们为你提供了 `GuitarString` 的框架代码，你将在此处使用第一部分中创建的 `deque` 包。
-
-### `GuitarString`
-
-我们想要完成 `GuitarString` 文件，该文件应使用 `deque` 包来复制拨动弦线的声音。请注意，该文件使用了”buffer”这个词，此处是”deque”的同义词。
-
-我们将使用 Karplus-Strong 算法，用 `Deque61B` 实现起来非常简单。它包括以下三个步骤：
-
-1.  将 `Deque61B` 中的每个元素替换为随机噪声（-0.5 到 0.5 之间的 `double` 值）。
-
-2.  播放 `Deque61B` 前面的 `double` 值。
-
-3.  移除 `Deque61B` 前面的 `double` ，将其与下一个 `double` 值（提示：使用 `removeFirst` 和 `get()` ）相加后乘以能量衰减因子 0.996（我们将此总量称为 `newDouble` ），然后将 `newDouble` 添加到 `Deque61B` 的末尾。回到步骤 2（无限循环）。
-
-或者从视觉上看，如果 `Deque61B` 如顶部所示，我们将播放 0.2，将其移除，与 0.4 结合得到 0.2988，然后添加 0.2988。
-
-![karplus-strong](images/proj1b//karplus-strong.png)
-
-### 完成 `GuitarString.java`
-
-补全 `GuitarString.java` ，使其实现 Karplus-Strong 算法。记得在 `GuitarString` 构造函数里用零填满 `Deque61B` 缓冲区。类的调用方会处理部分流程，你只需完成标有 `TODO` 的任务。
-
-!!! DANGER
-
-    别在 `GuitarString.java` 里调用 `StdAudio.play` ，否则会导致自动评分器出错。 `GuitarPlayer.java` 已经帮你调用了。
-
-!!! TIP
-
-    记得像往常一样添加所需库，否则IntelliJ找不到 `StdAudio` 。
-
-例如，提供的 `TestGuitarString` 类中有一个示例测试 `testPluckTheAString` ，它会尝试播放 A 调音符。运行该测试时如果能听到 A 音说明正确；如果听不到，可以先调试 `testTic` 方法。你也可以给 `GuitarString.java` 加个 `print` 或 `toString` 方法，方便观察每次 `tic` 后的缓冲区状态。
-
-### 原理解析
-
-Karplus-Strong 算法的两个核心组成部分是环形缓冲区的反馈机制和取平均操作。
-
-- **环形缓冲区反馈机制**
-  环形缓冲区模拟了两端固定的弦，在其中能量来回传播。缓冲区的长度决定了生成音的基频。听起来反馈机制只强化基频及其整数倍的谐波。衰减系数（这里为 0.996）模拟了波在弦上往返时的能量损失。
-
-- **取平均操作**
-  取平均相当于一个温和的低通滤波（让高频衰减、低频保留）。由于它在反馈路径中，会逐渐削弱高次谐波，保留低次谐波，这与拨弦声效很相似。
-
-### `GuitarHeroLite`
-
-现在你也可以使用 `GuitarHeroLite` 类了。运行它会弹出图形界面，使用 `gh2` 包里的 `GuitarString` 类与用户（你！）实时交互，演奏音符。
-<!-- 
-### 提交给自动评分器
-
-在本地写完测试并全部通过后，就可以提交给自动评分器。可能全过，也可能有测试未过：
-
-1.  如果覆盖率测试没过，说明本地测试遗漏了某些场景。自动评分器会给出测试名和覆盖率组件，帮你定位缺失点。
-
-2.  如果功能正确性测试没过，说明本地测试虽然覆盖了大部分情况，但有些行为没断言到。这很正常，覆盖率只是近似评估，不保证涵盖所有边界。[这里](https://sp25.datastructur.es/projects/proj1b/flags/)列出了相关标记。
-
-3.  如果性能测试没过，说明实现不满足上文描述的时间要求。你有每 24 小时 4 次提交令牌。因代码、风格等原因多次提交导致令牌耗尽，不会补发。自动评分器输出里可能会看到 `WARNING: A terminally deprecated method in java.lang.System has been called` 之类警告，可以放心忽略。 -->
-
-### 评分标准
-
-本项目与 Project
-0 类似，分为多个独立组件，每个组件都必须完全正确实现才能获得分数。
-
-1.  **添加功能（20%）** ：正确实现 `addFirst` 、 `addLast` 和 `toList` 。
-
-2.  **`isEmpty` 和 `size` （3.33%）** ：正确实现 `isEmpty` 和 `size` ，并确保添加方法正常工作。
-
-3.  **`get` （3.33%）** ：正确实现 `get` 。
-
-4.  **移除功能（20%）** ：正确实现 `removeFirst` 和 `removeLast` 。
-
-5.  **内存管理（16.67%）**：正确实现调整大小以避免内存过多使用。
-
-6.  **`LinkedListDeque61B` 对象方法（10%）** ：正确实现 `iterator` 、 `equals` 和 `toString` 在 `LinkedListDeque61B` 中。
-
-7.  **`ArrayDeque61B` 对象方法（10%）** ：正确实现 `iterator` 、 `equals` 和 `toString` 在 `ArrayDeque61B` 中。
-
-8.  **`Maximizer61B` 功能（10%）** ：正确实现 `max()` 和 `max(Comparator<T> comp)` 在 `Maximizer61B` 中。
-
-9.  **测试覆盖率（6.67%）**：编写足够多的测试用例。
-
-对于 **测试覆盖率** 这一项，我们会用你的测试与官方参考实现对比，检查覆盖了多少场景和边界情况。你可以为此部分获得部分分数。[这里](https://sp25.datastructur.es/projects/proj1b/flags/)列出了相关场景！
