@@ -1,0 +1,18 @@
+- 'CS61C':
+  - '课程简介': CS61C/CS61C.md
+  - '时间表': CS61C/Schedule.md
+  - 实验:
+    - '课程 2: 数值表示':
+      - '实验 0': "CS61C/Labs/Lab_0.md"
+    - '课程 4: C语言: 指针、数组、字符串':
+      - '实验 1': "CS61C/Labs/Lab_1.md"
+    - '课程 6: C语言: 泛型':
+      - '项目 1': "CS61C/Projects/Project_1.md"
+    - '课程 7: 浮点运算':
+      - '实验 2': "CS61C/Labs/Lab_2.md"
+    - '课程 10: RISC-V: 条件分支':
+      - '实验 3': "CS61C/Labs/Lab_3.md"
+  - 讨论:
+    - '讨论 1':
+      - '预习': "CS61C/Discussion/Discussion_1_pre.md"
+      - '作业': "CS61C/Discussion/Discussion_1.md"

@@ -1,0 +1,39 @@
+- "CS61B":
+  - "课程简介": CS61B/CS61B.md
+  - '时间表': CS61B/Schedule.md
+  - "作业工作流程": "CS61B/assignment-workflow.md"
+  
+  - 实验与作业:
+    - "课程 2.定义个使用类，列表，集合和映射":
+      - "实验1:设置,git": "CS61B/labs/lab01.md"
+      - "作业 0a": "CS61B/homework/hw0/hw0a.md"
+    - "课程 3.引用、递归与IntLists":
+      - "作业 0b": "CS61B/homework/hw0/hw0b.md" 
+    - "课程 5.双链表与数组":
+      - "实验 2": "CS61B/labs/lab02.md"
+    - "课程 6.测试（含附加视频）":
+      - "Project 0": "CS61B/projects/proj0.md" 
+    - "课程 8.接口与实现继承 0":
+      - "实验 3": "CS61B/labs/lab03.md"
+    - "课程 9.子类型多态、比较器与泛型函数":
+      - "Project 1A": "CS61B/projects/proj1a.md"
+    - "课程 11. 渐进分析I":
+      - "实验 4": "CS61B/labs/lab04.md" 
+    - "课程 12. 渐进分析II":
+      - "Project 1B": "CS61B/projects/proj1b.md"
+
+  - "讨论":
+    - "常规讨论":
+      - "讨论 01": "CS61B/discus/regular01.md"
+      - "讨论 01 解答": "CS61B/discus/regular01sol.md"
+      - "讨论 02": "CS61B/discus/regular02.md"
+      - "讨论 02 解答": "CS61B/discus/regular02sol.md"
+      - "讨论 03": "CS61B/discus/regular03.md"
+      - "讨论 03 解答": "CS61B/discus/regular03sol.md"
+    - "考试讨论":
+      - "考试 01": "CS61B/discus/examlevel01.md"
+      - "考试 01 解答": "CS61B/discus/examlevel01sol.md"
+      - "考试 02": "CS61B/discus/examlevel02.md"
+      - "考试 02 解答": "CS61B/discus/examlevel02sol.md"
+      - "考试 03": "CS61B/discus/examlevel03.md"
+      - "考试 03 解答": "CS61B/discus/examlevel03sol.md"
