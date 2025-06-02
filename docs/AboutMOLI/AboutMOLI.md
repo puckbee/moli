@@ -44,13 +44,12 @@ MOLI脱胎于“一生一芯”计划（ysyx.org），目的是面向计算机�
 
 MOLI在试运行阶段，可以先发邮件到我们的邮箱xiebiwei@ict.ac.cn，或者是加群如下：
 
-
-
-
-
-
-
-
+<div style="display: flex; justify-content: flex-start;">
+    <figure>
+        <img src="../AboutMOLI_wechat.png" alt="微信" width="50%">
+        <figcaption>微信</figcaption>
+    </figure>
+</div>
 
 <!--例如，我从书上学习到了操作系统里“系统调用（system call）”的概念，知道它是操作系统提供给用户程序调用系统资源的接口，那么，我能否自己实现一个简单的系统调用，来验证我的理解是否正确；我知道了Linux驱动的基本原理，我能否写一个驱动，或者是修改一个驱动，使其按照我的
 
