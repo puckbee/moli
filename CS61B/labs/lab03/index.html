@@ -8,23 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://puckbee.github.io/moli/">
+        <link rel="canonical" href="https://puckbee.github.io/moli/CS61B/labs/lab03/">
       
       
+        <link rel="prev" href="../lab02/">
       
-        <link rel="next" href="Contact/">
+      
+        <link rel="next" href="../lab04/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>My Docs</title>
+        <title>实验 03：调试（第二部分） - My Docs</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
       
       
 
@@ -43,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#moli" class="md-skip">
+        <a href="#03" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -98,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              实验 03：调试（第二部分）
             
           </span>
         </div>
@@ -176,7 +178,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -191,30 +193,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -225,33 +207,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#moli" class="md-nav__link">
-    <span class="md-ellipsis">
-      什么是 MOLI？
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -263,7 +218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Contact/" class="md-nav__link">
+      <a href="../../../Contact/" class="md-nav__link">
         
   
   
@@ -285,7 +240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Recruitment/" class="md-nav__link">
+      <a href="../../../Recruitment/" class="md-nav__link">
         
   
   
@@ -345,7 +300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="AboutMOLI/AboutMOLI/" class="md-nav__link">
+      <a href="../../../AboutMOLI/AboutMOLI/" class="md-nav__link">
         
   
   
@@ -413,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/CS61A/" class="md-nav__link">
+      <a href="../../../CS61A/CS61A/" class="md-nav__link">
         
   
   
@@ -436,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/Schedule/" class="md-nav__link">
+      <a href="../../../CS61A/Schedule/" class="md-nav__link">
         
   
   
@@ -497,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/discussions/disc00/" class="md-nav__link">
+      <a href="../../../CS61A/discussions/disc00/" class="md-nav__link">
         
   
   
@@ -520,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/discussions/disc01/" class="md-nav__link">
+      <a href="../../../CS61A/discussions/disc01/" class="md-nav__link">
         
   
   
@@ -543,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/discussions/disc02/" class="md-nav__link">
+      <a href="../../../CS61A/discussions/disc02/" class="md-nav__link">
         
   
   
@@ -566,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/discussions/disc03/" class="md-nav__link">
+      <a href="../../../CS61A/discussions/disc03/" class="md-nav__link">
         
   
   
@@ -635,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/homeworks/homework01/" class="md-nav__link">
+      <a href="../../../CS61A/homeworks/homework01/" class="md-nav__link">
         
   
   
@@ -658,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/homeworks/homework02/" class="md-nav__link">
+      <a href="../../../CS61A/homeworks/homework02/" class="md-nav__link">
         
   
   
@@ -681,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/homeworks/homework03/" class="md-nav__link">
+      <a href="../../../CS61A/homeworks/homework03/" class="md-nav__link">
         
   
   
@@ -750,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/labs/lab00/" class="md-nav__link">
+      <a href="../../../CS61A/labs/lab00/" class="md-nav__link">
         
   
   
@@ -773,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/labs/lab01/" class="md-nav__link">
+      <a href="../../../CS61A/labs/lab01/" class="md-nav__link">
         
   
   
@@ -796,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/labs/lab02/" class="md-nav__link">
+      <a href="../../../CS61A/labs/lab02/" class="md-nav__link">
         
   
   
@@ -865,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/projects/hog/" class="md-nav__link">
+      <a href="../../../CS61A/projects/hog/" class="md-nav__link">
         
   
   
@@ -900,18 +855,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -927,7 +884,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             CS61B
@@ -941,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/CS61B/" class="md-nav__link">
+      <a href="../../CS61B/" class="md-nav__link">
         
   
   
@@ -964,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/Schedule/" class="md-nav__link">
+      <a href="../../Schedule/" class="md-nav__link">
         
   
   
@@ -987,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/assignment-workflow/" class="md-nav__link">
+      <a href="../../assignment-workflow/" class="md-nav__link">
         
   
   
@@ -1048,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel01/" class="md-nav__link">
+      <a href="../../discus/examlevel01/" class="md-nav__link">
         
   
   
@@ -1071,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel01sol/" class="md-nav__link">
+      <a href="../../discus/examlevel01sol/" class="md-nav__link">
         
   
   
@@ -1094,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel02/" class="md-nav__link">
+      <a href="../../discus/examlevel02/" class="md-nav__link">
         
   
   
@@ -1117,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel02sol/" class="md-nav__link">
+      <a href="../../discus/examlevel02sol/" class="md-nav__link">
         
   
   
@@ -1140,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel03/" class="md-nav__link">
+      <a href="../../discus/examlevel03/" class="md-nav__link">
         
   
   
@@ -1163,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel03sol/" class="md-nav__link">
+      <a href="../../discus/examlevel03sol/" class="md-nav__link">
         
   
   
@@ -1186,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular01/" class="md-nav__link">
+      <a href="../../discus/regular01/" class="md-nav__link">
         
   
   
@@ -1209,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular01sol/" class="md-nav__link">
+      <a href="../../discus/regular01sol/" class="md-nav__link">
         
   
   
@@ -1232,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular02/" class="md-nav__link">
+      <a href="../../discus/regular02/" class="md-nav__link">
         
   
   
@@ -1255,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular02sol/" class="md-nav__link">
+      <a href="../../discus/regular02sol/" class="md-nav__link">
         
   
   
@@ -1278,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular03/" class="md-nav__link">
+      <a href="../../discus/regular03/" class="md-nav__link">
         
   
   
@@ -1301,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular03sol/" class="md-nav__link">
+      <a href="../../discus/regular03sol/" class="md-nav__link">
         
   
   
@@ -1408,7 +1365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/homework/hw0/hw0a/" class="md-nav__link">
+      <a href="../../homework/hw0/hw0a/" class="md-nav__link">
         
   
   
@@ -1431,7 +1388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/homework/hw0/hw0b/" class="md-nav__link">
+      <a href="../../homework/hw0/hw0b/" class="md-nav__link">
         
   
   
@@ -1467,18 +1424,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
@@ -1494,7 +1453,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_6">
             <span class="md-nav__icon md-icon"></span>
             Labs
@@ -1508,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/labs/lab01/" class="md-nav__link">
+      <a href="../lab01/" class="md-nav__link">
         
   
   
@@ -1531,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/labs/lab02/" class="md-nav__link">
+      <a href="../lab02/" class="md-nav__link">
         
   
   
@@ -1551,10 +1510,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="CS61B/labs/lab03/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    实验 03：调试（第二部分）
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1565,6 +1546,128 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见问题解答
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adventure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adventure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adventure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行游戏和测试
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      阅读堆栈跟踪
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machinestage" class="md-nav__link">
+    <span class="md-ellipsis">
+      调试 MachineStage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      又一个调试谜题？！ [可选]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="又一个调试谜题？！ [可选]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      异常断点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      表达式和监视
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      交付与评分
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1577,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/labs/lab04/" class="md-nav__link">
+      <a href="../lab04/" class="md-nav__link">
         
   
   
@@ -1646,7 +1749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/projects/proj0/" class="md-nav__link">
+      <a href="../../projects/proj0/" class="md-nav__link">
         
   
   
@@ -1669,7 +1772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/projects/proj1a/" class="md-nav__link">
+      <a href="../../projects/proj1a/" class="md-nav__link">
         
   
   
@@ -1692,7 +1795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/projects/proj1b/" class="md-nav__link">
+      <a href="../../projects/proj1b/" class="md-nav__link">
         
   
   
@@ -1768,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/CS61C/" class="md-nav__link">
+      <a href="../../../CS61C/CS61C/" class="md-nav__link">
         
   
   
@@ -1791,7 +1894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Schedule/" class="md-nav__link">
+      <a href="../../../CS61C/Schedule/" class="md-nav__link">
         
   
   
@@ -1852,7 +1955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Discussion/Discussion_1/" class="md-nav__link">
+      <a href="../../../CS61C/Discussion/Discussion_1/" class="md-nav__link">
         
   
   
@@ -1875,7 +1978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Discussion/Discussion_1_pre/" class="md-nav__link">
+      <a href="../../../CS61C/Discussion/Discussion_1_pre/" class="md-nav__link">
         
   
   
@@ -1944,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Labs/Lab_0/" class="md-nav__link">
+      <a href="../../../CS61C/Labs/Lab_0/" class="md-nav__link">
         
   
   
@@ -1967,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Labs/Lab_1/" class="md-nav__link">
+      <a href="../../../CS61C/Labs/Lab_1/" class="md-nav__link">
         
   
   
@@ -1990,7 +2093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Labs/Lab_2/" class="md-nav__link">
+      <a href="../../../CS61C/Labs/Lab_2/" class="md-nav__link">
         
   
   
@@ -2013,7 +2116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Labs/Lab_3/" class="md-nav__link">
+      <a href="../../../CS61C/Labs/Lab_3/" class="md-nav__link">
         
   
   
@@ -2082,7 +2185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Projects/Project_1/" class="md-nav__link">
+      <a href="../../../CS61C/Projects/Project_1/" class="md-nav__link">
         
   
   
@@ -2158,7 +2261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="LearnPath/LearnPath/" class="md-nav__link">
+      <a href="../../../LearnPath/LearnPath/" class="md-nav__link">
         
   
   
@@ -2226,7 +2329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="MIT6.S081/MIT6.S081/" class="md-nav__link">
+      <a href="../../../MIT6.S081/MIT6.S081/" class="md-nav__link">
         
   
   
@@ -2294,7 +2397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="PA/PA/" class="md-nav__link">
+      <a href="../../../PA/PA/" class="md-nav__link">
         
   
   
@@ -2334,6 +2437,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2342,9 +2447,102 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#moli" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      什么是 MOLI？
+      常见问题解答
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adventure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adventure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adventure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行游戏和测试
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      阅读堆栈跟踪
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machinestage" class="md-nav__link">
+    <span class="md-ellipsis">
+      调试 MachineStage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      又一个调试谜题？！ [可选]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="又一个调试谜题？！ [可选]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      异常断点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      表达式和监视
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      交付与评分
     </span>
   </a>
   
@@ -2366,22 +2564,181 @@
 
 
 
-  <h1>Home</h1>
-
-<h2 id="moli"><strong>什么是 MOLI？</strong></h2>
-<p><strong>MOLI（Massive Open Learning-by-doing Initiative，大规模开放式实践能力培养计划）</strong> 是一个 <strong>公益性质的</strong>，<strong>非盈利的</strong>，旨在提升动手实践能力的学习社区，鼓励同学们通过动手实践验证理论知识，从反复尝试中获取反馈，校准和加深对知识的理解，脱离“懂一点，但是不太会做”的状态，真正掌握“独立解决问题的能力”。MOLI以现有的高质量公开课（如MIT、Berkeley、CMU的课程）为基础，额外引入了社区助教体系，为同学们提供指导和引导。如果你对如下内容感兴趣，欢迎加入MOLI：</p>
-<pre><code>Tip：MOLI当前主要覆盖计算机系统和处理器芯片设计方向，未来会拓展更多方向。
-</code></pre>
-<p><strong>计算机系统方向：</strong> </p>
+<h1 id="03">实验 03：调试（第二部分）</h1>
+<p>!!! info "MOLI：本次实验你将会学到什么"
+    * 调试技巧和工具的使用
+    * 如何阅读堆栈跟踪
+    * 异常类型及处理方法
+    * IntelliJ 调试器的高级功能</p>
+<h2 id="_1">常见问题解答</h2>
+<p>实验 03 的常见问题解答在<a href="https://sp25.datastructur.es/labs/lab03/faq/">这里</a>。</p>
+<h2 id="_2">简介</h2>
+<p>这是上周调试实验的延续。本周的实验中，我们将使用上周使用的调试工具，并获得更多调试实践。今天实验的目标是更深入地了解以下内容：</p>
 <ul>
-<li><strong>独属计算机的浪漫</strong>：在自己的处理器上，运行自己的操作系统。</li>
-<li><strong>写出来更快的程序</strong>：我的程序现在跑1分钟，能否加速到10秒？</li>
-<li><strong>理解系统运行原理</strong>：敲下回车后，程序是如何在计算机系统上执行的？</li>
+<li>阅读堆栈跟踪并知道如何从中隔离错误。</li>
+<li>理解我们可能遇到的不同类型的异常。</li>
+<li>更加熟练地使用 IntelliJ 调试器。</li>
+<li>异常断点、表达式和监视（可选）。</li>
 </ul>
-<p><strong>处理器芯片方向（即“一生一芯”）：</strong></p>
+<p>一如既往，如果不确定某个内容的含义，特别是堆栈跟踪中出现的特定异常或错误，请随时查找。提示旨在引导您的思考，但我们鼓励您在打开提示之前先尝试自行完成实验。</p>
+<h2 id="adventure"><code>Adventure</code></h2>
+<h3 id="_3">运行游戏和测试</h3>
+<p>首先要做的是运行 <code>AdventureGame</code> 中的 <code>main</code> 方法以运行整个游戏。按照游戏运行后给出的指示操作。这将帮助您了解您正在调试的程序应该做什么（如果遇到错误，这是正常的）。</p>
+<p>然后，在运行游戏后，运行 <code>tests/adventure/AdventureGameTests</code> 中的测试。它们会在 <code>BeeCountingStage</code> 阶段失败，这将引导您调试下面的第一个错误（注意此时所有测试都会失败）。要通过 <code>AdventureGameTests</code> 的所有测试，您需要修复所有单独的阶段测试（修复一个阶段将显示您通过了该单独阶段）。<strong>阶段应按规范顺序完成。</strong></p>
+<p>我们鼓励您在完成每个阶段后运行游戏，以查看它们与游戏的关系。别忘了经常提交代码以保存进度！</p>
+<h3 id="_4">阅读堆栈跟踪</h3>
+<p>当 Java 中发生 <em>运行时错误</em> 时，会在控制台上打印出堆栈跟踪，以提供有关错误发生位置以及程序到达该位置所采取步骤的信息。首次运行 <code>Adventure</code> 时，您的堆栈跟踪可能如下所示：</p>
+<p><img alt="stack trace" src="https://sp25.datastructur.es/labs/lab03/img/adventure_stack_trace.png" /></p>
+<p>首先要注意的是发生了什么类型的错误；这在堆栈跟踪的第一行显示。在这种情况下，我们的代码抛出了一个 <code>NullPointerException</code>。</p>
+<p>对于某些异常，包括 <code>NullPointerException</code>，Java 会给出一个解释。在这里，<code>this.input</code> 是 <code>null</code>，因此无法对其调用方法。</p>
+<p>下面的行表示程序到达错误时所采取的方法序列：列表中的第一行是错误发生的位置，而其下的行表示调用抛出错误的方法的代码行，依此类推。</p>
+<p>您可以点击 <strong><code>蓝色文本</code></strong> 导航到该文件和行。</p>
+<p>!!! TIP</p>
+<pre><code>要了解如何解释堆栈跟踪，通常会从顶部开始。如前所述，堆栈跟踪的第一行是错误发生的位置——换句话说，这是错误发生前发生的最后一个方法调用，因此您可以使用它来隔离错误的位置。根据程序的编写方式、设计方式以及您编写/贡献的代码，您可以在堆栈跟踪中导航到相应的行，点击 **`蓝色文本`** 跳转到该行并开始调试。
+</code></pre>
+<hr />
+<p>!!! WARNING</p>
+<pre><code>对于以下每个阶段，**只更改必要的内容** ！除非另有说明，否则不应重写整个代码块。我们已包含更改行数作为指南。
+</code></pre>
+<p>!!! TIP</p>
+<pre><code>如果您愿意，可以每次通过冒险游戏来验证正确性，但不必这样做——可以直接通过测试进行调试。对于您要处理的每个文件，它包含一个 `playStage` 方法，您可以在该方法中设置断点。从那里，您可以开始在 `AdventureGameTests` 中进行调试。
+</code></pre>
+<p>调试 <code>BeeCountingStage</code></p>
+<p>!!! TASK
+    通过分析堆栈跟踪修复 <code>BeeCountingStage</code> 中发生的 <code>NullPointerException</code>。您可以忽略带有 <code>&lt;XX internal lines&gt;</code> 的行；这些通常是测试框架或库代码中的内容，通常不会帮助您找到错误。</p>
+<pre><code>预期修改行数：1
+</code></pre>
+<p>??? 提示1</p>
+<pre><code>错误发生在某一行，并不一定意味着那段代码不正确——堆栈跟踪中显示的某些内容可能是难以捉摸的罪魁祸首！
+</code></pre>
+<p>??? 提示2</p>
+<pre><code>仔细查看构造函数。查看声明的变量以及实例化的内容。
+</code></pre>
+<hr />
+<p>事实证明，这并不是 <code>BeeCountingStage</code> 中唯一的错误！</p>
+<p>!!! 任务</p>
+<pre><code>修复 `BeeCountingStage` 中发生的 `IndexOutOfBoundsError`。
+</code></pre>
+<p>!!! 信息</p>
+<pre><code>请忽略堆栈跟踪顶部指向 `Objects.java` 和 `ArrayList.java` 的灰色链接。错误可能 *发生* 在非你编写的代码中，但根本原因可能是 *你的代码* 试图执行的操作。
+
+预期修改行数：1
+</code></pre>
+<hr />
+<p>??? 提示1
+    别忘了，Java 是从 0 开始索引的！</p>
+<p>调试 <code>SpeciesListStage</code></p>
+<p>!!! 任务</p>
+<pre><code>修复 `SpeciesListStage` 中的错误。如果在异常发生的方法中看不出问题（堆栈跟踪的第一行），通常可以查看第二行，看看方法是从哪里调用的，以及使用了哪些参数。
+
+预期修改行数：3-4
+</code></pre>
+<hr />
+<p>??? 提示1</p>
+<pre><code>考虑可能的列表。代码是否涵盖了所有情况？是否有任何边界情况代码未能处理？
+
+阅读方法上方的 javadoc 注释可能也会有所帮助，以获得有关方法作用的更多背景信息。
+
+您需要编辑 handleResponses。
+</code></pre>
+<p>Debug <code>PalindromeStage</code>
+!!! 任务</p>
+<pre><code>有时，IntelliJ 会提示你一些它认为有问题的地方。将鼠标悬停在带有黄色/橙色高亮的错误位置（在 `PalindromeStage` 的 `digitsToIntList` 方法中 - 可以通过堆栈跟踪导航到该方法）。这是否给你提供了任何有用的信息？
+
+使用此功能来解决 `PalindromeStage` 中的错误。
+</code></pre>
+<p>!!! 信息</p>
+<pre><code>如果调试器响应缓慢，通常是由于代码中存在无限循环。如果设置的断点从未达到，则意味着在该断点之前发生了无限循环！结合逐步调试来隔离问题。
+</code></pre>
+<p>!!! 警告</p>
+<pre><code>**在此部分中有两个错误需要修复。首先修复最明显的一个，然后尝试隔离并解决第二个。此部分实验的提示适用于需要解决的第二个错误。**
+
+预期修改行数：3
+</code></pre>
+<p>??? 提示1仅适用于第二个错误</p>
+<pre><code>如果还没有，请阅读上面的说明。查看调用 `digitsToIntList` 的方法。如果在方法中设置断点并通过调试器运行，是否能够退出 `while` 循环？我们需要满足什么条件才能跳出 `while` 循环？这个条件是否达成？尝试结合使用 Java 可视化工具，以便更仔细地通过可视化工具检查错误。
+</code></pre>
+<h3 id="machinestage">调试 <code>MachineStage</code></h3>
+<p><code>MachineStage</code> 中的 <code>sumOfElementwiseMax</code> 方法应该接受两个数组，计算这两个数组的逐元素最大值，然后对结果中的最大值求和。例如，对于两个数组 <code>{2, 0, 10, 14}</code> 和 <code>{-5, 5, 20, 30}</code>，逐元素最大值为 <code>{2, 5, 20, 30}</code>。在第二个位置，<code>0</code> 和 <code>5</code> 中较大的是 <code>5</code>。此逐元素最大值的和为 2+5+20+30=57。</p>
+<p>有两个不同的错误导致该方法返回错误的结果。可以假设 <code>playStage</code> 中的输入解析代码是正确的。</p>
+<p>为了找到这些错误，不需要进入 <code>mysteryMax</code> 或 <code>mysteryAdd</code> 函数，甚至不需要理解它们的作用。也就是说，应该使用 <img alt="step over" src="https://sp25.datastructur.es/labs/lab03/img/step-over.png" /> 来 <em>仅查看结果</em> 。这些是 <strong>神秘</strong> 函数，故意被混淆。如果不小心进入了这两个函数，可以使用 <img alt="step out" src="https://sp25.datastructur.es/labs/lab03/img/step-out.png" /> 按钮退出。</p>
+<p>即使不进入这些函数，也应该能够判断它们是否存在问题。这就是抽象的妙处！即使我不知道鱼在分子水平上是如何工作的，但在某些情况下，我可以清楚地判断鱼是否已经死了。</p>
+<p>!!! 任务</p>
+<pre><code>修复两个错误，使 `sumOfElementwiseMax` 返回正确的结果。如果在 `mysteryMax` 或 `mysteryAdd` 中发现错误，请重新编写有问题的方法，而不是尝试修复它。但不要不必要地重写代码——请先确认它确实出问题了！
+
+预期修改行数：2-5
+</code></pre>
+<hr />
+<p>??? 提示</p>
 <ul>
-<li><strong>处理器体系结构</strong>：写一个乱序多发射可以启动 Linux 的高性能处理器。</li>
-<li><strong>芯片全链条设计</strong>：掌握处理器芯片从RTL开发、SoC集成再到版图生成的完整过程。</li>
+<li>
+<p>理解 <code>sumOfElementwiseMax</code> 函数的预期作用。当你为游戏提供输入时，尝试手动或使用计算器计算答案。验证你的计算结果与输出是否一致，你会发现输出不正确。</p>
+</li>
+<li>
+<p>在调用 <code>sumOfElementwiseMax</code> 的行上设置断点。当你运行调试器时，进入 <code>sumOfElementwiseMax</code>，然后使用 <img alt="step over" src="https://sp25.datastructur.es/labs/lab03/img/step-over.png" /> 查看 <code>arrayMax</code> 调用的结果。<code>arrayMax</code> 的输出是否符合你的预期？</p>
+</li>
+<li>
+<p>如果你认为 <code>arrayMax</code> 存在错误，应进入 <code>arrayMax</code>。不要进入 <code>mysteryMax</code>，除非你认为它有错误，那就完全重写它。</p>
+</li>
+<li>
+<p>重复 <code>arraySum</code> 和 <code>mysteryAdd</code>。</p>
+</li>
+</ul>
+<h2 id="_5">又一个调试谜题？！ [可选]</h2>
+<p>实验的其余部分是 <strong>可选</strong> 的。我们将介绍一些你可能会发现有用的 IntelliJ 调试器工具 - 异常断点和表达式监视。</p>
+<p>!!! 危险</p>
+<pre><code>不要修改 `Puzzle.java`！
+</code></pre>
+<p>!!! 警告</p>
+<pre><code>这些练习将涉及处理看似复杂和不熟悉的代码。请遵循抽象屏障，尝试在不完全理解的情况下找到答案！
+</code></pre>
+<h3 id="_6">异常断点</h3>
+<p>在调试时，你有时可能会遇到意外错误，这使得确定代码错误变得困难。为帮助解决此问题，IntelliJ 允许你在异常上设置断点。这些断点确保当你的代码抛出异常时，调试器将暂停执行，允许你检查程序状态。</p>
+<p>运行 <code>Puzzle</code> 类。你应该会看到以下输出：</p>
+<p><img alt="Puzzle output" src="https://sp25.datastructur.es/labs/lab03/img/puzzle-runtime-exception.png" /></p>
+<p>对于许多常见异常，IntelliJ 会在控制台输出中显示一个“创建断点”按钮（就在上图中 <code>java.lang.RuntimeException</code> 的右侧），该按钮允许你访问高级断点窗口。要在没有此按钮的情况下访问它，请在任何行上创建一个断点（在下图中，我们在第 23 行创建了一个断点），右键单击并选择“更多”。</p>
+<p><img alt="More breakpoint popup" src="https://sp25.datastructur.es/labs/lab03/img/more-breakpoint-popup.png" /></p>
+<p>高级断点窗口应该类似于这样：</p>
+<p><img alt="Advanced breakpoint window" src="https://sp25.datastructur.es/labs/lab03/img/advanced-breakpoint-window.png" /></p>
+<p>这里有很多内容，但你不需要了解大部分。点击左上角的加号符号，你应该会看到这样的弹出窗口：</p>
+<p><img alt="Exception breakpoint popup" src="https://sp25.datastructur.es/labs/lab03/img/add-exception-breakpoint-popup.png" /></p>
+<p>选择“Java 异常断点”，会出现另一个窗口，你可以在其中指定我们希望暂停执行的异常类型。控制台告诉我们，我们遇到了 <code>java.lang.RuntimeException</code>，因此请选择该选项。</p>
+<p><img alt="Runtime Exception Breakpoint" src="https://sp25.datastructur.es/labs/lab03/img/runtime-exception-breakpoint.png" /></p>
+<p>现在你应该看到原始的高级断点窗口，其中有一个新创建的异常断点，名为“java.lang.RuntimeException”（如果你使用控制台的“创建断点”按钮访问窗口，可能会看到两个副本，这没关系）。
+您可以选择在捕获或未捕获的异常上中断，也可以选择两者兼有。这很有用，因为许多库代码会有意抛出和捕获大量异常，因此如果需要，这允许我们专注于未处理的异常。目前，请继续保持两个选项都选中。</p>
+<p>如果此时调试程序，您的代码应在第 53 行暂停，通常的红色圆圈位置将有一个小闪电符号。这表明断点是由异常而不是普通断点触发的。</p>
+<p><img alt="Line 53 Exception breakpoint" src="https://sp25.datastructur.es/labs/lab03/img/line-53-exception-breakpoint.png" /></p>
+<p>从这里，我们可以看出 IntelliJ 暗示问题可能出在 <code>src/puzzle/answer.txt</code>。通过检查该文件，探索 <code>Puzzle.java</code>，以及使用您在实验 02 和本次实验中学到的其他调试技术，您能找出发生了什么吗？</p>
+<p>!!! 任务</p>
+<pre><code>修复 `answer.txt` 以便 `Puzzle` 不再抛出 `RuntimeException`。如果您遇到困难，请随意查看提示！
+</code></pre>
+<p>??? 提示</p>
+<pre><code>问题在于 `Puzzle.java` 解析 `answer.` 为一个整数猜测，但没有找到任何内容，因此抛出异常。要解决此问题，请将 `answer.` 的 TODO 行替换为任何整数。
+</code></pre>
+<p>修复错误后，再次运行 <code>Puzzle</code>。您现在应该看到以下输出：</p>
+<p><img alt="Puzzle out-of-bounds exception" src="https://sp25.datastructur.es/labs/lab03/img/puzzle-oob-exception.png" /></p>
+<p>阅读错误消息，看看能否找出答案！如果您正确找出，<code>Puzzle.java</code> 将不再出错，您应该通过 <code>tests/puzzle/PuzzleTest</code> 中的 <code>testPuzzle</code>。</p>
+<p>!!! 任务</p>
+<pre><code>替换 `answer.txt` 中的值，使 `Puzzle` 不再出错。
+</code></pre>
+<h3 id="_7">表达式和监视</h3>
+<p>在调试时，您可能并不总是希望检查的值存储在变量中。幸运的是，IntelliJ 为我们提供了解决方案！一旦在某行暂停，您就可以使用“评估表达式”工具（形状像计算器）。您可以点击计算器图标以打开一个全新的窗口，但您也可以直接在调试器中键入表达式：</p>
+<p><img alt="Evaluate Expression Blank" src="https://sp25.datastructur.es/labs/lab03/img/eval-expr-add-watches.png" /></p>
+<p>您还可以使用此工具调用变量和方法！尽管在下面的示例中我们只使用了 <code>Math</code> 库方法，但您可以调用任何您想要的东西。在这里，我们在 <code>Puzzle.java</code> 中使用此工具，并初始 <code>answer</code> 猜测为 <code>973</code>：</p>
+<p><img alt="Evaluate Expression 973" src="https://sp25.datastructur.es/labs/lab03/img/evaluate-expression-973.png" /></p>
+<p>继续程序后，<code>result</code> 将会丢失。如果您不想丢失它，可以使用 Ctrl+Shift+Enter (Windows) 或 Cmd+Shift+Enter (Mac) 将其添加为一个 <em>监视</em> 。这将在您继续执行后仍保留它。此外，监视将会随着程序的变化而改变其值，就像普通变量一样！</p>
+<p>监视甚至在您停止并重新运行程序后也会一直存在，因此在多次执行中进行调试时，它们非常有用。作为示例，我将之前的猜测更改为 <code>1717</code> 并重新运行整个程序，但不需要重新评估表达式即可让调试器告诉我它是什么！</p>
+<p><img alt="Evaluate Expression 1717" src="https://sp25.datastructur.es/labs/lab03/img/evaluate-expression-1717.png" /></p>
+<p>这部分没有关联的练习，但我们认为这会是一个有用的知识点！</p>
+<hr />
+<p>恭喜，您已完成实验 03！</p>
+<h2 id="_8">交付与评分</h2>
+<p>本次实验满分为 5 分。Gradescope 上没有隐藏测试。如果你通过了 <code>Adventure</code> 的所有本地测试，你将在实验中获得满分（除非你修改了不该修改的内容）。重申一下，“又一个调试谜题？！” 是本次实验的选做部分。最终交付物如下：</p>
+<ul>
+<li><code>BeeCountingStage</code>（1.25 分）</li>
+<li><code>SpeciesListStage</code>（1.25 分）</li>
+<li><code>PalindromeStage</code>（1.25 分）</li>
+<li><code>MachineStage</code>（1.25 分）</li>
 </ul>
 
 
@@ -2431,10 +2788,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

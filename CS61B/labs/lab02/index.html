@@ -8,23 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://puckbee.github.io/moli/">
+        <link rel="canonical" href="https://puckbee.github.io/moli/CS61B/labs/lab02/">
       
       
+        <link rel="prev" href="../lab01/">
       
-        <link rel="next" href="Contact/">
+      
+        <link rel="next" href="../lab03/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>My Docs</title>
+        <title>Lab 02: Debugging (Part 1) - My Docs</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
       
       
 
@@ -43,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#moli" class="md-skip">
+        <a href="#lab-02-debugging-part-1" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -98,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Lab 02: Debugging (Part 1)
             
           </span>
         </div>
@@ -176,7 +178,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -191,30 +193,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -225,33 +207,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#moli" class="md-nav__link">
-    <span class="md-ellipsis">
-      什么是 MOLI？
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -263,7 +218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Contact/" class="md-nav__link">
+      <a href="../../../Contact/" class="md-nav__link">
         
   
   
@@ -285,7 +240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Recruitment/" class="md-nav__link">
+      <a href="../../../Recruitment/" class="md-nav__link">
         
   
   
@@ -345,7 +300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="AboutMOLI/AboutMOLI/" class="md-nav__link">
+      <a href="../../../AboutMOLI/AboutMOLI/" class="md-nav__link">
         
   
   
@@ -413,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/CS61A/" class="md-nav__link">
+      <a href="../../../CS61A/CS61A/" class="md-nav__link">
         
   
   
@@ -436,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/Schedule/" class="md-nav__link">
+      <a href="../../../CS61A/Schedule/" class="md-nav__link">
         
   
   
@@ -497,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/discussions/disc00/" class="md-nav__link">
+      <a href="../../../CS61A/discussions/disc00/" class="md-nav__link">
         
   
   
@@ -520,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/discussions/disc01/" class="md-nav__link">
+      <a href="../../../CS61A/discussions/disc01/" class="md-nav__link">
         
   
   
@@ -543,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/discussions/disc02/" class="md-nav__link">
+      <a href="../../../CS61A/discussions/disc02/" class="md-nav__link">
         
   
   
@@ -566,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/discussions/disc03/" class="md-nav__link">
+      <a href="../../../CS61A/discussions/disc03/" class="md-nav__link">
         
   
   
@@ -635,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/homeworks/homework01/" class="md-nav__link">
+      <a href="../../../CS61A/homeworks/homework01/" class="md-nav__link">
         
   
   
@@ -658,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/homeworks/homework02/" class="md-nav__link">
+      <a href="../../../CS61A/homeworks/homework02/" class="md-nav__link">
         
   
   
@@ -681,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/homeworks/homework03/" class="md-nav__link">
+      <a href="../../../CS61A/homeworks/homework03/" class="md-nav__link">
         
   
   
@@ -750,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/labs/lab00/" class="md-nav__link">
+      <a href="../../../CS61A/labs/lab00/" class="md-nav__link">
         
   
   
@@ -773,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/labs/lab01/" class="md-nav__link">
+      <a href="../../../CS61A/labs/lab01/" class="md-nav__link">
         
   
   
@@ -796,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/labs/lab02/" class="md-nav__link">
+      <a href="../../../CS61A/labs/lab02/" class="md-nav__link">
         
   
   
@@ -865,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61A/projects/hog/" class="md-nav__link">
+      <a href="../../../CS61A/projects/hog/" class="md-nav__link">
         
   
   
@@ -900,18 +855,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -927,7 +884,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             CS61B
@@ -941,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/CS61B/" class="md-nav__link">
+      <a href="../../CS61B/" class="md-nav__link">
         
   
   
@@ -964,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/Schedule/" class="md-nav__link">
+      <a href="../../Schedule/" class="md-nav__link">
         
   
   
@@ -987,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/assignment-workflow/" class="md-nav__link">
+      <a href="../../assignment-workflow/" class="md-nav__link">
         
   
   
@@ -1048,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel01/" class="md-nav__link">
+      <a href="../../discus/examlevel01/" class="md-nav__link">
         
   
   
@@ -1071,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel01sol/" class="md-nav__link">
+      <a href="../../discus/examlevel01sol/" class="md-nav__link">
         
   
   
@@ -1094,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel02/" class="md-nav__link">
+      <a href="../../discus/examlevel02/" class="md-nav__link">
         
   
   
@@ -1117,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel02sol/" class="md-nav__link">
+      <a href="../../discus/examlevel02sol/" class="md-nav__link">
         
   
   
@@ -1140,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel03/" class="md-nav__link">
+      <a href="../../discus/examlevel03/" class="md-nav__link">
         
   
   
@@ -1163,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/examlevel03sol/" class="md-nav__link">
+      <a href="../../discus/examlevel03sol/" class="md-nav__link">
         
   
   
@@ -1186,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular01/" class="md-nav__link">
+      <a href="../../discus/regular01/" class="md-nav__link">
         
   
   
@@ -1209,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular01sol/" class="md-nav__link">
+      <a href="../../discus/regular01sol/" class="md-nav__link">
         
   
   
@@ -1232,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular02/" class="md-nav__link">
+      <a href="../../discus/regular02/" class="md-nav__link">
         
   
   
@@ -1255,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular02sol/" class="md-nav__link">
+      <a href="../../discus/regular02sol/" class="md-nav__link">
         
   
   
@@ -1278,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular03/" class="md-nav__link">
+      <a href="../../discus/regular03/" class="md-nav__link">
         
   
   
@@ -1301,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/discus/regular03sol/" class="md-nav__link">
+      <a href="../../discus/regular03sol/" class="md-nav__link">
         
   
   
@@ -1408,7 +1365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/homework/hw0/hw0a/" class="md-nav__link">
+      <a href="../../homework/hw0/hw0a/" class="md-nav__link">
         
   
   
@@ -1431,7 +1388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/homework/hw0/hw0b/" class="md-nav__link">
+      <a href="../../homework/hw0/hw0b/" class="md-nav__link">
         
   
   
@@ -1467,18 +1424,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
@@ -1494,7 +1453,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_6">
             <span class="md-nav__icon md-icon"></span>
             Labs
@@ -1508,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/labs/lab01/" class="md-nav__link">
+      <a href="../lab01/" class="md-nav__link">
         
   
   
@@ -1528,10 +1487,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="CS61B/labs/lab02/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 02: Debugging (Part 1)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1542,6 +1523,170 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见问题解答（FAQ）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="简介">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      准备工作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      目标与成果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bomb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bomb
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bomb">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互式调试
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      调试器概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="调试器概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      断点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行调试器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bomb-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bomb 介绍(第 0 阶段)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      可视化工具（第一阶段）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件断点(第二阶段)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      成功提交和评分
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      致谢
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1554,7 +1699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/labs/lab03/" class="md-nav__link">
+      <a href="../lab03/" class="md-nav__link">
         
   
   
@@ -1577,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/labs/lab04/" class="md-nav__link">
+      <a href="../lab04/" class="md-nav__link">
         
   
   
@@ -1646,7 +1791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/projects/proj0/" class="md-nav__link">
+      <a href="../../projects/proj0/" class="md-nav__link">
         
   
   
@@ -1669,7 +1814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/projects/proj1a/" class="md-nav__link">
+      <a href="../../projects/proj1a/" class="md-nav__link">
         
   
   
@@ -1692,7 +1837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61B/projects/proj1b/" class="md-nav__link">
+      <a href="../../projects/proj1b/" class="md-nav__link">
         
   
   
@@ -1768,7 +1913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/CS61C/" class="md-nav__link">
+      <a href="../../../CS61C/CS61C/" class="md-nav__link">
         
   
   
@@ -1791,7 +1936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Schedule/" class="md-nav__link">
+      <a href="../../../CS61C/Schedule/" class="md-nav__link">
         
   
   
@@ -1852,7 +1997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Discussion/Discussion_1/" class="md-nav__link">
+      <a href="../../../CS61C/Discussion/Discussion_1/" class="md-nav__link">
         
   
   
@@ -1875,7 +2020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Discussion/Discussion_1_pre/" class="md-nav__link">
+      <a href="../../../CS61C/Discussion/Discussion_1_pre/" class="md-nav__link">
         
   
   
@@ -1944,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Labs/Lab_0/" class="md-nav__link">
+      <a href="../../../CS61C/Labs/Lab_0/" class="md-nav__link">
         
   
   
@@ -1967,7 +2112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Labs/Lab_1/" class="md-nav__link">
+      <a href="../../../CS61C/Labs/Lab_1/" class="md-nav__link">
         
   
   
@@ -1990,7 +2135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Labs/Lab_2/" class="md-nav__link">
+      <a href="../../../CS61C/Labs/Lab_2/" class="md-nav__link">
         
   
   
@@ -2013,7 +2158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Labs/Lab_3/" class="md-nav__link">
+      <a href="../../../CS61C/Labs/Lab_3/" class="md-nav__link">
         
   
   
@@ -2082,7 +2227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CS61C/Projects/Project_1/" class="md-nav__link">
+      <a href="../../../CS61C/Projects/Project_1/" class="md-nav__link">
         
   
   
@@ -2158,7 +2303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="LearnPath/LearnPath/" class="md-nav__link">
+      <a href="../../../LearnPath/LearnPath/" class="md-nav__link">
         
   
   
@@ -2226,7 +2371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="MIT6.S081/MIT6.S081/" class="md-nav__link">
+      <a href="../../../MIT6.S081/MIT6.S081/" class="md-nav__link">
         
   
   
@@ -2294,7 +2439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="PA/PA/" class="md-nav__link">
+      <a href="../../../PA/PA/" class="md-nav__link">
         
   
   
@@ -2334,6 +2479,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2342,9 +2489,144 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#moli" class="md-nav__link">
+  <a href="#faq" class="md-nav__link">
     <span class="md-ellipsis">
-      什么是 MOLI？
+      常见问题解答（FAQ）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="简介">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      准备工作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      目标与成果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bomb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bomb
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bomb">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互式调试
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      调试器概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="调试器概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      断点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行调试器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bomb-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bomb 介绍(第 0 阶段)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      可视化工具（第一阶段）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件断点(第二阶段)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      成功提交和评分
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      致谢
     </span>
   </a>
   
@@ -2366,23 +2648,159 @@
 
 
 
-  <h1>Home</h1>
-
-<h2 id="moli"><strong>什么是 MOLI？</strong></h2>
-<p><strong>MOLI（Massive Open Learning-by-doing Initiative，大规模开放式实践能力培养计划）</strong> 是一个 <strong>公益性质的</strong>，<strong>非盈利的</strong>，旨在提升动手实践能力的学习社区，鼓励同学们通过动手实践验证理论知识，从反复尝试中获取反馈，校准和加深对知识的理解，脱离“懂一点，但是不太会做”的状态，真正掌握“独立解决问题的能力”。MOLI以现有的高质量公开课（如MIT、Berkeley、CMU的课程）为基础，额外引入了社区助教体系，为同学们提供指导和引导。如果你对如下内容感兴趣，欢迎加入MOLI：</p>
-<pre><code>Tip：MOLI当前主要覆盖计算机系统和处理器芯片设计方向，未来会拓展更多方向。
+<h1 id="lab-02-debugging-part-1">Lab 02: Debugging (Part 1)</h1>
+<p>!!! info "MOLI：本次实验你将会学到什么"
+    * Java 调试技术
+    * 使用 IntelliJ 调试器</p>
+<h2 id="faq">常见问题解答（FAQ）</h2>
+<p>每项作业顶部都会有一个常见问题解答的链接。你也可以在网址末尾添加 “/faq” 来访问。实验 2 的常见问题解答可在<a href="https://sp25.datastructur.es/labs/lab02/faq">此处</a>找到。</p>
+<h2 id="_1">简介</h2>
+<p>调试程序时，你首先得知道哪里出了问题。在本次实验中，你将通过使用调试器查看程序状态来积累一些经验。当遇到程序错误时，会伴随出现 “堆栈跟踪” ，它会详细列出最初导致错误的方法调用。在本次实验中我们不会讲解如何查看堆栈跟踪，不过在后续实验中会进一步讨论。</p>
+<p>待办事项：添加展示大语言模型（LLM）失效模式（如确认偏差）的 LLM 练习。</p>
+<h3 id="_2">准备工作</h3>
+<p>按照<a href="https://sp25.datastructur.es/resources/guides/assignment-workflow/#opening-in-intellij">作业工作流程</a> 获取作业并在 IntelliJ 中打开。</p>
+<h3 id="_3">目标与成果</h3>
+<p>在本次实验中，你将通过排除（程序中的） “定时炸弹” 来提升代码调试能力。我们会指导你完成这个过程，目的是让你获得真实的调试体验。</p>
+<p>在本次实验结束时，你将能够：</p>
+<ul>
+<li>
+<p>使用调试器和可视化工具检查程序状态。</p>
+</li>
+<li>
+<p>解读测试失败信息。</p>
+</li>
+<li>
+<p>更好地掌握代码调试方法。</p>
+</li>
+</ul>
+<p>!!! TIP</p>
+<pre><code>对于本次实验以及整门课程，我们强烈建议你先自行尝试，包括在不确定某些内容时进行查阅。在本次实验中，可能会遇到诸如某个错误的含义或抛出的异常等问题，去谷歌搜索一下！
 </code></pre>
-<p><strong>计算机系统方向：</strong> </p>
+<h2 id="bomb"><code>Bomb</code></h2>
+<p><code>BombMain</code> 类会调用 <code>Bomb</code> 类的各个 <code>phase</code> 方法。在本次实验中，我们将通过 <code>BombTest.java</code> 中的测试来运行实验。如果你运行 <code>BombTest</code> （在测试文件夹中），你会注意到有一些错误，这是因为 <code>BombMain</code> 中 <code>phase</code> 方法当前的输入不是正确的密码！你的任务是使用 IntelliJ 调试器找出每个阶段的密码。</p>
+<p>!!! DANGER</p>
+<pre><code>警告：代码经过编写，你无法仅通过阅读来找到密码。在本次实验中，禁止你编辑 `Bomb` 和 `BombTest` 代码，无论是添加打印语句还是进行其他修改都不行。这个练习的目的是让你熟练使用对今后有很大帮助的工具。请认真对待！ **如果你修改这些文件，自动评分器的测试将无法通过！**
+</code></pre>
+<p>如前所述，你将从测试文件夹中的 <code>BombTest.java</code> 运行代码，并且可以利用这些测试来辅助调试。和其他作业一样，你最终会自己编写测试来帮助修复错误！你唯一需要修改的文件是 <code>BombMain.java</code> 。</p>
+<p><strong><code>BombTest.java</code> 是你运行程序的地方。 <code>Bomb.java</code> 和 <code>BombMain.java</code> 不会有绿色运行按钮，因为它们不包含 <code>static void main(String[] args)</code> ，所以请务必通过 <code>BombTest.java</code> 来运行程序！</strong></p>
+<h3 id="_4">交互式调试</h3>
+<p>到目前为止，你可能已经通过使用打印语句来查看程序运行时某些变量的值，以此练习调试。如果将打印语句放在合适的位置，打印输出可能有助于让错误一目了然，或者缩小错误原因的范围。这种方法称为 <strong>打印调试</strong> 。虽然打印调试非常有用，但它也有一些缺点：</p>
 <ul>
-<li><strong>独属计算机的浪漫</strong>：在自己的处理器上，运行自己的操作系统。</li>
-<li><strong>写出来更快的程序</strong>：我的程序现在跑1分钟，能否加速到10秒？</li>
-<li><strong>理解系统运行原理</strong>：敲下回车后，程序是如何在计算机系统上执行的？</li>
+<li>
+<p>它要求你修改代码，之后还得清理。</p>
+</li>
+<li>
+<p>决定并准确写出你想要打印的内容很繁琐。</p>
+</li>
+<li>
+<p>打印输出的格式并不总是美观。</p>
+</li>
 </ul>
-<p><strong>处理器芯片方向（即“一生一芯”）：</strong></p>
+<p>在本次实验中，我们将向你展示一种新技术—— <strong>交互式调试</strong> ，即使用交互式工具（也就是调试器）进行调试。我们将重点介绍 IntelliJ 的内置调试器。</p>
+<h3 id="_5">调试器概述</h3>
+<h4 id="_6">断点</h4>
+<p>在启动 IntelliJ 调试器之前，你应该设置几个 <strong>断点</strong> 。断点标记了代码中的位置，在调试时你可以在这些位置暂停程序并检查其状态。断点有以下优点：</p>
 <ul>
-<li><strong>处理器体系结构</strong>：写一个乱序多发射可以启动 Linux 的高性能处理器。</li>
-<li><strong>芯片全链条设计</strong>：掌握处理器芯片从RTL开发、SoC集成再到版图生成的完整过程。</li>
+<li>
+<p>无需修改代码，也无需在调试后清理代码，因为在正常执行时断点会被忽略。</p>
+</li>
+<li>
+<p>无需编写打印语句就能查看所有变量。</p>
+</li>
+<li>
+<p>能让 IntelliJ 以结构化的方式显示所有内容。</p>
+</li>
 </ul>
+<p>继续操作，打开 <code>Bomb.java</code> 并设置一个断点。要设置断点，点击行号右侧的区域。</p>
+<p><img alt="image0" src="../images/lab02/image0.png" /></p>
+<p>点击的位置应该会出现一个红色圆圈或菱形标记。如果没有出现任何标记，请确保你点击的是有代码的行旁边。当调试器运行到程序中的这个点时，它会在执行该行代码或方法之前暂停。再次点击断点即可将其移除。</p>
+<h4 id="_7">运行调试器</h4>
+<p>现在，让我们设置几个断点——你可以在 <code>Bomb.java</code> 或 <code>BombMain.java</code> 中进行设置。设置好断点后，我们就可以开始调试会话了！点击你想要调试的类或测试旁边的绿色三角形（在测试文件中可能会有两个绿色三角形）。不要点击绿色三角形来运行程序，而是点击调试选项：</p>
+<p><img alt="image1" src="../images/lab02/image1.png" /></p>
+<p><img alt="image2" src="../images/lab02/image2.png" /></p>
+<p>所选程序应该会一直运行，直到遇到第一个断点。调试器窗口也应该会出现在界面底部原本控制台所在的位置。</p>
+<p><img alt="image3" src="../images/lab02/image3.png" /></p>
+<p>在（调试器窗口的）左侧，你将能够看到当前所有的方法调用；在右侧，你可以看到程序在这个时间点已实例化变量的值（这些值在编辑器中也会以灰色文本显示）。对于类的实例，你可以点击下拉箭头展开它们，查看其字段。</p>
+<p>在调试器中，你有以下几个操作选项：</p>
+<ul>
+<li>
+<p>从显示的值中了解信息，找出问题所在并修复错误！点击 <img alt="image4" src="../images/lab02/image4.png" />停止调试会话。</p>
+</li>
+<li>
+<p>点击<img alt="image5" src="../images/lab02/image5.png" />恢复程序运行（直到遇到下一个断点或程序终止）。</p>
+</li>
+<li>
+<p>点击<img alt="image6" src="../images/lab02/image6.png" />让程序单步执行一行代码。</p>
+</li>
+<li>
+<p>点击<img alt="image7" src="../images/lab02/image7.png" />执行类似操作，但它会进入当前行调用的任何方法内部，而<img alt="image8" src="../images/lab02/image8.png" />会直接跳过该方法继续执行。</p>
+</li>
+<li>
+<p>点击<img alt="image9" src="../images/lab02/image9.png" />使程序继续运行，直到从当前方法返回。</p>
+</li>
+<li>
+<p>如果你不小心单步执行过了头，想重新开始调试会话，点击<img alt="image10" src="../images/lab02/image10.png" />（至少目前没有很好的直接回退方法）。</p>
+</li>
+</ul>
+<h3 id="bomb-0">Bomb 介绍(第 0 阶段)</h3>
+<p>!!! TIP</p>
+<pre><code>在本次实验中，如果你想对正在调试的方法 / 阶段有个总体了解，我们会提供方法详解。
+</code></pre>
+<p>!!! TASK</p>
+<pre><code>在 `phase0` 处设置一个断点，利用调试器找出 `phase0` 的密码，并在 `bomb/BombMain.java` 中相应地替换 `phase0` 的参数。你可以从 `tests/bomb/BombTest.java` 里的 `testBombPhase0` 启动程序。
+</code></pre>
+<p>一旦你找到了正确密码，运行代码（非调试模式）时应输出 <code>你使用密码‘&lt;password&gt;’通过了阶段0！</code> ，而不是 <code>阶段0爆炸了！</code></p>
+<p>??? phase0方法细分</p>
+<pre><code>`phase0` 方法首先会生成一个秘密字符串 `correctPassword` （你无需了解 `shufflePassword` 的工作原理 ）。然后，将从 `BombMain` 传入的 `password` 与 `correctPassword` 进行比较。此阶段的目标是使用调试器找出 `correctPassword` 的值，并传入与之匹配的 `password` 。
+</code></pre>
+<h3 id="_8">可视化工具（第一阶段）</h3>
+<p>在本次实验的这个部分，我们将使用 <code>IntList</code> 。如果你需要快速复习，可以参考本周相关的课程幻灯片。</p>
+<p>在我们对 <code>IntList</code> 的实现中，有两个可能未提及的方法： <code>print</code> 和 <code>of</code> 。 <code>of</code> 方法让创建 <code>IntList</code> 更加便捷。下面简要演示其工作原理。看这段代码：</p>
+<pre><code class="language-java">IntList lst = new IntList(1, new IntList(2, new IntList(3, null)));
+</code></pre>
+<p>仅仅为了创建一个包含 1、2、3 的列表，就要输入这么多内容（而且也很容易混淆）！ <code>IntList.of</code> 方法解决了这个问题。要创建一个包含 1、2、3 这些元素的 <code>IntList</code> ，你只需输入：</p>
+<pre><code class="language-java">IntList lst = IntList.of(1, 2, 3);
+</code></pre>
+<p>另一个方法 <code>print</code> 会返回 <code>IntList</code> 的字符串表示形式。</p>
+<pre><code class="language-java">IntList lst = IntList.of(1, 2, 3);
+System.out.println(lst.print());
+// 输出: 1 -&gt; 2 -&gt; 3
+</code></pre>
+<p>回到调试——虽然能够查看变量值很好，但有时我们的数据不太容易检查。例如，要查看长 <code>IntList</code> ，我们得点击很多下拉菜单。Java 可视化工具会显示程序中变量的盒图和指针图，这对 <code>IntList</code> 来说更适用。要使用可视化工具，运行调试器，直到在断点处停下，然后点击 “Java Visualizer” 标签页。下面用红色框出了该标签页。</p>
+<p><img alt="image11" src="../images/lab02/image11.png" /></p>
+<p>阶段 1 的密码是一个 <code>IntList</code> ，而不是字符串 。你可能会发现 <code>IntList.of</code> 方法很有用。</p>
+<p>!!! TASK</p>
+<pre><code>在 `phase1` 处设置一个断点，使用 Java 可视化工具找出阶段 1 的密码，并在 `bomb/BombMain.java` 中相应地替换 `phase1` 的参数。你可以从 `tests/bomb/BombTest.java` 中的 `testBombPhase1` 启动程序。
+</code></pre>
+<p>??? phase1方法细分</p>
+<pre><code>`phase1` 方法会生成一个名为 `correctIntListPassword` 的秘密 `IntList` （与上一阶段类似，你无需了解 `shufflePasswordIntList` 的工作原理 ）。然后，将从 `BombMain` 传入的 `password` （以 `IntList` 形式 ）与 `correctIntListPassword` 进行相等性比较。此阶段的目标是使用调试器的 Java 可视化工具找出 `correctIntListPassword` 这个 `IntList` 的结构和值，并传入与之匹配的 `password` 。
+</code></pre>
+<h3 id="_9">条件断点(第二阶段)</h3>
+<p>设想一个循环 5000 次的程序，要是每次都单步执行来查找错误，效率可不高。相反，你会希望程序在特定的迭代（比如最后一次）时暂停。换句话说，你希望程序在满足某些条件时暂停。要实现这一点，在感兴趣的代码行处设置一个断点，然后右键单击断点图标，打开 “编辑断点” 菜单。在那里，你可以输入一个布尔条件，这样只有当条件为真时，程序才会在这个断点处暂停。大概是像这样：</p>
+<p><img alt="image12" src="../images/lab02/image12.png" /></p>
+<p>你还可以在 Java 中为异常设置断点。如果程序崩溃，调试器可以在抛出异常的位置暂停，并显示程序状态。要做到这一点，在调试器窗口中点击<img alt="image" src="../images/lab02/image13.png" />，然后按下加号图标来创建一个 “Java 异常断点” 。在弹出的窗口中，输入程序抛出的异常名称。</p>
+<p>!!! TASK</p>
+<pre><code>在 `phase2` 处设置一个断点，使用调试器找出 `phase2` 的密码，并在 `bomb/BombMain.java` 中相应地替换 `phase2` 的参数。记住，不要编辑 `Bomb.java` ！你可以从 `tests/bomb/BombTest.java` 中的 `testBombPhase2` 启动程序。
+</code></pre>
+<p>!!! TIP</p>
+<pre><code>注意：此阶段的密码不像前几个阶段那样会明确给出。相反，你的任务是使用条件断点 “尝试找出” 密码。
+</code></pre>
+<p>??? phase2方法细分</p>
+<pre><code>`phase2` 方法从 `BombMain` 接收 `password` 。
+
+该方法会向一个名为 `numbers` 的 `Set` 集合中添加 100,000 个随机整数。然后使用增强型 `for` 循环遍历这些整数，同时递增变量 `i` 。在第 1338 次迭代时（因为 Java 是从 0 开始计数，所以在第 1338 次迭代时 `i == 1337` ），会检查你的 `password` 是否与当前值相等。
+</code></pre>
+<p>此时，你应该能够运行 <code>tests/bomb/BombTest.java</code> 中的测试，并且所有测试都能通过，显示绿色对勾。</p>
+<h2 id="_10">成功提交和评分</h2>
+<p>!!! WARNING</p>
+<pre><code>确保你没有编辑 `Bomb.java` 或 `BombTest.java` 。自动评分器会进行测试，检查你是否编辑过这些文件，一旦文件有改动（包括添加注释 ），你将无法通过。本地测试会阻止你编辑 `Bomb.java` ，但不会阻止编辑 `BombTest.java` （这一点仅在自动评分器中检测 ），所以不要动这些文件！
+</code></pre>
+<p>本次实验满分为 5 分。</p>
+<ul>
+<li>找出 <code>BombMain.java</code> 中所有阶段的密码。</li>
+</ul>
+<h2 id="_11">致谢</h2>
+<p>本次作业改编自亚当·布兰克（Adam Blank） 。</p>
 
 
 
@@ -2431,10 +2849,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
