@@ -1,4 +1,4 @@
-#!/bin/env lua
+#!/usr/bin/env lua
 -- vim:fdm=marker:fdl=0
 
 --------------- 配置文件路径 ---------------
