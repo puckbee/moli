@@ -37,11 +37,15 @@ MIT6.S081 的旅程充满挑战，但也是一次绝佳的成长机会。为了�
 <div style="display: flex; justify-content: flex-start;">
     <figure>
         <img src="../images/MIT6.S081_qq.png" alt="QQ" width="100%">
-        <figcaption>QQ</figcaption>
+        <figcaption style="text-align: center; font-size: 0.9em; color: #666;">
+        QQ：MIT6.S081 学习交流群
+        </figcaption>
     </figure>
 
     <figure>
         <img src="../images/MIT6.S081_wechat.png" alt="微信" width="80%">
-        <figcaption>微信</figcaption>
+        <figcaption style="text-align: center; font-size: 0.9em; color: #666;">
+        微信：MIT6.S081 学习交流群
+        </figcaption>
     </figure>
 </div>

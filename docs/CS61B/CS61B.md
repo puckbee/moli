@@ -43,4 +43,11 @@ CS61B 的旅程充满挑战，但也是一次绝佳的成长机会。为了让�
 
 扫描下方二维码，加入我们，一起在 CS61B 中蜕变！
 
-[在此放置二维码]
+<div style="display: flex; justify-content: flex-start;">
+    <figure>
+        <img src="../images/CS61B_wechat.jpg" alt="微信" width="80%">
+        <figcaption style="text-align: center; font-size: 0.9em; color: #666;">
+        微信：CS61B 学习交流群
+        </figcaption>
+    </figure>
+</div>

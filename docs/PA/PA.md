@@ -34,11 +34,15 @@ PA的旅程充满挑战，但也是一次绝佳的成长机会。为了让你更
 <div style="display: flex; justify-content: flex-start;">
     <figure>
         <img src="../images/PA_qq.png" alt="QQ" width="100%">
-        <figcaption>QQ</figcaption>
+        <figcaption style="text-align: center; font-size: 0.9em; color: #666;">
+        QQ：南京大学 ICS 学习交流群
+        </figcaption>
     </figure>
 
     <figure>
         <img src="../images/PA_wechat.png" alt="微信" width="80%">
-        <figcaption>微信</figcaption>
+        <figcaption style="text-align: center; font-size: 0.9em; color: #666;">
+        微信：南京大学 ICS 学习交流群
+        </figcaption>
     </figure>
 </div>
