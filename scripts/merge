@@ -1,18 +1,18 @@
 #!/usr/bin/env lua
 -- vim:fdm=marker:fdl=0
 
---------------- 配置文件路径 ---------------
+----------------- 配置文件 -----------------
 local files = {
-	"nav/HomePage.yml",
-	"nav/LearningPath.yml",
-	"nav/CS61A.yml",
-	"nav/CS61B.yml",
-	"nav/CS61C.yml",
-	"nav/PA.yml",
-	"nav/MIT6.S081.yml",
-	"nav/Recruitment.yml",
-	"nav/Contact.yml",
-	"nav/AboutMOLI.yml",
+	"HomePage.yml",
+	"LearningPath.yml",
+	"CS61A.yml",
+	"CS61B.yml",
+	"CS61C.yml",
+	"PA.yml",
+	"MIT6.S081.yml",
+	"Recruitment.yml",
+	"Contact.yml",
+	"AboutMOLI.yml",
 }
 --------------------------------------------
 
@@ -35,18 +35,23 @@ function read_file(file_path, isnav)
 	return content
 end
 
+function get_path(file)
+	local path = "./nav/"
+	return path .. file
+end
+
 function nav_yaml(files)
 	local merged_content = {}
 
 	for _, file in ipairs(files) do
-		local content = read_file(file, true)
+		local content = read_file(get_path(file), true)
 		table.insert(merged_content, content)
 	end
 
 	return table.concat(merged_content)
 end
 
-local final_content = read_file("nav/header.yml") .. nav_yaml(files)
+local final_content = read_file(get_path("header.yml")) .. nav_yaml(files)
 
 local output_file = io.open("mkdocs.yml", "w")
 if output_file then
@@ -54,6 +59,6 @@ if output_file then
 	output_file:close()
 	print("mkdocs.yml 成功生成！")
 else
-	print("无法创建 mkdocs.yml 文件。")
+	error("无法创建 mkdocs.yml 文件。")
 end
 -- }}}
