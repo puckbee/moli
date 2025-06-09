@@ -12,6 +12,7 @@ local files = {
 	"MIT6.S081.yml",
 	"Recruitment.yml",
 	"Contact.yml",
+	"Contributing.yml",
 	"AboutMOLI.yml",
 }
 --------------------------------------------
