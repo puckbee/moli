@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -321,6 +321,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../../Vote/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  投票：未来计划
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../../Contact/Contact/" class="md-tabs__link">
         
   
@@ -328,6 +347,25 @@
     
   
   联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../CONTRIBUTING/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  贡献说明
 
       </a>
     </li>
@@ -3207,12 +3245,56 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../Vote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    投票：未来计划
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../Contact/Contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
     
   </span>
   
@@ -3504,9 +3586,8 @@
 <p>为了让你更熟悉Java语法和测试，这里有几道练习题需要你解答！在你完成函数编写后，我们提供了一些测试用例。尽管我们已提供测试，但也欢迎你自行编写！编写测试不仅在本课程中至关重要，还是一项通用的重要技能。它能强化我们对特定方法功能的理解，还能帮我们发现边界情况！在后续课程中你会有更多测试练习，我们希望你能尽早接触。</p>
 <p>请先完成实验01，并参考<a href="https://sp25.datastructur.es/resources/guides/assignment-workflow/">此处（更改链接）</a>了解如何开始本次作业。</p>
 <p>在完成作业时，你可能需要使用不同的数据结构，如<code>ArrayList</code> 和<code>TreeMap</code> 。要导入这些类，如果你将鼠标悬停在使用数据结构的地方，IntelliJ会提供导入选项，或者你也可以手动添加以下代码：
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.TreeMap</span><span class="p">;</span>
-</code></pre></div></p>
+<pre class="highlight"><code class="language-java">import java.util.ArrayList;
+import java.util.TreeMap;</code></pre></p>
 <h2 id="1java">任务 1：Java 练习<a class="headerlink" href="#1java" title="Permanent link">&para;</a></h2>
 <p>在<code>JavaExercises.java</code> 中有4个不同的方法需要你完成：</p>
 <ul>
@@ -3588,20 +3669,20 @@
 <details>
 <summary style="background-color:rgb(255, 255, 255); padding: 8px; border: 1px solidrgb(255, 255, 255); border-radius: 4px; cursor: pointer;">`Dessert`类在python中的实现 </summary>
 
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Dessert</span><span class="p">:</span>
-    <span class="n">numDesserts</span> <span class="o">=</span> <span class="mi">0</span>
+<pre class="highlight"><code class="language-python">class Dessert:
+    numDesserts = 0
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flavor</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">flavor</span> <span class="o">=</span> <span class="n">flavor</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
-        <span class="n">Dessert</span><span class="o">.</span><span class="n">numDesserts</span> <span class="o">+=</span> <span class="mi">1</span>
+    def __init__(self, flavor, price):
+        self.flavor = flavor
+        self.price = price
+        Dessert.numDesserts += 1
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">printDessert</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flavor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span><span class="p">,</span> <span class="n">Dessert</span><span class="o">.</span><span class="n">numDesserts</span><span class="p">)</span>
+    def printDessert(self):
+        print(self.flavor, self.price, Dessert.numDesserts)
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love dessert!&quot;</span><span class="p">)</span>
-</code></pre></div>
+if __name__ == "__main__":
+    print("I love dessert!")
+</code></pre>
 </details>
 <p><br></p>
 <h1 id="_9">测试和调式<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
@@ -3673,10 +3754,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../../javascripts/mathjax.js"></script>
       

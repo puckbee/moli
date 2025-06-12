@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -321,6 +321,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../Vote/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  投票：未来计划
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../Contact/Contact/" class="md-tabs__link">
         
   
@@ -328,6 +347,25 @@
     
   
   联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CONTRIBUTING/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  贡献说明
 
       </a>
     </li>
@@ -3317,12 +3355,56 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Vote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    投票：未来计划
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Contact/Contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
     
   </span>
   
@@ -3415,26 +3497,24 @@
 <p>本次实验作业的一部分就是去预测 Python 解释器的行为。</p>
 <blockquote>
 <p>在终端输入以下的内容来开始本节：
-<div class="highlight"><pre><span></span><code>python3 ok -q python-basics -u --local
-</code></pre></div>
+<pre class="highlight"><code>python3 ok -q python-basics -u --local</code></pre>
 <em>正如设置的章节所述，如果 <code>python3</code> 命令无效，请尝试使用 <code>python</code> 或 <code>py</code>。</em></p>
 <p>你将被提示去输入变量、语句或表达式的输出结果。你必须正确的输入他们才能继续，但答错也没有处罚。</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
-<span class="o">------</span>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; x = 20
+&gt;&gt;&gt; x + 2
+------
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
-<span class="o">------</span>
+&gt;&gt;&gt; x
+------
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">*</span> <span class="mi">2</span>
-<span class="o">------</span>
+&gt;&gt;&gt; y = 5
+&gt;&gt;&gt; y = y + 3
+&gt;&gt;&gt; y * 2
+------
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span>
-<span class="o">------</span>
-</code></pre></div>
+&gt;&gt;&gt; y + x
+------</code></pre>
 <h3 id="2">2) 函数实现<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>使用 VS Code 打开整个 <code>lab00</code> 文件夹。你可以拖拽文件夹到 VS Code 应用图标上，或打开 VS Code 并在文件菜单中使用 <code>打开文件夹...</code> 选项。一旦你打开了 <code>lab00</code> 文件夹，你将在 VS Code 窗口左侧面板的文件浏览器中看到 <code>lab00.py</code> 文件。点击它去开始编辑 <code>lab00.py</code>，这就是你最终需要提交以获取实验分数的文件。</p>
 <p><strong>重要</strong>：在 VS Code 的 <code>文件</code> 菜单中打开 <code>自动保存</code> 功能。这样，无论你什么时候修改了一个文件，内容都会被自动保存</p>
@@ -3449,56 +3529,50 @@
 <li><code>lab00.ok</code>：<code>ok</code> 的测试文件</li>
 </ul>
 <p>现在可以测试我们的代码，去确定它正常工作。你可以运行 <code>ok</code> 命令：</p>
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>--local
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">python3 ok --local</code></pre>
 <blockquote>
 <p>别忘了，如果你使用 Windows 操作系统且 <code>python3</code> 命令没有正常工作，请尝试使用 <code>python</code> 或 <code>py</code>。</p>
 </blockquote>
 <p>如果你正确的完成代码，并且解锁了你的测试，你应该可以看到一个成功的测试：</p>
-<div class="highlight"><pre><span></span><code><span class="o">=====================================================================</span>
-<span class="n">Assignment</span><span class="p">:</span> <span class="n">Lab</span> <span class="mi">0</span>
-<span class="o">=====================================================================</span>
+<pre class="highlight"><code class="language-python">=====================================================================
+Assignment: Lab 0
+=====================================================================
 
-<span class="o">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
-<span class="n">Running</span> <span class="n">tests</span>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
 
-<span class="o">---------------------------------------------------------------------</span>
-<span class="n">Test</span> <span class="n">summary</span>
-    <span class="mi">2</span> <span class="n">test</span> <span class="n">cases</span> <span class="n">passed</span><span class="err">!</span> <span class="n">No</span> <span class="n">cases</span> <span class="n">failed</span><span class="o">.</span>
-</code></pre></div>
+---------------------------------------------------------------------
+Test summary
+    2 test cases passed! No cases failed.</code></pre>
 <p>如果你没有通过测试，<code>ok</code> 将会显示类似这些信息：</p>
-<div class="highlight"><pre><span></span><code><span class="o">---------------------------------------------------------------------</span>
-<span class="n">Doctests</span> <span class="k">for</span> <span class="n">twenty_twenty_five</span>
+<pre class="highlight"><code class="language-python">---------------------------------------------------------------------
+Doctests for twenty_twenty_five
 
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">lab00</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">twenty_twenty_five</span><span class="p">()</span>
-<span class="mi">0</span>
+&gt;&gt;&gt; from lab00 import *
+&gt;&gt;&gt; twenty_twenty_five()
+0
 
-<span class="c1"># Error: expected</span>
-<span class="c1">#     2025</span>
-<span class="c1"># but got</span>
-<span class="c1">#     0</span>
+# Error: expected
+#     2025
+# but got
+#     0
 
-<span class="o">---------------------------------------------------------------------</span>
-<span class="n">Test</span> <span class="n">summary</span>
-    <span class="mi">0</span> <span class="n">test</span> <span class="n">cases</span> <span class="n">passed</span> <span class="n">before</span> <span class="n">encountering</span> <span class="n">first</span> <span class="n">failed</span> <span class="n">test</span> <span class="n">case</span>
-</code></pre></div>
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case</code></pre>
 <p>在你的编辑器中修复你的代码，直到测试通过。</p>
 <h2 id="python">附录：实用的 Python 命令行参数<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
 <p>以下是运行 Python 文件中最常用的方式：</p>
 <ol>
 <li>不使用如何命令行选项去运行你提供的文件中的代码，然后返回到命令行。如果你的文件只包含了一个函数定义，除非你有一个语法错误你将不会看到任何输出。</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code>python3<span class="w"> </span>lab00.py
-</code></pre></div>
+<p><pre class="highlight"><code class="language-bash">python3 lab00.py</code></pre>
 2. <code>-i</code>：<code>-i</code> 选项可以在运行你提供的文件中的代码后，进入交互式环境（伴随着一个 <code>&gt;&gt;&gt;</code> 提示符）。你可以进行表达式求值，比如调用你已定义的函数等。可以通过 <code>exit()</code> 来退出。你也可以在 Linux/Mac 上使用键盘快捷键 <code>Ctrl-D</code> 或在 Windows 上使用 <code>Ctrl-z Enter</code> 来进行退出。如果你在运行着交互环境时编写了 Python 文件，你需要退出并重启解释器才能使更改生效。</p>
 <p>以下是我们应该如何在交互环境中运行 <code>lab00.py</code>：
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-i<span class="w"> </span>lab00.py
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">python3 -i lab00.py</code></pre>
 3. <code>-m doctest</code>：运行文件中的文档测试，即函数中的文档字符串。每个测试都由 <code>&gt;&gt;&gt;</code> 和一些 Python 代码以及期望的输出组成。</p>
 <p>以下是我们应该如何运行 <code>lab00.py</code> 中的文档测试：
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>doctest<span class="w"> </span>lab00.py
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">python3 -m doctest lab00.py</code></pre></p>
 <p>当我们的代码通过了所有的测试时，不会有任何输出。否则，会有测试失败的信息显示。</p>
 
 
@@ -3548,10 +3622,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

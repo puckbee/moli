@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -321,6 +321,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../Vote/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  投票：未来计划
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../Contact/Contact/" class="md-tabs__link">
         
   
@@ -328,6 +347,25 @@
     
   
   联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CONTRIBUTING/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  贡献说明
 
       </a>
     </li>
@@ -3485,12 +3523,56 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Vote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    投票：未来计划
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Contact/Contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
     
   </span>
   
@@ -3593,7 +3675,7 @@
 <h3 id="_4">获取框架代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>按照<a href="https://sp25.datastructur.es/resources/guides/assignment-workflow/#assignment-workflow">作业流程指南</a>的说明获取框架代码并在 IntelliJ 中打开。本项目中，我们将在 <code>proj1b</code> 目录下进行开发。</p>
 <p>你将看到仓库中出现一个 <code>proj1b</code> 目录，结构如下：</p>
-<div class="highlight"><pre><span></span><code> proj1b
+<pre class="highlight"><code class="language-txt"> proj1b
 ├── src
 │   └── deque
 │       ├── Deque61B.java
@@ -3601,8 +3683,7 @@
 └── tests
     ├── ArrayDeque61BPreconditionTest.java
     ├── ArrayDeque61BTest.java
-    └── Maximizer61BTest.java
-</code></pre></div>
+    └── Maximizer61BTest.java</code></pre>
 <p>注意你还会看到一个 <code>gh2</code> 目录和相关的测试文件 <code>TestGuitarString.java</code> 。这些是与可选的 Guitar
 Hero 部分相关的，你可以继续往下阅读了解。</p>
 <p>如果遇到错误，请停下来仔细阅读<a href="https://sp25.datastructur.es/resources/guides/git/wtfs/">git 常见问题</a>，或者去 OH 或 Ed 寻求帮助。相比随意尝试 git 命令，这能节省你大量时间。如果你发现自己想用 Google 推荐的命令比如 <code>force push</code> ，<a href="https://twitter.com/heathercmiller/status/526770571728531456">千万别这么做</a>。 <strong>即使 Stack Overflow 上的帖子建议这么做，也别用 force push！</strong></p>
@@ -3612,19 +3693,16 @@ Hero 部分相关的，你可以继续往下阅读了解。</p>
 <h2 id="creating-the-file">Creating the File<a class="headerlink" href="#creating-the-file" title="Permanent link">&para;</a></h2>
 <p>首先创建名为 <code>ArrayDeque61B</code> 的文件。该文件应放在 <code>proj1b/src/deque</code> 目录下。右键点击 <code>deque</code> 目录，选择”New -&gt; Java Class”，然后将其命名为 <code>ArrayDeque61B</code> 。</p>
 <p>我们希望 <code>ArrayDeque61B</code> 能够存储多种类型的数据。例如， <code>ArrayDeque61B&lt;String&gt;</code> 存储 <code>String</code> 类型， <code>ArrayDeque61B&lt;Integer&gt;</code> 存储 <code>Integer</code> 类型。为此，需要将类声明修改为：</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ArrayDeque61B</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-java">public class ArrayDeque61B&lt;T&gt;</code></pre>
 <p>课堂上讲过，使用 <code>T</code> 或其他名称如 <code>ArrayDeque61B&lt;Glerp&gt;</code> 实际上没有区别。但我们建议使用 <code>&lt;T&gt;</code> 以保持与其他 Java 代码的一致性。</p>
 <p>我们还需要告诉 Java 每个 <code>ArrayDeque61B</code> 都是一个 <code>Deque61B</code> ，这样用户就可以编写如 <code>Deque61B&lt;String&gt; lld1 = new ArrayDeque61B&lt;&gt;();</code> 的代码。为此，需要将类声明修改为：</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ArrayDeque61B</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Deque61B</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-java">public class ArrayDeque61B&lt;T&gt; implements Deque61B&lt;T&gt;</code></pre>
 <p>完成这一步后，你可能会在整个类声明下方看到一条红色波浪线。这是因为你声明了你的类实现了一个接口，但你还没有实际实现任何接口方法。</p>
 <p>将鼠标悬停在红线上，当 IntelliJ 弹出窗口出现时，点击“Implement
 methods”按钮。确保列表中的所有方法都已高亮显示，然后点击“OK”。现在，你的类中应该充满了一堆空的方法声明。这些就是你在这个项目中需要实现的方法！</p>
 <p>最后，你需要创建一个空的构造函数。在文件中添加以下代码，目前先保持构造函数体为空：</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">ArrayDeque61B</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-java">public ArrayDeque61B() {
+}</code></pre>
 <p>注意：你也可以通过点击”Code”，然后选择”Generate”再选择”Constructor”来生成构造函数，但我们更推荐手动输入代码的方式。</p>
 <p>现在你已经准备好开始了！</p>
 <h2 id="arraydeque61b"><code>ArrayDeque61B</code><a class="headerlink" href="#arraydeque61b" title="Permanent link">&para;</a></h2>
@@ -3637,10 +3715,9 @@ methods”按钮。确保列表中的所有方法都已高亮显示，然后点�
 <p>更多细节请参见<a href="https://docs.google.com/presentation/d/1kjbO8X7-i63NwQ_9wIt4HXr6APp2qc9PkghD-GO7_is/edit#slide=id.g1094ff4355_0_466">项目1B演示幻灯片</a>。特别注意，虽然概念上的双端队列和数组包含相同的元素，但它们的顺序不同。</p>
 </div>
 <p>我们建议使用 Java 内置 <code>Math</code> 类的 <code>floorMod(int a, int b)</code> 方法来帮助设计循环方法。与 <code>a % b</code> 在 a 为负数时可能返回负数不同， <code>floorMod(int a, int b)</code> 总是返回非负数。实际上这意味着结果的符号与除数相同。以下是使用 <code>floorMod(int a, int b)</code> 方法的一些示例：</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">value1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">floorMod</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">);</span><span class="w"> </span><span class="c1">// value1 == 0</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">value2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">floorMod</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">);</span><span class="w"> </span><span class="c1">// value2 == 15</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">value3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">floorMod</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">);</span><span class="w"> </span><span class="c1">// value3 == 4</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-java">int value1 = Math.floorMod(16, 16); // value1 == 0
+int value2 = Math.floorMod(-1, 16); // value2 == 15
+int value3 = Math.floorMod(20, 16); // value3 == 4</code></pre>
 <p>你可以通过在文件顶部添加以下导入语句来使用 <code>floorMod(int a, int b)</code> 方法： <code>import java.lang.Math;</code> 。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -3687,11 +3764,10 @@ methods”按钮。确保列表中的所有方法都已高亮显示，然后点�
 <p><code>removeFirst</code> 和 <code>removeLast</code> <strong>不得</strong> 使用循环或递归。与 <code>addFirst</code> 和 <code>addLast</code> 一样，这些操作必须在”常数时间”完成。有关这方面的更多信息，请参阅关于编写 <code>addFirst</code> 和 <code>addLast</code> 的章节。</p>
 <h3 id="getrecursive"><code>getRecursive</code><a class="headerlink" href="#getrecursive" title="Permanent link">&para;</a></h3>
 <p>虽然本次项目不再使用链表，但仍然需要实现此方法以保持与接口的一致性。从技术角度看，此方法本不应该出现在接口中，但为了方便测试，我们将其保留。你可以直接使用以下代码块：</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
-<span class="kd">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">getRecursive</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UnsupportedOperationException</span><span class="p">(</span><span class="s">&quot;No need to implement getRecursive for proj 1b&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-java">@Override
+public T getRecursive(int index) {
+    throw new UnsupportedOperationException("No need to implement getRecursive for proj 1b");
+}</code></pre>
 <div class="admonition task">
 <p class="admonition-title">Task</p>
 <p>“实现”  <code>getRecursive</code> 。</p>
@@ -3755,29 +3831,26 @@ methods”按钮。确保列表中的所有方法都已高亮显示，然后点�
 <p>为了实现以下方法，你需要先将 Project 1A 中的 <code>LinkedListDeque61B</code> 实现复制并粘贴到 <code>src</code> 目录中。</p>
 <h4 id="iterator"><code>iterator()</code><a class="headerlink" href="#iterator" title="Permanent link">&para;</a></h4>
 <p>我们 <code>Deque61B</code> 接口的一个缺陷是无法进行迭代。也就是说，下面的代码无法通过编译，报错为“foreach 不适用于类型”。</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">Deque61B</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lld1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedListDeque61B</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<pre class="highlight"><code class="language-java">  Deque61B&lt;String&gt; lld1 = new LinkedListDeque61B&lt;&gt;();
 
-<span class="w">  </span><span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;front&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;middle&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;back&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">lld1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-</code></pre></div>
+  lld1.addLast("front");
+  lld1.addLast("middle");
+  lld1.addLast("back");
+  for (String s : lld1) {
+      System.out.println(s);
+  }</code></pre>
 <p>同样，如果尝试编写一个测试用例验证 <code>Deque61B</code> 是否包含特定的元素集合，也会出现编译错误，提示为“无法解析方法 containsExactly 在 Subject 中”。</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addLastTestBasicWithoutToList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Deque61B</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lld1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedListDeque61B</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<pre class="highlight"><code class="language-java">public void addLastTestBasicWithoutToList() {
+    Deque61B&lt;String&gt; lld1 = new LinkedListDeque61B&lt;&gt;();
 
-<span class="w">    </span><span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;front&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 调用后预期元素为 [&quot;front&quot;]</span>
-<span class="w">    </span><span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;middle&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 调用后预期元素为 [&quot;front&quot;, &quot;middle&quot;]</span>
-<span class="w">    </span><span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;back&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 调用后预期元素为 [&quot;front&quot;, &quot;middle&quot;, &quot;back&quot;]</span>
-<span class="w">    </span><span class="n">assertThat</span><span class="p">(</span><span class="n">lld1</span><span class="p">).</span><span class="na">containsExactly</span><span class="p">(</span><span class="s">&quot;front&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;middle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;back&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+    lld1.addLast("front"); // 调用后预期元素为 ["front"]
+    lld1.addLast("middle"); // 调用后预期元素为 ["front", "middle"]
+    lld1.addLast("back"); // 调用后预期元素为 ["front", "middle", "back"]
+    assertThat(lld1).containsExactly("front", "middle", "back");
+}</code></pre>
 <p>问题依然是我们的对象无法被迭代。 <code>Truth</code> 库通过迭代我们的对象来工作（如第一个示例），但我们的 <code>LinkedListDeque61B</code> 不支持迭代。</p>
 <p>要解决这个问题，你需要首先修改 <code>Deque61B</code> 接口，使其声明变为：</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Deque61B</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-java">public interface Deque61B&lt;T&gt; extends Iterable&lt;T&gt; {</code></pre>
 <p>然后使用讲座 10 中提到的技术实现 <code>iterator()</code> 方法。</p>
 <div class="admonition task">
 <p class="admonition-title">Task</p>
@@ -3789,31 +3862,28 @@ methods”按钮。确保列表中的所有方法都已高亮显示，然后点�
 </div>
 <h4 id="equals"><code>equals()</code><a class="headerlink" href="#equals" title="Permanent link">&para;</a></h4>
 <p>考虑以下代码：</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nd">@Test</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testEqualDeques61B</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Deque61B</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lld1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedListDeque61B</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<span class="w">        </span><span class="n">Deque61B</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lld2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedListDeque61B</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<pre class="highlight"><code class="language-java">    @Test
+    public void testEqualDeques61B() {
+        Deque61B&lt;String&gt; lld1 = new LinkedListDeque61B&lt;&gt;();
+        Deque61B&lt;String&gt; lld2 = new LinkedListDeque61B&lt;&gt;();
 
-<span class="w">        </span><span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;front&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;middle&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;back&quot;</span><span class="p">);</span>
+        lld1.addLast("front");
+        lld1.addLast("middle");
+        lld1.addLast("back");
 
-<span class="w">        </span><span class="n">lld2</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;front&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">lld2</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;middle&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">lld2</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;back&quot;</span><span class="p">);</span>
+        lld2.addLast("front");
+        lld2.addLast("middle");
+        lld2.addLast("back");
 
-<span class="w">        </span><span class="n">assertThat</span><span class="p">(</span><span class="n">lld1</span><span class="p">).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="n">lld2</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-</code></pre></div>
+        assertThat(lld1).isEqualTo(lld2);
+    }</code></pre>
 <p>如果我们运行这段代码，会发现测试失败，报错信息如下：</p>
-<div class="highlight"><pre><span></span><code>expected: [front, middle, back]
-but was : (non-equal instance of same class with same string representation)
-</code></pre></div>
+<pre class="highlight"><code class="language-txt">expected: [front, middle, back]
+but was : (non-equal instance of same class with same string representation)</code></pre>
 <p>问题在于 <code>Truth</code> 库使用了 <code>LinkedListDeque61B</code> 类的 <code>equals</code> 方法。默认实现由以下代码提供：</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">obj</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-java">    public boolean equals(Object obj) {
+        return (this == obj);
+    }</code></pre>
 <p>也就是说， <code>equals</code> 方法仅检查两个对象的地址是否相同。我们希望比较两个 <code>Deque61B</code> 对象的元素顺序和内容是否相等，因此需要自定义 <code>equals</code> 方法。</p>
 <p>在 <code>ArrayDeque61B</code> 和 <code>LinkedListDeque61B</code> 中重写 <code>equals</code> 方法。关于编写 <code>equals</code> 方法的指导，请参考<a href="https://docs.google.com/presentation/d/1lIR4--P9NrBqRL9xqP_RQYyK1WJBrBEbriLVpatrRqk/edit#slide=id.g4f922fa56b_2_47">讲座幻灯片</a>或<a href="https://github.com/Berkeley-CS61B/lectureCode-sp23/blob/main/lec12_inheritance4/ArraySet.java">讲座代码仓库</a>。</p>
 <div class="admonition tip">
@@ -3840,18 +3910,17 @@ but was : (non-equal instance of same class with same string representation)
 </div>
 <h3 id="tostring"><code>toString()</code>方法<a class="headerlink" href="#tostring" title="Permanent link">&para;</a></h3>
 <p>考虑以下示例代码，该代码段打印了一个 <code>LinkedListDeque61B</code> ：</p>
-<div class="highlight"><pre><span></span><code><span class="n">Deque61B</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lld1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedListDeque61B</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;front&quot;</span><span class="p">);</span>
-<span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;middle&quot;</span><span class="p">);</span>
-<span class="n">lld1</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">&quot;back&quot;</span><span class="p">);</span>
+<pre class="highlight"><code class="language-java">Deque61B&lt;String&gt; lld1 = new LinkedListDeque61B&lt;&gt;();
+lld1.addLast("front");
+lld1.addLast("middle");
+lld1.addLast("back");
 
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">lld1</span><span class="p">);</span>
-</code></pre></div>
+System.out.println(lld1);</code></pre>
 <p>这段代码会输出类似 <code>deque.proj1a.LinkedListDeque61B@1a04f701</code> 的内容，原因是未覆盖 <code>toString()</code> 方法。默认的 <code>toString()</code> 实现如下所示：</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getClass</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;@&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">toHexString</span><span class="p">(</span><span class="n">hashCode</span><span class="p">());</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-java">public String toString() {
+    return getClass().getName() + "@" + Integer.toHexString(hashCode());
+}
+</code></pre>
 
 
 
@@ -3900,10 +3969,10 @@ but was : (non-equal instance of same class with same string representation)
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

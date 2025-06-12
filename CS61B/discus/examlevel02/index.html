@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -321,6 +321,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../Vote/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  投票：未来计划
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../Contact/Contact/" class="md-tabs__link">
         
   
@@ -328,6 +347,25 @@
     
   
   联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CONTRIBUTING/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  贡献说明
 
       </a>
     </li>
@@ -3266,12 +3304,56 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Vote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    投票：未来计划
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Contact/Contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
     
   </span>
   
@@ -3326,13 +3408,12 @@
 <p>2025年春季 考试级别02：2025年2月3日</p>
 <h2 id="1">1 框和指针<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>绘制框和指针图，表示在每个语句之后的IntLists L1、L2和L3。</p>
-<div class="highlight"><pre><span></span><code><span class="n">IntList</span><span class="w"> </span><span class="n">L1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IntList</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
-<span class="n">IntList</span><span class="w"> </span><span class="n">L2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IntList</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">L1</span><span class="p">.</span><span class="na">rest</span><span class="p">);</span>
-<span class="n">L2</span><span class="p">.</span><span class="na">rest</span><span class="p">.</span><span class="na">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
-<span class="n">L1</span><span class="p">.</span><span class="na">rest</span><span class="p">.</span><span class="na">rest</span><span class="p">.</span><span class="na">rest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">L2</span><span class="p">;</span>
-<span class="n">IntList</span><span class="w"> </span><span class="n">L3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IntList</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
-<span class="n">L2</span><span class="p">.</span><span class="na">rest</span><span class="p">.</span><span class="na">rest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">L3</span><span class="p">;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-java">IntList L1 = IntList.list(1, 2, 3);
+IntList L2 = new IntList(4, L1.rest);
+L2.rest.first = 13;
+L1.rest.rest.rest = L2;
+IntList L3 = IntList.list(50);
+L2.rest.rest = L3;</code></pre>
 <h2 id="2-interweave">2 交错（Interweave）<a class="headerlink" href="#2-interweave" title="Permanent link">&para;</a></h2>
 <p>实现<code>interweave</code>方法，该方法接收一个IntList lst和一个整数k，并将lst破坏性地交错成k个IntList，存储在一个IntList数组中。这里，破坏性意味着你应该专注于修改现有IntList lst中的指针，而不是创建新的IntList实例。</p>
 <p>具体要求：
@@ -3342,62 +3423,60 @@
 <p>例如，如果lst包含元素[6, 5, 4, 3, 2, 1]，且k = 2，那么该方法应该返回一个IntList数组，索引0处为[6, 4, 2]，索引1处为[5, 3, 1]。</p>
 <p>在开始时，我们对IntList lst进行了破坏性反转，因为通常从后向前构建IntList更容易。</p>
 <p>提示：数组中的元素应该跟踪它们正在构建的小IntList的头部。</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">IntList</span><span class="o">[]</span><span class="w"> </span><span class="nf">interweave</span><span class="p">(</span><span class="n">IntList</span><span class="w"> </span><span class="n">lst</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">IntList</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IntList</span><span class="o">[</span><span class="n">k</span><span class="o">]</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="n">IntList</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reverse</span><span class="p">(</span><span class="n">lst</span><span class="p">);</span><span class="w"> </span><span class="c1">// 假设reverse已正确实现</span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">___________________</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">IntList</span><span class="w"> </span><span class="n">prevAtIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">___________________</span><span class="p">;</span>
-<span class="w">        </span><span class="n">IntList</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">___________________</span><span class="p">;</span>
-<span class="w">        </span><span class="n">__________________________________</span><span class="p">;</span>
-<span class="w">        </span><span class="n">__________________________________</span><span class="p">;</span>
-<span class="w">        </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">___________________</span><span class="p">;</span>
-<span class="w">        </span><span class="n">index</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">______________________</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">_______________________</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">array</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-java">public static IntList[] interweave(IntList lst, int k) {
+    IntList[] array = new IntList[k];
+    int index = k - 1;
+    IntList L = reverse(lst); // 假设reverse已正确实现
+    while (___________________) {
+        IntList prevAtIndex = ___________________;
+        IntList next = ___________________;
+        __________________________________;
+        __________________________________;
+        L = ___________________;
+        index -= 1;
+        if(______________________) {
+            _______________________;
+        }
+    }
+    return array;
+}</code></pre>
 <h2 id="3">3 移除重复项<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>使用下一页定义的简化DLList类，实现<code>removeDuplicates</code>方法。<code>removeDuplicates</code>应该从DLList中移除所有重复项。例如，如果我们的初始列表是[8, 4, 4, 6, 4, 10, 12, 12]，最终列表应该是[8, 4, 6, 10, 12]。你不能假设重复项是分组在一起的，或者列表是排序的！</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DLList</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="n">sentinel</span><span class="p">;</span>
+<pre class="highlight"><code class="language-java">public class DLList {
+    Node sentinel;
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">DLList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// 构造函数实现</span>
-<span class="w">    </span><span class="p">}</span>
+    public DLList() {
+        // 构造函数实现
+    }
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
-<span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="n">prev</span><span class="p">;</span>
-<span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+    public class Node {
+        int item;
+        Node prev;
+        Node next;
+    }
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">removeDuplicates</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sentinel</span><span class="p">.</span><span class="na">next</span><span class="p">;</span><span class="w">  </span><span class="c1">// 从第一个有效节点开始</span>
-<span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="n">checker</span><span class="p">;</span>
+    public void removeDuplicates() {
+        Node ref = sentinel.next;  // 从第一个有效节点开始
+        Node checker;
 
-<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">ref</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">sentinel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 遍历整个链表</span>
-<span class="w">            </span><span class="n">checker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="na">next</span><span class="p">;</span><span class="w">    </span><span class="c1">// 检查ref之后的所有节点</span>
+        while (ref != sentinel) {  // 遍历整个链表
+            checker = ref.next;    // 检查ref之后的所有节点
 
-<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">checker</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">sentinel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 内层循环检查重复</span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">checker</span><span class="p">.</span><span class="na">item</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="na">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 发现重复节点</span>
-<span class="w">                    </span><span class="n">Node</span><span class="w"> </span><span class="n">checkerPrev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">checker</span><span class="p">.</span><span class="na">prev</span><span class="p">;</span>
-<span class="w">                    </span><span class="n">Node</span><span class="w"> </span><span class="n">checkerNext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">checker</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+            while (checker != sentinel) {  // 内层循环检查重复
+                if (checker.item == ref.item) {  // 发现重复节点
+                    Node checkerPrev = checker.prev;
+                    Node checkerNext = checker.next;
 
-<span class="w">                    </span><span class="c1">// 删除重复节点</span>
-<span class="w">                    </span><span class="n">checkerPrev</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">checkerNext</span><span class="p">;</span>
-<span class="w">                    </span><span class="n">checkerNext</span><span class="p">.</span><span class="na">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">checkerPrev</span><span class="p">;</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">                </span><span class="n">checker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">checker</span><span class="p">.</span><span class="na">next</span><span class="p">;</span><span class="w">  </span><span class="c1">// 移动到下一个检查节点</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">            </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="na">next</span><span class="p">;</span><span class="w">  </span><span class="c1">// 移动到下一个参考节点</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+                    // 删除重复节点
+                    checkerPrev.next = checkerNext;
+                    checkerNext.prev = checkerPrev;
+                }
+                checker = checker.next;  // 移动到下一个检查节点
+            }
+            ref = ref.next;  // 移动到下一个参考节点
+        }
+    }
+}</code></pre>
 
 
 
@@ -3446,10 +3525,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -321,6 +321,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../Vote/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  投票：未来计划
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../Contact/Contact/" class="md-tabs__link">
         
   
@@ -328,6 +347,25 @@
     
   
   联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CONTRIBUTING/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  贡献说明
 
       </a>
     </li>
@@ -3422,12 +3460,56 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Vote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    投票：未来计划
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Contact/Contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
     
   </span>
   
@@ -3490,16 +3572,13 @@
 <h2 id="1hello">练习1：hello<a class="headerlink" href="#1hello" title="Permanent link">&para;</a></h2>
 <h3 id="c">编译并运行一个C程序<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
 <p>在本实验中，我们将使用命令行程序 <a href="https://gcc.gnu.org/">gcc</a> 在 C 语言中编译程序。使用以下命令编译练习 1 的代码（确保你已 cd 到正确的目录中）</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>gcc<span class="w"> </span>ex1_hello.c
-</code></pre></div>
+<pre class="highlight"><code class="language-shell">$ gcc ex1_hello.c</code></pre>
 <p>这会将 <code>ex1_hello.c</code> 编译为名为 <code>a.out</code> 的可执行文件 。如果你学过 CS61B 或有 Java 经验，则可以将 <code>gcc</code> 视为 <code>javac</code> 的 C 等价物。可以使用以下命令运行此文件：</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./a.out
-</code></pre></div>
+<pre class="highlight"><code class="language-shell">$ ./a.out</code></pre>
 <p>可执行文件是 <code>a.out</code>，那么 <code>./</code> 是干什么用的呢？答：当你要执行可执行文件时，你需要在可执行文件名称前加上路径。该点是指 “当前目录”。双点 （<code>..</code>） 将引用上一级的目录。</p>
 <p><code>gcc</code> 有各种命令行选项，我们鼓励你探索。但是，在本实验中，我们将仅使用 <code>-o</code>，它用于指定 <code>gcc</code> 创建的可执行文件的名称。默认情况下，<code>gcc</code> 生成的可执行文件的名称为 <code>a.out</code>。你可以使用以下命令将 <code>ex1_hello.c</code> 编译为名为 <code>ex1_hello</code> 的程序，然后运行它。如果你不希望所有可执行文件都命名为 <code>a.out</code>，这将非常有用。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>gcc<span class="w"> </span>-o<span class="w"> </span>ex1_hello<span class="w"> </span>ex1_hello.c
-$<span class="w"> </span>./ex1_hello
-</code></pre></div>
+<pre class="highlight"><code class="language-shell">$ gcc -o ex1_hello ex1_hello.c
+$ ./ex1_hello</code></pre>
 <p>此时，你应该会看到打印出的字符串 <code>Hello World</code>。如果编辑源代码（例如 <code>ex1_hello.c</code>），则必须使用 <code>gcc</code> 重新编译程序以生成新的可执行文件，否则可执行文件仍将运行旧的源代码。</p>
 <p>使用你选择的编辑器 <strong>编辑</strong> <code>ex1_hello.c</code>，并使程序打印出字符串 <code>Hello 61C</code> 而不是 <code>Hello World</code>。确保保存编辑后的文件，但不要重新编译。</p>
 <p>使用 <code>./ex1_hello</code> <strong>运行</strong> 可执行文件。你仍应看到 <code>Hello World</code>，这是旧输出。</p>
@@ -3507,45 +3586,40 @@ $<span class="w"> </span>./ex1_hello
 <h2 id="_1">知识回顾：指针<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>指针是一种变量，其值为另一个变量的内存地址。需要注意的是，每个变量声明后都存在于内存中，而内存中的每个元素都对应一个地址。可以将这种关系想象成数组：每个变量的值存储在特定的数组索引（地址）位置，而指向该变量的指针则是同一数组中的另一个变量，这个指针变量存储着它所指向变量的索引（地址）。</p>
 <p>考虑以下示例：</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">my_var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">my_var_p</span><span class="p">;</span>
-<span class="w">    </span><span class="n">my_var_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">my_var</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-C">int main() {
+    int my_var = 20;
+    int* my_var_p;
+    my_var_p = &amp;my_var;
+}</code></pre>
 <p>在第一行，我们声明了一个名为 <code>my_var</code> 的 int 变量，然后为其赋值 20。该值 20 将放置在内存中的某个位置。</p>
 <p>在第二行，我们声明了一个名为 <code>my_var_p</code> 的整型指针变量。需要注意的是，你也可以写成 <code>int \*my_var_p</code>，此时星号<code>*</code>紧贴着变量名而非类型名。</p>
 <p>在第三行，我们将 <code>my_var_p</code> 赋值为 <code>my_var</code> 的地址。这是通过在 <code>my_var</code> 变量前使用取址运算符（&amp;）实现的。此时，变量 <code>my_var_p</code> 中存储的值就是变量 <code>my_var</code> 在内存中的地址。</p>
 <p>请注意，每当你想要更改 <code>my_var</code> 的值时，你都可以通过直接更改 <code>my_var</code> 来实现。</p>
-<div class="highlight"><pre><span></span><code><span class="n">my_var</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-C">my_var += 2;</code></pre>
 <p>或者，你也可以通过解引用 <code>my_var_p</code> 来更改 <code>my_var</code> 的值</p>
-<div class="highlight"><pre><span></span><code><span class="o">*</span><span class="n">my_var_p</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-C">*my_var_p += 2;</code></pre>
 <p>简而言之， <code>&amp;x</code> 获取 <code>x</code> 的地址，而 <code>*x</code> 获取地址 <code>x</code> 处的内容。</p>
 <p>在本节中，假设 <code>sizeof(int) == 4</code> 。这是一个更完整的示例：</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">my_var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">my_var_p</span><span class="p">;</span>
-<span class="w">    </span><span class="n">my_var_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">my_var</span><span class="p">;</span>
+<pre class="highlight"><code class="language-C">int main() {
+    int my_var = 20;
+    int* my_var_p;
+    my_var_p = &amp;my_var;
 
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Address of my_var: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">my_var_p</span><span class="p">);</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Address of my_var: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">my_var</span><span class="p">);</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Address of my_var_p: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">my_var_p</span><span class="p">);</span>
+    printf("Address of my_var: %p\n", my_var_p);
+    printf("Address of my_var: %p\n", &amp;my_var);
+    printf("Address of my_var_p: %p\n", &amp;my_var_p);
 
-<span class="w">    </span><span class="o">*</span><span class="n">my_var_p</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+    *my_var_p += 2;
 
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;my_var: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">my_var</span><span class="p">);</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;my_var: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">my_var_p</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+    printf("my_var: %d\n", my_var);
+    printf("my_var: %d\n", *my_var_p);
+}</code></pre>
 <p>该代码的示例执行结果如下：</p>
-<div class="highlight"><pre><span></span><code>Address<span class="w"> </span>of<span class="w"> </span>my_var:<span class="w"> </span>0xebafb32c
-Address<span class="w"> </span>of<span class="w"> </span>my_var:<span class="w"> </span>0xebafb32c
-Address<span class="w"> </span>pf<span class="w"> </span>my_var_p:<span class="w"> </span>0xebafb330
-my_var:<span class="w"> </span><span class="m">22</span>
-my_var:<span class="w"> </span><span class="m">22</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">Address of my_var: 0xebafb32c
+Address of my_var: 0xebafb32c
+Address pf my_var_p: 0xebafb330
+my_var: 22
+my_var: 22</code></pre>
 <p>第一行输出了 <code>my_var_p</code> 的值，该值被赋为变量 <code>my_var</code> 的地址。</p>
 <p>第二行验证了 <code>my_var_p</code> 确实等于 <code>&amp;my_var</code>（即 <code>my_var</code> 的地址）。</p>
 <p>第三行输出了 <code>my_var_p</code> 自身的地址。需要注意的是，由于 <code>my_var_p</code> 本身也是一个变量（类型为整型指针），因此它也必须存储在内存的某个位置。通过打印 <code>&amp;my_var_p</code>，我们可以看到该变量在内存中的具体存储位置。</p>
@@ -3609,49 +3683,42 @@ my_var:<span class="w"> </span><span class="m">22</span>
 <p><strong>编译并运行</strong> 程序 ，<strong>检查</strong> 输出结果是否符合你的预期。</p>
 <h2 id="typedefs">扩展内容：typedefs<a class="headerlink" href="#typedefs" title="Permanent link">&para;</a></h2>
 <p>有时，在声明结构体时可能会看到使用 <code>typedef</code>：</p>
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="n">Student</span><span class="p">;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-c">typedef struct {
+    int id;
+} Student;</code></pre>
 <p>在这种情况下，可以直接使用 <code>Student</code> 作为类型名，而无需写成 <code>struct Student</code>。此处不深入探讨其原理，但如果你感兴趣，可以参考<a href="https://stackoverflow.com/questions/1675351/typedef-struct-vs-struct-definitions">此链接</a>了解更多细节。</p>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
 <h3 id="header-file">什么是头文件(header file)？<a class="headerlink" href="#header-file" title="Permanent link">&para;</a></h3>
 <p>头文件允许你在不同源文件之间共享函数和宏定义。更多信息可参考 <a href="https://gcc.gnu.org/onlinedocs/cpp/Header-Files.html#Header-Files">GCC 头文件文档</a>。</p>
 <h3 id="null-terminator">什么是空终止符（Null Terminator）？<a class="headerlink" href="#null-terminator" title="Permanent link">&para;</a></h3>
 <p>空终止符是在 C 语言中用于表示字符串结束的字符。空终止符写作 <code>'\0'</code> 。空终止符的 ASCII 值是 <code>0</code> 。当你创建一个字符数组时，你应该在数组末尾加上一个空终止符，如下所示</p>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">my_str</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;x&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;m&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;p&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">};</span><span class="w"> </span><span class="c1">// 需显式添加</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-c">char my_str[] = {'e', 'x', 'a', 'm', 'p', 'l', 'e', '\0'}; // 需显式添加</code></pre>
 <p>如果你使用双引号来创建字符串，空终止符会隐式添加，所以你不需要自己添加。例如：</p>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">my_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;example&quot;</span><span class="p">;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-C">char *my_str = "example";</code></pre>
 <h3 id="_5">什么是可执行文件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>可执行文件是一个由二进制组成的文件，可以在你的计算机上执行。可执行文件是由编译源代码创建的。</p>
 <h3 id="strlen-strlen">什么是 <code>strlen</code>？ <code>strlen</code> 是什么？<a class="headerlink" href="#strlen-strlen" title="Permanent link">&para;</a></h3>
 <p>查看手册页以获取完整描述。在终端中输入以下内容</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>man<span class="w"> </span>strlen
-</code></pre></div>
+<pre class="highlight"><code class="language-shell">$ man strlen</code></pre>
 <p>要退出手册，请按 <code>q</code></p>
 <h3 id="_6">什么是宏？<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>宏是一段带有名称的文本。当代码中出现该名称时，预处理器会将名称替换为对应的文本。宏使用 <code>#define</code> 来定义。例如：</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#define ARR_SIZE 1024</span>
-<span class="cp">#define min(X, Y)  ((X) &lt; (Y) ? (X) : (Y))</span>
+<pre class="highlight"><code class="language-c">#define ARR_SIZE 1024
+#define min(X, Y)  ((X) &lt; (Y) ? (X) : (Y))
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">arr1</span><span class="p">[</span><span class="n">ARR_SIZE</span><span class="p">];</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">arr2</span><span class="p">[</span><span class="n">ARR_SIZE</span><span class="p">];</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">arr3</span><span class="p">[</span><span class="n">ARR_SIZE</span><span class="p">];</span>
+int main() {
+    int arr1[ARR_SIZE];
+    int arr2[ARR_SIZE];
+    int arr3[ARR_SIZE];
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ARR_SIZE</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">arr3</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">arr1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">arr2</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+    for (int i = 0; i &lt; ARR_SIZE; ++i) {
+        arr3[i] = min(arr1[i], arr2[i]);
+    }
+}</code></pre>
 <p>在这段代码中，预处理器会将 ARR_SIZE 替换为 1024，并且会将：</p>
-<div class="highlight"><pre><span></span><code><span class="n">arr3</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">arr1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">arr2</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-C">arr3[i] = min(arr1[i], arr2[i]);</code></pre>
 <p>替换为：</p>
-<div class="highlight"><pre><span></span><code><span class="n">arr3</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">arr1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">arr2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">arr1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="n">arr2</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-C">arr3[i] = ((arr1[i]) &lt; (arr2[i]) ? (arr1[i]) : (arr2[i]));</code></pre>
 <p>宏的功能可以比上面示例更复杂。更多信息可以参考 <a href="https://gcc.gnu.org/onlinedocs/cpp/Macros.html">GCC 文档</a>。</p>
 <h3 id="segfault">什么是段错误（Segfault）？<a class="headerlink" href="#segfault" title="Permanent link">&para;</a></h3>
 <p>段错误发生在你尝试访问“不属于你”的内存时。可能导致段错误的情况包括：</p>
@@ -3663,11 +3730,9 @@ my_var:<span class="w"> </span><span class="m">22</span>
 <li><strong>试图写入只读内存</strong></li>
 </ul>
 <p>例如，使用以下语法创建的字符串是只读的，这意味着创建后你不能更改它的值（不可变）：</p>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">my_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-C">char *my_str = "Hello";</code></pre>
 <p>而使用以下语法创建的字符串是可变的：</p>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">my_str</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-C">char my_str[] = "hello";</code></pre>
 <p>为什么第一个字符串不可变而第二个字符串可变？
 第一个字符串存储在数据段（只读内存）中，而第二个字符串存储在栈(stack)上。</p>
 
@@ -3718,10 +3783,10 @@ my_var:<span class="w"> </span><span class="m">22</span>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

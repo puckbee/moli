@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -321,6 +321,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../Vote/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  投票：未来计划
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../Contact/Contact/" class="md-tabs__link">
         
   
@@ -328,6 +347,25 @@
     
   
   联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CONTRIBUTING/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  贡献说明
 
       </a>
     </li>
@@ -3338,12 +3376,56 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Vote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    投票：未来计划
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Contact/Contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
     
   </span>
   
@@ -3475,92 +3557,83 @@
 </ol>
 <h2 id="c-risc-v">从 C 语言到 RISC-V汇编<a class="headerlink" href="#c-risc-v" title="Permanent link">&para;</a></h2>
 <p>在本例中，我们将演示如何将一个 C 程序逐步翻译成 RISC-V 程序。下面的程序会打印第 n 个斐波那契数。虽然本节内容较长，但请务必阅读！</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<pre class="highlight"><code class="language-c">#include &lt;stdio.h&gt;
 
-<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+int n = 12;
 
-<span class="c1">// Function to find the nth Fibonacci number</span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">curr_fib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">next_fib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">new_fib</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">new_fib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curr_fib</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">next_fib</span><span class="p">;</span>
-<span class="w">        </span><span class="n">curr_fib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next_fib</span><span class="p">;</span>
-<span class="w">        </span><span class="n">next_fib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_fib</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">curr_fib</span><span class="p">);</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+// Function to find the nth Fibonacci number
+int main(void) {
+    int curr_fib = 0, next_fib = 1;
+    int new_fib;
+    for (int i = n; i &gt; 0; i--) {
+        new_fib = curr_fib + next_fib;
+        curr_fib = next_fib;
+        next_fib = new_fib;
+    }
+    printf("%d\n", curr_fib);
+    return 0;
+}</code></pre>
 <p>下面我们分步骤说明如何翻译。首先在 Venus 编辑器中打开 <code>fib.s</code>。我们需要定义全局变量 <code>n</code> 。在 RISC-V 中，全局变量在 <code>.data</code> 指令下声明。这代表数据段。它看起来像这样：</p>
-<div class="highlight"><pre><span></span><code>.data
-n: .word 12
-</code></pre></div>
+<pre class="highlight"><code class="language-Assembly">.data
+n: .word 12</code></pre>
 <ul>
 <li><code>n</code> 是变量的名称</li>
 <li><code>.word</code> 表示数据的大小为一个字</li>
 <li>12是分配给 <code>n</code> 的数值</li>
 </ul>
 <p>继续初始化 <code>curr_fib</code> 和 <code>next_fib</code> 两个变量</p>
-<div class="highlight"><pre><span></span><code>.text
+<pre class="highlight"><code class="language-Assembly">.text
 main:
     add t0, x0, x0 # curr_fib = 0
-    addi t1, x0, 1 # next_fib = 1
-</code></pre></div>
+    addi t1, x0, 1 # next_fib = 1</code></pre>
 <p>在这里我们添加了 <code>.text</code> 指令。该指令之下的所有内容都是我们的代码。</p>
 <p>请记住，寄存器 <code>x0</code> 始终保存数值 0。</p>
 <p>对于 <code>new_fib</code>，我们无需任何声明（在 RISC‑V 中不需要显式声明变量）。</p>
 <p>接下来，让我们进入循环部分。首先设置循环变量：以下代码会将 <code>i</code> 设为 <code>n</code>。</p>
-<div class="highlight"><pre><span></span><code>la t3, n # 将标签 n 的地址存到寄存器t3中
-lw t3, 0(t3) # 从寄存器 t3 指向的内存地址读取一个字（32 位）到 t3
-</code></pre></div>
+<pre class="highlight"><code class="language-Assembly">la t3, n # 将标签 n 的地址存到寄存器t3中
+lw t3, 0(t3) # 从寄存器 t3 指向的内存地址读取一个字（32 位）到 t3</code></pre>
 <p>你可以将上面的代码理解为：</p>
-<div class="highlight"><pre><span></span><code><span class="n">t3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">;</span><span class="w">    </span><span class="c1">//取变量 n 的地址</span>
-<span class="n">t3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">t3</span><span class="p">;</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-c">t3 = &amp;n;    //取变量 n 的地址
+t3 = *t3;</code></pre>
 <p>这里我们引入了一个新的伪指令 <code>la</code>，它用于加载标签地址。第一行将 <code>n</code> 的地址加载到寄存器 <code>t3</code>，相当于将 <code>t3</code> 设为指向 <code>n</code> 的指针。接着，我们使用 <code>lw</code> 指令对 <code>t3</code> 进行解引用，将 <code>n</code> 存储的值加载到 <code>t3</code>。</p>
 <p>你可能会想，为什么不能直接把 <code>t3</code> 设为 <code>n</code>？在 <code>.text</code> 段中无法直接访问符号 <code>n</code>（比如无法写 <code>add t3, n, x0</code> ，因为 <code>add</code> 的操作数必须是寄存器，而 <code>n</code> 不是寄存器）。我们唯一能访问它的方式是先获取 <code>n</code> 的地址，然后使用 <code>lw</code> 在该地址处读取值。在本例中，我们对 <code>n</code> 的地址加了 <code>0</code> 的偏移。</p>
 <p>现在我们进入循环部分，首先，创建以下的循环结构：</p>
-<div class="highlight"><pre><span></span><code>fib:
+<pre class="highlight"><code class="language-Assembly">fib:
     beq t3, x0, finish # exit loop once we have completed n iterations
     ...
     ...
     addi t3, t3, -1 # decrement counter
     j fib # loop
-finish:
-</code></pre></div>
+finish:</code></pre>
 <p>第一行 <code>fib:</code> 是一个标签，用于跳回循环开始处。</p>
 <p>下一行 <code>beq t3, x0, finish</code> 指定了终止条件：当 <code>t3</code>（即循环变量 <code>i</code>）变为 0 时，跳转到另一个标签 <code>finish</code>。</p>
 <p>再下一行 <code>addi t3, t3, -1</code> 在循环体末尾对 <code>i</code> 进行递减。必须放在循环体最后，因为在循环体中还要使用 <code>i</code>，如果在 <code>beq</code> 之后立刻更新，循环体内就无法获取正确的 <code>i</code> 值。</p>
 <p>接下来的指令 <code>j fib</code> 无条件跳转回循环开头。</p>
 <p>现在，让我们把循环体内容添加进来。</p>
-<div class="highlight"><pre><span></span><code>fib:
+<pre class="highlight"><code class="language-Assembly">fib:
     beq t3, x0, finish # 当完成 n 次迭代后跳转到 finish 处，退出循环。
     add t2, t1, t0 # new_fib = curr_fib + next_fib;
     mv t0, t1 # curr_fib = next_fib;
     mv t1, t2 # next_fib = new_fib;
     addi t3, t3, -1 # decrement counter
     j fib # loop
-finish:
-</code></pre></div>
+finish:</code></pre>
 <p>这里没有特别之处。相应的 C 代码已写在注释中。</p>
 <p>现在，让我们打印出第 n 个斐波那契数！</p>
-<div class="highlight"><pre><span></span><code>finish:
+<pre class="highlight"><code class="language-Assembly">finish:
     addi a0, x0, 1 # argument to ecall to execute print integer
     addi a1, t0, 0 # argument to ecall, the value to be printed
-    ecall # print integer ecall
-</code></pre></div>
+    ecall # print integer ecall</code></pre>
 <p>打印操作是一次系统调用。稍后你会在本学期更深入地学习系统调用，但它本质上是程序与操作系统交互的一种方式。</p>
 <p>在 RISC‑V 中发起系统调用使用特殊指令 <code>ecall</code>。要打印一个整数，需要向 <code>ecall</code> 传递两个参数：第一个参数指定 <code>ecall</code> 要执行的操作（此处为打印整数，用 <code>1</code> 表示），第二个参数则是要打印的整数值。</p>
 <p>在 C 语言中，我们习惯写成 <code>ecall(1, t0)</code> 的形式。但在 RISC‑V 汇编里不能这样传参，必须将参数放入约定好的寄存器：第一个参数放在 <code>a0</code>，第二个参数放在 <code>a1</code>，依此类推。</p>
 <p>因此，我们把 <code>1</code> 放入 <code>a0</code>，将要打印的整数（存于 <code>t0</code>）放入 <code>a1</code>，然后执行 <code>ecall</code> 即可打印该整数。</p>
 <p>接下来，我们需要终止程序，这同样需要调用 <code>ecall</code>。</p>
-<div class="highlight"><pre><span></span><code>addi a0, x0, 10 # argument to ecall to terminate
-ecall # terminate ecall
-</code></pre></div>
+<pre class="highlight"><code class="language-Assembly">addi a0, x0, 10 # argument to ecall to terminate
+ecall # terminate ecall</code></pre>
 <p>这种情况下，<code>ecall</code> 只需要一个参数。将 <code>a0</code> 设置为 <code>10</code> 表示我们要终止程序。</p>
 <p>大功告成！下面是完整的 RISC‑V 程序：</p>
-<div class="highlight"><pre><span></span><code>.data
+<pre class="highlight"><code class="language-Assembly">.data
 n: .word 12
 
 .text
@@ -3581,8 +3654,7 @@ finish:
     addi a1, t0, 0 # argument to ecall, the value to be printed
     ecall # print integer ecall
     addi a0, x0, 10 # argument to ecall to terminate
-    ecall # terminate ecall
-</code></pre></div>
+    ecall # terminate ecall</code></pre>
 <h2 id="2-venus">练习2：使用 Venus 调试器<a class="headerlink" href="#2-venus" title="Permanent link">&para;</a></h2>
 <p>在 Venus 调试器中打开文件有两种方式：</p>
 <ul>
@@ -3706,9 +3778,8 @@ finish:
 </li>
 </ol>
 <p>在 <strong>Venus</strong> 选项卡中可启用这两种模式：</p>
-<div class="highlight"><pre><span></span><code>1. 仅选中 “Enable Memcheck?” 即运行普通模式。
-2. 同时选中 “Enable Memcheck?” 和 “Enable Memcheck Verbose?” 即运行详细模式。
-</code></pre></div>
+<pre class="highlight"><code>1. 仅选中 “Enable Memcheck?” 即运行普通模式。
+2. 同时选中 “Enable Memcheck?” 和 “Enable Memcheck Verbose?” 即运行详细模式。</code></pre>
 <div class="admonition 注意">
 <p class="admonition-title">注意</p>
 <p>启用或禁用 Memcheck 后，必须在 VDB 中重新打开正在调试的文件。</p>
@@ -3764,14 +3835,13 @@ finish:
 </div>
 <h2 id="4">练习4：数组实践<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>考虑定义在整数集合 <code>{-3, -2, -1, 0, 1, 2, 3}</code> 上的离散值函数 <code>f</code>，其定义如下：
-<div class="highlight"><pre><span></span><code><span class="n">f</span><span class="p">(</span><span class="mi">-3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span>
-<span class="n">f</span><span class="p">(</span><span class="mi">-2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">61</span>
-<span class="n">f</span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">17</span>
-<span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">-38</span>
-<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">19</span>
-<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span>
-<span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
-</code></pre></div></p>
+<pre class="highlight"><code class="language-C">f(-3) = 6
+f(-2) = 61
+f(-1) = 17
+f(0)  = -38
+f(1)  = 19
+f(2)  = 42
+f(3)  = 5</code></pre></p>
 <p>在 <code>ex4_discrete_fn.s</code> 中使用 RISC‑V 汇编实现该函数，<strong>不得使用任何分支或跳转指令</strong>。请确保你的代码已保存在本地。我们提供了一些提示以防卡壳。</p>
 <p>函数 f 把所有可能的输出值都预先放在一个数组 <code>output</code> 里，在函数 f 中通过 a1 寄存器访问数组 <code>output</code>，你不用自己去申请或定义这个数组，只要根据输入值 (<code>a0</code>) 算出对应的下标，然后直接从这个数组里取出对应的值即可。</p>
 <p>请务必**只使用** <code>t</code> 和 <code>a</code> 寄存器。如果使用其他寄存器，可能会导致意想不到的问题（稍后会解释原因）。</p>
@@ -3788,10 +3858,9 @@ finish:
 <li><strong>算元素地址</strong>：把这个偏移量加到 <code>t1</code> 上</li>
 <li><strong>读取元素</strong>：对新地址执行 <code>lw t2, 0(t1)</code>（假设把结果放到 <code>t2</code>）</li>
 </ol>
-<div class="highlight"><pre><span></span><code>slli t2, t0, 2 # step 1 (see above)
+<pre class="highlight"><code class="language-Assembly">slli t2, t0, 2 # step 1 (see above)
 add t2, t2, t1 # step 2 (see above)
-lw t3, 0(t2)   # step 3 (see above)
-</code></pre></div>
+lw t3, 0(t2)   # step 3 (see above)</code></pre>
 </details>
 <details class="提示3">
 <summary>提示3</summary>
@@ -3814,8 +3883,7 @@ lw t3, 0(t2)   # step 3 (see above)
 <li>打开 <code>ex5_factorial.s</code>，在 Venus 模拟器中运行并验证输出。这也是自动评分器测试你的方式，请务必在本地通过测试后再提交。</li>
 <li>你也可以在命令行中使用以下命令测试：</li>
 </ol>
-<div class="highlight"><pre><span></span><code>java<span class="w"> </span>-jar<span class="w"> </span>tools/venus.jar<span class="w"> </span>lab03/ex5_factorial.s
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">java -jar tools/venus.jar lab03/ex5_factorial.s</code></pre>
 <h2 id="riscv">过渡到更复杂的 RISC‑V 程序<a class="headerlink" href="#riscv" title="Permanent link">&para;</a></h2>
 <p>在后续课程中，我们将使用多个汇编文件来实现更复杂的 RISC‑V 程序。为此，建议你提前查阅 <a href="https://cs61c.org/sp25/resources/venus-reference/">Venus</a> 参考文档，以便了解如何配置和调试多文件项目。</p>
 
@@ -3866,10 +3934,10 @@ lw t3, 0(t2)   # step 3 (see above)
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

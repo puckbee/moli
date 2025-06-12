@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -321,6 +321,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../Vote/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  投票：未来计划
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../Contact/Contact/" class="md-tabs__link">
         
   
@@ -328,6 +347,25 @@
     
   
   联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CONTRIBUTING/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  贡献说明
 
       </a>
     </li>
@@ -3284,12 +3322,56 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Vote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    投票：未来计划
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Contact/Contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
     
   </span>
   
@@ -3343,43 +3425,42 @@
 <h1 id="cs-61b">CS 61B 作用域、静态、链表、数组<a class="headerlink" href="#cs-61b" title="Permanent link">&para;</a></h1>
 <p>2025年春季 讨论02：2025年2月3日</p>
 <h2 id="1">1 静态变量和静态函数<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Pokemon</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">trainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Ash&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">partySize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<pre class="highlight"><code class="language-java">public class Pokemon {
+    public String name;
+    public int level;
+    public static String trainer = "Ash";
+    public static int partySize = 0;
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Pokemon</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">level</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">partySize</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+    public Pokemon(String name, int level) {
+        this.name = name;
+        this.level = level;
+        this.partySize += 1;
+    }
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Pokemon</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pokemon</span><span class="p">(</span><span class="s">&quot;Pikachu&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">);</span>
-<span class="w">        </span><span class="n">Pokemon</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pokemon</span><span class="p">(</span><span class="s">&quot;Jolteon&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">);</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Party size: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Pokemon</span><span class="p">.</span><span class="na">partySize</span><span class="p">);</span>
-<span class="w">        </span><span class="n">p</span><span class="p">.</span><span class="na">printStats</span><span class="p">();</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
-<span class="w">        </span><span class="n">Pokemon</span><span class="p">.</span><span class="na">change</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="p">);</span>
-<span class="w">        </span><span class="n">p</span><span class="p">.</span><span class="na">printStats</span><span class="p">();</span>
-<span class="w">        </span><span class="n">Pokemon</span><span class="p">.</span><span class="na">trainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Ash&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="n">j</span><span class="p">.</span><span class="na">trainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Cynthia&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="n">p</span><span class="p">.</span><span class="na">printStats</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
+    public static void main(String[] args) {
+        Pokemon p = new Pokemon("Pikachu", 17);
+        Pokemon j = new Pokemon("Jolteon", 99);
+        System.out.println("Party size: " + Pokemon.partySize);
+        p.printStats();
+        int level = 18;
+        Pokemon.change(p, level);
+        p.printStats();
+        Pokemon.trainer = "Ash";
+        j.trainer = "Cynthia";
+        p.printStats();
+    }
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">change</span><span class="p">(</span><span class="n">Pokemon</span><span class="w"> </span><span class="n">poke</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">poke</span><span class="p">.</span><span class="na">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">level</span><span class="p">;</span>
-<span class="w">        </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
-<span class="w">        </span><span class="n">poke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pokemon</span><span class="p">(</span><span class="s">&quot;Luxray&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<span class="w">        </span><span class="n">poke</span><span class="p">.</span><span class="na">trainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Team Rocket&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+    public static void change(Pokemon poke, int level) {
+        poke.level = level;
+        level = 50;
+        poke = new Pokemon("Luxray", 1);
+        poke.trainer = "Team Rocket";
+    }
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printStats</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trainer</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+    public void printStats() {
+        System.out.println(name + " " + level + " " + trainer);
+    }
+}</code></pre>
 <h2 id="2">2 作用域、静态、链表、数组<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>( a ) 写出main方法执行后将打印的内容。</p>
 <p>( b ) 在第28行，我们将level设置为50。这里的level指的是什么？
@@ -3390,97 +3471,92 @@ D. 其他（请解释）</p>
 <p>( c ) 如果我们在main方法结束时调用Pokemon.printStats()，会发生什么？</p>
 <h2 id="2-rotate-extra">2 旋转数组（Rotate Extra）<a class="headerlink" href="#2-rotate-extra" title="Permanent link">&para;</a></h2>
 <p>编写一个函数，当给定数组A和整数k时，返回一个新数组，其内容已向右移动k个位置，必要时绕回索引0。例如，如果A包含值0到7（包含），且k = 12，则在调用rotate(A, k)后返回的数组如下所示（右侧）：</p>
-<div class="highlight"><pre><span></span><code>01234567 =&gt; 45670123
-</code></pre></div>
+<pre class="highlight"><code>01234567 =&gt; 45670123</code></pre>
 <p>k可以任意大或小 - 也就是说，k可以是正数或负数。如果k为负，则向左移动k个位置。调用rotate后，A应保持不变。</p>
 <p>提示：你可能会发现模运算符%很有用。请注意，负数的模仍然是负数（即(-11) % 8 = -3）。</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/** 返回一个包含A中元素向右移动k个位置的新数组。 */</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="nf">rotate</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rightShift</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_______________________________</span><span class="p">;</span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">_________________________</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_____________________________________________</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">newArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">___________________________________</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">__________________________________________</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">newIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">________________________________</span><span class="p">;</span>
-<span class="w">        </span><span class="n">_____________________________________________</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">newArr</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-java">/** 返回一个包含A中元素向右移动k个位置的新数组。 */
+public static int[] rotate(int[] A, int k) {
+    int rightShift = _______________________________;
+    if(_________________________) {
+        _____________________________________________;
+    }
+    int[] newArr = ___________________________________;
+    for (__________________________________________) {
+        int newIndex = ________________________________;
+        _____________________________________________;
+    }
+    return newArr;
+}</code></pre>
 <h2 id="3">3 方向指针<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>绘制运行以下代码后产生的框和指针图。DLLStringNode类似于DLList中的Node。它有3个实例变量：prev、s和next。</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DLLStringNode</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">DLLStringNode</span><span class="w"> </span><span class="n">prev</span><span class="p">;</span>
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
-<span class="w">    </span><span class="n">DLLStringNode</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">DLLStringNode</span><span class="p">(</span><span class="n">DLLStringNode</span><span class="w"> </span><span class="n">prev</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">DLLStringNode</span><span class="w"> </span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prev</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">DLLStringNode</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DLLStringNode</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;eat&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
-<span class="w">        </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DLLStringNode</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bananas&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="p">);</span>
-<span class="w">        </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DLLStringNode</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;never&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="p">);</span>
-<span class="w">        </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DLLStringNode</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sometimes&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="p">);</span>
-<span class="w">        </span><span class="n">DLLStringNode</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">L</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
-<span class="w">        </span><span class="n">DLLStringNode</span><span class="w"> </span><span class="n">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DLLStringNode</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;shredded&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
-<span class="w">        </span><span class="n">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DLLStringNode</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wheat&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">);</span>
-<span class="w">        </span><span class="n">R</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">;</span>
-<span class="w">        </span><span class="n">M</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
-<span class="w">        </span><span class="n">L</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">L</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+<pre class="highlight"><code class="language-java">public class DLLStringNode {
+    DLLStringNode prev;
+    String s;
+    DLLStringNode next;
+    public DLLStringNode(DLLStringNode prev, String s, DLLStringNode next) {
+        this.prev = prev;
+        this.s = s;
+        this.next = next;
+    }
+    public static void main(String[] args) {
+        DLLStringNode L = new DLLStringNode(null, "eat", null);
+        L = new DLLStringNode(null, "bananas", L);
+        L = new DLLStringNode(null, "never", L);
+        L = new DLLStringNode(null, "sometimes", L);
+        DLLStringNode M = L.next;
+        DLLStringNode R = new DLLStringNode(null, "shredded", null);
+        R = new DLLStringNode(null, "wheat", R);
+        R.next.next = R;
+        M.next.next.next = R.next;
+        L.next.next = L.next.next.next;
 
-<span class="w">        </span><span class="cm">/* 下面是可选练习。 */</span>
+        /* 下面是可选练习。 */
 
-<span class="w">        </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">M</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
-<span class="w">        </span><span class="n">M</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">;</span>
-<span class="w">        </span><span class="n">L</span><span class="p">.</span><span class="na">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">M</span><span class="p">;</span>
-<span class="w">        </span><span class="n">L</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">L</span><span class="p">;</span>
-<span class="w">        </span><span class="n">R</span><span class="p">.</span><span class="na">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">L</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+        L = M.next;
+        M.next.next.prev = R;
+        L.prev = M;
+        L.next.prev = L;
+        R.prev = L.next.next;
+    }
+}</code></pre>
 <h2 id="4-gridify">4 网格化（Gridify）<a class="headerlink" href="#4-gridify" title="Permanent link">&para;</a></h2>
 <p>( a ) 考虑一个由Node组成的SLList的循环哨兵实现。对于前rows * cols个Node，将每个Node的项目按行主序放入一个2D rows×cols数组中。元素按顺序添加，填满整行后再移动到下一行。</p>
 <p>例如，如果SLList包含元素5→3→7→2→8，且rows = 2和cols = 3，对其调用gridify应该返回这个网格。</p>
-<div class="highlight"><pre><span></span><code>537
-280
-</code></pre></div>
+<pre class="highlight"><code>537
+280</code></pre>
 <p>注意：如果SLList包含的元素少于2D数组的容量，剩余的数组元素应为0；如果包含更多元素，则忽略多余的元素。</p>
 <p>提示：Java的/运算符默认向下取整。你能使用这个以及%来移动行吗？</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SLList</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="n">sentinel</span><span class="p">;</span>
+<pre class="highlight"><code class="language-java">public class SLList {
+    Node sentinel;
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">SLList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">sentinel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
+    public SLList() {
+        this.sentinel = new Node();
+    }
 
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
-<span class="w">        </span><span class="n">Node</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+    private static class Node {
+        int item;
+        Node next;
+    }
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="nf">gridify</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">rows</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cols</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">__________________________________</span><span class="p">;</span>
-<span class="w">        </span><span class="n">_________________________________________________</span><span class="p">;</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">grid</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+    public int[][] gridify(int rows, int cols) {
+        int[][] grid = __________________________________;
+        _________________________________________________;
+        return grid;
+    }
 
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">gridifyHelper</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="n">curr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numFilled</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">_________________________________________________________________________</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
+    private void gridifyHelper(int[][] grid, Node curr, int numFilled) {
+        if(_________________________________________________________________________) {
+            return;
+        }
 
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">________________________________________</span><span class="p">;</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">________________________________________</span><span class="p">;</span>
+        int row = ________________________________________;
+        int col = ________________________________________;
 
-<span class="w">        </span><span class="n">grid</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_____________________________</span><span class="p">;</span>
-<span class="w">        </span><span class="n">_________________________________________________</span><span class="p">;</span>
+        grid[row][col] = _____________________________;
+        _________________________________________________;
 
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+    }
+}</code></pre>
 <p>( b ) 为什么我们在这里使用辅助方法？即，为什么不能简单地使用签名gridify(int rows, int cols, Node curr, int numFilled)，完全省略gridifyHelper？</p>
 
 
@@ -3530,10 +3606,10 @@ D. 其他（请解释）</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

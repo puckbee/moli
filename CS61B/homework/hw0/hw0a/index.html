@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -321,6 +321,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../../Vote/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  投票：未来计划
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../../Contact/Contact/" class="md-tabs__link">
         
   
@@ -328,6 +347,25 @@
     
   
   联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../CONTRIBUTING/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  贡献说明
 
       </a>
     </li>
@@ -3320,12 +3358,56 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../Vote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    投票：未来计划
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../Contact/Contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
     
   </span>
   
@@ -3501,10 +3583,9 @@
 </tbody>
 </table>
 <p>在 Java 中，for循环的语法如下：</p>
-<div class="highlight"><pre><span></span><code>for (initialization; termination; increment) {
+<pre class="highlight"><code>for (initialization; termination; increment) {
     // loop body
-}
-</code></pre></div>
+}</code></pre>
 <p>这与while循环类似：
 | Python | Java |
 | ---- | ---- |
@@ -3671,49 +3752,46 @@
 <p>如果你在做练习时遇到困难，一种方法是先在Python中解决问题，然后再将其转换为Java代码。如果你在Python中解决问题也有困难，这也没关系，这不是本练习的重点。如果你想参考Python解决方案，请查看下面的下拉菜单。 </p>
 <details class="startriangle">
 <summary>Startriangle</summary>
-<div class="highlight"><pre><span></span><code>for i in range(5):
-    line = &quot;&quot;
+<pre class="highlight"><code>for i in range(5):
+    line = ""
     for j in range(5 - i - 1):
-        line += &quot; &quot;
+        line += " "
     for k in range(i + 1):
-        line += &quot;*&quot;
+        line += "*"
     print(line)
-</code></pre></div>
+</code></pre>
 </details>
 <details class="printindexed">
 <summary>Printindexed</summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">printIndexed</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">def printIndexed(s):
+    output = ""
+    for i in range(len(s)):
+        output += s[i]
+        output += str(len(s) - 1 - i)
+    print(output)</code></pre>
 </details>
 <details class="stutter">
 <summary>Stutter</summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">stutter</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">output</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">def stutter(s):
+    output = ""
+    for i in range(len(s)):
+        output += s[i]
+        output += s[i]
+    return output</code></pre>
 </details>
 <details class="quadrant">
 <summary>Quadrant</summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">quadrant</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">elif</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">2</span>
-    <span class="k">elif</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">3</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">4</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">def quadrant(x, y):
+    if x == 0 or y == 0:
+        return 0
+    elif y &gt; 0 and x &gt; 0:
+        return 1
+    elif y &gt; 0 and x &lt; 0:
+        return 2
+    elif y &lt; 0 and x &lt; 0:
+        return 3
+    else:
+        return 4</code></pre>
 </details>
 <h1 id="_10">作业提交<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
 <p>本次作业有两种获得学分的方式：
@@ -3773,10 +3851,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../../javascripts/mathjax.js"></script>
       

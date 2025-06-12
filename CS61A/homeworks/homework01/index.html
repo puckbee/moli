@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -321,6 +321,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../Vote/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  投票：未来计划
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../Contact/Contact/" class="md-tabs__link">
         
   
@@ -328,6 +347,25 @@
     
   
   联系我们
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CONTRIBUTING/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  贡献说明
 
       </a>
     </li>
@@ -3299,12 +3337,56 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Vote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    投票：未来计划
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Contact/Contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
     
   </span>
   
@@ -3371,80 +3453,71 @@
 <h3 id="q1-ab">Q1: A加B的绝对值<a class="headerlink" href="#q1-ab" title="Permanent link">&para;</a></h3>
 <p>Python的<code>operator</code>模块包含两个参数的函数，例如<code>add</code>和<code>sub</code>，用于Python的内置算术运算符。例如，<code>add(2,3)</code>的计算结果是5，就像表达式<code>2+3</code>一样。</p>
 <p>在下面的函数中填空，在不调用abs函数的情况下，将a加到b的绝对值上。除了两个空以外，你不能修改提供的任何代码。</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">a_plus_abs_b</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;返回 a+abs(b), 但不要调用abs函数.</span>
+<pre class="highlight"><code class="language-Python">def a_plus_abs_b(a, b):
+    """返回 a+abs(b), 但不要调用abs函数.
 
-<span class="sd">    &gt;&gt;&gt; a_plus_abs_b(2, 3)</span>
-<span class="sd">    5</span>
-<span class="sd">    &gt;&gt;&gt; a_plus_abs_b(2, -3)</span>
-<span class="sd">    5</span>
-<span class="sd">    &gt;&gt;&gt; a_plus_abs_b(-1, 4)</span>
-<span class="sd">    3</span>
-<span class="sd">    &gt;&gt;&gt; a_plus_abs_b(-1, -4)</span>
-<span class="sd">    3</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">f</span> <span class="o">=</span> <span class="n">_____</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">f</span> <span class="o">=</span> <span class="n">_____</span>
-    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-</code></pre></div>
+    &gt;&gt;&gt; a_plus_abs_b(2, 3)
+    5
+    &gt;&gt;&gt; a_plus_abs_b(2, -3)
+    5
+    &gt;&gt;&gt; a_plus_abs_b(-1, 4)
+    3
+    &gt;&gt;&gt; a_plus_abs_b(-1, -4)
+    3
+    """
+    if b &lt; 0:
+        f = _____
+    else:
+        f = _____
+    return f(a, b)</code></pre>
 <p>使用ok来测试你的代码：</p>
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>a_plus_abs_b<span class="w"> </span>--local
-</code></pre></div>
+<pre class="highlight"><code class="language-shell">python3 ok -q a_plus_abs_b --local</code></pre>
 <p>使用ok来运行本地语法检查器（它会检查你除了两个空格之外，没有修改提供的任何代码）：</p>
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>a_plus_abs_b_syntax_check<span class="w"> </span>--local
-</code></pre></div>
+<pre class="highlight"><code class="language-shell">python3 ok -q a_plus_abs_b_syntax_check --local</code></pre>
 <h3 id="q2">Q2: 三者中的两者<a class="headerlink" href="#q2" title="Permanent link">&para;</a></h3>
 <p>编写一个函数，该函数接受三个*正数*作为参数，并返回两个最小数的平方和。<strong>只使用一行代码作为函数体</strong>。</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">two_of_three</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;返回 m*m + n*n，其中 m 和 n 是正数 i、j 和 k 之中最小的两个数。</span>
+<pre class="highlight"><code class="language-python">def two_of_three(i, j, k):
+    """返回 m*m + n*n，其中 m 和 n 是正数 i、j 和 k 之中最小的两个数。
 
-<span class="sd">    &gt;&gt;&gt; two_of_three(1, 2, 3)</span>
-<span class="sd">    5</span>
-<span class="sd">    &gt;&gt;&gt; two_of_three(5, 3, 1)</span>
-<span class="sd">    10</span>
-<span class="sd">    &gt;&gt;&gt; two_of_three(10, 2, 8)</span>
-<span class="sd">    68</span>
-<span class="sd">    &gt;&gt;&gt; two_of_three(5, 5, 5)</span>
-<span class="sd">    50</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">_____</span>
-</code></pre></div>
+    &gt;&gt;&gt; two_of_three(1, 2, 3)
+    5
+    &gt;&gt;&gt; two_of_three(5, 3, 1)
+    10
+    &gt;&gt;&gt; two_of_three(10, 2, 8)
+    68
+    &gt;&gt;&gt; two_of_three(5, 5, 5)
+    50
+    """
+    return _____</code></pre>
 <blockquote>
 <p><strong>提示</strong>：考虑使用 <code>max</code> 或 <code>min</code> 函数：</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">min</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
-<span class="o">-</span><span class="mi">3</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-python">&gt;&gt;&gt; max(1, 2, 3)
+3
+&gt;&gt;&gt; min(-1, -2, -3)
+-3</code></pre>
 <p>使用ok来测试你的代码：</p>
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>two_of_three<span class="w"> </span>--local
-</code></pre></div>
+<pre class="highlight"><code class="language-shell">python3 ok -q two_of_three --local</code></pre>
 <p>使用ok来运行本地语法检查器（它会检查你是否只使用了一行代码作为函数体）：</p>
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>two_of_three_syntax_check<span class="w"> </span>--local
-</code></pre></div>
+<pre class="highlight"><code class="language-shell">python3 ok -q two_of_three_syntax_check --local</code></pre>
 <h3 id="q3">Q3: 最大因数<a class="headerlink" href="#q3" title="Permanent link">&para;</a></h3>
 <p>编写一个函数，该函数接受一个**大于 1** 的整数 <code>n</code> ，并返回小于 <code>n</code> 且能被 <code>n</code> 整除的最大整数。</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">largest_factor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;返回小于n的最大因子</span>
+<pre class="highlight"><code class="language-python">def largest_factor(n):
+    """返回小于n的最大因子
 
-<span class="sd">    &gt;&gt;&gt; largest_factor(15) # factors are 1, 3, 5</span>
-<span class="sd">    5</span>
-<span class="sd">    &gt;&gt;&gt; largest_factor(80) # factors are 1, 2, 4, 5, 8, 10, 16, 20, 40</span>
-<span class="sd">    40</span>
-<span class="sd">    &gt;&gt;&gt; largest_factor(13) # factor is 1 since 13 is prime</span>
-<span class="sd">    1</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="s2">&quot;*** 在这里填写你的代码 ***&quot;</span>
-</code></pre></div>
+    &gt;&gt;&gt; largest_factor(15) # factors are 1, 3, 5
+    5
+    &gt;&gt;&gt; largest_factor(80) # factors are 1, 2, 4, 5, 8, 10, 16, 20, 40
+    40
+    &gt;&gt;&gt; largest_factor(13) # factor is 1 since 13 is prime
+    1
+    """
+    "*** 在这里填写你的代码 ***"</code></pre>
 <blockquote>
 <p><strong>提示</strong>：要检查 <code>b</code> 是否能整除 <code>a</code> ，可以使用表达式 <code>a % b == 0</code> ，该表达式可以理解为，“ <code>a</code> 除以 <code>b</code> 的余数为 0。”</p>
 </blockquote>
 <p>使用ok来测试你的代码：</p>
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>largest_factor<span class="w"> </span>--local
-</code></pre></div>
+<pre class="highlight"><code class="language-shell">python3 ok -q largest_factor --local</code></pre>
 <h3 id="q4">Q4: 冰雹<a class="headerlink" href="#q4" title="Permanent link">&para;</a></h3>
 <p>道格拉斯·霍夫斯塔特（Douglas Hofstadter），在他获得普利策奖的书籍《哥德尔、埃舍尔、巴赫》（Gödel, Escher, Bach）中，提出了以下数学谜题：</p>
 <ol>
@@ -3455,42 +3528,39 @@
 </ol>
 <p>数字 <code>n</code> 会计算的过程中上下波动，但最终会以1结束（至少对于所有已经尝试过的数字来说——因为没人证明过这个序列必定会终止）。类似于冰雹在大气中上下波动，而最终会落在地球上一样。</p>
 <p>这个 <code>n</code> 的值序列常被称为冰雹序列（Hailstone Sequences）。写一个函数，它接受一个名为 <code>n</code> 的参数。该函数打印出从 <code>n</code> 开始的冰雹序列，并返回计算序列所执行的步数：</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hailstone</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;从n开始打印冰雹序列，并返回序列长度。</span>
+<pre class="highlight"><code class="language-python">def hailstone(n):
+    """从n开始打印冰雹序列，并返回序列长度。
 
-<span class="sd">    &gt;&gt;&gt; a = hailstone(10)</span>
-<span class="sd">    10</span>
-<span class="sd">    5</span>
-<span class="sd">    16</span>
-<span class="sd">    8</span>
-<span class="sd">    4</span>
-<span class="sd">    2</span>
-<span class="sd">    1</span>
-<span class="sd">    &gt;&gt;&gt; a</span>
-<span class="sd">    7</span>
-<span class="sd">    &gt;&gt;&gt; b = hailstone(1)</span>
-<span class="sd">    1</span>
-<span class="sd">    &gt;&gt;&gt; b</span>
-<span class="sd">    1</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="s2">&quot;*** 在这里填写你的代码 ***&quot;</span>
-</code></pre></div>
+    &gt;&gt;&gt; a = hailstone(10)
+    10
+    5
+    16
+    8
+    4
+    2
+    1
+    &gt;&gt;&gt; a
+    7
+    &gt;&gt;&gt; b = hailstone(1)
+    1
+    &gt;&gt;&gt; b
+    1
+    """
+    "*** 在这里填写你的代码 ***"</code></pre>
 <p>冰雹序列可能会非常长！试试 27。你能找到最长的序列是什么？</p>
 <blockquote>
 <p>注意，如果 <code>n == 1</code> 最初为空，则序列计算会执行一步。</p>
 <p><strong>提示</strong>：如果你看到结果是4.0但只需要4，那么请尝试使用地板除（floor division）<code>//</code> 而不是普通除法 <code>/</code> 。</p>
 </blockquote>
 <p>使用ok来测试你的代码：</p>
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>hailstone<span class="w"> </span>--local
-</code></pre></div>
+<pre class="highlight"><code class="language-shell">python3 ok -q hailstone --local</code></pre>
 <p><strong>对 hailstone 序列感到好奇？看看这篇文章：</strong></p>
 <ul>
 <li>2019 年，在hailstone 猜想中，对于理解大多数数字是如何工作的方面，有重大<a href="https://www.quantamagazine.org/mathematician-terence-tao-and-the-collatz-conjecture-20191211/">进展</a>！</li>
 </ul>
 <h3 id="_2">检查你的得分<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>运行得到本次作业中每个问题的分数。</p>
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>--score<span class="w"> </span>--local
-</code></pre></div>
+<pre class="highlight"><code class="language-shell">python3 ok --score --local</code></pre>
 
 
 
@@ -3539,10 +3609,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       
