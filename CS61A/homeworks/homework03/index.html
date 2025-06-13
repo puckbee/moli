@@ -11,22 +11,18 @@
         <link rel="canonical" href="https://puckbee.github.io/moli/CS61A/homeworks/homework03/">
       
       
-        <link rel="prev" href="../../labs/lab02/">
-      
-      
-        <link rel="next" href="../../discussions/disc00/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>作业 03 - MOLI：提升实践能力的试炼之地</title>
+        <title>作业 3：递归、树形递归 hw03.zip - MOLI：提升实践能力的试炼之地</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
       
       
 
@@ -98,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              作业 03
+              作业 3：递归、树形递归 hw03.zip
             
           </span>
         </div>
@@ -219,20 +215,28 @@
   
   
   
+  
     
+    
+      
+  
+  
   
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../../CS61A/" class="md-tabs__link">
           
   
   
-  CS61A
+  基础动手
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -245,92 +249,15 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../CS61B/CS61B/" class="md-tabs__link">
+        <a href="../../../MIT6.S081/MIT6.S081/" class="md-tabs__link">
           
   
   
-  CS61B
+  操作系统
 
         </a>
       </li>
     
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../CS61C/CS61C/" class="md-tabs__link">
-          
-  
-  
-  CS61C
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../PA/PA/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  南京大学 ICS
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../MIT6.S081/MIT6.S081/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  MIT6.S081
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../Vote/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  投票：未来计划
-
-      </a>
-    </li>
   
 
       
@@ -486,31 +413,69 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    基础动手
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            基础动手
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   
@@ -523,8 +488,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             CS61A
           </label>
@@ -576,120 +541,6 @@
 
               
             
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    实验与作业
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_3">
-            <span class="md-nav__icon md-icon"></span>
-            实验与作业
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 1: 欢迎
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3_1">
-            <span class="md-nav__icon md-icon"></span>
-            课程 1: 欢迎
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../labs/lab00/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    实验 00
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -718,785 +569,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 2: 函数
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            课程 2: 函数
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../homework01/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    作业 01
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 3: 控制
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3_3">
-            <span class="md-nav__icon md-icon"></span>
-            课程 3: 控制
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../labs/lab01/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    实验 01
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_3_4" id="__nav_3_3_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 4: 高阶函数
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3_4">
-            <span class="md-nav__icon md-icon"></span>
-            课程 4: 高阶函数
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../projects/hog/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    猪
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_3_5" id="__nav_3_3_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 5: 环境
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3_5">
-            <span class="md-nav__icon md-icon"></span>
-            课程 5: 环境
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../homework02/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    作业 02
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 6: 函数抽象
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3_6">
-            <span class="md-nav__icon md-icon"></span>
-            课程 6: 函数抽象
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../labs/lab02/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    实验 02
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_7" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_3_7" id="__nav_3_3_7_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 10: 递归、树形递归
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            课程 10: 递归、树形递归
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    作业 03
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    作业 03
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      必答题
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="必答题">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#q18" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q1：数字8的个数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q2：数字距离
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q3：交错和
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q4" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q4: 计算美元
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      检查你的得分
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      可选问题
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="可选问题">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#q5" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q5: 升序统计美元金额
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      考试练习
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      仅供娱乐的问题
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="仅供娱乐的问题">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#q6" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q6：汉诺塔
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#q7" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q7: 匿名阶乘
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    讨论
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
-            <span class="md-nav__icon md-icon"></span>
-            讨论
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../discussions/disc00/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    讨论 00
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../discussions/disc01/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    讨论 01
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../discussions/disc02/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    讨论 02
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../discussions/disc03/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    讨论 03
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   
@@ -1509,8 +585,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             CS61B
           </label>
@@ -1585,138 +661,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    实验与作业
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            实验与作业
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 2.定义个使用类，列表，集合和映射
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            课程 2.定义个使用类，列表，集合和映射
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/labs/lab01/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    实验1:设置,git
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/homework/hw0/hw0a/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    作业 0a
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1745,972 +689,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 3.引用、递归与IntLists
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            课程 3.引用、递归与IntLists
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/homework/hw0/hw0b/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    作业 0b
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 5.双链表与数组
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            课程 5.双链表与数组
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/labs/lab02/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    实验 2
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 6.测试（含附加视频）
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            课程 6.测试（含附加视频）
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/projects/proj0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Project 0
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4_5" id="__nav_4_4_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 8.接口与实现继承 0
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_5">
-            <span class="md-nav__icon md-icon"></span>
-            课程 8.接口与实现继承 0
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/labs/lab03/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    实验 3
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4_6" id="__nav_4_4_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 9.子类型多态、比较器与泛型函数
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_6">
-            <span class="md-nav__icon md-icon"></span>
-            课程 9.子类型多态、比较器与泛型函数
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/projects/proj1a/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Project 1A
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4_7" id="__nav_4_4_7_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 11. 渐进分析I
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_7">
-            <span class="md-nav__icon md-icon"></span>
-            课程 11. 渐进分析I
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/labs/lab04/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    实验 4
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4_8" id="__nav_4_4_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 12. 渐进分析II
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_8">
-            <span class="md-nav__icon md-icon"></span>
-            课程 12. 渐进分析II
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/projects/proj1b/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Project 1B
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    讨论
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
-            <span class="md-nav__icon md-icon"></span>
-            讨论
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    常规讨论
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            常规讨论
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/regular01/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    讨论 01
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/regular01sol/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    讨论 01 解答
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/regular02/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    讨论 02
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/regular02sol/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    讨论 02 解答
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/regular03/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    讨论 03
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/regular03sol/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    讨论 03 解答
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5_2" id="__nav_4_5_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    考试讨论
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            考试讨论
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/examlevel01/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    考试 01
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/examlevel01sol/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    考试 01 解答
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/examlevel02/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    考试 02
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/examlevel02sol/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    考试 02 解答
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/examlevel03/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    考试 03
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61B/discus/examlevel03sol/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    考试 03 解答
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   
@@ -2723,8 +705,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             CS61C
           </label>
@@ -2776,8 +758,23 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
               
-                
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
   
   
   
@@ -2796,15 +793,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    实验
+    操作系统
     
   </span>
   
@@ -2812,570 +809,15 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            实验
+            操作系统
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3_1" id="__nav_5_3_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 2: 数值表示
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3_1">
-            <span class="md-nav__icon md-icon"></span>
-            课程 2: 数值表示
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61C/Labs/Lab_0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    实验 0
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 4: C语言: 指针、数组、字符串
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            课程 4: C语言: 指针、数组、字符串
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61C/Labs/Lab_1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    实验 1
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3_3" id="__nav_5_3_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 6: C语言: 泛型
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3_3">
-            <span class="md-nav__icon md-icon"></span>
-            课程 6: C语言: 泛型
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61C/Projects/Project_1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    项目 1
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3_4" id="__nav_5_3_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 7: 浮点运算
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3_4">
-            <span class="md-nav__icon md-icon"></span>
-            课程 7: 浮点运算
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61C/Labs/Lab_2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    实验 2
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3_5" id="__nav_5_3_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    课程 10: RISC-V: 条件分支
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3_5">
-            <span class="md-nav__icon md-icon"></span>
-            课程 10: RISC-V: 条件分支
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61C/Labs/Lab_3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    实验 3
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    讨论
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4">
-            <span class="md-nav__icon md-icon"></span>
-            讨论
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_4_1" id="__nav_5_4_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    讨论 1
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            讨论 1
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61C/Discussion/Discussion_1_pre/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    预习
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS61C/Discussion/Discussion_1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    作业
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../PA/PA/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    南京大学 ICS
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
   
   
   
@@ -3395,25 +837,34 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../../../Vote/" class="md-nav__link">
+      <a href="../../../PA/PA/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    投票：未来计划
+    南京大学 ICS
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3519,32 +970,34 @@
 <h3 id="q18">Q1：数字8的个数<a class="headerlink" href="#q18" title="Permanent link">&para;</a></h3>
 <p>编写一个递归函数 <code>num_eights</code> ，它接受一个正整数 <code>n</code> ，并返回数字 <code>n</code> 中8出现的次数。</p>
 <p>注意：必须使用递归；如果使用任何赋值语句或循环，测试将失败。（你可以定义新的函数，但那里也不要使用赋值语句。）</p>
-<pre class="highlight"><code class="language-python">def num_eights(n):
-    """返回数字n中8出现的次数。
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">num_eights</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;返回数字n中8出现的次数。</span>
 
-    &gt;&gt;&gt; num_eights(3)
-    0
-    &gt;&gt;&gt; num_eights(8)
-    1
-    &gt;&gt;&gt; num_eights(88888888)
-    8
-    &gt;&gt;&gt; num_eights(2638)
-    1
-    &gt;&gt;&gt; num_eights(86380)
-    2
-    &gt;&gt;&gt; num_eights(12345)
-    0
-    &gt;&gt;&gt; num_eights(8782089)
-    3
-    &gt;&gt;&gt; from construct_check import check
-    &gt;&gt;&gt; # 禁止所有的赋值语句
-    &gt;&gt;&gt; check(HW_SOURCE_FILE, 'num_eights',
-    ...       ['Assign', 'AnnAssign', 'AugAssign', 'NamedExpr', 'For', 'While'])
-    True
-    """
-    "*** 在这里填写你的代码 ***"</code></pre>
+<span class="sd">    &gt;&gt;&gt; num_eights(3)</span>
+<span class="sd">    0</span>
+<span class="sd">    &gt;&gt;&gt; num_eights(8)</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; num_eights(88888888)</span>
+<span class="sd">    8</span>
+<span class="sd">    &gt;&gt;&gt; num_eights(2638)</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; num_eights(86380)</span>
+<span class="sd">    2</span>
+<span class="sd">    &gt;&gt;&gt; num_eights(12345)</span>
+<span class="sd">    0</span>
+<span class="sd">    &gt;&gt;&gt; num_eights(8782089)</span>
+<span class="sd">    3</span>
+<span class="sd">    &gt;&gt;&gt; from construct_check import check</span>
+<span class="sd">    &gt;&gt;&gt; # 禁止所有的赋值语句</span>
+<span class="sd">    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#39;num_eights&#39;,</span>
+<span class="sd">    ...       [&#39;Assign&#39;, &#39;AnnAssign&#39;, &#39;AugAssign&#39;, &#39;NamedExpr&#39;, &#39;For&#39;, &#39;While&#39;])</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="s2">&quot;*** 在这里填写你的代码 ***&quot;</span>
+</code></pre></div>
 <p>使用ok来测试你的代码：</p>
-<pre class="highlight"><code class="language-shell">python3 ok -q num_eights --local</code></pre>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>num_eights<span class="w"> </span>--local
+</code></pre></div>
 <h3 id="q2">Q2：数字距离<a class="headerlink" href="#q2" title="Permanent link">&para;</a></h3>
 <p>对于一个给定的整数，数字距离指的是连续数字对之差的绝对值之和。例如：</p>
 <ul>
@@ -3553,28 +1006,30 @@
 <li><code>6</code> 的数字距离是 <code>0</code> ，因为没有连续的数字对。</li>
 </ul>
 <p>编写一个函数来确定正整数的数字距离。你必须使用递归，否则测试将失败。</p>
-<pre class="highlight"><code class="language-python">def digit_distance(n):
-    """确定正整数的数字距离
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">digit_distance</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;确定正整数的数字距离</span>
 
-    &gt;&gt;&gt; digit_distance(3)
-    0
-    &gt;&gt;&gt; digit_distance(777) # 0 + 0
-    0
-    &gt;&gt;&gt; digit_distance(314) # 2 + 3
-    5
-    &gt;&gt;&gt; digit_distance(31415926535) # 2 + 3 + 3 + 4 + ... + 2
-    32
-    &gt;&gt;&gt; digit_distance(3464660003)  # 1 + 2 + 2 + 2 + ... + 3
-    16
-    &gt;&gt;&gt; from construct_check import check
-    &gt;&gt;&gt; # 禁止所有的循环
-    &gt;&gt;&gt; check(HW_SOURCE_FILE, 'digit_distance',
-    ...       ['For', 'While'])
-    True
-    """
-    "*** 在这里填写你的代码 ***"</code></pre>
+<span class="sd">    &gt;&gt;&gt; digit_distance(3)</span>
+<span class="sd">    0</span>
+<span class="sd">    &gt;&gt;&gt; digit_distance(777) # 0 + 0</span>
+<span class="sd">    0</span>
+<span class="sd">    &gt;&gt;&gt; digit_distance(314) # 2 + 3</span>
+<span class="sd">    5</span>
+<span class="sd">    &gt;&gt;&gt; digit_distance(31415926535) # 2 + 3 + 3 + 4 + ... + 2</span>
+<span class="sd">    32</span>
+<span class="sd">    &gt;&gt;&gt; digit_distance(3464660003)  # 1 + 2 + 2 + 2 + ... + 3</span>
+<span class="sd">    16</span>
+<span class="sd">    &gt;&gt;&gt; from construct_check import check</span>
+<span class="sd">    &gt;&gt;&gt; # 禁止所有的循环</span>
+<span class="sd">    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#39;digit_distance&#39;,</span>
+<span class="sd">    ...       [&#39;For&#39;, &#39;While&#39;])</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="s2">&quot;*** 在这里填写你的代码 ***&quot;</span>
+</code></pre></div>
 <p>使用ok来测试你的代码：</p>
-<pre class="highlight"><code class="language-shell">python3 ok -q digit_distance --local</code></pre>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>digit_distance<span class="w"> </span>--local
+</code></pre></div>
 <h3 id="q3">Q3：交错和<a class="headerlink" href="#q3" title="Permanent link">&para;</a></h3>
 <p>编写函数 <code>interleaved_sum</code>，该函数接收一个数字 <code>n</code> 和两个单参数函数：<code>odd_func</code> 与 <code>even_func</code>。函数返回的结果是：将 <code>odd_func</code> 应用到 <code>1</code> 到 <code>n</code>（包括 <code>n</code>）的所有奇数，并将 <code>even_func</code> 应用到所有偶数，最后将这些结果相加的总和。</p>
 <p>例如，执行 <code>interleaved_sum(5, lambda x: x, lambda x: x * x)</code> 会返回 <code>1 + 2*2 + 3 + 4*4 + 5 = 29</code> 。</p>
@@ -3582,29 +1037,31 @@
 <p><strong>重要提示</strong>：实现此函数时，不得使用任何循环，也不可直接判断数字的奇偶性（例如禁止使用 <code>%</code> 运算符）。相反，应从已知的奇数1开始，通过交替计算奇数和偶数的方式实现。</p>
 <p>提示：可以引入一个内部辅助函数，该函数接收一个奇数 <code>k</code>，并计算从 <code>k</code> 到 <code>n</code>（闭区间）的交错和。或者，你也可以使用相互递归来实现。</p>
 </blockquote>
-<pre class="highlight"><code class="language-python">def interleaved_sum(n, odd_func, even_func):
-    """计算odd_func(1) + even_func(2) + odd_func(3) + ...，直到n的总和.
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">interleaved_sum</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">odd_func</span><span class="p">,</span> <span class="n">even_func</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;计算odd_func(1) + even_func(2) + odd_func(3) + ...，直到n的总和.</span>
 
-    &gt;&gt;&gt; identity = lambda x: x
-    &gt;&gt;&gt; square = lambda x: x * x
-    &gt;&gt;&gt; triple = lambda x: x * 3
-    &gt;&gt;&gt; interleaved_sum(5, identity, square) # 1   + 2*2 + 3   + 4*4 + 5
-    29
-    &gt;&gt;&gt; interleaved_sum(5, square, identity) # 1*1 + 2   + 3*3 + 4   + 5*5
-    41
-    &gt;&gt;&gt; interleaved_sum(4, triple, square)   # 1*3 + 2*2 + 3*3 + 4*4
-    32
-    &gt;&gt;&gt; interleaved_sum(4, square, triple)   # 1*1 + 2*3 + 3*3 + 4*3
-    28
-    &gt;&gt;&gt; from construct_check import check
-    &gt;&gt;&gt; check(HW_SOURCE_FILE, 'interleaved_sum', ['While', 'For', 'Mod']) # 禁用循环和%
-    True
-    &gt;&gt;&gt; check(HW_SOURCE_FILE, 'interleaved_sum', ['BitAnd', 'BitOr', 'BitXor']) # 禁用位运算符（如果不了解这是什么，也不用担心）
-    True
-    """
-    "*** 在这里填写你的代码 ***"</code></pre>
+<span class="sd">    &gt;&gt;&gt; identity = lambda x: x</span>
+<span class="sd">    &gt;&gt;&gt; square = lambda x: x * x</span>
+<span class="sd">    &gt;&gt;&gt; triple = lambda x: x * 3</span>
+<span class="sd">    &gt;&gt;&gt; interleaved_sum(5, identity, square) # 1   + 2*2 + 3   + 4*4 + 5</span>
+<span class="sd">    29</span>
+<span class="sd">    &gt;&gt;&gt; interleaved_sum(5, square, identity) # 1*1 + 2   + 3*3 + 4   + 5*5</span>
+<span class="sd">    41</span>
+<span class="sd">    &gt;&gt;&gt; interleaved_sum(4, triple, square)   # 1*3 + 2*2 + 3*3 + 4*4</span>
+<span class="sd">    32</span>
+<span class="sd">    &gt;&gt;&gt; interleaved_sum(4, square, triple)   # 1*1 + 2*3 + 3*3 + 4*3</span>
+<span class="sd">    28</span>
+<span class="sd">    &gt;&gt;&gt; from construct_check import check</span>
+<span class="sd">    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#39;interleaved_sum&#39;, [&#39;While&#39;, &#39;For&#39;, &#39;Mod&#39;]) # 禁用循环和%</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#39;interleaved_sum&#39;, [&#39;BitAnd&#39;, &#39;BitOr&#39;, &#39;BitXor&#39;]) # 禁用位运算符（如果不了解这是什么，也不用担心）</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="s2">&quot;*** 在这里填写你的代码 ***&quot;</span>
+</code></pre></div>
 <p>使用ok来测试你的代码：</p>
-<pre class="highlight"><code class="language-shell">python3 ok -q interleaved_sum --local</code></pre>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>interleaved_sum<span class="w"> </span>--local
+</code></pre></div>
 <h3 id="q4">Q4: 计算美元<a class="headerlink" href="#q4" title="Permanent link">&para;</a></h3>
 <p>对于给定的正整数总额（<code>total</code>），若一组美元纸币的面值之和等于该总额，则称这组纸币可以组成该总额的找零。这里我们使用标准美元纸币面额：1、5、10、20、50和100。例如，以下各组纸币都可以组成 <code>15</code> 美元的找零：</p>
 <ul>
@@ -3621,45 +1078,48 @@
 <p><strong>重要提示</strong>：请使用递归实现，若使用循环将导致测试失败。
 <strong>提示</strong>：可参考 <code>count_partitions</code> 的实现示例，了解如何通过逐步累加较小数值来统计总和达到目标值。若需要在函数递归调用之间追踪多个值，建议编写辅助函数。</p>
 </blockquote>
-<pre class="highlight"><code class="language-python">def next_smaller_dollar(bill):
-    """返回比输入面值更小的下一个美元面额"""
-    if bill == 100:
-        return 50
-    if bill == 50:
-        return 20
-    if bill == 20:
-        return 10
-    elif bill == 10:
-        return 5
-    elif bill == 5:
-        return 1
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">next_smaller_dollar</span><span class="p">(</span><span class="n">bill</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;返回比输入面值更小的下一个美元面额&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">bill</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">50</span>
+    <span class="k">if</span> <span class="n">bill</span> <span class="o">==</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">20</span>
+    <span class="k">if</span> <span class="n">bill</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">10</span>
+    <span class="k">elif</span> <span class="n">bill</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">5</span>
+    <span class="k">elif</span> <span class="n">bill</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
 
-def count_dollars(total):
-    """返回凑出该总额的所有可能方式的数量
+<span class="k">def</span><span class="w"> </span><span class="nf">count_dollars</span><span class="p">(</span><span class="n">total</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;返回凑出该总额的所有可能方式的数量</span>
 
-    &gt;&gt;&gt; count_dollars(15)  # 15 $1 bills, 10 $1 &amp; 1 $5 bills, ... 1 $5 &amp; 1 $10 bills
-    6
-    &gt;&gt;&gt; count_dollars(10)  # 10 $1 bills, 5 $1 &amp; 1 $5 bills, 2 $5 bills, 10 $1 bills
-    4
-    &gt;&gt;&gt; count_dollars(20)  # 20 $1 bills, 15 $1 &amp; $5 bills, ... 1 $20 bill
-    10
-    &gt;&gt;&gt; count_dollars(45)  # 有多少种方式凑出45美元？
-    44
-    &gt;&gt;&gt; count_dollars(100) # 有多少种方式凑出100美元？
-    344
-    &gt;&gt;&gt; count_dollars(200) # 有多少种方式凑出200美元？
-    3274
-    &gt;&gt;&gt; from construct_check import check
-    &gt;&gt;&gt; # 禁用迭代
-    &gt;&gt;&gt; check(HW_SOURCE_FILE, 'count_dollars', ['While', 'For'])
-    True
-    """
-    "*** 在这里填写你的代码 ***" </code></pre>
+<span class="sd">    &gt;&gt;&gt; count_dollars(15)  # 15 $1 bills, 10 $1 &amp; 1 $5 bills, ... 1 $5 &amp; 1 $10 bills</span>
+<span class="sd">    6</span>
+<span class="sd">    &gt;&gt;&gt; count_dollars(10)  # 10 $1 bills, 5 $1 &amp; 1 $5 bills, 2 $5 bills, 10 $1 bills</span>
+<span class="sd">    4</span>
+<span class="sd">    &gt;&gt;&gt; count_dollars(20)  # 20 $1 bills, 15 $1 &amp; $5 bills, ... 1 $20 bill</span>
+<span class="sd">    10</span>
+<span class="sd">    &gt;&gt;&gt; count_dollars(45)  # 有多少种方式凑出45美元？</span>
+<span class="sd">    44</span>
+<span class="sd">    &gt;&gt;&gt; count_dollars(100) # 有多少种方式凑出100美元？</span>
+<span class="sd">    344</span>
+<span class="sd">    &gt;&gt;&gt; count_dollars(200) # 有多少种方式凑出200美元？</span>
+<span class="sd">    3274</span>
+<span class="sd">    &gt;&gt;&gt; from construct_check import check</span>
+<span class="sd">    &gt;&gt;&gt; # 禁用迭代</span>
+<span class="sd">    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#39;count_dollars&#39;, [&#39;While&#39;, &#39;For&#39;])</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="s2">&quot;*** 在这里填写你的代码 ***&quot;</span> 
+</code></pre></div>
 <p>使用ok来测试你的代码：</p>
-<pre class="highlight"><code class="language-shell">python3 ok -q count_dollars --local</code></pre>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>count_dollars<span class="w"> </span>--local
+</code></pre></div>
 <h3 id="_2">检查你的得分<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>运行得到本次作业中每个问题的分数。</p>
-<pre class="highlight"><code class="language-shell">python3 ok --score --local</code></pre>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>--score<span class="w"> </span>--local
+</code></pre></div>
 <h2 id="_3">可选问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>这些问题可自行选做。即使不完成也不会影响作业的得分。但它们是非常好的练习材料，建议还是认真完成！</p>
@@ -3669,42 +1129,44 @@ def count_dollars(total):
 <blockquote>
 <p><strong>重要提示</strong>：必须使用递归实现，使用循环将无法通过测试。</p>
 </blockquote>
-<pre class="highlight"><code class="language-python">def next_larger_dollar(bill):
-    """返回比输入面值更大的下一个美元面额"""
-    if bill == 1:
-        return 5
-    elif bill == 5:
-        return 10
-    elif bill == 10:
-        return 20
-    elif bill == 20:
-        return 50
-    elif bill == 50:
-        return 100
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">next_larger_dollar</span><span class="p">(</span><span class="n">bill</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;返回比输入面值更大的下一个美元面额&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">bill</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">5</span>
+    <span class="k">elif</span> <span class="n">bill</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">10</span>
+    <span class="k">elif</span> <span class="n">bill</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">20</span>
+    <span class="k">elif</span> <span class="n">bill</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">50</span>
+    <span class="k">elif</span> <span class="n">bill</span> <span class="o">==</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">100</span>
 
-def count_dollars_upward(total):
-    """返回凑出该总额的所有可能方式的数量
+<span class="k">def</span><span class="w"> </span><span class="nf">count_dollars_upward</span><span class="p">(</span><span class="n">total</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;返回凑出该总额的所有可能方式的数量</span>
 
-    &gt;&gt;&gt; count_dollars_upward(15)  # 15 $1 bills, 10 $1 &amp; 1 $5 bills, ... 1 $5 &amp; 1 $10 bills
-    6
-    &gt;&gt;&gt; count_dollars_upward(10)  # 10 $1 bills, 5 $1 &amp; 1 $5 bills, 2 $5 bills, 10 $1 bills
-    4
-    &gt;&gt;&gt; count_dollars_upward(20)  # 20 $1 bills, 15 $1 &amp; $5 bills, ... 1 $20 bill
-    10
-    &gt;&gt;&gt; count_dollars_upward(45)  # 有多少种方式凑出45美元？
-    44
-    &gt;&gt;&gt; count_dollars_upward(100) # 有多少种方式凑出100美元？
-    344
-    &gt;&gt;&gt; count_dollars_upward(200) # 有多少种方式凑出200美元？
-    3274
-    &gt;&gt;&gt; from construct_check import check
-    &gt;&gt;&gt; # 禁用迭代
-    &gt;&gt;&gt; check(HW_SOURCE_FILE, 'count_dollars_upward', ['While', 'For'])
-    True
-    """
-    "*** 在这里填写你的代码 ***"</code></pre>
+<span class="sd">    &gt;&gt;&gt; count_dollars_upward(15)  # 15 $1 bills, 10 $1 &amp; 1 $5 bills, ... 1 $5 &amp; 1 $10 bills</span>
+<span class="sd">    6</span>
+<span class="sd">    &gt;&gt;&gt; count_dollars_upward(10)  # 10 $1 bills, 5 $1 &amp; 1 $5 bills, 2 $5 bills, 10 $1 bills</span>
+<span class="sd">    4</span>
+<span class="sd">    &gt;&gt;&gt; count_dollars_upward(20)  # 20 $1 bills, 15 $1 &amp; $5 bills, ... 1 $20 bill</span>
+<span class="sd">    10</span>
+<span class="sd">    &gt;&gt;&gt; count_dollars_upward(45)  # 有多少种方式凑出45美元？</span>
+<span class="sd">    44</span>
+<span class="sd">    &gt;&gt;&gt; count_dollars_upward(100) # 有多少种方式凑出100美元？</span>
+<span class="sd">    344</span>
+<span class="sd">    &gt;&gt;&gt; count_dollars_upward(200) # 有多少种方式凑出200美元？</span>
+<span class="sd">    3274</span>
+<span class="sd">    &gt;&gt;&gt; from construct_check import check</span>
+<span class="sd">    &gt;&gt;&gt; # 禁用迭代</span>
+<span class="sd">    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#39;count_dollars_upward&#39;, [&#39;While&#39;, &#39;For&#39;])</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="s2">&quot;*** 在这里填写你的代码 ***&quot;</span>
+</code></pre></div>
 <p>使用ok来测试你的代码：</p>
-<pre class="highlight"><code class="language-shell">python3 ok -q count_dollars_upward --local</code></pre>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>count_dollars_upward<span class="w"> </span>--local
+</code></pre></div>
 <h2 id="_4">考试练习<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>作业也会包含之前的考试级别问题供你参考。这些问题不需要提交；如果你喜欢挑战，那就可以尝试它们！</p>
 <ol>
@@ -3746,68 +1208,73 @@ def count_dollars_upward(total):
   <p>你无需担心怎么去收集所有步骤。只要你确保移动步骤是按顺序打印的，<code>print</code> 就能有效地在终端中"收集"所有结果。</p>
 </details>
 
-<pre class="highlight"><code class="language-python">def print_move(origin, destination):
-    """打印移动盘片的指令"""
-    print("Move the top disk from rod", origin, "to rod", destination)
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">print_move</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;打印移动盘片的指令&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Move the top disk from rod&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="s2">&quot;to rod&quot;</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span>
 
-def move_stack(n, start, end):
-    """打印将 n 个圆盘从起始杆移动到目标杆所需的步骤，且不违反汉诺塔规则。
+<span class="k">def</span><span class="w"> </span><span class="nf">move_stack</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;打印将 n 个圆盘从起始杆移动到目标杆所需的步骤，且不违反汉诺塔规则。</span>
 
-       n -- 圆盘数量
-       start -- 起始杆位置（取值为 1、2 或 3）
-       end -- 目标杆位置（取值为 1、2 或 3）
+<span class="sd">       n -- 圆盘数量</span>
+<span class="sd">       start -- 起始杆位置（取值为 1、2 或 3）</span>
+<span class="sd">       end -- 目标杆位置（取值为 1、2 或 3）</span>
 
-       共有三根柱子，且起始柱和目标柱必须不同。假设起始柱上至少有n个尺寸递增的圆盘，而目标柱要么为空，要么其顶部圆盘的尺寸大于起始柱顶部n个圆盘的尺寸。
+<span class="sd">       共有三根柱子，且起始柱和目标柱必须不同。假设起始柱上至少有n个尺寸递增的圆盘，而目标柱要么为空，要么其顶部圆盘的尺寸大于起始柱顶部n个圆盘的尺寸。</span>
 
-    &gt;&gt;&gt; move_stack(1, 1, 3)
-    Move the top disk from rod 1 to rod 3
-    &gt;&gt;&gt; move_stack(2, 1, 3)
-    Move the top disk from rod 1 to rod 2
-    Move the top disk from rod 1 to rod 3
-    Move the top disk from rod 2 to rod 3
-    &gt;&gt;&gt; move_stack(3, 1, 3)
-    Move the top disk from rod 1 to rod 3
-    Move the top disk from rod 1 to rod 2
-    Move the top disk from rod 3 to rod 2
-    Move the top disk from rod 1 to rod 3
-    Move the top disk from rod 2 to rod 1
-    Move the top disk from rod 2 to rod 3
-    Move the top disk from rod 1 to rod 3
-    """
-    assert 1 &lt;= start &lt;= 3 and 1 &lt;= end &lt;= 3 and start != end, "Bad start/end"
-    "*** 在这里填写你的代码 ***"</code></pre>
+<span class="sd">    &gt;&gt;&gt; move_stack(1, 1, 3)</span>
+<span class="sd">    Move the top disk from rod 1 to rod 3</span>
+<span class="sd">    &gt;&gt;&gt; move_stack(2, 1, 3)</span>
+<span class="sd">    Move the top disk from rod 1 to rod 2</span>
+<span class="sd">    Move the top disk from rod 1 to rod 3</span>
+<span class="sd">    Move the top disk from rod 2 to rod 3</span>
+<span class="sd">    &gt;&gt;&gt; move_stack(3, 1, 3)</span>
+<span class="sd">    Move the top disk from rod 1 to rod 3</span>
+<span class="sd">    Move the top disk from rod 1 to rod 2</span>
+<span class="sd">    Move the top disk from rod 3 to rod 2</span>
+<span class="sd">    Move the top disk from rod 1 to rod 3</span>
+<span class="sd">    Move the top disk from rod 2 to rod 1</span>
+<span class="sd">    Move the top disk from rod 2 to rod 3</span>
+<span class="sd">    Move the top disk from rod 1 to rod 3</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="mi">3</span> <span class="ow">and</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">end</span> <span class="o">&lt;=</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">start</span> <span class="o">!=</span> <span class="n">end</span><span class="p">,</span> <span class="s2">&quot;Bad start/end&quot;</span>
+    <span class="s2">&quot;*** 在这里填写你的代码 ***&quot;</span>
+</code></pre></div>
 <p>使用ok来测试你的代码：</p>
-<pre class="highlight"><code class="language-shell">python3 ok -q move_stack --local</code></pre>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>move_stack<span class="w"> </span>--local
+</code></pre></div>
 <h3 id="q7">Q7: 匿名阶乘<a class="headerlink" href="#q7" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>在不为递归函数分配全局框架名称的情况下，这个问题展示了我们仍然可以编写递归函数。</p>
 </blockquote>
 <p>通过使用<a href="http://docs.python.org/py3k/reference/expressions.html#conditional-expressions">条件表达式</a>，递归阶乘函数可以写成一个单一的表达式。</p>
-<pre class="highlight"><code class="language-python">&gt;&gt;&gt; fact = lambda n: 1 if n == 1 else mul(n, fact(sub(n, 1)))
-&gt;&gt;&gt; fact(5)
-120</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">fact</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">mul</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">fact</span><span class="p">(</span><span class="n">sub</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fact</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="mi">120</span>
+</code></pre></div>
 <p>然而，这种实现方式依赖于一个事实，即 <code>fact</code> 必须有一个名字（这里不是双关语），然后我们才能在函数体内引用它。以往编写递归函数时，我们总是通过 <code>def</code> 或赋值语句为其命名，以便在函数体内引用自身。而在这个问题中，你的任务是在不给函数命名的情况下，递归地定义 <code>fact</code>！</p>
 <p>写一个表达式，它只能通过使用调用表达式、条件表达式和 <code>lambda</code> 表达式（不使用赋值或 <code>def</code> 语句）来计算 <code>n</code> 的阶乘。</p>
 <blockquote>
 <p><strong>注意</strong>：在返回的表达式中，不允许使用 <code>make_anonymous_factorial</code>。</p>
 </blockquote>
 <p>要解决这个问题， <code>operator</code> 模块中的 <code>sub</code> 和 <code>mul</code> 函数是你唯一需要使用的内置函数。</p>
-<pre class="highlight"><code class="language-python">from operator import sub, mul
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">sub</span><span class="p">,</span> <span class="n">mul</span>
 
-def make_anonymous_factorial():
-    """返回计算阶乘的表达式的值
+<span class="k">def</span><span class="w"> </span><span class="nf">make_anonymous_factorial</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;返回计算阶乘的表达式的值</span>
 
-    &gt;&gt;&gt; make_anonymous_factorial()(5)
-    120
-    &gt;&gt;&gt; from construct_check import check
-    &gt;&gt;&gt; # 禁用任何赋值和递归
-    &gt;&gt;&gt; check(HW_SOURCE_FILE, 'make_anonymous_factorial',
-    ...     ['Assign', 'AnnAssign', 'AugAssign', 'NamedExpr', 'FunctionDef', 'Recursion'])
-    True
-    """
-    return '在这里编写你的表达式'</code></pre>
+<span class="sd">    &gt;&gt;&gt; make_anonymous_factorial()(5)</span>
+<span class="sd">    120</span>
+<span class="sd">    &gt;&gt;&gt; from construct_check import check</span>
+<span class="sd">    &gt;&gt;&gt; # 禁用任何赋值和递归</span>
+<span class="sd">    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#39;make_anonymous_factorial&#39;,</span>
+<span class="sd">    ...     [&#39;Assign&#39;, &#39;AnnAssign&#39;, &#39;AugAssign&#39;, &#39;NamedExpr&#39;, &#39;FunctionDef&#39;, &#39;Recursion&#39;])</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s1">&#39;在这里编写你的表达式&#39;</span>
+</code></pre></div>
 <p>使用ok来测试你的代码：</p>
-<pre class="highlight"><code class="language-shell">python3 ok -q make_anonymous_factorial --local</code></pre>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ok<span class="w"> </span>-q<span class="w"> </span>make_anonymous_factorial<span class="w"> </span>--local
+</code></pre></div>
 
 
 
@@ -3856,10 +1323,10 @@ def make_anonymous_factorial():
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       
