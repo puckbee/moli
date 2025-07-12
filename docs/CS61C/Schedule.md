@@ -171,7 +171,7 @@
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=20">19. SDS(1)</a></td>
           <td></td>
           <td></td>
-          <td rowspan="15">项目 3: CS61CPU</td>
+          <td rowspan="11">项目 3: CS61CPU</td>
         </tr>
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=21">20. SDS(2)</a></td>
@@ -227,6 +227,7 @@
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=38">30. 并行(1) - 介绍</a></td>
           <td></td>
           <td>实验 6: CPU、流水线</td>
+          <td rowspan="4">项目 4: <span style="color:red;">CS61</span>ka<span style="color:red;">C</span>how</td>
         </tr>
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=40">31. 并行(2) - SIMD</a></td>
@@ -269,7 +270,7 @@
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=51">38. 总结</a></td>
           <td>讨论 12: 虚拟内存</td>
-          <td>实验 8: <span style="color:red;">CS61</span>ka<span style="color:red;">C</span>how</td>
+          <td></td>
           <td></td>
         </tr>
       </tbody>
