@@ -155,7 +155,7 @@
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=17">17. 红黑树</a></td>
     <td rowspan="3">6. 不相交集、ADT、BST</td>
-    <td rowspan="3">实验6：BST映射</td>
+    <td rowspan="3"><a href="../labs/lab06">实验6：BST映射</a></td>
   </tr>
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=18">18. 哈希I</a></td>
@@ -166,7 +166,7 @@
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=20">20. 堆与优先队列</a></td>
     <td rowspan="3">7. B 树、LLRB、哈希</td>
-    <td rowspan="3">实验7：哈希映射</td>
+    <td rowspan="3"><a href="../labs/lab07">实验7：哈希映射</a></td>
     <td rowspan="12">作业3</td>
   </tr>
   <tr>
@@ -202,7 +202,7 @@
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=29">29. 归并排序、插入排序与快速排序</a></td>
     <td rowspan="3">10. 图表 II</td>
-    <td rowspan="3">实验9：项目3入门（可选）</td>
+    <td rowspan="3"><a href="../labs/lab09">实验9：项目3入门（可选）</a></td>
   </tr>
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=30">30. 软件工程II（可选）</a></td>
@@ -213,7 +213,7 @@
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=32">32. 快速排序进阶、快速选择与稳定性</a></td>
     <td rowspan="3">11.排序I</td>
-    <td rowspan="3">实验10：俄罗斯方块（可选）</td>
+    <td rowspan="3"><a href="../labs/lab10">实验10：俄罗斯方块（可选）</a></td>
     <td rowspan="3"></td>
     <td rowspan="6">项目3A：世界生成</td>
   </tr>
