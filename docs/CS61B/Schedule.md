@@ -150,7 +150,7 @@
   </tr>
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=16">16. B树（2-3树、2-3-4树）</a></td>
-    <td rowspan="6">项目2A：N元语法模型</td>
+    <td rowspan="6"><a href="../projects/proj2a">项目2A：N元语法模型</a></td>
   </tr>
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=17">17. 红黑树</a></td>
