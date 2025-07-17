@@ -26,7 +26,7 @@
     您需要将该压缩文件解压至`proj2`目录下，确保解压后的`data`文件夹与`src`、`static`文件夹处于同级目录。
 
     * [Windows系统解压指南](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc#:~:text=To unzip files,folder to a new location.)
-    * [Mac系统解压指南](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac#:~:text=Unzip (expand) a compressed item,zip file.)`
+    * [Mac系统解压指南](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac#:~:text=Unzip (expand) a compressed item,zip file.)
 
 
 
@@ -270,13 +270,6 @@ iVBORw0KGg...
 - **历史文本处理器（HistoryTextHandler）（4 分）**：正确实现 `HistoryTextHandler.java`。
 - **历史处理器（HistoryHandler）（4 分）**：正确实现 `HistoryHandler.java`。
 
-### 提交方式
-
-提交项目时，先添加并提交你的文件，然后推送到远程仓库。接着，进入 Gradescope 上相应的作业页面进行提交。
-
-本作业的自动评分程序采用以下提交次数限制机制：
-
-* 从项目发布到截止日期期间，你共有 8 次提交机会；每次提交机会每 24 小时刷新一次。
 
 ## 鸣谢
 

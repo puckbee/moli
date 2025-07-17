@@ -1,6 +1,5 @@
 # 实验 7：并行
 
-截止日期：11 月 14 日（周四），11:59:59 PM PT
 
 [实验PPT](https://web.archive.org/web/20241219154537/https://docs.google.com/presentation/d/1a5IOvSyLCZtPt7FOZ5bcx0e7s42Dt9nR9nvhAzMU2sA/edit?usp=sharing)
 
@@ -226,11 +225,3 @@ make ex2
    - 提示：应该一次只能由一个线程访问的变量是`global_sum`，对它执行的操作是加法（`+`）。
 3. 使用 OpenMP 和归约的思想实现`dotp_manual_reduction`，但不要使用`reduction`关键字。
    - 提示：为每个线程创建变量，并且仅在绝对必要时才累加到最终总和中。在你的解决方案中，你可能需要使用` #pragma omp critical`。
-
-## 练习 3：反思与反馈表
-
-我们一直在努力每周改进这门课程 —— 请填写这份 [调查问卷](https://web.archive.org/web/20241219154537/https://docs.google.com/forms/d/e/1FAIpQLSclCTiQJ2yuf1jCxfHGyRgiOxAEYW4sdARCpw5YEO1sbT7mtA/viewform?usp=sf_link)，告诉我们你目前在讨论课和实验中的体验！
-
-## 提交方式
-
-保存、提交（commit）并推送（push）你的作业，然后在 Gradescope 上提交到 “实验 7” 作业中。

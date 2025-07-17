@@ -6,7 +6,7 @@ Lab 06的常见问题解答在[这里](https://sp25.datastructur.es/labs/lab06/f
 
 ## 介绍
 
-在本实验中，您将基于二叉搜索树(BST)实现`Map61B`接口的`BSTMap`类，构建一个基础的树形映射结构。您需要**从零开始**完成这个实现，并以提供的接口规范作为开发指南。
+在本实验中，您将基于二叉搜索树(BST)实现`Map61B`接口的`BSTMap`类，构建一个基础的树形映射结构。**您需要从零开始完成这个实现**，并以提供的接口规范作为开发指南。
 
 完成实施后，您将比较您的实现转换为基于列表的实现以及内置 Java 类（使用称为红黑树的 BST 变体）从骨架代码库拉取
 
@@ -26,7 +26,7 @@ git pull skeleton main
 
 在您的实现中，需要确保泛型键类型 `K` 实现了 `Comparable` 接口。 这称为[有界类型参数](https://docs.oracle.com/javase/tutorial/java/generics/bounded.html)。
 
-这个[语法](https://docs.oracle.com/javase/tutorial/java/generics/bounded.html)有点复杂，但我们已在下方提供了示例。这里我们创建了一个针对可比较对象的BSTSet。出于教学目的，我们特意加入了`compareRoots`和`compareTo`等概念用于教学目的（如需复习，请参阅此[文档](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html#compareTo(T))）
+这个[语法](https://docs.oracle.com/javase/tutorial/java/generics/bounded.html)有点复杂，但我们已在下方提供了示例。这里我们创建了一个针对可比较对象的BSTSet。出于教学目的，我们特意加入了`compareRoots`和`compareTo`等概念。（如需复习，请参阅此[文档](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html#compareTo(T))）
 
 ```java
 public class BSTSet<K extends Comparable<K>> implements Set61B<K> {
@@ -127,9 +127,6 @@ IntelliJ 有一个很好的功能，可以为你生成方法签名。如果你�
 
 实现`remove()`方法颇具挑战性，你需要实现 Hibbard 删除算法。如果指定的键不存在于`BSTMap`中，`remove()`方法应返回`null`；否则，删除该键值对并返回被删除的值。
 
-### 提交说明
-
-与之前的作业一样，将你的 Lab 06 代码添加到 Git 仓库，提交并推送到 GitHub。然后，提交到 Gradescope 进行代码测试。
 
 ### 可选：渐进复杂度问题
 
