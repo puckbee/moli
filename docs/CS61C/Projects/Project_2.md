@@ -2,27 +2,17 @@
 
 在这个项目中，你将编写 RISC-V 汇编代码，使用一个简单的机器学习算法对手写数字进行分类。
 
-本项目的目标是帮助你熟悉 RISC-V 架构，特别是以下几个方面：
-
-调用约定（Calling Convention）
-
-函数调用
-
-使用堆内存
-
-文件交互
-
-编写测试代码
+本项目的目标是帮助你熟悉 RISC-V 架构，特别调用约定（Calling Convention）、函数调用、使用堆内存、文件交互、编写测试代码。
 
 ## 调试视频
 
-这个[视频集](https://web.archive.org/web/20241219223816/https://www.youtube.com/playlist?list=PLnvUoC1Ghb7xbUcAM923j41yjTNxRbMOA)展示了如何调试内存还有调用约定的问题！请确认你已观看了这些视频。
+这个[视频集](https://www.youtube.com/playlist?list=PLnvUoC1Ghb7xbUcAM923j41yjTNxRbMOA)展示了如何调试内存还有调用约定的问题！请确认你已观看了这些视频。
 
 ## 设置
 
->你必须在你的本地机器上完成本项目。如果你忘了如何在你的本地机器上设置，请看 [Lab 0](https://web.archive.org/web/20241219154546/https://cs61c.org/fa24/labs/lab00/) 。
+>你必须在你的本地机器上完成本项目。如果你忘了如何在你的本地机器上设置，请看 [Lab 0](../Labs/Lab_0.md) 。
 
->**项目 2 的相关问题在[常见问题](https://web.archive.org/web/20241213065233/https://cs61c.org/fa24/resources/common-errors/)页面的下方列出**。<br>
+>**项目 2 的相关问题在[常见问题](https://cs61c.org/fa24/resources/common-errors/)页面的下方列出**。<br>
 
 ## 设置： Git
 
@@ -44,20 +34,20 @@ git remote add starter https://github.com/61c-teach/fa24-proj2-starter.git
 git pull starter main
 ```
 
-如果你遇到 git 相关问题，看[这里](https://web.archive.org/web/20241213065233/https://cs61c.org/fa24/resources/common-errors/)
+如果你遇到 git 相关问题，看[这里](https://cs61c.org/fa24/resources/common-errors/)
 
 ## 设置： Java 和 Python
-确认你已经遵循了 [Lab 0 练习 2 ](https://web.archive.org/web/20241219154546/https://cs61c.org/fa24/labs/lab00/#exercise-2-installing-software)。
+确认你已经遵循了 [Lab 0 练习 2 ](../Labs/Lab_0.md)。
 
 ## 设置：Venus
-我们使用 Venus web interface 来调试。步骤和[Lab 3](https://web.archive.org/web/20241219214056/https://cs61c.org/fa24/labs/lab03/#exercise-1-venus-basics) Venus 设置相似。
+我们使用 Venus web interface 来调试。步骤和[Lab 3](../Labs/Lab_3.md) Venus 设置相似。
 
 1. 在 <code>61c-proj2</code> 目录下输入 <code> bash test.sh download_tools </code>下载 Venus 。（你只用运行一次。）
 2. 在你的​ **本地机器**​ （不是 hive ），​ **进入**​  <code>61c-proj2</code> 目录并​ **输入**​ 以下命令。 Windows 用户需要在 WSL 外输入（推荐 Git Bash ）。
 ```bash
 java -jar tools/venus.jar . -dm
 ```
-3. 在​ **浏览器**​ 中打开 [Venus web](https://venus.cs61c.org) （推荐 Chrome 或 Firefox ）。在 ​ **Venus web 终端**​ ，​ **输入**​  <code>mount local vmfs</code> 。在你的浏览器你会看到这个提示： <code>Key has been shown in the Venus mount server! Please copy and paste it into here</code> 。你应该能在你的本地终端输出的最近一行看到一个 key （由英文字母和数字组成的字符串 ）；将这个 key **复制粘贴**到对话中。
+3. 在​ **浏览器**​ 中打开 [Venus web](https://venus.cs61c.org) （推荐 Chrome 或 Firefox ）。在 ​ **Venus web 终端**​ ，​ **输入**​  <code>mount local vmfs</code> 。在你的浏览器你会看到这个提示： <code>Key has been shown in the Venus mount server! Please copy and paste it into here</code> 。你应该能在你的本地终端输出的最近一行看到一个 key （由英文字母和数字组成的字符串 ）；将这个 key **复制粘贴** 到对话中。
 4. 现在你本地机器的项目文件已上传到了 Venus web interface 。在 ​ **Venus**​  中，你可以​ **打开**​  Files 选项卡或者在 Venus 终端​ **输入**​  <code>ls vmfs</code> 来浏览你浏览器中的所有文件。
 
 如果你能在 Venus 中看到你的文件，你可以跳过以下部分。如果以上步骤运行失败，你可以遵循以下步骤来手动上传文件。
@@ -66,7 +56,7 @@ java -jar tools/venus.jar . -dm
 
     1. 在你的本地机器或 hive ，将 src ， tests ，还有 test-src 目录 zip 压缩。<br><br>
 
-    2. 点击这个[链接](https://venus.cs61c.org) ，在 Venus 终端输入 <code>upload</code> 。<br><br>
+    2. 点击这个<a href="https://venus.cs61c.org/">链接</a>，在 Venus 终端输入 <code>upload</code> 。<br><br>
 
     3. 你会看到一个 file upload 提示。将你在第一步中创建的压缩 zip 文件上传。<br><br>
     
@@ -76,7 +66,7 @@ java -jar tools/venus.jar . -dm
 </details>
 
 ## 还原初始文件
-如果需要还原初始文件，请查看[常见错误](https://web.archive.org/web/20241213065233/https://cs61c.org/fa24/resources/common-errors/)。
+如果需要还原初始文件，请查看[常见错误](https://cs61c.org/fa24/resources/common-errors/)。
 
 ## Part A
 !!! info "注意"
@@ -214,8 +204,8 @@ ReLU 会在原地修改数组。比如说，如果上述的整数数组传入了
 如果输入存在以下异常，请将相应的返回码写入 <code>a0</code>，并运行 <code>j exit</code> 以退出程序。（例如，如果数组长度小于1，输入 <code>li a0 36</code> 以及 <code>j exit</code> ）。
 <table>
 <colgroup>
-<col span="1" style="width: 35%;">
-<col span="1" style="width: 65%;">
+<col span="1" style="width: 32%;">
+<col span="1" style="width: 68%;">
 </colgroup>
 <tbody>
   <tr>
@@ -244,7 +234,7 @@ vdb test_relu_invalid_n.s
 * 不幸的是，本地测试并不会检查越界的内存访问。如果你在自动评分器上遇到测试失败，建议检查你的代码是否存在向数组之外的内存写入操作。
 
 * 本地测试不会往 ReLU 传入很大的数字。
-* 请查看[调试视频](https://web.archive.org/web/20241219223816/https://www.youtube.com/playlist?list=PLnvUoC1Ghb7xbUcAM923j41yjTNxRbMOA) 。
+* 请查看[调试视频](https://www.youtube.com/playlist?list=PLnvUoC1Ghb7xbUcAM923j41yjTNxRbMOA) 。
 
 ### 任务 3 ： Argmax
 
@@ -317,7 +307,7 @@ vdb test_argmax_standard.s
 
 * 本地测试不会检查当最大元素出现多次时，你的代码是否能返回最小的索引值。
 
-* 请查看[调试视频](https://web.archive.org/web/20241219223816/https://www.youtube.com/playlist?list=PLnvUoC1Ghb7xbUcAM923j41yjTNxRbMOA) 。
+* 请查看[调试视频](https://www.youtube.com/playlist?list=PLnvUoC1Ghb7xbUcAM923j41yjTNxRbMOA) 。
 
 ### 任务 4 ：点积（ Dot Product ）
 
@@ -423,7 +413,7 @@ vdb test_dot_stride_error1.s
 vdb test_dot_stride_error2.s
 ```
 
-请查看[调试视频](https://web.archive.org/web/20241219223816/https://www.youtube.com/playlist?list=PLnvUoC1Ghb7xbUcAM923j41yjTNxRbMOA) 。
+请查看[调试视频](https://www.youtube.com/playlist?list=PLnvUoC1Ghb7xbUcAM923j41yjTNxRbMOA) 。
 
 ### 任务 5 ：测试
 在这个任务中，你将为一些已经实现好的数学函数编写测试用例。
@@ -697,7 +687,7 @@ jal ra, checkCalleeSavedRegs         # check the saved registers values didn't c
 在这一部分，你将实现一个矩阵乘法函数以及用于读取手写数字图片的文件操作函数。接着，你将使用前一部分中实现的数学函数来判断图片中是哪个数字。
 
 如果你对这个机器学习算法的工作原理感兴趣，可以展开下方的“神经网络（Neural Networks）”部分进行了解。这部分是可选内容，不是完成项目所必需的。<br>
-[选做：神经网络](#_23)
+[选做：神经网络](#_30)
 
 ### 任务 6：矩阵乘法
 
@@ -815,9 +805,9 @@ vdb test_matmul_zero_dim_m1.s
 
 * 因为你需要在 <code>matmul</code> 函数中调用 <code>dot</code> 函数，务必遵守调用约定！详情请参阅调用约定附录。特别注意，一旦调用 <code>dot</code> 函数，<code>dot</code> 函数有权修改所有的 <code>t0–t6</code> 和 <code>a1–a7</code> 寄存器，所以当 <code>dot</code> 函数返回时，你必须假设这些寄存器中的值都是垃圾（不可依赖的）。
 
-* 你可以使用[调用约定附录](https://web.archive.org/web/20241217193426/https://cs61c.org/fa24/projects/proj2/calling-convention/#randomizing-preserved-registers)中介绍的函数来调试调用约定相关的错误。
+* 你可以使用[调用约定附录](#_31)中介绍的函数来调试调用约定相关的错误。
 
-* 请查看[调试视频](https://web.archive.org/web/20241219223816/https://www.youtube.com/playlist?list=PLnvUoC1Ghb7xbUcAM923j41yjTNxRbMOA) 。
+* 请查看[调试视频](https://www.youtube.com/playlist?list=PLnvUoC1Ghb7xbUcAM923j41yjTNxRbMOA) 。
 
 ### 任务 7：读取矩阵
 
@@ -1075,7 +1065,7 @@ vdb test_read_fail_malloc.s
 ```
 **注意** ：这些错误情况在 Venus 模拟器中不会报错，只有在通过 bash test.sh 运行测试时才会报错。
 
-提醒一下，你可以使用调用[约定附录](https://web.archive.org/web/20241217193426/https://cs61c.org/fa24/projects/proj2/calling-convention/#randomizing-preserved-registers)中描述的函数来调试调用约定错误。我们还有一些[调试视频](https://web.archive.org/web/20241219154543/https://cs61c.org/fa24/projects/proj2/#debugging-videos)，可能会帮助你解决这些错误。
+提醒一下，你可以使用调用[约定附录](#_31)中描述的函数来调试调用约定错误。我们还有一些[调试视频](https://cs61c.org/fa24/projects/proj2/#debugging-videos)，可能会帮助你解决这些错误。
 
 ### 任务 8：写入矩阵
 
@@ -1275,7 +1265,7 @@ vdb test_write_fail_fwrite.s
 ```
 **注意** ：这些错误情况在 Venus 模拟器中不会报错，只有在通过 bash test.sh 运行测试时才会报错。
 
-提醒一下，你可以使用调用[约定附录](https://web.archive.org/web/20241217193426/https://cs61c.org/fa24/projects/proj2/calling-convention/#randomizing-preserved-registers)中描述的函数来调试调用约定错误。我们还有一些[调试视频](https://web.archive.org/web/20241219154543/https://cs61c.org/fa24/projects/proj2/#debugging-videos)，可能会帮助你解决这些错误。
+提醒一下，你可以使用调用[约定附录](#_31)中描述的函数来调试调用约定错误。我们还有一些[调试视频](https://cs61c.org/fa24/projects/proj2/#debugging-videos)，可能会帮助你解决这些错误。
 
 ### 任务 9：分类
 
@@ -1713,7 +1703,7 @@ vdb ../tests/chain-1/chain.s
 
 你可能会好奇，这个网络中的权重是怎么确定的？这部分内容超出了本项目的范围。我们鼓励你在将来学习更高级的课程，比如数值线性代数、信号处理、机器学习和优化等。这里只简要说明：我们可以通过向网络提供一组正确的输入和对应的输出，来调整网络中的权重，使得网络输出与正确输出之间的误差最小化。这个过程叫做 训练（ Training ）。而使用训练好的权重来处理新的输入、得到输出的过程，称为 推理（ Inference ）。在本项目中，我们只进行推理，不进行训练。你将会使用预先训练好的权重。
 
-在这个项目中，我们将实现一个类似的、但稍微复杂一点的神经网络，它能够对手写数字进行分类。输入数据使用的是 [MNIST](https://web.archive.org/web/20241216192027/https://yann.lecun.com/exdb/mnist/) 数据集，这是一个包含了 60,000 张 28×28 大小的手写数字图像的数据集，数字范围为 0 到 9。我们会将这些图像视为大小为 784（ <code>= 28 × 28</code> ）的“展平”向量（即一维向量）。与前面的例子类似，我们会对输入向量与预训练的权重矩阵 <code>m_0</code> 和 <code>m_1</code> 进行矩阵乘法。不同的是，这里不会使用阈值函数，而是使用两个不同的非线性函数： <code>ReLU</code>（线性整流函数）和 <code>ArgMax</code>（取最大值的索引）具体细节将在后续各个任务的描述中提供。
+在这个项目中，我们将实现一个类似的、但稍微复杂一点的神经网络，它能够对手写数字进行分类。输入数据使用的是 [MNIST](https://yann.lecun.com/exdb/mnist/) 数据集，这是一个包含了 60,000 张 28×28 大小的手写数字图像的数据集，数字范围为 0 到 9。我们会将这些图像视为大小为 784（ <code>= 28 × 28</code> ）的“展平”向量（即一维向量）。与前面的例子类似，我们会对输入向量与预训练的权重矩阵 <code>m_0</code> 和 <code>m_1</code> 进行矩阵乘法。不同的是，这里不会使用阈值函数，而是使用两个不同的非线性函数： <code>ReLU</code>（线性整流函数）和 <code>ArgMax</code>（取最大值的索引）具体细节将在后续各个任务的描述中提供。
 ![](../images/proj2nn4.png)
 
 ## 附录：函数定义
