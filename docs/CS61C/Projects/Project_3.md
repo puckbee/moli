@@ -185,7 +185,7 @@ ReLU 会在原地修改数组。比如说，如果上述的整数数组传入了
     <td colspan="4"><code>relu</code> ：任务 2。</td>
   </tr>
   <tr>
-  	<td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向整数数组开头的指针。</td>
@@ -202,11 +202,22 @@ ReLU 会在原地修改数组。比如说，如果上述的整数数组传入了
 </tbody>
 </table>
 如果输入存在以下异常，请将相应的返回码写入 <code>a0</code>，并运行 <code>j exit</code> 以退出程序。（例如，如果数组长度小于1，输入 <code>li a0 36</code> 以及 <code>j exit</code> ）。
-
-| 返回码       |异常                       |
-|-------------|--------------------------|
-|36           |数组的长度小于 1 。|
-
+<table>
+<colgroup>
+<col span="1" style="width: 32%;">
+<col span="1" style="width: 68%;">
+</colgroup>
+<tbody>
+  <tr>
+    <td><b>返回码</b></td>
+    <td><b>异常</b></td>
+  </tr>
+  <tr>
+    <td>36</td>
+    <td>数组的长度小于 1 。</td>
+  </tr>
+</tbody>
+</table>
 
 #### 测试与调试
 要想测试你的函数，在你的本地机器输入 <code>bash test.sh test_relu</code> 。
@@ -246,7 +257,7 @@ argmax 函数接受一个整数数组作为输入，并返回数组中最大元�
     <td colspan="4"><code>argmax</code>: 任务 3 。</td> 
   </tr>
   <tr>
-  	<td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向整数数组开头的指针。</td>
@@ -265,11 +276,22 @@ argmax 函数接受一个整数数组作为输入，并返回数组中最大元�
 </tbody>
 </table>
 如果输入存在以下异常，请将相应的返回码写入 <code>a0</code>，并运行 <code>j exit</code> 以退出程序。
-
-| 返回码       |异常                       |
-|-------------|--------------------------|
-|36           |数组的长度小于 1 。|
- 
+<table>
+<colgroup>
+<col span="1" style="width: 35%;">
+<col span="1" style="width: 65%;">
+</colgroup>
+<tbody>
+  <tr>
+    <td><b>返回码</b></td>
+    <td><b>异常</b></td>
+  </tr>
+  <tr>
+    <td>36</td>
+    <td>数组的长度小于 1 。</td>
+  </tr>
+</tbody>
+</table>
 
 #### 测试与调试
 要想测试你的函数，在你的本地机器输入 <code>bash test.sh test_argmax</code> 。
@@ -322,7 +344,7 @@ vdb test_argmax_standard.s
     <td colspan="4"><code>dot</code>: 任务 4 。</td>
   </tr>
   <tr>
-  	<td rowspan="5" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="5" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向第一个整数数组开头的指针。</td>
@@ -363,16 +385,16 @@ vdb test_argmax_standard.s
 </colgroup>
 <tbody>
   <tr>
-  	<td><b>返回码</b></td>
-  	<td><b>异常</b></td>
+    <td><b>返回码</b></td>
+    <td><b>异常</b></td>
   </tr>
   <tr>
-  	<td>36</td>
-  	<td>数组的长度小于 1 。</td>
+    <td>36</td>
+    <td>数组的长度小于 1 。</td>
   </tr>
   <tr>
-  	<td>37</td>
-  	<td>任一数组的步幅小于 1 。</td>
+    <td>37</td>
+    <td>任一数组的步幅小于 1 。</td>
   </tr>
 </tbody>
 </table>
@@ -425,7 +447,7 @@ vdb test_dot_stride_error2.s
     <td colspan="4"><code>Loss functions</code>: 任务 4 。</td>
   </tr>
   <tr>
-  	<td rowspan="4" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="4" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向第一个整数数组开头的指针。</td>
@@ -455,10 +477,10 @@ vdb test_dot_stride_error2.s
 </table>
 <table>
 <colgroup>
-<col span="1" style="width: 18%;">
+<col span="1" style="width: 15%;">
 <col span="1" style="width: 14%;">
 <col span="1" style="width: 19%;">
-<col span="1" style="width: 49%;">
+<col span="1" style="width: 52%;">
 </colgroup>
 <tbody>
   <tr>
@@ -479,12 +501,26 @@ vdb test_dot_stride_error2.s
 </tbody>
 </table>
 如果输入格式不正确，函数将返回以下错误代码：
-
-| 返回码       |异常                       |
-|-------------|--------------------------|
-|36           |数组的长度小于 1 。|
-|26           |<code>malloc</code> 返回错误|
-
+<table>
+<colgroup>
+<col span="1" style="width: 35%;">
+<col span="1" style="width: 65%;">
+</colgroup>
+<tbody>
+  <tr>
+    <td><b>返回码</b></td>
+    <td><b>异常</b></td>
+  </tr>
+  <tr>
+    <td>36</td>
+    <td>数组的长度小于 1 。</td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td><code>malloc</code> 返回错误</td>
+  </tr>
+</tbody>
+</table>
 要测试你的代码覆盖率，请输入 <code>bash test.sh coverage</code> 。确保你的测试用例达到 100% 的覆盖率。（换句话说，你的测试必须触发实现代码中的每一行被执行。）
 
 ## 调用约定（ Calling Convention ）
@@ -684,7 +720,7 @@ jal ra, checkCalleeSavedRegs         # check the saved registers values didn't c
     <td colspan="4"><code>matmul</code>: 任务 6 。</td>
   </tr>
   <tr>
-  	<td rowspan="7" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="7" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向矩阵 A 开头的指针。（被存成一个行优先的整数数组）</td>
@@ -733,16 +769,16 @@ jal ra, checkCalleeSavedRegs         # check the saved registers values didn't c
 </colgroup>
 <tbody>
   <tr>
-  	<td><b>返回码</b></td>
-  	<td><b>异常</b></td>
+    <td><b>返回码</b></td>
+    <td><b>异常</b></td>
   </tr>
   <tr>
-  	<td>38</td>
-  	<td>矩阵的长度或宽度小于 1 。</td>
+    <td>38</td>
+    <td>矩阵的长度或宽度小于 1 。</td>
   </tr>
   <tr>
-  	<td>38</td>
-  	<td>第一个矩阵 A 的列数（宽度）不等于第二个矩阵 B 的行数（高度）。</td>
+    <td>38</td>
+    <td>第一个矩阵 A 的列数（宽度）不等于第二个矩阵 B 的行数（高度）。</td>
   </tr>
 </tbody>
 </table>
@@ -852,24 +888,24 @@ vdb test_matmul_zero_dim_m1.s
 </colgroup>
 <tbody>
   <tr>
-  	<td><b>返回码</b></td>
-  	<td><b>异常</b></td>
+    <td><b>返回码</b></td>
+    <td><b>异常</b></td>
   </tr>
   <tr>
-  	<td>26</td>
-  	<td><code>malloc</code> 返回错误。</td>
+    <td>26</td>
+    <td><code>malloc</code> 返回错误。</td>
   </tr>
   <tr>
-  	<td>27</td>
-  	<td><code>fopen</code> 返回错误。</td>
+    <td>27</td>
+    <td><code>fopen</code> 返回错误。</td>
   </tr>
   <tr>
-  	<td>28</td>
-  	<td><code>fclose</code> 返回错误。</td>
+    <td>28</td>
+    <td><code>fclose</code> 返回错误。</td>
   </tr>
   <tr>
-  	<td>29</td>
-  	<td><code>fread</code> 没有读取正确的字节数。</td>
+    <td>29</td>
+    <td><code>fread</code> 没有读取正确的字节数。</td>
   </tr>
 </tbody>
 </table>
@@ -959,10 +995,10 @@ vdb test_matmul_zero_dim_m1.s
 </colgroup>
 <tbody>
   <tr>
-  	<td colspan="4"><code>malloc</code>：分配堆内存。</td>
+    <td colspan="4"><code>malloc</code>：分配堆内存。</td>
   </tr>
   <tr>
-  	<td style="vertical-align: middle;"><b>参数</b></td>
+    <td style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int</code></td>
     <td>要分配的内存大小（以字节为单位）。</td>
@@ -992,10 +1028,10 @@ vdb test_matmul_zero_dim_m1.s
 </colgroup>
 <tbody>
   <tr>
-  	<td colspan="4"><code>fclose</code>：关闭文件，并保存我们对文件所做的任何写入操作。</td>
+    <td colspan="4"><code>fclose</code>：关闭文件，并保存我们对文件所做的任何写入操作。</td>
   </tr>
   <tr>
-  	<td style="vertical-align: middle;"><b>参数</b></td>
+    <td style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int</code></td>
     <td>我们要关闭的文件的文件描述符，由之前的 <code>fopen</code> 返回。</td>
@@ -1088,20 +1124,20 @@ vdb test_read_fail_malloc.s
 </colgroup>
 <tbody>
   <tr>
-  	<td><b>返回码</b></td>
-  	<td><b>异常</b></td>
+    <td><b>返回码</b></td>
+    <td><b>异常</b></td>
   </tr>
   <tr>
-  	<td>27</td>
-  	<td><code>fopen</code> 返回错误。</td>
+    <td>27</td>
+    <td><code>fopen</code> 返回错误。</td>
   </tr> 
   <tr>
-  	<td>30</td>
-  	<td><code>fwrite</code> 没有写入正确的字节数。</td>
+    <td>30</td>
+    <td><code>fwrite</code> 没有写入正确的字节数。</td>
   </tr>
   <tr>
-  	<td>28</td>
-  	<td><code>fclose</code> 返回错误。</td>
+    <td>28</td>
+    <td><code>fclose</code> 返回错误。</td>
   </tr>
 
 </tbody>
@@ -1198,10 +1234,10 @@ vdb test_read_fail_malloc.s
 </colgroup>
 <tbody>
   <tr>
-  	<td colspan="4"><code>fclose</code>：关闭文件，并保存我们对文件所做的任何写入操作。</td>
+    <td colspan="4"><code>fclose</code>：关闭文件，并保存我们对文件所做的任何写入操作。</td>
   </tr>
   <tr>
-  	<td style="vertical-align: middle;"><b>参数</b></td>
+    <td style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int</code></td>
     <td>我们要关闭的文件的文件描述符，由之前的 <code>fopen</code> 返回。</td>
@@ -1262,7 +1298,7 @@ vdb test_write_fail_fwrite.s
     <td colspan="4"><code>classify</code>：任务 9 。</td>
   </tr>
   <tr>
-  	<td rowspan="7" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="7" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int</code></td>
     <td><code>argc</code> （提供的参数数量）</td>
@@ -1313,16 +1349,16 @@ vdb test_write_fail_fwrite.s
 </colgroup>
 <tbody>
   <tr>
-  	<td><b>返回码</b></td>
-  	<td><b>异常</b></td>
+    <td><b>返回码</b></td>
+    <td><b>异常</b></td>
   </tr>
   <tr>
-  	<td>26</td>
-  	<td><code>malloc</code> 返回错误。</td>
+    <td>26</td>
+    <td><code>malloc</code> 返回错误。</td>
   </tr>
   <tr>
-  	<td>31</td>
-  	<td>命令行参数数量不正确。请注意，程序应接收 5 个参数，因为 <code>a1[0]</code> 保留用于程序名称。</td>
+    <td>31</td>
+    <td>命令行参数数量不正确。请注意，程序应接收 5 个参数，因为 <code>a1[0]</code> 保留用于程序名称。</td>
   </tr>
 </tbody>
 </table>
@@ -1379,10 +1415,10 @@ vdb test_write_fail_fwrite.s
 </colgroup>
 <tbody>
   <tr>
-  	<td colspan="4"><code>malloc</code>：分配堆内存。</td>
+    <td colspan="4"><code>malloc</code>：分配堆内存。</td>
   </tr>
   <tr>
-  	<td style="vertical-align: middle;"><b>参数</b></td>
+    <td style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int</code></td>
     <td>要分配的内存大小（以字节为单位）。</td>
@@ -1407,7 +1443,7 @@ vdb test_write_fail_fwrite.s
     <td colspan="4"><code>matmul</code>: 任务 6 。</td>
   </tr>
   <tr>
-  	<td rowspan="7" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="7" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向矩阵 A 开头的指针。（被存成一个行优先的整数数组）</td>
@@ -1463,7 +1499,7 @@ vdb test_write_fail_fwrite.s
     <td colspan="4"><code>relu</code> ：任务 2。</td>
   </tr>
   <tr>
-  	<td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向整数数组开头的指针。</td>
@@ -1535,7 +1571,7 @@ vdb test_write_fail_fwrite.s
     <td colspan="4"><code>argmax</code>: 任务 3 。</td> 
   </tr>
   <tr>
-  	<td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向整数数组开头的指针。</td>
@@ -1604,10 +1640,10 @@ vdb test_write_fail_fwrite.s
 </ol>
 <table>
 <colgroup>
-<col span="1" style="width: 18%;">
-<col span="1" style="width: 14%;">
-<col span="1" style="width: 20%;">
-<col span="1" style="width: 48%;">
+<col span="1" style="width: 15%;">
+<col span="1" style="width: 9%;">
+<col span="1" style="width: 9%;">
+<col span="1" style="width: 67%;">
 </colgroup>
 <tbody>
   <tr>
@@ -1685,10 +1721,10 @@ vdb ../tests/chain-1/chain.s
 </colgroup>
 <tbody>
   <tr>
-  	<td colspan="4"><code>malloc</code>：分配堆内存。</td>
+    <td colspan="4"><code>malloc</code>：分配堆内存。</td>
   </tr>
   <tr>
-  	<td style="vertical-align: middle;"><b>参数</b></td>
+    <td style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int</code></td>
     <td>要分配的内存大小（以字节为单位）。</td>
@@ -1934,7 +1970,7 @@ vdb ../tests/chain-1/chain.s
     <td colspan="4"><code>relu</code> ：任务 2。</td>
   </tr>
   <tr>
-  	<td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向整数数组开头的指针。</td>
@@ -1964,7 +2000,7 @@ vdb ../tests/chain-1/chain.s
     <td colspan="4"><code>argmax</code>: 任务 3 。</td> 
   </tr>
   <tr>
-  	<td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="2" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向整数数组开头的指针。</td>
@@ -1996,7 +2032,7 @@ vdb ../tests/chain-1/chain.s
     <td colspan="4"><code>dot</code>: 任务 4 。</td>
   </tr>
   <tr>
-  	<td rowspan="5" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="5" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向第一个整数数组开头的指针。</td>
@@ -2043,7 +2079,7 @@ vdb ../tests/chain-1/chain.s
     <td colspan="4"><code>Loss functions</code>: 任务 4 。</td>
   </tr>
   <tr>
-  	<td rowspan="4" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="4" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向第一个整数数组开头的指针。</td>
@@ -2111,7 +2147,7 @@ vdb ../tests/chain-1/chain.s
     <td colspan="4"><code>matmul</code>: 任务 6 。</td>
   </tr>
   <tr>
-  	<td rowspan="7" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="7" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int *</code></td>
     <td>一个指向矩阵 A 开头的指针。（被存成一个行优先的整数数组）</td>
@@ -2243,7 +2279,7 @@ vdb ../tests/chain-1/chain.s
     <td colspan="4"><code>classify</code>：任务 9 。</td>
   </tr>
   <tr>
-  	<td rowspan="7" style="vertical-align: middle;"><b>参数</b></td>
+    <td rowspan="7" style="vertical-align: middle;"><b>参数</b></td>
     <td><code>a0</code></td>
     <td><code>int</code></td>
     <td><code>argc</code> （提供的参数数量）</td>
