@@ -132,7 +132,7 @@
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=13">11. RISC-V: 程序控制</a></td>
           <td></td>
           <td></td>
-          <td rowspan="8">项目 2: CS61Classify</td>
+          <td rowspan="8"><a href="../Projects/Project_2/index.html">项目 2: CS61Classify</a></td>
         </tr>
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=14">12. RISC-V: 指令格式(1)</a></td>
