@@ -14,7 +14,7 @@
 
 >**项目 2 的相关问题在[常见问题](https://cs61c.org/fa24/resources/common-errors/)页面的下方列出**。<br>
 
-## 设置： Git
+### 设置： Git
 
 1. 在你的 **本地机器** 上 **克隆** 该代码仓库（本项目完全不需要使用 Hive 服务器）。Windows 用户应使用 Git Bash 来进行克隆操作。
 ```bash
@@ -36,10 +36,10 @@ git pull starter main
 
 如果你遇到 git 相关问题，看[这里](https://cs61c.org/fa24/resources/common-errors/)
 
-## 设置： Java 和 Python
+### 设置： Java 和 Python
 确认你已经遵循了 [Lab 0 练习 2 ](../Labs/Lab_0.md)。
 
-## 设置：Venus
+### 设置：Venus
 我们使用 Venus web interface 来调试。步骤和[Lab 3](../Labs/Lab_3.md) Venus 设置相似。
 
 1. 在 <code>61c-proj2</code> 目录下输入 <code> bash test.sh download_tools </code>下载 Venus 。（你只用运行一次。）
