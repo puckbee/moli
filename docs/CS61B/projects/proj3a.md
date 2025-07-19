@@ -174,8 +174,8 @@ System.out.println(r.nextInt());
       <summary>（点击展开）走廊宽度的示例。</summary>
       <p>
         下面是宽度为1的走廊(大多数走廊应该是这样的)
-        <img src="images/proj3a/width1-hallway.png" alt="width1-hallway">
-        下面是宽度为2的走廊
+        <img src="images/proj3a/width1-hallway.png" alt="width1-hallway"> <br>
+        下面是宽度为2的走廊<br>
         <img src="images/proj3a/width2-hallway.png" alt="width2-hallway">
       </p>
     </details>
@@ -208,7 +208,7 @@ System.out.println(r.nextInt());
         例如，左边的房间在角落处有墙体，但右边的房间没有。这两种情况都是允许的。（注意：这个世界本身是无效的，因为这两个房间是不连通的。）
         <img src="images/proj3a/room-corners.png" alt="room-corners">
         例如，这个走廊的左上角有一个墙壁图块，但右上角没有。这两种情况都是允许的。（注意：这个世界本身是无效的，因为它没有房间。）
-        <img src="images/hallway-corners.png" alt="hallway-corners">
+        <img src="images/proj3a/hallway-corners.png" alt="hallway-corners">
       </p>
     </details>
     <br>
