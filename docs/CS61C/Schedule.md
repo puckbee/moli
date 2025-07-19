@@ -171,7 +171,7 @@
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=20">19. SDS(1)</a></td>
           <td></td>
           <td></td>
-          <td rowspan="11">项目 3: CS61CPU</td>
+          <td rowspan="11"><a href="../Projects/Project_3/index.html">项目 3: CS61CPU</a></td>
         </tr>
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=21">20. SDS(2)</a></td>
