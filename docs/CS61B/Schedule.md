@@ -215,7 +215,7 @@
     <td rowspan="3">11.排序I</td>
     <td rowspan="3"><a href="../labs/lab10">实验10：俄罗斯方块（可选）</a></td>
     <td rowspan="3"></td>
-    <td rowspan="6">项目3A：世界生成</td>
+    <td rowspan="6"><a href="../projects/proj3a">项目3A：世界生成</td>
   </tr>
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=33">33. 排序与算法下界</a></td>
@@ -239,7 +239,7 @@
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=38">38. 压缩（可选）</a></td>
     <td rowspan="3">无讨论</td>
-    <td rowspan="3">项目3B：交互功能</td>
+    <td rowspan="3"><a href="../projects/proj3b">项目3B：交互功能</td>
   </tr>
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=39">39. P与NP问题（可选）</a></td>
