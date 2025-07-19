@@ -132,7 +132,7 @@
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=13">11. RISC-V: 程序控制</a></td>
           <td></td>
           <td></td>
-          <td rowspan="8">项目 2: CS61Classify</td>
+          <td rowspan="8"><a href="../Projects/Project_2/index.html">项目 2: CS61Classify</a></td>
         </tr>
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=14">12. RISC-V: 指令格式(1)</a></td>
@@ -171,7 +171,7 @@
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=20">19. SDS(1)</a></td>
           <td></td>
           <td></td>
-          <td rowspan="15">项目 3: CS61CPU</td>
+          <td rowspan="11"><a href="../Projects/Project_3/index.html">项目 3: CS61CPU</a></td>
         </tr>
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=21">20. SDS(2)</a></td>
@@ -195,8 +195,8 @@
         </tr>
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=24">24. RISC-V: 单周期数据通路(1)</a></td>
-          <td></td>	 
-          <td rowspan="3"><a href="../Labs/Lab_5/index.html">实验 5: Logisim</a></td>
+          <td></td>
+          <td><a href="../Labs/Lab_5/index.html">实验 5: Logisim</a></td>
         </tr>
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=25">25. RISC-V: 单周期数据通路(2)</a></td>
@@ -227,7 +227,7 @@
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=38">30. 并行(1) - 介绍</a></td>
           <td></td>
           <td>实验 6: CPU、流水线</td>
-	  
+          <td rowspan="4"><a href="../Projects/Project_4/index.html">项目 4: <span style="color:red;">CS61</span>ka<span style="color:red;">C</span>how</a></td>
         </tr>
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=40">31. 并行(2) - SIMD</a></td>
@@ -260,7 +260,7 @@
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=44">36. 虚拟内存(2)</a></td>
           <td></td>
           <td rowspan="2">实验 7: 并行</td>
-           <td rowspan="3"><a href="../Projects/Project_4/index.html">项目 4: <span style="color:red;">CS61</span>ka<span style="color:red;">C</span>how</td>
+          <td></td>
         </tr>
         <tr>
           <td>37. 操作系统基础</td>
@@ -270,8 +270,8 @@
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=51">38. 总结</a></td>
           <td>讨论 12: 虚拟内存</td>
-          <td>
-          <td>
+          <td></td>
+          <td></td>
         </tr>
       </tbody>
     </table>
