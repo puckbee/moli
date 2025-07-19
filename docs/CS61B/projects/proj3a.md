@@ -36,6 +36,7 @@
 你的项目只能使用标准 Java 库，或我们随你的仓库和 `library-sp25` 一起提供的任何库。
 
 以下是允许导入的非详尽的列表
+
 * `java.util.List`, `java.util.ArrayList`, `java.util.Collections`, `java.awt.*`, `java.io.*`，或任何以 `java.` 开头的都可以。
 * `javax.sound`, javax.imageio, javax.swing.JOptionPane，或任何以 javax. 开头的都可以。
 * `edu.princeton.cs.algs4.StdDraw`, `edu.princeton.cs.algs4.StdAudio`，或任何以 `edu.princeton.cs.algs4.` 开头的都可以，因为它们包含在 `library-sp25` 中。
@@ -46,6 +47,7 @@
 总的来说，你的目标是创建一个 `TETile` 对象的二维数组，并用不同的瓦片填充该数组，以创建一个美观的世界。接着，你可以调用我们提供的库函数之一，将这个世界显示给用户。
 
 关于方向的重要说明：
+
 * `world[0][0]` 对应着世界的左下角瓦片。
 * 第一个坐标是 x 坐标。例如，`world[8][0]` 位于左下角瓦片右侧 8 个单位。
 * 第二个坐标是 y 坐标。例如，`world[0][3]` 位于左下角瓦片上方 3 个单位。
@@ -137,6 +139,7 @@ System.out.println(r.nextInt());
 这段代码片段总是会打印出两次相同的数字。如果你多次运行这个程序，你仍然会得到两次相同的数字。
 
 在项目 3 中，你应该始终为你的 `Random` 对象设置种子，这样你的世界看起来是随机的，但你可以为了调试和评分目的而一致地重新创建它们。`RandomUtils` 类提供了一些有用的方法，可以从 `Random` 对象中获取其他类型的随机性，例如：
+
 * `int uniform(Random random, int a, int b)`: 返回范围 `[a, b)` 内的一个整数。
 * `T randomChoice(Random random, List<T> items)`: 从 items 中返回一个随机项。
 * `void shuffle(Random random, Object[] a)`: 打乱给定数组。
@@ -159,80 +162,61 @@ System.out.println(r.nextInt());
 
     房间重叠是允许的，只要明确这些方块属于房间而非走廊即可。
 
-    <details>
-      <summary>（点击展开）无效世界的示例，因为无法区分房间和走廊。</summary>
-      <p>
-        <img src="images/proj3a/invalid-indistinct-hallways.png" alt="invalid-indistinct-hallways">
-        <img src="images/proj3a/invalid-indistinct-hallways2.png" alt="invalid-indistinct-hallways2">
-      </p>
-    </details>
-    <br>
+    ??? "（点击展开）无效世界的示例，因为无法区分房间和走廊。"
+
+        ![invalid-indistinct-hallways](images/proj3a/invalid-indistinct-hallways.png)
+        ![invalid-indistinct-hallways2](images/proj3a/invalid-indistinct-hallways2.png)
 
 2. 至少有一些房间应该是矩形的。你也可以选择支持其他形状的房间。
 3. 走廊的宽度应为1格或2格。然而，走廊必须在视觉上与房间区分开来。绝大多数学生使用1格宽的走廊。
-    <details>
-      <summary>（点击展开）走廊宽度的示例。</summary>
-      <p>
-        下面是宽度为1的走廊(大多数走廊应该是这样的)
-        <img src="images/proj3a/width1-hallway.png" alt="width1-hallway"> <br>
+
+    ??? "（点击展开）走廊宽度的示例。"
+
+        下面是宽度为1的走廊(大多数走廊应该是这样的)<br>
+        ![width1-hallway](images/proj3a/width1-hallway.png)<br>
         下面是宽度为2的走廊<br>
-        <img src="images/proj3a/width2-hallway.png" alt="width2-hallway">
-      </p>
-    </details>
-    <br>
+        ![width2-hallway](images/proj3a/width2-hallway.png)
 
 4. 你的世界生成器必须能够生成包含转弯的走廊（或者等效地，相互交叉的直线走廊）。随机生成的世界应高频率地包含转弯走廊，即大多数世界都应有转弯走廊。
-    5. 世界不应有任何死胡同走廊。走廊应始终通向房间。
-    <details>
-      <summary> 无效世界的示例，因为它有一个死胡同走廊。</summary>
-      <p>
-        <img src="images/proj3a/invalid-dead-end-hallway.png" alt="invalid-dead-end-hallway">
-      </p>
-    </details>
-    <br>
+
+5. 世界不应有任何死胡同走廊。走廊应始终通向房间。
+
+    ??? "无效世界的示例，因为它有一个死胡同走廊。"
+
+        ![invalid-dead-end-hallway](images/proj3a/invalid-dead-end-hallway.png)
+  
 6. 墙壁、地板和空地都应在视觉上清晰可辨。
 
     最简单的方法是使用三种不同的图块类型：一种用于墙壁，一种用于地板，一种用于空地。
 
-    <details>
-      <summary> 无效世界的示例，因为我们无法区分墙壁和地板。</summary>
-      <p>
-        <img src="images/proj3a/invalid-indistinct-walls.png" alt="invalid-indistinct-walls">
-      </p>
-    </details>
-    <br>
+    ??? "无效世界的示例，因为我们无法区分墙壁和地板。"
+
+        ![invalid-indistinct-walls](images/proj3a/invalid-indistinct-walls.png)
+
 7. 房间和走廊角落的墙壁是可选的。
-    <details>
-      <summary> 例如，所有这些房间和走廊都是有效的。</summary>
-      <p>
+
+    ??? "例如，所有这些房间和走廊都是有效的。"
+
         例如，左边的房间在角落处有墙体，但右边的房间没有。这两种情况都是允许的。（注意：这个世界本身是无效的，因为这两个房间是不连通的。）
-        <img src="images/proj3a/room-corners.png" alt="room-corners">
+        ![room-corners](images/proj3a/room-corners.png)
         例如，这个走廊的左上角有一个墙壁图块，但右上角没有。这两种情况都是允许的。（注意：这个世界本身是无效的，因为它没有房间。）
-        <img src="images/proj3a/hallway-corners.png" alt="hallway-corners">
-      </p>
-    </details>
-    <br>
+        ![hallway-corners](images/proj3a/hallway-corners.png)
   
 8. 所有地面方块（房间和走廊）都应彼此连通。注意：作为进阶功能的一部分，你最终可能会创建出仅在特定条件下可达的世界，例如通过使用传送器、上锁的门、可破坏的墙壁等。
     换句话说，任意两个地面方块之间都应该能够找到一条由地面方块组成的路径。
 9. 所有墙壁“内部”的空间都应该是地面方块，而所有墙壁“外部”的空间都应该是空白空间方块。
     换句话说，一个地面方块只能与地面方块或墙壁方块相邻。
 10. 房间不能超出世界边缘。换句话说，世界边缘不应该有任何地面方块。
-    <details>
-      <summary> (点击展开) 这是一个无效世界的例子，因为它超出了世界边缘。</summary>
-      <p>
-        <img src="images/proj3a/invalid-clipping-world.png" alt="invalid-clipping-world">
-      </p>
-    </details>
-    <br>
+
+    ??? "(点击展开) 这是一个无效世界的例子，因为它超出了世界边缘。"
+
+        ![invalid-clipping-world](images/proj3a/invalid-clipping-world.png)
+
 11. 世界不应有过多的未使用的空间。没有严格要求，但请尽量确保世界至少50%的空间被房间和走廊填充。
-    <details>
-      <summary> (点击展开) 这是一个无效世界的例子，因为房间太少。</summary>
-      <p>
-        <img src="images/proj3a/invalid-insufficient-rooms.png" alt="invalid-insufficient-rooms">
-      </p>
-    </details>
-    <br>
+
+    ??? "(点击展开) 这是一个无效世界的例子，因为房间太少。"
+
+        ![invalid-insufficient-rooms](images/proj3a/invalid-insufficient-rooms.png)
 
 ## 伪随机世界的要求：
 1. 世界必须是伪随机的。<
@@ -251,27 +235,22 @@ System.out.println(r.nextInt());
 ## 杂项边缘情况常见问题解答：
 1. 两个相邻的房间可以由一堵墙或两堵墙隔开。两种情况都可以。
     同样地，如果一个房间和一条走廊相邻，或者两条走廊相邻，它们可以由一堵墙或两堵墙隔开。两种情况都可以。
-    <details>
-      <summary> (点击展开) 这是一个无效世界的例子，因为房间太少。</summary>
-      <p>
+
+    ??? "(点击展开) 这是一个无效世界的例子，因为房间太少。"
+
         请注意，无论你选择哪种选项（一堵墙或两堵墙），这两个房间都必须是连通的，即必须有通路连接两个房间。以下世界是无效的，因为房间之间没有连通。
-        由一堵墙隔开的两个房间：
-        <img src="images/proj3a/single-wall.png" alt="single-wall">
-        由两堵墙隔开的两个房间：
-        <img src="images/proj3a/double-wall.png" alt="double-wall">
-      </p>
-    </details>
-    <br>
+        由一堵墙隔开的两个房间：<br>
+        ![single-wall](images/proj3a/single-wall.png)<br>
+        由两堵墙隔开的两个房间：<br>
+        ![double-wall](images/proj3a/double-wall.png)
+
 2. 墙壁不应出现在房间内部，因为这会使人难以分辨哪些方块属于房间，哪些方块属于走廊。
     偶尔发生这种情况是可以的，但不应该经常发生。
-    <details>
-      <summary> (点击展开) 这是一个无效世界的例子，因为房间太少。</summary>
-      <p>
+
+    ??? "(点击展开) 这是一个无效世界的例子，因为房间太少。"
+
         如果这种情况经常发生，则视为无效。
-        <img src="images/proj3a/wall-inside-room.png" alt="wall-inside-room">
-      </p>
-    </details>
-    <br>
+        ![wall-inside-room](images/proj3a/wall-inside-room.png)
 
 ## 任务 2：设计文档
 在开始编写任何代码之前，您需要先撰写一份设计文档！这能让您规划代码库的整体设计，从而将代码组织成更小的部分，并逐一解决问题。
