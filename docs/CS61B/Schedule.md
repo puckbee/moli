@@ -227,7 +227,6 @@
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=35">35. 基数排序</a></td>
     <td rowspan="3">12.排序II</td>
     <td rowspan="3"><a href="../labs/lab11">实验11：基于比较的排序（可选）</td>
-    <td rowspan="6"></td>
     <td rowspan="6">作业4</td>
   </tr>
   <tr>
@@ -239,6 +238,7 @@
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=38">38. 压缩（可选）</a></td>
     <td rowspan="3">无讨论</td>
+    <td rowspan="3"></td>
     <td rowspan="3"><a href="../projects/proj3b">项目3B：交互功能</td>
   </tr>
   <tr>
