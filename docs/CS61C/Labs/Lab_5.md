@@ -6,7 +6,7 @@
 
 ## 配置
 
-??? note "你必须在本地机器上完成本实验。如果需要重新设置你的本地机器，请查看 [Lab 0](https://cs61c.org/fa24/labs/lab00/)。"
+??? note "你必须在本地机器上完成本实验。如果需要重新设置你的本地机器，请查看 [Lab 0](Lab0.md)。"
 
 在本地机器的 `labs` 目录中，拉取你可能在之前实验中所做的更改：
 
@@ -51,7 +51,7 @@ bash tools/download_tools.sh
 Exception in thread "main" java.lang.UnsupportedClassVersionError: com/cburch/logisim/Main has been compiled by a more recent version of the Java Runtime (class file version 60.0), this version of the Java Runtime only recognizes class file versions up to 52.0
 ```
 
-你需要将 Java 更新至 16+。请按照 [Lab 0 的设置说明](https://cs61c.org/fa24/labs/lab00/) 进行设置。
+你需要将 Java 更新至 16+。请按照 [Lab 0 的设置说明](Lab_0.md) 进行设置。
 
 ## Exercise 1: 简介
 

@@ -7,7 +7,7 @@
 ## 实验设置
 
 
-??? note "你必须在本地机器上完成本实验。如需重新配置环境，请参考 [Lab 0](https://web.archive.org/web/20241219154533/https://cs61c.org/fa24/labs/lab00/)。"
+??? note "你必须在本地机器上完成本实验。如需重新配置环境，请参考 [Lab 0](Lab_0.md)。"
 
 在本地的 `labs` 文件夹中，拉取你之前实验的变更：
 
@@ -48,7 +48,7 @@ bash tools/download_tools.sh
 
 我们将继续使用 [Venus](https://venus.cs61c.org) 进行 RISC-V 模拟。请参考 [Venus 使用文档](https://cs61c.org/sp25/resources/venus-reference/) 以熟悉界面与功能。
 
-挂载 Lab 4 的文件方法与 [Lab 3](https://web.archive.org/web/20241219154533/https://cs61c.org/fa24/labs/lab03/#exercise-1-venus-basics) 相同。
+挂载 Lab 4 的文件方法与 [Lab 3](Lab_3.md) 相同。
 
 ## 调用约定简介
 

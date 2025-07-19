@@ -29,7 +29,7 @@
 
 
 
-??? note "**必须在 hive 机器上完成本项目**，请参考 [Lab 0](https://cs61c.org/fa24/labs/lab00/) 配置 hive。"  
+??? note "**必须在 hive 机器上完成本项目**，请参考 [Lab 0](../Labs/Lab_0.md) 配置 hive。"  
 
 
 
