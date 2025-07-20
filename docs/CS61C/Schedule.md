@@ -226,7 +226,7 @@
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=38">30. 并行(1) - 介绍</a></td>
           <td></td>
-          <td>实验 6: CPU、流水线</td>
+          <td><a href="../Labs/Lab_6/index.html">实验 6: CPU、流水线</a></td>
           <td rowspan="4"><a href="../Projects/Project_4/index.html">项目 4: <span style="color:red;">CS61</span>ka<span style="color:red;">C</span>how</a></td>
         </tr>
         <tr>

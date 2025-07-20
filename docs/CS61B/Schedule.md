@@ -142,7 +142,7 @@
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=14">14. 并查集</a></td>
     <td rowspan="3">5. 渐近线 II</td>
-    <td rowspan="3">实验5:项目1回顾</td>
+    <td rowspan="3"><a href="../labs/lab05">实验5: 项目1回顾</a></td>
   </tr>
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=15">15. 继承、集合、映射与二叉搜索树</a></td>
@@ -179,7 +179,7 @@
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=23">23. 最短路径</a></td>
     <td rowspan="3">8. 图表、堆</td>
-    <td rowspan="3">实验8：左倾红黑树</td>
+    <td rowspan="3"><a href="../labs/lab08">实验8：左倾红黑树</a></td>
   </tr>
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=24">24. 最小生成树</a></td>
