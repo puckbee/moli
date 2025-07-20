@@ -7,7 +7,7 @@
 
 <h3>
 
-[官方网站](https://puckbee.github.io/moli) | [贡献说明](CONTRIBUTING.md)
+[官方网站](https://moli.oscc.cc/) | [贡献说明](CONTRIBUTING.md)
 
 </h3>
 
