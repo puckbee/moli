@@ -191,7 +191,7 @@
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=26">26. 字典树</a></td>
     <td rowspan="3">9. 最短路径，MST</td>
     <td rowspan="3"></td>
-    <td rowspan="6">项目2B：Wordnet</td>
+    <td rowspan="6"><a href="../projects/proj2b">项目2B：Wordnet</td>
   </tr>
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=27">27. 基础排序算法</a></td>
