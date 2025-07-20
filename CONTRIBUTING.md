@@ -28,4 +28,4 @@ make serve # 默认访问 http://127.0.0.1:8000/moli/
 * 请提交代码到 `dev` 分支，如果通过，我们会在特定时间合并到 `main` 分支上
 
 [1]: https://github.com/puckbee/moli/issues
-[2]: https://puckbee.github.io/moli/Contact/Contact/
+[2]: https://puckbee.github.io/moli/#_1
