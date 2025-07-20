@@ -259,7 +259,7 @@
         <tr>
           <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=44">36. 虚拟内存(2)</a></td>
           <td></td>
-          <td rowspan="2">实验 7: 并行</td>
+          <td rowspan="2"><a href="../Labs/Lab_7/index.html">实验 7: 并行</a></td>
           <td></td>
         </tr>
         <tr>
