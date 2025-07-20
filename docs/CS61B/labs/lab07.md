@@ -109,7 +109,7 @@ public MyHashMap(int initialCapacity, double loadFactor);
 
 * 你的哈希映射初始桶数量应等于 `initialCapacity`。当负载因子超过最大 `loadFactor` 阈值时，应扩展 `MyHashMap` 的大小。回想一下，当前 **负载因子** 计算公式为：`loadFactor = N/M`，其中 N是映射中的元素数量，M是桶的数量。负载因子代表每个桶的平均元素数量。若未指定 `initialCapacity`和 `loadFactor`，应设置默认值 `initialCapacity = 16` 和 `loadFactor = 0.75`（与 Java 内置 `HashMap` 相同）。
 
-* 你应使用分离链接法处理冲突。除桶类、`Collection`、`Iterator`、`Set`和 `HashSet` ·外，不应该使用其他库。关于分离链接法的实现细节，请参阅上文的 **框架代码** 部分。
+* 你应使用分离链接法处理冲突。除桶类、`Collection`、`Iterator`、`Set`和 `HashSet` 外，不应该使用其他库。关于分离链接法的实现细节，请参阅上文的 **框架代码** 部分。
 
 * 由于我们使用 `Collection<Node>[]` 作为桶数组，在实现 `MyHashMap` 时，你只能使用 `Collection` 接口指定的方法。**当你在 `Collection` 中搜索 `Node` 时，需遍历该集合并找到 `key` 与目标键 `.equals()` 匹配的 `Node`。**
 * 若同一键被重复插入，每次都应更新其值（即不应添加新 `Node`）。可假定永远不会插入 `null` 键。
@@ -124,7 +124,7 @@ public MyHashMap(int initialCapacity, double loadFactor);
 
 2. 若 `%` 运算结果为负，可加上数组长度使其转化为正数。
 
-3. 你可以使用 Math.abs() 函数将负值转为正值。请注意：|x| mod m、|x mod m|和 x mod m **通常不等价！** 我们在这里使用取模运算只是为了确保有效的索引值，不必关心元素被分配到哪个具体桶，因为优秀的哈希函数应能在正负值范围内均匀分布元素。
+3. 你可以使用 Math.abs() 函数将负值转为正值。请注意：|x| mod m、|x mod m| 和 x mod m **通常不等价！** 我们在这里使用取模运算只是为了确保有效的索引值，不必关心元素被分配到哪个具体桶，因为优秀的哈希函数应能在正负值范围内均匀分布元素。
 
 4. 基于选项3 但是使用位掩码变体（不了解位掩码无需担心）。这个方法超出 61B 课程范围，但因为部分参考资料使用，所以我们在这里列出。
 `
@@ -156,19 +156,19 @@ public MyHashMap(int initialCapacity, double loadFactor);
 
 我们提供了两个交互式速度测试文件：`InsertRandomSpeedTest.java` 和 `InsertInOrderSpeedTest.java`。在完成 `MyHashMap` 实现前，请勿运行这些测试。完成后，可在 `IntelliJ` 中运行测试。
 
-`InsertRandomSpeedTest` 类测试 `MyHashMap`、`ULLMap`（已提供）和 Java 内置 `HashMap`的元素插入速度。它的工作流程为：要求用户输入规模 N，然后生成 N 个长度为 10 的字符串，并以 <String, Integer>键值对形式插入映射。
+`InsertRandomSpeedTest` 类测试 `MyHashMap`、`ULLMap`（已提供）和 Java 内置 `HashMap`的元素插入速度。它的工作流程为：要求用户输入规模 N，然后生成 N 个长度为 10 的字符串，并以  `<String, Integer>` 键值对形式插入映射。
 
-运行测试，与基础实现与工业级实现相比，观察你的数据结构的性能变化随 N 的增长如何变化，并将结果记录到提供的 src/results.txt文件中。结果文件无固定格式要求，数据点数量不限，但我们希望你至少写一两句观察的结论。
+运行测试，与基础实现与工业级实现相比，观察你的数据结构的性能变化随 N 的增长如何变化，并将结果记录到提供的 `src/results.txt` 文件中。结果文件无固定格式要求，数据点数量不限，但我们希望你至少写一两句观察的结论。
 
-接着尝试运行 `InsertInOrderSpeedTest`，其行为类似 `InsertRandomSpeedTest`，但此次  `<String, Integer>` 键值对中的 `String` 按字典序递增插入。你的代码性能应与 Java 内置方案处于同一量级（例如相差 10 倍以内）。这表明：相比最先进的树形映射（`TreeMap`），最先进的哈希映射（`HashMap`）的实现相对更加简单。请思考一下 `BSTMap`/`TreeMap` 和其他数据结构之间的这种关系——是否存在哈希映射更具优势的场景？与同伴讨论并将答案写入 `results.txt`。
+接着尝试运行 `InsertInOrderSpeedTest`，其行为类似 `InsertRandomSpeedTest`，但此次  `<String, Integer>` 键值对中的 `String` 按字典序递增插入。你的代码性能应与 Java 内置方案处于同一量级（例如相差 10 倍以内）。这表明：相比最先进的树形映射（`TreeMap`），最先进的哈希映射（`HashMap`）的实现相对更加简单。请思考一下 `BSTMap`/`TreeMap` 和其他数据结构之间的这种关系，然后思考：是否存在哈希映射更具优势的场景？与同伴讨论并将答案写入 `results.txt`。
 
 ## 不同的桶类型
 
-若你已正确实现泛型 `Collection` 桶，大部分工作已经完成！我们可直接比较用于实现桶的不同数据结构。我们提供了 `speed/BucketsSpeedTest.java`，这是一个交互式测试程序：要求用户输入整数 L（后续操作所用字符串的长度）,接着在循环中要求用户输入整数 N，然后使用不同类型的桶运行 MyHashMap速度测试
+若你已正确实现泛型 `Collection` 桶，那么大部分工作已经完成！我们可直接比较用于实现桶的不同数据结构。我们提供了 `speed/BucketsSpeedTest.java`，这是一个交互式测试程序：要求用户输入整数 L（后续操作所用字符串的长度）,接着在循环中要求用户输入整数 N，然后使用不同类型的桶运行 `MyHashMap` 速度测试
 
 请运行测试，比较不同实现在 N 增长时的性能变化。与同伴讨论结果，并将结论记录到 `results.txt`。
 
-你可能会注意到，使用 `HashSet` 作为桶的实现会通过遍历整个数据结构来搜索 Node。但我们知道，哈希表本应支持更高效的查找。如果我们能在 `HashSet` 上使用常数时间搜索，我们的哈希表是否会获得渐进复杂度层面的加速？ 你无需实现新功能，只需与同伴讨论并将想法记录到 `results.txt`。
+你可能会注意到，使用 `HashSet` 作为桶的实现会通过遍历整个数据结构来搜索 ` Node` 。但我们知道，哈希表本应支持更高效的查找。如果我们能在 `HashSet` 上使用常数时间搜索，我们的哈希表是否会获得渐进复杂度层面的加速？ 你无需实现新功能，只需与同伴讨论并将想法记录到 `results.txt`。
 
 !!! TASK
 
@@ -178,6 +178,6 @@ public MyHashMap(int initialCapacity, double loadFactor);
 ## 可选练习
 这些练习不计分，但你仍然可以通过给定的测试获得反馈。
 
-在你的 `MyHashMap` 类中实现方法 `remove(K key)` 和 `remove(K key, V value)`。作为额外的挑战，尝试在不使用额外实例变量存储键集合的情况下实现 `keySet()` 和 `iterator()` 方法。
+在你的 `MyHashMap` 类中实现方法 `remove(K key)` 和 `remove(K key, V value)`。作为额外的挑战，尝试在不使用额外实例变量来存储键集合的情况下实现 `keySet()` 和 `iterator()` 方法。
 
 对于 `remove`，如果参数键在 `MyHashMap` 中不存在，你应该返回 `null`。否则，删除键值对 `(key, value)` 并返回关联的值。
