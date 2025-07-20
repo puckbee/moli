@@ -3,17 +3,15 @@
 ## [常见问题](https://sp25.datastructur.es/projects/proj2b/faq/)
 
 每个作业顶部都会提供 FAQ 链接。你也可以在网址末尾添加"/faq"访问。项目 2B 的 FAQ 位于[此处](https://sp25.datastructur.es/projects/proj2b/faq/)。
-## 检查点 & 设计文档截止时间 2025/3/21
-## 代码提交截止时间 2025/4/4
 
 在本项目中，你将完成 NGordnet 工具的实现。
 
 由于这是较新的项目，规范可能存在偶发错误或表述不清之处。如果你发现此类问题，请在Ed论坛反馈。
 
 !!! DANGER
-> **重要提示**：阅读完 2B 规范后，切勿立即开始编码！
->
-> 在实现任何 2B 代码前，请先完成[项目 2B：检查点](https://www.gradescope.com/courses/961758/assignments/5737910)以及[设计文档](https://www.gradescope.com/courses/961758/assignments/5737948)。
+    **重要提示**：阅读完 2B 规范后，切勿立即开始编码！
+
+    在实现任何 2B 代码前，请先完成[项目 2B：检查点](https://www.gradescope.com/courses/961758/assignments/5737910)以及[设计文档](https://www.gradescope.com/courses/961758/assignments/5737948)。
 
 ### 设计说明
 
@@ -24,8 +22,7 @@
 ## 项目设置
 
 !!! DANGER
-
-> **本项目设置与其他实验/项目不同。请勿跳过此步骤！**
+    **本项目设置与其他实验/项目不同。请勿跳过此步骤！**
 
 ### 框架设置
 
@@ -34,16 +31,13 @@
 3. 将你在 2A 中实现的 `ngrams` 模块（包括 `TimeSeries` 和 `NGramMap`）复制到 `proj2b.src.ngrams` 包。
 
 !!! WARNING
-
-> 若未完成 2A ，请跳过框架设置的步骤 3 。我们在框架文件中提供了 2A 的精简版解决方案。它包含支持 `countHistory` 方法的 `NGramMap` 实现，能够满足完成2B的需求。然而，它不包含 `TimeSeries` 的实现。框架文件中许多部分需要定义 `TimeSeries` 类才能编译，因此你必须注释掉这些部分或自行添加 `TimeSeries` 的实现。
-
-!!! INFO
-
-> 在过往的学期中，某些低效的 `NGramMap` 和 `TimeSeries` 实现通过了 2A 自动评分器，但在 2B 中失败。**如果你遇到自动评分器超时问题，我们建议恢复为 2A 的官方解决方案**。
+    若未完成 2A ，请跳过框架设置的步骤 3 。我们在框架文件中提供了 2A 的精简版解决方案。它包含支持 `countHistory` 方法的 `NGramMap` 实现，能够满足完成2B的需求。然而，它不包含 `TimeSeries` 的实现。框架文件中许多部分需要定义 `TimeSeries` 类才能编译，因此你必须注释掉这些部分或自行添加 `TimeSeries` 的实现。
 
 !!! INFO
+    在过往的学期中，某些低效的 `NGramMap` 和 `TimeSeries` 实现通过了 2A 自动评分器，但在 2B 中失败。**如果你遇到自动评分器超时问题，我们建议恢复为 2A 的官方解决方案**。
 
-> 如果你用自己的实现替换了 `NGramMap`，但后来更愿意使用官方解决方案，应通过 `git restore` 恢复原始框架版本（检查你的 `git log`）。你可以在实验 4 中了解更多相关信息。或者，你也可以从此处[框架仓库](https://github.com/Berkeley-CS61B/skeleton-sp25/blob/main/proj2b/src/ngrams/NGramMap.java)复制内容。
+!!! INFO
+    如果你用自己的实现替换了 `NGramMap`，但后来更愿意使用官方解决方案，应通过 `git restore` 恢复原始框架版本（检查你的 `git log`）。你可以在实验 4 中了解更多相关信息。或者，你也可以从此处[框架仓库](https://github.com/Berkeley-CS61B/skeleton-sp25/blob/main/proj2b/src/ngrams/NGramMap.java)复制内容。
 
 完成设置后，`proj2b` 目录结构应如下：
 ```
@@ -67,13 +61,11 @@ proj2b
 ## 开始实现
 
 !!! WARNING
-
-> **重要提示：** 在开始编码甚至设计项目之前，您需要先完成[项目 2B：检查点](https://www.gradescope.com/courses/961758/assignments/5737910)。我们认为这将有助于您理解项目。我们还将要求您向Gradescope提交[设计文档](https://docs.google.com/document/d/15j1vyx8zKwEi29JQ1Sd6Vl6R9AtbmJLWmL2BECFyx-w/edit?usp=sharing)。有关设计文档的更多详细信息可在[提交与评分](#提交与评分)部分找到。
+    **重要提示：** 在开始编码甚至设计项目之前，您需要先完成[项目 2B：检查点](https://www.gradescope.com/courses/961758/assignments/5737910)。我们认为这将有助于您理解项目。我们还将要求您向Gradescope提交[设计文档](https://docs.google.com/document/d/15j1vyx8zKwEi29JQ1Sd6Vl6R9AtbmJLWmL2BECFyx-w/edit?usp=sharing)。有关设计文档的更多详细信息可在[提交与评分](#提交与评分)部分找到。
 
 !!! TASK
-
-> 完成[项目 2B：检查点](https://www.gradescope.com/courses/961758/assignments/5737910)  
-> 完成检查点后，完善并提交您的[设计文档](https://www.gradescope.com/courses/961758/assignments/5737948)
+    完成[项目 2B：检查点](https://www.gradescope.com/courses/961758/assignments/5737910)  
+    完成检查点后，完善并提交您的[设计文档](https://www.gradescope.com/courses/961758/assignments/5737948)
 
 项目的这一部分旨在引导您为实施设计高效且正确的方案。您提出的设计对于处理这些案例至关重要。请在开始设计文档前仔细阅读 2B 规范。
 
@@ -92,7 +84,7 @@ proj2b
 
 ![wordnet-fig1](./images/proj2b/wordnet-fig1.png)
 
-上图中的每个节点是一个**同义词集**。同义词集由一个或多个具有相同含义的英语单词组成。例如，一个同义词集是["jump, parachuting"](http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s=jump&i=6&h=000010000000000000000000#c)，它表示使用降落伞降落到地面的行为。"jump, parachuting"是"descent"的下义词，因为"jump, parachuting"是(is-a)"descent"。
+上图中的每个节点是一个 **同义词集** 。同义词集由一个或多个具有相同含义的英语单词组成。例如，一个同义词集是["jump, parachuting"](http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s=jump&i=6&h=000010000000000000000000#c)，它表示使用降落伞降落到地面的行为。"jump, parachuting"是"descent"的下义词，因为"jump, parachuting"是(is-a)"descent"。
 
 英语单词可能属于多个同义词集。这只是表达单词可能有多种含义的另一种方式。例如，单词"jump"还属于同义词集["jump, leap"](http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s=jump&i=2&h=100000000000000000000000#c)，它表示更比喻性的跳跃概念(例如出席率的跃升)，而不是另一个同义词集中字面意义的跳跃(例如跳过水坑)。同义词集"jump, leap"的上义词是"increase"，因为"jump, leap"是(is-an)"increase"的一种类型。当然，还有其他"增加"事物的方式：例如，我们可以通过"augmentation"来增加事物，因此在上图中从"increase"指向"augmentation"的箭头也就不足为奇。
 
@@ -101,7 +93,7 @@ proj2b
 一个同义词集可能是多个同义词集的下义词。例如，"actifed"既是"antihistamine"也是"nasal_decongestant"的下义词，因为"actifed"同时属于这两种类型。
 
 !!! INFO
-> 提示：可通过这个[网址](http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&r=1&s=sturgeon&i=3&h=1000#c)浏览WordNet数据库（非必需）
+    提示：可通过这个[网址](http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&r=1&s=sturgeon&i=3&h=1000#c)浏览WordNet数据库（非必需）
 
 ## 基础下义词处理
 ### 设置HyponymsHandler
@@ -119,8 +111,7 @@ proj2b
 3. 修改 `Main` 类注册新处理器处理 hyponyms 请求后，启动 `Main` 并再次点击 Hyponyms 按钮，此时应显示"Hello"文本。
 
 !!! INFO
-
-> 若出现"无法加载文件 `some_file_here.txt` "错误，很可能说明你的项目设置不正确。请确认你的目录结构与"项目设置"章节一致。
+    若出现"无法加载文件 `some_file_here.txt` "错误，很可能说明你的项目设置不正确。请确认你的目录结构与"项目设置"章节一致。
 
 ### 基础版下义词处理器
 
@@ -128,7 +119,7 @@ proj2b
 
 - 假设输入的"words"仅为单个单词
 - 忽略startYear、endYear和k参数
-- 返回单个单词的下义词列表的字符串表示（包含单词本身），列表按**字母顺序排列**且**无重复单词**
+- 返回单个单词的下义词列表的字符串表示（包含单词本身），列表按 **字母顺序排列** 且 **无重复单词** 
 
 例如，假设WordNet数据集如下所示（对应输入文件 `synsets11.txt` 和 `hyponyms11.txt`）。用户输入"descent"并点击Hyponyms按钮时：
 
@@ -146,7 +137,7 @@ proj2b
 
 输出应为 `[alteration, change, demotion, increase, jump, leap, modification, saltation, transition, variation]`。注意即使"change"属于两个同义词集，输出中仅出现一次。
 
-注意：避免过度复杂化。特别注意输出**不包含**：
+注意：避免过度复杂化。特别注意输出 **不包含**：
 
 - 同义词的同义词（如不包含`"adjustment"`）
 
@@ -155,19 +146,19 @@ proj2b
 - 其他下义词定义的下义词（如不包含`"flashback"`，它是`"transition"`另一释义的下义词）
 
 !!! TASK
-
-> 实现 `HyponymsHandler.java` 及辅助类。  
-> **注意**：请阅读下方提示，不应将所有代码写入此类。
+    实现 `HyponymsHandler.java` 及辅助类。  
+    **注意**：请阅读下方提示，不应将所有代码写入此类。
 
 !!! WARNING
-> 完成此任务需确定支持 `HyponymsHandler` 的辅助类。​​**切勿将所有实现集中在HyponymsHandler中​**​。应创建辅助类，例如 2A 中为"History"按钮实现 `NGramMap` 类，2B 中需构建自有类实现类似功能。  
+    完成此任务需确定支持 `HyponymsHandler` 的辅助类。​​**切勿将所有实现集中在HyponymsHandler中​**​。应创建辅助类，例如 2A 中为"History"按钮实现 `NGramMap` 类，2B 中需构建自有类实现类似功能。  
 
-> 同时需理解WordNet数据集的输入格式（详见下节说明）。
+    同时需理解WordNet数据集的输入格式（详见下节说明）。
 
 !!! DANGER
-> 严禁导入现有图库​​（如普林斯顿算法教材的可选图实现），需自主构建一个或多个图类。
+    严禁导入现有图库​​（如普林斯顿算法教材的可选图实现），需自主构建一个或多个图类。
 
 **TIPS**
+
 - 类似2A的NGramMap，辅助类应在构造函数中单次解析输入文件。​**​禁止创建每次调用都重读整个文件的方法​​**（效率过低）！
 
 - 我们强烈建议至少创建两个类：一个实现有向图概念的类，一个读取WordNet数据集并构建有向图实例的类（该类需能接收单词返回其下义词）。可额外创建遍历辅助类但非必需，遍历也可在图类中实现。
@@ -180,13 +171,13 @@ proj2b
 
 现在描述存储WordNet数据集的两种数据文件类型。这些文件采用逗号分隔格式，即每行包含由逗号分隔的字段序列。
 
-- 文件类型1：名词同义词集列表。文件 `synsets.txt`（及其他名称含 `synset` 的小文件）列出WordNet所有同义词集。每行格式包含三个逗号分隔字段：字段1是同义词集ID（整数），字段2是同义词集（synset），字段3是词典定义。例如行
+文件类型1：名词同义词集列表。文件 `synsets.txt`（及其他名称含 `synset` 的小文件）列出WordNet所有同义词集。每行格式包含三个逗号分隔字段：字段1是同义词集ID（整数），字段2是同义词集（synset），字段3是词典定义。例如行
 
 > "6829,Goofy,a cartoon character created by Walt Disney"
 
 表示同义词集`{Goofy}`的ID为6829，定义为"华特·迪士尼创作的卡通人物"。同义词集内单词用空格分隔（单词本身不能含空格）。S个同义词集ID从0到S-1连续编号，文件内ID连续排列。这些ID在下义词文件（类型2）中会使用。
 
-- 文件类型2：下义词列表。文件`hyponyms.txt`（及其他名称含"hyponym"的小文件）包含下义关系：字段1是同义词集ID，后续字段是该同义词集的直接下义词ID。例如行 
+文件类型2：下义词列表。文件`hyponyms.txt`（及其他名称含"hyponym"的小文件）包含下义关系：字段1是同义词集ID，后续字段是该同义词集的直接下义词ID。例如行 
 
 > 79537,38611,9007  
 
@@ -213,11 +204,13 @@ proj2b
 ### 建议步骤
 
 实现"Hyponyms"按钮需：
-- 开发**图类**（不熟悉可参考第22/23讲）。编写独立于数据文件的测试（如验证 `createNode`/`addEdge` 通过 `getNodes`/`neighbors` 测试）
-- 编写将**WordNet文件转换为图的代码**（可作为图类的一部分或独立类）
-- 编写通过**图遍历**获取单词下义词的代码
+
+- 开发 **图类**（不熟悉可参考第22/23讲）。编写独立于数据文件的测试（如验证 `createNode`/`addEdge` 通过 `getNodes`/`neighbors` 测试）
+- 编写将 **WordNet文件转换为图的代码**（可作为图类的一部分或独立类）
+- 编写通过 **图遍历** 获取单词下义词的代码
 
 **强烈建议**：
+
 - 基于前述示例编写测试（如验证 `synsets11/hyponyms11` 中"descent"的下义词）
 - 测试应匹配抽象层次（如 `TestGraph` 测试图类，`TestWordNet` 测试WordNet类）
 
@@ -237,14 +230,16 @@ public void testHyponymsSimple(){
 本项目涉及多种查询操作、图操作和数据处理操作，不存在唯一正确实现方式。
 
 需执行的查询操作示例：
+
 - 给定单词（如"change"），哪些节点包含该单词？  
-  - 示例（synsets16.txt）："change"位于同义词集2和8中
+    - 示例（synsets16.txt）："change"位于同义词集2和8中
 - 给定整数索引，对应哪个节点？  
-  - 处理hyponyms.txt必需。例如在hyponyms16.txt中，已知同义词集8指向9和10，因此需能定位节点8获取其相邻节点
+    - 处理hyponyms.txt必需。例如在hyponyms16.txt中，已知同义词集8指向9和10，因此需能定位节点8获取其相邻节点
 - 给定节点，该节点包含哪些单词？  
-  - 示例（synsets16.txt）：同义词集11包含"alteration"、"modification"和"adjustment"
+    - 示例（synsets16.txt）：同义词集11包含"alteration"、"modification"和"adjustment"
 
 需执行的图操作示例：
+
 - 创建节点（如synsets16.txt每行包含一个节点信息）
 - 为节点添加边（如hyponyms16.txt每行包含应添加到对应节点的一条或多条边）
 - 查找可达顶点（如hyponyms16.txt中从顶点7可达的顶点为7、8、9、10）
@@ -252,16 +247,15 @@ public void testHyponymsSimple(){
 为类选择能自然解决上述六个问题的实例变量和/或数据结构，将大幅简化实现。
 
 数据处理操作示例：
+
 - 给定对象集合，如何找出所有非重复项？（提示：特定数据结构可高效实现）。请大胆查阅所选数据结构的文档（如选用TreeMap，可搜索"TreeMap方法 Java"、"Map方法 Java"或"Collection方法 Java"等）
 - 给定对象集合，如何进行排序？（提示：搜索对应集合的排序方法）
 
 !!! WARNING
-
-> 项目2A提醒：深层嵌套泛型是设计过度复杂的警示。应寻找更简方案或创建辅助类管理复杂度。例如若使用类似`Map<Set<Set<...`的结构，表明已陷入不必要的复杂路径  
+    项目2A提醒：深层嵌套泛型是设计过度复杂的警示。应寻找更简方案或创建辅助类管理复杂度。例如若使用类似`Map<Set<Set<...`的结构，表明已陷入不必要的复杂路径  
 
 !!! WARNING
-
-> 常规建议：若设计导致进展困难，请果断删除现有实例变量重新设计。本项目的难点在于设计而非编程，您随时可通过git恢复旧设计
+    常规建议：若设计导致进展困难，请果断删除现有实例变量重新设计。本项目的难点在于设计而非编程，您随时可通过git恢复旧设计
 
 ## 处理单词列表
 
@@ -273,21 +267,20 @@ public void testHyponymsSimple(){
 
 可见仅需返回属于列表中所有单词共同下义词的单词。注意用户输入的单词列表可包含两个以上单词（尽管本文档示例仅展示两个单词）。
 
-注意两个单词可能共享下义词但不同属同节点。参考此例：用户输入"car, bug"时（对应下图），应返回`[beetle]`而非空列表`[]`！此例表明我们获取的是**单词**交集而非**节点**交集。
+注意两个单词可能共享下义词但不同属同节点。参考此例：用户输入"car, bug"时（对应下图），应返回`[beetle]`而非空列表`[]`！此例表明我们获取的是 **单词** 交集而非 **节点** 交集。
 
 ![wordnet-fig](./images/proj2b/wordnet-fig.png)
 
 更多完整数据集示例（使用`synsets.txt`/`hyponyms.txt`）：
+
 - 输入"video, recording"应返回`[video, video_recording, videocassette, videotape]`（均为video和recording的共同下义词）
 - 输入"pastry, tart"应返回`[apple_tart, lobster_tart, quiche, quiche_Lorraine, tart, tartlet]`
 
 !!! TASK
-
-> 请修改 `HyponymsHandler` 及其他相关实现以支持多词输入场景。
+    请修改 `HyponymsHandler` 及其他相关实现以支持多词输入场景。
 
 !!! WARNING
-
-> 测试建议：使用 `synsets16.txt` 以及 `hyponyms16.txt` 手动构建测试用例，通过网页前端验证正确性。
+    测试建议：使用 `synsets16.txt` 以及 `hyponyms16.txt` 手动构建测试用例，通过网页前端验证正确性。
 
 ## 处理 `k != 0` 参数
 
@@ -298,8 +291,7 @@ public void testHyponymsSimple(){
 应选择请求时间段内出现次数最多的 `k` 个下义词。例如输入`words = ["food", "cake"]`，`startYear = 1950`，`endYear = 1990`，`k = 5`时，需找出 1950-1990 年间既是food又是cake下义词的5个最高频单词。频率定义为该时间段内单词总出现次数，结果按字母序排列。使用 `top_14377_words.csv`, `total_counts.csv`, `synsets.txt` 以及 `hyponyms.txt` 时输出应为`[cake, cookie, kiss, snap, wafer]`。（自动评分器未使用这些文件，因此该查询返回空列表）
 
 !!! DANGER
-
-> 确保获取最高出现次数的单词（而非最高权重），否则将引发难以调试的问题。
+    确保获取最高出现次数的单词（而非最高权重），否则将引发难以调试的问题。
 
 注意：若前端未提供年份，`NGordnetQueryHandler.readQueryMap` 会使用默认值startYear=1900，endYear=2020。
 
@@ -314,18 +306,16 @@ public void testHyponymsSimple(){
 本任务较复杂，因需传递信息使 `HyponymsHandler` 能访问有效 `NGramMap`。
 
 !!! TASK
-
-> 修改 `HyponymsHandler` 及其他实现以支持`k != 0` 场景。
+    修改 `HyponymsHandler` 及其他实现以支持`k != 0` 场景。
 
 !!! WARNING
-
-> EECS数据集在网页版官方方案不可用（输入 `CS61A` 无返回），**但自动评分器会提供EECS数据集的测试数据和预期响应**。建议据此在本地复现调试。
+    EECS数据集在网页版官方方案不可用（输入 `CS61A` 无返回），**但自动评分器会提供EECS数据集的测试数据和预期响应**。建议据此在本地复现调试。
 
 !!! DANGER
-
-> **严禁创建静态NGramMap！** 避免创建全局变量（如`public static NGramMap`），应通过构造函数或方法传递NGramMap。软件工程课程将详述此问题。
+    **严禁创建静态NGramMap！** 避免创建全局变量（如`public static NGramMap`），应通过构造函数或方法传递NGramMap。软件工程课程将详述此问题。
 
 建议：
+
 - 使用前文示例：`words = ["food", "cake"]`, `startYear = 1950`, `endYear = 1990`, `k = 5`。
 - 当你创建你的测试集时，建议创建自定义输入文件（大文件测试繁琐）。
 
