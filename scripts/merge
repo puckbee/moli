@@ -1,0 +1,67 @@
+#!/usr/bin/env lua
+-- vim:fdm=marker:fdl=0
+
+----------------- 配置文件 -----------------
+local files = {
+	"HomePage.yml",
+	"LearningPath.yml",
+	"CS61.yml",
+	-- "CS61A.yml",
+	-- "CS61B.yml",
+	-- "CS61C.yml",
+	"OperatorSystem.yml",
+	-- "PA.yml",
+	-- "MIT6.S081.yml",
+	"Recruitment.yml",
+	"Vote.yml",
+	--	"Contributing.yml",
+	"AboutMOLI.yml",
+}
+--------------------------------------------
+
+-- {{{
+function read_file(file_path, isnav)
+	local file = io.open(file_path, "r")
+	if not file then
+		error("无法打开文件: " .. file_path)
+	end
+	local content
+	if isnav then
+		content = ""
+		for line in file:lines() do
+			content = content .. "  " .. line .. "\n"
+		end
+	else
+		content = file:read("*a")
+	end
+	file:close()
+	return content
+end
+
+function get_path(file)
+	local path = "./nav/"
+	return path .. file
+end
+
+function nav_yaml(files)
+	local merged_content = {}
+
+	for _, file in ipairs(files) do
+		local content = read_file(get_path(file), true)
+		table.insert(merged_content, content)
+	end
+
+	return table.concat(merged_content)
+end
+
+local final_content = read_file(get_path("header.yml")) .. nav_yaml(files)
+
+local output_file = io.open("mkdocs.yml", "w")
+if output_file then
+	output_file:write(final_content)
+	output_file:close()
+	print("mkdocs.yml 成功生成！")
+else
+	error("无法创建 mkdocs.yml 文件。")
+end
+-- }}}

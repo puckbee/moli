@@ -66,7 +66,6 @@
     <table>
       <thead>
         <tr>
-          <th>周次</th>
           <th>讲座</th>
           <th>讨论</th>
           <th>实验</th>
@@ -75,220 +74,211 @@
       </thead>
       <tbody>
         <tr>
-          <td rowspan="2">1</td>
-          <td>导言</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/">1. 导言</a></td>
           <td></td>
           <td rowspan="2"><a href="../Labs/Lab_0/index.html">实验 0: 课程介绍与环境配置</a></td>
           <td></td>
         </tr>
         <tr>
-          <td>数值表示</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=2">2. 数值表示</a></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td rowspan="3">2</td>
-          <td>C语言: 基础</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=3">3. C语言: 基础</a></td>
           <td><a href="../Discussion/Discussion_1/index.html">讨论 1: C语言与数值表示</a></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td>C语言: 指针、数组、字符串</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=5">4. C语言: 指针、数组、字符串</a></td>
           <td></td>
           <td><a href="../Labs/Lab_1/index.html">实验 1: C语言</a></td>
           <td></td>
         </tr>
         <tr>
-          <td>C语言: 内存管理</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=6">5. C语言: 内存管理</a></td>
           <td></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td rowspan="3">3</td>
-          <td>C语言: 泛型</td>
+          <td><a href="https://www.bilibili.com/video/BV1eGwFeQEfm/?p=5">6. C语言: 泛型</a></td>
           <td>讨论 2: C语言</td>
           <td></td>
           <td rowspan="5"><a href="../Projects/Project_1/index.html">项目 1: snek</a></td>
         </tr>
         <tr>
-          <td>浮点运算</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=8">7. 浮点运算</a></td>
           <td></td>
           <td><a href="../Labs/Lab_2/index.html">实验 2: C语言调试</a></td>
         </tr>
         <tr>
-          <td>RISC-V: 基础</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=9">8. RISC-V: 基础</a></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td rowspan="3">4</td>
-          <td>RISC-V: 数据传输</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=10">9. RISC-V: 数据传输</a></td>
           <td>讨论 3: 浮点/RISC-V</td>
           <td></td>
         </tr>
         <tr>
-          <td>RISC-V: 条件分支</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=12">10. RISC-V: 条件分支</a></td>
           <td></td>
           <td><a href="../Labs/Lab_3/index.html">实验 3: RISC-V, Venus</a></td>
         </tr>
         <tr>
-          <td>RISC-V: 程序控制</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=13">11. RISC-V: 程序控制</a></td>
           <td></td>
           <td></td>
-          <td rowspan="8">项目 2: CS61Classify</td>
+          <td rowspan="8"><a href="../Projects/Project_2/index.html">项目 2: CS61Classify</a></td>
         </tr>
         <tr>
-          <td rowspan="2">5</td>
-          <td>RISC-V: 指令格式(1)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=14">12. RISC-V: 指令格式(1)</a></td>
           <td>讨论 4: RISC-V 调用约定</td>
           <td></td>
         </tr>
         <tr>
-          <td>RISC-V: 指令格式(2)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=16">13. RISC-V: 指令格式(2)</a></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td rowspan="3">6</td>
-          <td>缓存(1)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=32">14. 缓存(1)</a></td>
           <td>讨论 5: RISC-V ISA, AMAT</td>
           <td></td>
         </tr>
         <tr>
-          <td>缓存(2)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=33">15. 缓存(2)</a></td>
           <td></td>
-          <td rowspan="3">实验 4: RISC-V 调用约定</td>
+          <td rowspan="3"><a href="../Labs/Lab_4/index.html">实验 4: RISC-V 调用约定</a></td>
         </tr>
         <tr>
-          <td>缓存(3)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=34">16. 缓存(3)</a></td>
           <td></td>
         </tr>
         <tr>
-          <td rowspan="3">7</td>
-          <td>缓存(4)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=36">17. 缓存(4)</a></td>
           <td>讨论 6: 缓存</td>
         </tr>
         <tr>
-          <td>编译器、汇编器、链接器、加载器</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=17">18. 编译器、汇编器、链接器、加载器</a></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td>SDS(1)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=20">19. SDS(1)</a></td>
           <td></td>
           <td></td>
-          <td rowspan="15">项目 3: CS61CPU</td>
+          <td rowspan="11"><a href="../Projects/Project_3/index.html">项目 3: CS61CPU</a></td>
         </tr>
         <tr>
-          <td rowspan="3">8</td>
-          <td>SDS(2)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=21">20. SDS(2)</a></td>
           <td>讨论 7: CALL, 布尔代数</td>
           <td></td>
         </tr>
         <tr>
-          <td>SDS(3)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=22">21. SDS(3)</a></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td>SDS(4)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=23">22. SDS(4)</a></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td rowspan="3">9</td>
-          <td>期中考试</td>
+          <td>23. 期中考试</td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td>RISC-V: 单周期数据通路(1)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=24">24. RISC-V: 单周期数据通路(1)</a></td>
           <td></td>
-          <td>实验 5: Logisim</td>
+          <td><a href="../Labs/Lab_5/index.html">实验 5: Logisim</a></td>
         </tr>
         <tr>
-          <td>RISC-V: 单周期数据通路(2)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=25">25. RISC-V: 单周期数据通路(2)</a></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td rowspan="3">11</td>
-          <td>RISC-V: 单周期控制逻辑</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=26">26. RISC-V: 单周期控制逻辑</a></td>
           <td>讨论 8: SDS, 单周期数据通路</td>
           <td></td>
         </tr>
         <tr>
-          <td>RISC-V: 五级流水线(1)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=28">27. RISC-V: 五级流水线(1)</a></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td>RISC-V: 五级流水线(2)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=29">28. RISC-V: 五级流水线(2)</a></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td rowspan="3">12</td>
-          <td>RISC-V: 五级流水线(3) - 冒险</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=30">29. RISC-V: 五级流水线(3) - 冒险</a></td>
           <td>讨论 9: 流水线与冒险</td>
           <td></td>
         </tr>
         <tr>
-          <td>并行(1) - 介绍</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=38">30. 并行(1) - 介绍</a></td>
           <td></td>
-          <td>实验 6: CPU、流水线</td>
+          <td><a href="../Labs/Lab_6/index.html">实验 6: CPU、流水线</a></td>
+          <td rowspan="4"><a href="../Projects/Project_4/index.html">项目 4: <span style="color:red;">CS61</span>ka<span style="color:red;">C</span>how</a></td>
         </tr>
         <tr>
-          <td>并行(2) - SIMD</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=40">31. 并行(2) - SIMD</a></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td rowspan="3">13</td>
-          <td>并行(3) - TLP</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=41">32. 并行(3) - TLP</a></td>
           <td>讨论 10: 性能、DLP</td>
           <td></td>
         </tr>
         <tr>
-          <td>并行(4) - 并发</td>
+          <td>33. 并行(4) - 并发</td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td>并行(5) - MIMD 架构</td>
+          <td>34. 并行(5) - MIMD 架构</td>
           <td></td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td rowspan="3">14</td>
-          <td>虚拟内存(1)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=42">35. 虚拟内存(1)</a></td>
           <td>讨论 11: 线程级并行</td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td>虚拟内存(2)</td>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=44">36. 虚拟内存(2)</a></td>
           <td></td>
-          <td rowspan="2">实验 7: 并行</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>操作系统基础</td>
-          <td></td>
+          <td rowspan="2"><a href="../Labs/Lab_7/index.html">实验 7: 并行</a></td>
           <td></td>
         </tr>
         <tr>
-          <td rowspan="1">15</td>
-          <td>总结</td>
+          <td>37. 操作系统基础</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.bilibili.com/video/BV1MCDPYZEUf/?p=51">38. 总结</a></td>
           <td>讨论 12: 虚拟内存</td>
-          <td>实验 8: <span style="color:red;">CS61</span>ka<span style="color:red;">C</span>how</td>
+          <td></td>
           <td></td>
         </tr>
       </tbody>
     </table>
+    <blockquote>
+    <p>时间表基于 <a href="https://cs61c.org">cs61c.org</a> 翻译，讲座的课程视频来源于 Bilibili，灰色的部分为2025年秋季新增内容。</p>
+    <p>感谢 Bilibili UP主：加加的公开课小屋</p>
+    </blockquote>
   </div>
 </body>
 </html>

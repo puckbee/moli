@@ -23,7 +23,7 @@ CS61C 是 CS61 系列课程的最后一环。在前两门课程打下的坚实�
 ## 学习建议
 如果不清楚自己是否拥有足够的前置知识，可以先尝试学习，当遇到困难时再进行相关的知识补充。
 
-* **先修要求**: CS61B，C语言基础    
+* **先修要求**: C语言基础    
 
 * **先修书籍推荐**：[笨方法学C](https://wizardforcel.gitbooks.io/lcthw/content/)，[RISC-V开放架构设计之道](https://ysyx.oscc.cc/books/riscv-reader.html)    
 

@@ -1,0 +1,11 @@
+- '基础动手':
+  # - 'CS61A': 
+  #   - '课程简介': CS61A/CS61A.md
+  #   - '讲义': CS61A/Schedule.md
+  # - "CS61B":
+  #   - "课程简介": CS61B/CS61B.md
+  #   - '讲义': CS61B/Schedule.md
+  #   - "作业工作流程": "CS61B/assignment-workflow.md"
+  - 'CS61C':
+    - '课程简介': CS61C/CS61C.md
+    - '讲义': CS61C/Schedule.md
