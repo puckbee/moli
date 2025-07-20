@@ -60,4 +60,9 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
+extra:
+  generator: false
+
+copyright: Copyright &copy; 2025 MOLI
+
 nav:
