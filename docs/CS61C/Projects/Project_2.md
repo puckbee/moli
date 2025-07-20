@@ -218,6 +218,7 @@ vdb test_relu_length_1.s
 vdb test_relu_invalid_n.s
 ```
 以下这些调试调试建议可以在整个项目中使用：
+
 * 如果你遇到这个错误 "You are attempting to edit the text of the program though the program is set to immutable at address 0x00000000!" ，这就说明你正在试图在内存地址 0x00000000 中写入（或是其他内存地址）。这很可能是因为你将这个地址传递给了一个存储（ store ）指令，而该指令随后尝试向这个地址写入数据。
 * 如果你在启动调试器的时候遇到这个错误 "label exit used but not defined" ，请确保你使用了上面的 <code>vdb</code> 指令启动调试器。点击 "assemble and simulate from editor" 是错误的。
 * 不幸的是，本地测试并不会检查越界的内存访问。如果你在自动评分器上遇到测试失败，建议检查你的代码是否存在向数组之外的内存写入操作。
