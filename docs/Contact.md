@@ -2,13 +2,9 @@
 
 欢迎对我们的学习计划提出宝贵建议！
 
-**电子邮箱**
-
-xiebiwei@ict.ac.cn
-
 **微信群聊**
 
-![微信群聊](../Contact_wechat.png){ width="30%" }
+![微信群聊](./Contact_wechat.png){ width="30%" }
 
 ## 代码改进 & 文档翻译
 
