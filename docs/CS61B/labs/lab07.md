@@ -29,9 +29,8 @@
 
 对于下面的视频动画，哈希函数是任意的。对于输入的每个几何图形（对象），它都会输出一个随机整数。
 
-<video width="320" controls loop>
-  <source src="https://www.youtube.com/watch?v=tUEixFouAjg">
-</video>
+<iframe width="660" height="371" src="https://www.youtube.com/embed/tUEixFouAjg" title="Quick Hashing Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 感谢 Meshan Khosla 制作了这个动画!
 
