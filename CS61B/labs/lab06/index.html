@@ -1,0 +1,921 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://puckbee.github.io/moli/CS61B/labs/lab06/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>实验 06：BSTMap - MOLI：提升实践能力的试炼之地</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#06bstmap" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOLI：提升实践能力的试炼之地
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              实验 06：BSTMap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  学习路线
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CS61C/CS61C/" class="md-tabs__link">
+          
+  
+  
+  基础动手
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../MIT6.S081/MIT6.S081/" class="md-tabs__link">
+          
+  
+  
+  操作系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../AboutMOLI/" class="md-tabs__link">
+          
+  
+  
+  关于 MOLI
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MOLI：提升实践能力的试炼之地
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    学习路线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    基础动手
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            基础动手
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            CS61C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/CS61C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    讲义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MIT6.S081/MIT6.S081/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MIT6.S081
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PA/PA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    南京大学 ICS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            关于 MOLI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AboutMOLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="06bstmap">实验 06：BSTMap<a class="headerlink" href="#06bstmap" title="Permanent link">&para;</a></h1>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<p>Lab 06的常见问题解答在<a href="https://sp25.datastructur.es/labs/lab06/faq/">这里</a>。</p>
+<h2 id="_1">介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>在本实验中，您将基于二叉搜索树(BST)实现<code>Map61B</code>接口的<code>BSTMap</code>类，构建一个基础的树形映射结构。<strong>您需要从零开始完成这个实现</strong>，并以提供的接口规范作为开发指南。</p>
+<p>完成实施后，您将比较您的实现转换为基于列表的实现以及内置 Java 类（使用称为红黑树的 BST 变体）从骨架代码库拉取</p>
+<p>要获取本次作业，请从您的个人代码仓库中拉取<code>skeleton</code>分支：</p>
+<pre class="highlight"><code>git pull skeleton main</code></pre>
+<p>此作业是 。<code>lab06</code></p>
+<h2 id="bstmap"><code>BSTMap</code><a class="headerlink" href="#bstmap" title="Permanent link">&para;</a></h2>
+<p>在本次实验（及后续实验）中，我们可能不会像以往那样提供完整的框架代码。如果您在开始实现时遇到困难，请参加实验辅导或查阅相关参考资料！</p>
+<p>您需要创建一个使用  二叉搜索树（Binary Search Tree, BST） 作为核心数据结构的类，以实现<code>Map61B</code>接口。在完成类的定义并实现<code>BSTMap</code>中的所有方法前，代码将无法通过编译。您可以采用渐进式实现策略：先定义所有必需方法的签名，对于暂未实现的方法，可暂时抛出<code>UnsupportedOperationException</code>异常占位。具体异常抛出方式请参考相关<a href="https://sp25.datastructur.es/labs/lab06/#exercise-bstmap">文档</a>。</p>
+<p>在您的实现中，需要确保泛型键类型 <code>K</code> 实现了 <code>Comparable</code> 接口。 这称为<a href="https://docs.oracle.com/javase/tutorial/java/generics/bounded.html">有界类型参数</a>。</p>
+<p>这个<a href="https://docs.oracle.com/javase/tutorial/java/generics/bounded.html">语法</a>有点复杂，但我们已在下方提供了示例。这里我们创建了一个针对可比较对象的BSTSet。出于教学目的，我们特意加入了<code>compareRoots</code>和<code>compareTo</code>等概念。（如需复习，请参阅此<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html#compareTo(T)">文档</a>）</p>
+<pre class="highlight"><code class="language-java">public class BSTSet&lt;K extends Comparable&lt;K&gt;&gt; implements Set61B&lt;K&gt; {
+    private class BSTNode {
+        K item;
+        // ...
+    }
+    private BSTNode root;
+  /* 
+ * 比较当前 BSTSet 的根节点与另一个 BSTSet 的根节点的大小关系，
+ * 返回值遵循 `compareTo` 方法的标准约定：
+ * - 负数：当前 BSTSet 的根节点小于另一个 BSTSet 的根节点
+ * - 零：两个 BSTSet 的根节点相等
+ * - 正数：当前 BSTSet 的根节点大于另一个 BSTSet 的根节点
+ */
+    public int compareRoots(BSTSet other) {
+    /* 
+     * 我们可以安全地对 `n1.item` 调用 `compareTo` 方法，
+     * 因为泛型类型 `K` 被声明为 `extends Comparable&lt;K&gt;`，
+     * 这意味着 `K` 必须实现 `Comparable` 接口，
+     * 而所有实现 `Comparable` 的类都必须定义 `compareTo` 方法。
+     */
+        return this.root.item.compareTo(other.root.item);
+    }
+    // ...
+}</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>您可能已经注意到，有界类型参数的语法使用了 <code>extends</code> 关键字，尽管 <code>Comparable</code> 是一个 接口。在有界类型参数的上下文中，<code>extends</code> 可以表示 继承自类 或 实现接口（<a href="https://docs.oracle.com/javase/tutorial/java/generics/bounded.html">官方文档</a>）。不要问我们为什么 ——Java 设计者也没解释过。</p>
+<p>（这种语法还暗示您可以 “扩展” 像 <code>Integer</code> 这样的 <code>final</code> 类，但这显然是不可能的。欢迎来到神奇的 Java 世界！）</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>请记住，上面的代码片段模拟的是一个 集合（Set），而你需要实现的是一个 映射（Map）。我们建议你在实现 <code>BSTMap</code> 时采用类似的逻辑，但需要创建一个嵌套的节点类来存储键值对。
+你的 <code>BSTMap</code> 应该包含两个泛型参数 <code>K</code> 和 <code>V</code>，分别代表映射中键和值的类型：</p>
+</div>
+<p>IntelliJ 有一个很好的功能，可以为你生成方法签名。如果你正在实现一个接口，但尚未实现所有方法，IntelliJ 会将类签名标为红色。如果你将鼠标悬停在上面，应该可以选择 “<code>Implement methods</code>”（实现方法）。在弹出的窗口中，确保你选中了 “Copy JavaDoc”（复制 Java 文档）和 “Insert @Override”（插入 @Override 注解）选项。点击 “OK”，IntelliJ 就会在类中填充所需的方法签名（不过这些方法还无法正常工作！），并复制相关注释。</p>
+<p>生成后的代码大概会是这个样子（<strong>你没有 Set61B，这只是一个示例！</strong>）：
+<img alt="image" src="../images/lab06/image1.png" />
+<img alt="image" src="../images/lab06/image2.png" /></p>
+<h3 id="bstmap_1">练习：实现 BSTMap<a class="headerlink" href="#bstmap_1" title="Permanent link">&para;</a></h3>
+<p>如前所述，你需要创建一个名为<code>BSTMap</code>的类来实现<code>Map61B</code> 接口。请确保将实现代码写在 <code>BSTMap.java</code> 文件中，否则自动评分系统可能无法运行你的代码！需要实现的方法包括：</p>
+<ul>
+<li>
+<p>​<strong><code>void put(K key, V value)</code></strong>​:  将指定的键与值关联。若键已存在，更新其对应的值。</p>
+</li>
+<li>
+<p>​<strong><code>V get(K key)</code></strong>​ : 返回指定键所映射的值；若键不存在，返回 <code>null</code>。</p>
+</li>
+<li>
+<p>​<strong><code>boolean containsKey(K key)</code></strong>​ : 判断此映射是否包含指定键的映射关系。</p>
+</li>
+<li>
+<p>​<strong><code>int size()</code></strong>​ : 返回此映射中的键值对数量。</p>
+</li>
+<li>
+<p>​<strong><code>void clear()</code></strong>​: 移除映射中的所有键值对。</p>
+</li>
+</ul>
+<p>请务必阅读<code>Map61B</code>接口中每个方法的注释，以充分理解具体实现要求。上述描述未必涵盖所有细节。</p>
+<p>为了便于调试，你的<code>BSTMap</code>还应包含一个额外的方法<code>printInOrder()</code>（该方法无需在<code>Map61B</code>接口中声明），该方法按键的升序打印<code>BSTMap</code> 中的所有键值对。我们不会测试此方法的输出结果，但它会帮助你验证自己的实现！</p>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>请实现<code>BSTMap</code>类，该类需实现<code>Map61B</code>接口及其所有必需方法。通过使用有界类型参数，确保<code>BSTMap</code>中的键是可比较的。</p>
+<p>我们强烈建议你创建辅助方法来简化实现（特别是递归辅助方法）。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>很遗憾，你需要实现的大多数方法在测试时都依赖于其他方法（例如<code>get</code>方法依赖于<code>put</code>方法）。这意味着在实现<code>put</code>方法之前，很难对其他方法进行有效测试。我们建议你按照 Map61B 接口中指定的顺序实现这些方法。</p>
+<p>你可以使用<code>TestBSTMap.java</code>来测试你的实现。</p>
+</div>
+<h3 id="_2">参考资源<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>以下资源可能会有所帮助：</p>
+<ul>
+<li>2024 年秋季学期，第 16 讲 <a href="https://docs.google.com/presentation/d/1e-KW3PROYhxJB-0wk3w3LkXz48I13OYtudsGXsBokpM/edit?usp=sharing">幻灯片</a>.。</li>
+<li><code>ULLMap.java</code>（位于<code>src</code> / 目录下），一个基于无序链表的<code>Map61B</code>实现。</li>
+<li>为了帮助你入门， <a href="https://www.youtube.com/watch?v=P3_Luw2M8X4">这里</a>有一份关于<code>put</code> 和<code>get</code> 方法的算法指南。</li>
+</ul>
+<h2 id="_3">那么…… 它的速度有多快呢？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在 <code>InsertRandomSpeedTest.java</code>中提供了一个交互式速度测试。在完成 <code>BSTMap</code>的实现之前，不要尝试运行这个测试。准备就绪后，你可以在 IntelliJ 中运行这些测试。</p>
+<p><code>InsertRandomSpeedTest</code> 类会测试你的 <code>BSTMap</code>、<code>ULLMap</code>（已提供）、Java 内置的 <code>TreeMap</code> 以及 Java 内置的 <code>HashMap</code>（你将在后续实验中深入了解）的元素插入速度。测试流程是：询问用户要插入的每个字符串的长度，以及输入规模（要执行的插入操作次数）。然后生成指定数量、指定长度的字符串，并将它们作为 <code>&lt;String, Integer&gt;</code> 键值对插入到各个映射中。</p>
+<p>试试看，对比你的数据结构与朴素实现、工业级实现，看看随着插入次数的增加，性能表现如何变化。记住，在小样本上，渐进复杂度并不能体现出来，所以如果得到的趋势令人困惑，要确保输入足够大（但要注意，这里有个限制 —— 如果输入的值太大，程序可能会溢出，所以可以尝试用足够大但合适的值进行测试）。将你的测试结果记录在名为 <code>speedTestResults.txt</code> 的文件中。</p>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>运行速度测试并将结果记录在 <code>speedTestResults.txt</code>中。结果格式不做强制要求，但至少应包含你执行的操作和观察到的现象。</p>
+</div>
+<h3 id="_4">评分标准<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>本实验满分为 5 分。Gradescope 上没有隐藏测试，即你在 Gradescope 上获得的分数就是最终分数。不过，有一项测试不会在本地提供，该测试会检查你的<code>speedTestResults.txt</code>文件。通过本地测试<code>TestBSTMap.java</code>意味着你的<code>BSTMap.java</code>能获得满分，但这并不保证你在 Gradescope 上的<code>speedTestResults.txt</code>也能得分。<strong>因此，对于本次实验，只要你通过了相关的本地测试（<code>TestBSTMap.java</code>）并充分填写了<code>speedTestResults.txt</code>文件，就能在 Gradescope 上获得满分。</strong></p>
+<h3 id="bstmap_2"><code>BSTMap</code> 的更多（不计分）练习<a class="headerlink" href="#bstmap_2" title="Permanent link">&para;</a></h3>
+<p>这些练习不会被评分，但你仍可通过本地测试（特别是<code>TestBSTMapExtra.java</code>）和自动评分器获得反馈。</p>
+<p>在你的<code>BSTMap</code>类中实现以下方法：<code>iterator()</code>：返回一个按升序遍历键的迭代器。<code>keySet()</code>：返回所有键的集合。<code>remove(K key)</code>：删除指定键对应的键值对。</p>
+<p>实现<code>remove()</code>方法颇具挑战性，你需要实现 Hibbard 删除算法。如果指定的键不存在于<code>BSTMap</code>中，<code>remove()</code>方法应返回<code>null</code>；否则，删除该键值对并返回被删除的值。</p>
+<h3 id="_5">可选：渐进复杂度问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>这部分内容同样为可选内容，我们纳入它是为了让你针对渐进复杂度进行更多练习。可对照 <a href="https://sp25.datastructur.es/labs/lab06/asymptotics-soln/">答案</a>来检查你的解答！</p>
+<p>已知有一个名为 <code>B</code> 的 <code>BSTMap</code>（二叉搜索树映射），其中包含 <code>N</code> 个键值对，还有一个随机的键值对 <code>(K, V)</code>，请回答以下问题。</p>
+<p>除非另有说明，“big-Oh”（如 <code>O(N)</code>）和 “big-Theta”（如 <code>Θ(N)</code>）均针对给定方法调用过程中比较操作的次数而言。</p>
+<p>对于问题 1-7，判断陈述为 “正确” 还是 “错误”。对于问题 8，给出运行时复杂度界。</p>
+<ol>
+<li><code>B.put(K, V) ∈ O(log N)</code></li>
+<li><code>B.put(K, V) ∈ Θ(log N)</code></li>
+<li><code>B.put(K, V) ∈ Θ(N)</code></li>
+<li><code>B.put(K, V) ∈ O(N)</code></li>
+<li><code>B.put(K, V) ∈ O(N²)</code></li>
+<li>对于一个与 <code>K</code> 不相等的固定键 <code>C</code>，<code>B.containsKey(C)</code> 和 <code>B.containsKey(K)</code> 的运行时复杂度均满足 <code>Ω(log N)</code>。</li>
+<li>（本题难度较高）设 <code>b</code> 是 <code>BSTMap</code> 的一个 <code>Node</code>（节点），以 <code>root</code> 为根的两棵子树分别记为 <code>left</code>（左子树）和 <code>right</code>（右子树）。进一步假设，方法 <code>numberOfNodes(Node p)</code> 会返回以 <code>p</code> 为根的子树的节点数量（记为 <code>M</code>），且其运行时复杂度为 <code>Θ(M)</code>。若 <code>1 &lt;= z &lt; numberOfNodes(b.root)</code>，那么 <code>mystery(b.root, z)</code> 在最坏情况和最佳情况下的运行时复杂度分别是多少？</li>
+</ol>
+<p>提示：先试着弄清楚 <code>mystery</code> 方法的功能，再分析它是如何实现该功能的。</p>
+<pre class="highlight"><code class="language-java">public Key mystery(Node b, int z) {
+    int numLeft = numberOfNodes(b.left);
+    if (numLeft == z - 1) {
+        return b.key;
+    } else if (numLeft &gt; z) {
+        return mystery(b.left, z);
+    } else {
+        return mystery(b.right, z - numLeft - 1);
+    }
+}</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

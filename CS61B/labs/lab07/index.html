@@ -1,0 +1,933 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://puckbee.github.io/moli/CS61B/labs/lab07/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>实验 07: 哈希映射 - MOLI：提升实践能力的试炼之地</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#07" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOLI：提升实践能力的试炼之地
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              实验 07: 哈希映射
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  学习路线
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CS61C/CS61C/" class="md-tabs__link">
+          
+  
+  
+  基础动手
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../MIT6.S081/MIT6.S081/" class="md-tabs__link">
+          
+  
+  
+  操作系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../AboutMOLI/" class="md-tabs__link">
+          
+  
+  
+  关于 MOLI
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MOLI：提升实践能力的试炼之地
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    学习路线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    基础动手
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            基础动手
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            CS61C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/CS61C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    讲义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MIT6.S081/MIT6.S081/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MIT6.S081
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PA/PA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    南京大学 ICS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            关于 MOLI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AboutMOLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="07">实验 07: 哈希映射<a class="headerlink" href="#07" title="Permanent link">&para;</a></h1>
+<h2 id="_1">常见问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本实验FAQ详见<a href="https://sp25.datastructur.es/labs/lab07/faq">此处</a>。</p>
+<h2 id="_2">简介<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>在本实验中，你将实现 <code>MyHashMap</code> 类，这是一个基于哈希表的 Map61B 接口实现。这与实验 06 很相似，只不过这次我们要构建的是 <code>Hashmap</code> 而不是 <code>TreeMap</code></p>
+<p>在完成你的代码实现后，你需要将你的实现与基于链表的映射实现（ULLMap） 以及 Java 内置的 <code>HashMap</code> 类（同样基于哈希表实现）进行性能对比。我们还将比较 <code>MyHashMap</code> 在采用不同数据结构作为哈希桶（buckets）时的性能表现</p>
+<h2 id="myhashmap">MyHashMap<a class="headerlink" href="#myhashmap" title="Permanent link">&para;</a></h2>
+<h3 id="_3">概述<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>我们在 <code>MyHashMap.java</code> 中创建了一个 <code>MyHashMap</code> 类，它的启动代码非常少。你的目标是实现 <code>MyHashMap</code> 所继承的 <code>Map61B</code> 的接口中的所有方法，<em>除了</em> <code>remove</code>、<code>keySet</code> 和 <code>iterator</code>（在实验 07 中这些是可选的）。对于这些方法，请直接抛出 <code>UnsupportedOperationException</code> 异常。</p>
+<p>请注意，在实现 <code>Map61B</code> 的所有方法之前，你的代码无法编译。你可以一次性给所有需要的方法编写方法签名，但要抛出 <code>UnsupportedOperationException</code> 异常直到你具体地实现它们。</p>
+<h3 id="_4">复习动画<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>以下是一个哈希表如何工作的快速动画。 N指的是哈希表中的项目数，M指的是桶的数量。</p>
+<p>我们使用对象的 <code>hashCode</code> 对桶的数量取模（<code>%</code>）来确定该对象（以几何图形代表）落入哪个桶。当达到负载因子时，我们将桶的数量乘以扩容因子，然后对所有项目重新哈希，并用新的桶数量对其取模。</p>
+<p>对于下面的视频动画，哈希函数是任意的。对于输入的每个几何图形（对象），它都会输出一个随机整数。</p>
+<iframe width="660" height="371" src="https://www.youtube.com/embed/tUEixFouAjg" title="Quick Hashing Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>感谢 Meshan Khosla 制作了这个动画!</p>
+<h3 id="_5">框架代码<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>你可能还记得在课堂上讲过，当我们构建哈希表时，可以选择多种不同的数据结构作为桶。经典的做法是选择链表。但我们也可以选择数组列表、树集，甚至更 crazy 的数据结构，比如优先队列，甚至其他的哈希集！</p>
+<p><img alt="image1" src="../images/lab07/ht-buckets.png" /></p>
+<p>在本实验中，我们将尝试使用不同的数据结构作为哈希桶，并通过实验验证不同数据结构作为哈希桶时是否存在渐进性差异。</p>
+<p>在本实验中，我们将尝试使用 <code>LinkedList</code>、<code>ArrayList</code>、<code>HashSet</code>、<code>Stack</code> 和 <code>ArrayDeque</code>（遗憾的是，由于模板过多，我们没用如上图所示的 <code>TreeSet</code> 或 <code>PriorityQueue</code>，不过如果你愿意，欢迎尝试）。这些类可真不少！</p>
+<p>可以想象，如果我们未竟周密设计就实现 <code>MyHashMap</code>，那么当需要更换桶的数据结构类型时，将不得不进行大量的查找替换操作。例如，如果我们想把所有的 <code>ArrayList</code> 桶都改成 <code>LinkedList</code> 桶，我们将不得不查找替换所有出现的 <code>ArrayList</code>，并将其替换为 <code>LinkedList</code>。这种做法并不理想——因为项目中可能存在依赖某些 <code>ArrayList</code> 方法的非桶组件。若将其错误替换为 <code>LinkedList</code>，将破坏代码功能！这不是我们想要的。</p>
+<p>初始代码的目的是提供一种更简便的方法来使用 <code>MyHashMap</code> 以尝试不同的桶类型。它通过多态性和继承来实现这一点，我们在本学期早些时候已经学习过。它还使用了工厂方法和类，它们是用于创建对象的实用程序代码。在处理更高级的代码时，这是一种常见的模式，不过具体细节不在 61B 的范围内。</p>
+<p><code>MyHashMap</code> 通过使用哈希表实现了 <code>Map61B</code>· 接口。在提供的初始代码中，我们声明了实例变量  <code>private Collection&lt;Node&gt;[] buckets</code>，它是哈希表的底层数据结构。让我们解析这段代码的含义：</p>
+<ul>
+<li><code>buckets</code> 是 <code>MyHashMap</code> 类中的一个 <code>private</code> 变量</li>
+</ul>
+<pre class="highlight"><code class="language-Java">private Collection&lt;Node&gt;[] buckets;</code></pre>
+<ul>
+<li>它是一个 <code>Collection&lt;Node&gt;</code> 对象的数组 (或表)，其中每个 <code>Collection</code> 都代表哈希表中的一个桶，并且存储 <code>Node</code> 对象。</li>
+<li><code>Node</code> 是我们提供的一个私有（嵌套）辅助类，用于存储单个键值映射。此类的代码应该是容易理解的，不需要做任何修改。</li>
+</ul>
+<pre class="highlight"><code class="language-Java">protected class Node {
+    K key;
+    V value;
+
+    Node(K k, V v) {
+        key = k;
+        value = v;
+    }
+  }</code></pre>
+<ul>
+<li><code>java.util.Collection</code> 是一个被大部分数据结构继承的接口，它代表一组对象。该接口支持 <code>add</code>、<code>remove</code>、<code>iterator</code> 等方法。<code>java.util</code> 中的许多数据结构（如 <code>ArrayList</code>、<code>LinkedList</code>、<code>TreeSet</code>、<code>HashSet</code>、<code>PriorityQueue</code>等）都实现了 <code>Collection</code> 接口。请注意，由于这些数据结构实现了 <code>Collection</code>，我们可以通过多态将其赋值给 <code>Collection</code> 类型的变量。</li>
+<li>因此，我们的 <code>Collection&lt;Node&gt;[]</code> 数组可通过多种数据结构实例化（例如 <code>LinkedList&lt;Node&gt;</code> 或 <code>ArrayList&lt;Node&gt;</code>）。<strong>请确保你的桶设计能泛化到任何 <code>Collection</code> 类型！</strong> 具体实现方式请参考下方警告。·</li>
+<li>注意在创建新的 <code>Collection&lt;Node&gt;[]</code> 数组并存储在 <code>buckets</code> 变量中时，Java 禁止创建参数化类型的数组。<code>Collection&lt;Node&gt;</code> 是参数化类型（因为我们通过 Node类参数化了 Collection类）。因此，Java 不允许 <code>new Collection&lt;Node&gt;[size]</code> 这种操作（无论 size取值如何）。若尝试此操作，将触发 "Generic array creation"（泛型数组创建）错误。</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>为了解决这个问题，你应该创建 <code>new Collection[size]</code>，其中 <code>size</code> 代表所需大小。</p>
+</div>
+<ul>
+<li><code>Collection[]</code> 数组的元素可以是任意类型的集合，例如 <code>Collection&lt;Integer&gt;</code> 或  <code>Collection&lt;Node&gt;</code>。<strong>就我们的目的而言，我们仅向该数组添加 <code>Collection&lt;Node&gt;</code> 类型的元素。</strong></li>
+</ul>
+<p>哈希表通过工厂方法 <code>protected Collection&lt;Node&gt; createBucket()</code> 实现不同桶类型的切换，该方法直接返回一个 <code>Collection</code> 。在 <code>MyHashMap.java</code> 中，你可自由选择桶的数据结构。例如，若选择 <code>LinkedList</code>，则 <code>createBucket()</code> 的实现如下：</p>
+<pre class="highlight"><code class="language-Java">protected Collection&lt;Node&gt; createBucket() {
+    return new LinkedList&lt;&gt;();
+}</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>你必须使用 <code>createBucket()</code> 方法创建新桶，而非使用 new 操作符。</strong>  初看之下这似乎是没必要的，但它允许工厂类通过重写（override）该方法以为每个桶提供不同的数据结构。
+在 <code>MyHashMap</code> 中，该方法可返回 <code>new LinkedList&lt;&gt;()</code> 或 <code>new ArrayList&lt;&gt;()</code>。</p>
+</div>
+<h3 id="_6">实现要求<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>你应该实现以下构造函数：</p>
+<pre class="highlight"><code class="language-Java">public MyHashMap();
+public MyHashMap(int initialCapacity);
+public MyHashMap(int initialCapacity, double loadFactor);</code></pre>
+<p>以下是 <code>MyHashMap</code> 的一些额外要求：</p>
+<ul>
+<li>
+<p>你的哈希映射初始桶数量应等于 <code>initialCapacity</code>。当负载因子超过最大 <code>loadFactor</code> 阈值时，应扩展 <code>MyHashMap</code> 的大小。回想一下，当前 <strong>负载因子</strong> 计算公式为：<code>loadFactor = N/M</code>，其中 N是映射中的元素数量，M是桶的数量。负载因子代表每个桶的平均元素数量。若未指定 <code>initialCapacity</code>和 <code>loadFactor</code>，应设置默认值 <code>initialCapacity = 16</code> 和 <code>loadFactor = 0.75</code>（与 Java 内置 <code>HashMap</code> 相同）。</p>
+</li>
+<li>
+<p>你应使用分离链接法处理冲突。除桶类、<code>Collection</code>、<code>Iterator</code>、<code>Set</code>和 <code>HashSet</code> 外，不应该使用其他库。关于分离链接法的实现细节，请参阅上文的 <strong>框架代码</strong> 部分。</p>
+</li>
+<li>
+<p>由于我们使用 <code>Collection&lt;Node&gt;[]</code> 作为桶数组，在实现 <code>MyHashMap</code> 时，你只能使用 <code>Collection</code> 接口指定的方法。<strong>当你在 <code>Collection</code> 中搜索 <code>Node</code> 时，需遍历该集合并找到 <code>key</code> 与目标键 <code>.equals()</code> 匹配的 <code>Node</code>。</strong></p>
+</li>
+<li>
+<p>若同一键被重复插入，每次都应更新其值（即不应添加新 <code>Node</code>）。可假定永远不会插入 <code>null</code> 键。</p>
+</li>
+<li>
+<p>扩容时，确保是乘法（几何）调整，而不是加法（算术）调整。 <strong>不要求</strong> 缩容。</p>
+</li>
+<li>
+<p>假设插入任何对象的 <code>hashCode()</code> 均匀分布 <strong>（回想一下：Java 中每个对象都有其 <code>hashCode()</code> 方法），<code>MyHashMap</code> 的所有操作都应该是恒定均摊时间的。</strong></p>
+</li>
+</ul>
+<p><code>hashCode()</code> 可能返回负值！Java 的取模运算符 <code>%</code> 在输入为负数时会返回负值，但我们需要将元素放到[0, M)范围内的桶中。有多种处理方式：</p>
+<ol>
+<li>
+<p>（推荐）你可以使用 <code>Math.floorMod()</code> 替代 <code>%</code> 进行取模运算。该方法返回值的范围是非负数，类似于 Python 的取模运算。</p>
+</li>
+<li>
+<p>若 <code>%</code> 运算结果为负，可加上数组长度使其转化为正数。</p>
+</li>
+<li>
+<p>你可以使用 Math.abs() 函数将负值转为正值。请注意：|x| mod m、|x mod m| 和 x mod m <strong>通常不等价！</strong> 我们在这里使用取模运算只是为了确保有效的索引值，不必关心元素被分配到哪个具体桶，因为优秀的哈希函数应能在正负值范围内均匀分布元素。</p>
+</li>
+<li>
+<p>基于选项3 但是使用位掩码变体（不了解位掩码无需担心）。这个方法超出 61B 课程范围，但因为部分参考资料使用，所以我们在这里列出。
+`</p>
+</li>
+</ol>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>根据 <code>Map61B</code> 接口的规范及上述指南完成 <code>MyHashMap</code> 类的实现。</p>
+</div>
+<h3 id="_7">资源<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>以下资源可能会对您有所帮助</p>
+<ul>
+<li>讲座幻灯片：</li>
+<li>Lecture <a href="../others/lab07/%5B61B%2BSP25%5D%2BLecture%2B19_%2BHashing.pptx">19</a></li>
+<li>Lecture <a href="../others/lab07/%5B61B%2BSP25%5D%2BLecture%2B20%2B-%2BHashing%2BII.pptx">20</a></li>
+</ul>
+<p>以下内容可能包含过时的代码或使用不熟悉的技术，但应该还有用：</p>
+<ul>
+<li><code>ULLMap.java</code>（已提供），一个基于无序链表的 <code>Map61B</code> 实现</li>
+</ul>
+<h3 id="_8">测试<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>你可以使用 <code>TestMyHashMap.java</code> 测试你的实现。部分测试较为棘手，涉及 61B 课程中我们没学过的奇怪的操作。测试的注释有助于你理解测试的实际行为。</p>
+<p>如果你正确实现了泛型 <code>Collection</code> 桶，你还应该通过 <code>TestMyHashMapBuckets.java</code> 的测试。<code>TestMyHashMapBuckets.java</code> 会为每个实现不同桶数据结构的映射子类调用 <code>TestMyHashMap.java</code> 中的方法。请确保你使用提供的工厂方法（即 <code>createBucket</code>）正确实现了 <code>MyHashMap</code>，以保证 <code>TestHashMapBuckets.java</code> 测试通过。</p>
+<p>如果你选择额外实现 <code>remove</code>、<code>keySet</code> 和 <code>iterator</code> 方法，我们提供了 <code>TestHashMapExtra.java</code> 进行相关测试。</p>
+<h2 id="_9">速度测试<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>我们提供了两个交互式速度测试文件：<code>InsertRandomSpeedTest.java</code> 和 <code>InsertInOrderSpeedTest.java</code>。在完成 <code>MyHashMap</code> 实现前，请勿运行这些测试。完成后，可在 <code>IntelliJ</code> 中运行测试。</p>
+<p><code>InsertRandomSpeedTest</code> 类测试 <code>MyHashMap</code>、<code>ULLMap</code>（已提供）和 Java 内置 <code>HashMap</code>的元素插入速度。它的工作流程为：要求用户输入规模 N，然后生成 N 个长度为 10 的字符串，并以  <code>&lt;String, Integer&gt;</code> 键值对形式插入映射。</p>
+<p>运行测试，与基础实现与工业级实现相比，观察你的数据结构的性能变化随 N 的增长如何变化，并将结果记录到提供的 <code>src/results.txt</code> 文件中。结果文件无固定格式要求，数据点数量不限，但我们希望你至少写一两句观察的结论。</p>
+<p>接着尝试运行 <code>InsertInOrderSpeedTest</code>，其行为类似 <code>InsertRandomSpeedTest</code>，但此次  <code>&lt;String, Integer&gt;</code> 键值对中的 <code>String</code> 按字典序递增插入。你的代码性能应与 Java 内置方案处于同一量级（例如相差 10 倍以内）。这表明：相比最先进的树形映射（<code>TreeMap</code>），最先进的哈希映射（<code>HashMap</code>）的实现相对更加简单。请思考一下 <code>BSTMap</code>/<code>TreeMap</code> 和其他数据结构之间的这种关系，然后思考：是否存在哈希映射更具优势的场景？与同伴讨论并将答案写入 <code>results.txt</code>。</p>
+<h2 id="_10">不同的桶类型<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>若你已正确实现泛型 <code>Collection</code> 桶，那么大部分工作已经完成！我们可直接比较用于实现桶的不同数据结构。我们提供了 <code>speed/BucketsSpeedTest.java</code>，这是一个交互式测试程序：要求用户输入整数 L（后续操作所用字符串的长度）,接着在循环中要求用户输入整数 N，然后使用不同类型的桶运行 <code>MyHashMap</code> 速度测试</p>
+<p>请运行测试，比较不同实现在 N 增长时的性能变化。与同伴讨论结果，并将结论记录到 <code>results.txt</code>。</p>
+<p>你可能会注意到，使用 <code>HashSet</code> 作为桶的实现会通过遍历整个数据结构来搜索 <code>Node</code> 。但我们知道，哈希表本应支持更高效的查找。如果我们能在 <code>HashSet</code> 上使用常数时间搜索，我们的哈希表是否会获得渐进复杂度层面的加速？ 你无需实现新功能，只需与同伴讨论并将想法记录到 <code>results.txt</code>。</p>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>在 <code>speed</code> 目录下运行上述速度测试，并将你的结果记录在 <code>results.txt</code> 中 </p>
+</div>
+<h2 id="_11">可选练习<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>这些练习不计分，但你仍然可以通过给定的测试获得反馈。</p>
+<p>在你的 <code>MyHashMap</code> 类中实现方法 <code>remove(K key)</code> 和 <code>remove(K key, V value)</code>。作为额外的挑战，尝试在不使用额外实例变量来存储键集合的情况下实现 <code>keySet()</code> 和 <code>iterator()</code> 方法。</p>
+<p>对于 <code>remove</code>，如果参数键在 <code>MyHashMap</code> 中不存在，你应该返回 <code>null</code>。否则，删除键值对 <code>(key, value)</code> 并返回关联的值。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

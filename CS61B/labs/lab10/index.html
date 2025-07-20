@@ -1,0 +1,935 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://puckbee.github.io/moli/CS61B/labs/lab10/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>实验 10：俄罗斯方块（可选） - MOLI：提升实践能力的试炼之地</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#10" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOLI：提升实践能力的试炼之地
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              实验 10：俄罗斯方块（可选）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  学习路线
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CS61C/CS61C/" class="md-tabs__link">
+          
+  
+  
+  基础动手
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../MIT6.S081/MIT6.S081/" class="md-tabs__link">
+          
+  
+  
+  操作系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../AboutMOLI/" class="md-tabs__link">
+          
+  
+  
+  关于 MOLI
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MOLI：提升实践能力的试炼之地
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    学习路线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    基础动手
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            基础动手
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            CS61C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/CS61C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    讲义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MIT6.S081/MIT6.S081/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MIT6.S081
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PA/PA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    南京大学 ICS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            关于 MOLI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AboutMOLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="10">实验 10：俄罗斯方块（可选）<a class="headerlink" href="#10" title="Permanent link">&para;</a></h1>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<p>每个作业的顶部都会链接一个常见问题页面，你也可以在 URL 末尾添加 “/faq” 来访问。本实验 10 的常见问题页面位于<a href="https://sp25.datastructur.es/labs/lab10/faq/">此处</a>。</p>
+<h2 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本实验将帮助你入门项目的第二阶段：交互性。在做本实验时，你不一定需要完成第一阶段，但如果还没开始，我们强烈建议你着手准备！</p>
+<p>在本实验中，你需要思考一些想法（或实现方式）如何应用到项目 3 中。它还会帮助你更熟悉项目所需的实用工具。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>本实验提供了很多辅助方法 —— 你无需了解每个方法的具体作用，但请注意，在实验过程中你需要调用其中一些方法。你还会用到一个库中的方法，请务必通读相关文件，了解你所使用的内容！提醒一下，坐标 (0, 0) 代表游戏板的左下角。</p>
+</div>
+<h2 id="_2"><strong>可选说明</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>请注意，本实验是可选的，<strong>但强烈建议你完成</strong>，以帮助你更好地完成项目！</p>
+<h2 id="tetris"><strong>俄罗斯方块（Tetris）</strong><a class="headerlink" href="#tetris" title="Permanent link">&para;</a></h2>
+<p>为了准备制作游戏，我们将构建俄罗斯方块！如果你对俄罗斯方块不太熟悉，它是一款益智视频游戏，玩家需要在不同形状的方块（称为 “四格骨牌”）下落时 “消行”。玩家可以根据需要移动和旋转这些方块来完成行消除 —— 一旦有行被消除，这些行就会消失，玩家得分。当未消除的行堆积到游戏板顶部时，游戏结束。
+你所有的实现工作都将在<code>Tetris.java</code>中完成。我们还提供了另外三个文件：</p>
+<ul>
+<li><code>Tetromino.java</code>：包含你将使用的游戏方块</li>
+<li><code>Movement.java</code>：包含方块旋转和移动的逻辑</li>
+<li><code>BagRandomizer.java</code>：帮助随机生成要出现的方块</li>
+</ul>
+<p>你无需直接在这三个文件中编写代码，但这些类会在<code>Tetris.java</code> 中被使用（或将要被使用）。我们还会用到<code>StdDraw</code>库来实现一些功能，例如用户输入。你会发现这个库对项目 3 非常有用。</p>
+<p>虽然我们希望做出一个能运行的<code>Tetris.java</code>游戏，但应该将其分解为更小的步骤，而不是一次性解决所有问题。游戏大致可以分为以下步骤：</p>
+<ol>
+<li>创建游戏窗口。</li>
+<li>随机生成一个供玩家控制的方块，并显示当前分数。</li>
+<li>根据玩家的输入更新方块的移动。</li>
+<li>当方块无法再移动时，检查是否有行需要消除，更新分数，并重新生成一个新方块。</li>
+<li>重复步骤 2-4，直到游戏结束（当未消除的行到达顶部时）。</li>
+</ol>
+<p>一般来说，良好的编码实践是先构建具有明确用途的小型程序，然后用这些基础程序组合出更复杂的方法。如果你查看 <code>Tetris.java</code>，会发现它包含许多辅助方法，用于构建更复杂的游戏机制 —— 在项目 3 中，强烈建议将游戏逻辑分解为独立的方法。这会让你的开发路径更清晰，也更容易为单元测试拆分逻辑。</p>
+<p>实验结束时，你将做出一个功能如下的游戏：</p>
+<p><img alt="image" src="../images/lab10/image1.gif" /></p>
+<p>如果你想自己玩这个游戏，可以在<a href="https://tetris.com/play-tetris">这里</a>找到它。</p>
+<h2 id="stddraw">StdDraw<a class="headerlink" href="#stddraw" title="Permanent link">&para;</a></h2>
+<p>如前所述，我们将使用 <code>StdDraw</code> 库。<code>StdDraw</code> 是一个提供基础绘图和用户输入捕获功能的库。开始前请查看其 <a href="https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html">API</a>  文档 —— 其中的一些方法不仅对本实验有用，对项目 3 也至关重要。</p>
+<h2 id="_3">运行游戏<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>要运行游戏，需运行 <code>Tetris.java</code> 中的 <code>main</code> 方法。目前，运行后只会显示一个黑框。随着你实现更多方法，可以通过这个方法验证游戏逻辑的正确性。</p>
+<h2 id="_4">方法概述<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>由于所有实现工作都在 <code>Tetris.java</code> 中进行，你需要完成几个方法才能让游戏运行起来。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>如前所述，请务必通读 <code>Tetris.java</code>、<code>Tetromino.java</code> 和 <code>Movement.java</code>，熟悉本实验中的辅助方法。虽然你不一定需要理解每个辅助方法的工作原理（这就是抽象的意义！），但其中一些很可能对你的实现有帮助，因此请仔细阅读，了解有哪些可用的工具。</p>
+</div>
+<h3 id="updateboard"><code>updateBoard</code><a class="headerlink" href="#updateboard" title="Permanent link">&para;</a></h3>
+<p>该方法根据用户输入更新游戏板。第一步是检查用户是否有输入，若有则获取输入。<code>StdDraw</code>  <a href="https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html">API</a> 中的一些方法对实现这部分很有用，可参考 <code>hasNextKeyTyped</code> 和 <code>nextKeyTyped</code>。</p>
+<p>下一步是实现特定按键对应的操作。用户可输入 5 个键：</p>
+<ul>
+<li><code>a</code>：将当前方块向左移动一格</li>
+<li><code>s</code>：将当前方块向下移动一格</li>
+<li><code>d</code>：将当前方块向右移动一格</li>
+<li><code>q</code>：将当前方块向左旋转 90 度</li>
+<li><code>w</code>：将当前方块向右旋转 90 度</li>
+</ul>
+<p>建议查看 <code>Movement.java</code> 中提供的辅助方法，确定可以调用哪些方法来移动或旋转方块（<strong>你无需自己实现任何移动逻辑，只需理解这些辅助方法的作用即可</strong>）。</p>
+<p>代码中已提供一个 <code>Movement</code> 实例供你使用。</p>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>根据上述描述完成 <code>updateBoard</code> 方法。提醒一下，务必通读 <code>Movement.java</code> 和 <code>StdDraw</code> 的 API！</p>
+</div>
+<h3 id="incrementscore"><code>incrementScore</code><a class="headerlink" href="#incrementscore" title="Permanent link">&para;</a></h3>
+<p>这是一个辅助方法，用于更新分数。玩家的分数根据单次消除的行数增加，具体规则如下：</p>
+<ul>
+<li>消除 1 行：加 100 分</li>
+<li>消除 2 行：加 300 分</li>
+<li>消除 3 行：加 500 分</li>
+<li>消除 4 行：加 800 分</li>
+</ul>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>完成 <code>incrementScore</code> 方法，使玩家分数按上述规则增加。</p>
+</div>
+<h3 id="clearlines"><code>clearLines</code><a class="headerlink" href="#clearlines" title="Permanent link">&para;</a></h3>
+<p>在俄罗斯方块中，当一行被填满时，需要更新分数并消除该行。该方法用于在方块落定后检查是否有行需要消除。实现时需考虑：</p>
+<ul>
+<li>由于不确定哪些行会被填满（如果有的话），需要检查整个游戏板</li>
+<li>如何判断一行是否被填满？特别是如何判断一行未被填满？</li>
+<li>找到被填满的行后，需要消除该行。</li>
+<li>消除一行后，其上方所有行需下移。</li>
+<li>用变量 <code>linesCleared</code> 记录消除的行数。</li>
+<li>最后，根据消除的行数更新分数，可调用你实现的辅助方法。</li>
+</ul>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>完成 <code>clearLines</code> 方法，检查消除的行数并相应更新游戏板。注意，游戏板会作为参数传入，因此请务必使用参数 <code>tiles</code>（否则可能影响自动评分）。</p>
+</div>
+<h3 id="rungame"><code>runGame</code><a class="headerlink" href="#rungame" title="Permanent link">&para;</a></h3>
+<p>这是主游戏逻辑所在的地方。代码框架中已留下注释帮助你入门。需注意几点：</p>
+<ul>
+<li>确保游戏在结束前不会退出或停止（提示：如何让游戏持续运行？）。</li>
+<li>如果当前方块无法下移或从当前位置移动，<strong>会被设为 <code>null</code></strong>。这部分逻辑已实现，你无需处理。</li>
+<li>当方块落定且无法移动后，需检查是否有行需要消除，并生成新方块。</li>
+<li>需根据用户输入更新游戏板，并渲染这些变化。</li>
+</ul>
+<p>除了你已实现的方法，你可能会用到以下相关辅助方法：</p>
+<ul>
+<li><code>spawnPiece</code>：在游戏板上生成一个方块，并将当前方块设为随机选择的方块</li>
+<li><code>isGameOver</code>：检查游戏是否结束</li>
+<li><code>clearLines</code>：检查需要消除的行，并根据消除的行数更新分数（确保将游戏板传入 <code>clearLines</code>）</li>
+<li><code>updateBoard</code>：检查玩家的移动，并根据用户输入更新游戏板</li>
+<li><code>renderBoard</code>：渲染游戏板状态（在用户输入和消除行后调用）</li>
+</ul>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>完成 <code>runGame</code> 方法。</p>
+</div>
+<h3 id="renderscore"><code>renderScore</code><a class="headerlink" href="#renderscore" title="Permanent link">&para;</a></h3>
+<p>此时，如果你运行游戏，会发现缺少了一些东西 —— 分数！因为我们还未显示分数。完成 <code>renderScore</code> 方法以显示分数，这样你可以验证消除行时分数是否正确更新。</p>
+<p>步骤如下：</p>
+<ol>
+<li>将文本颜色设为白色（RGB 值为 (255, 255, 255)），使分数在黑色背景上可见。</li>
+<li>分数应显示在坐标 (7, 19) 处。</li>
+<li>绘制完成后，确保渲染分数！</li>
+</ol>
+<p>以下是 <code>StdDraw</code> 库中可能有用的方法（你可能不会全部用到，但可参考）：</p>
+<ul>
+<li><a href="https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html#setFont(java.awt.Font)"><code>StdDraw.setFont</code></a></li>
+<li><a href="https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html#clear()"><code>StdDraw.clear</code></a></li>
+<li><a href="https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html#text(double, double, java.lang.String)"><code>StdDraw.text</code></a></li>
+<li><a href="https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html#setPenColor(java.awt.Color)"><code>StdDraw.setPenColor</code></a></li>
+<li><a href="https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html#show()"><code>StdDraw.show</code></a></li>
+<li><a href="https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html#pause-int-"><code>StdDraw.pause</code></a></li>
+</ul>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>完成 <code>renderScore</code> 方法，运行游戏检查分数是否显示。</p>
+</div>
+<p>Gradescope 的自动评分器并非面面俱到，但你可以通过以下方式检查游戏是否正常运行：</p>
+<ul>
+<li>方块可通过 <code>a</code>、<code>s</code>、<code>d</code> 键分别向左、向下、向右移动，通过 <code>q</code>、<code>w</code> 键分别向左、向右旋转。</li>
+<li>其他按键（如 <code>h</code>）不应影响游戏板。</li>
+<li>分数在游戏过程中持续显示，不会消失。</li>
+<li>方块堆叠或落地时不会穿透。</li>
+</ul>
+<p>重申一下，需要实现的方法总结如下：</p>
+<ul>
+<li><code>updateBoard</code>：根据用户输入更新游戏板</li>
+<li><code>incrementScore</code>：根据消除的行数更新分数</li>
+<li><code>clearLines</code>：检查并消除填满的行</li>
+<li><code>runGame</code>：实现运行游戏的主逻辑</li>
+<li><code>renderScore</code>：显示分数</li>
+</ul>
+<h2 id="_5"><strong>致谢</strong><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>4 位助教参与了本实验的制作（Noah Adhikari、Erik Nelson、Omar Yu 和 Jasmine Lin）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

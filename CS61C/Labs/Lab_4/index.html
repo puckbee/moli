@@ -1,0 +1,1192 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://puckbee.github.io/moli/CS61C/Labs/Lab_4/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>实验4：RISC-V 调用约定 - MOLI：提升实践能力的试炼之地</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4risc-v" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOLI：提升实践能力的试炼之地
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              实验4：RISC-V 调用约定
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  学习路线
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CS61C/" class="md-tabs__link">
+          
+  
+  
+  基础动手
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../MIT6.S081/MIT6.S081/" class="md-tabs__link">
+          
+  
+  
+  操作系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../AboutMOLI/" class="md-tabs__link">
+          
+  
+  
+  关于 MOLI
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MOLI：提升实践能力的试炼之地
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    学习路线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    基础动手
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            基础动手
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            CS61C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS61C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    讲义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MIT6.S081/MIT6.S081/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MIT6.S081
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PA/PA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    南京大学 ICS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            关于 MOLI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AboutMOLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="4risc-v">实验4：RISC-V 调用约定<a class="headerlink" href="#4risc-v" title="Permanent link">&para;</a></h1>
+<p><a href="https://web.archive.org/web/20241219154533/https://docs.google.com/presentation/d/1sb53wVc02O4er53P7dOUhcvey46XVyASQMiEP3Gz8uM/edit">实验幻灯片</a></p>
+<h2 id="_1">实验设置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>你必须在本地机器上完成本实验。如需重新配置环境，请参考 <a href="../Lab_0/">Lab 0</a>。</summary>
+</details>
+<p>在本地的 <code>labs</code> 文件夹中，拉取你之前实验的变更：</p>
+<pre class="highlight"><code class="language-bash">git pull origin main</code></pre>
+<p>继续在 <code>labs</code> 文件夹中，拉取本实验的文件：</p>
+<pre class="highlight"><code class="language-bash">git pull starter main</code></pre>
+<p>如果报错如下：</p>
+<pre class="highlight"><code>fatal: 'starter' does not appear to be a git repository
+fatal: Could not read from remote repository.</code></pre>
+<p>请先添加 starter 远程仓库地址：</p>
+<pre class="highlight"><code class="language-bash">git remote add starter https://github.com/61c-teach/fa24-lab-starter.git</code></pre>
+<p>然后再次运行原来的命令。</p>
+<p>接着，在 <code>labs</code> 目录下执行以下命令以下载我们可能需要的工具：</p>
+<pre class="highlight"><code class="language-bash">bash tools/download_tools.sh</code></pre>
+<p>如果遇到 Git 报错，请查阅常见<a href="https://web.archive.org/web/20241219154533/https://cs61c.org/fa24/resources/common-errors/">错误页面</a>。</p>
+<h2 id="venus">Venus 模拟器<a class="headerlink" href="#venus" title="Permanent link">&para;</a></h2>
+<p>我们将继续使用 <a href="https://venus.cs61c.org">Venus</a> 进行 RISC-V 模拟。请参考 <a href="https://cs61c.org/sp25/resources/venus-reference/">Venus 使用文档</a> 以熟悉界面与功能。</p>
+<p>挂载 Lab 4 的文件方法与 <a href="../Lab_3/">Lab 3</a> 相同。</p>
+<h2 id="_2">调用约定简介<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>建议先阅读<a href="https://cs61c.org/sp25/projects/proj2/#calling-convention">调用约定附录</a>，掌握基础概念。调用约定对于正确编写 RISC-V 程序至关重要。</p>
+<p>此外，我们建议结合实验幻灯片与<a href="https://web.archive.org/web/20241219154533/https://cs61c.org/su24/lectures/lec07/">相关课程</a>讲解，以理解调用约定背后的设计动机。</p>
+<p>我们在下面提供了两个关于调用约定（Calling Convention, CC）的实际演示示例。我们知道这些示例比较长，但它们将帮助你理解在编写 RISC-V 程序时如何遵循调用约定，从而使这个实验更容易完成。</p>
+<hr />
+<h2 id="_3">示例：实际应用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>假设我们有如下结构的汇编代码，用于一个名为 <code>func1</code> 的函数。我们假设 <code>func1</code> 是由另一个函数（例如 <code>main</code> 函数）调用的。从代码中你也会看到，<code>func1</code> 还会调用另一个名为 <code>func2</code> 的函数。
+当 <code>func1</code> 被 <code>main</code> 调用时，<code>func1</code> 是 <strong>被调用者（callee）</strong>；<br />
+而当 <code>func1</code> 调用 <code>func2</code> 时，<code>func1</code> 又成为了 <strong>调用者（caller）</strong>。
+因此，<code>func1</code> 在遵循调用约定（Calling Convention）时，必须同时承担 <strong>被调用者</strong> 和 <strong>调用者</strong> 的职责。</p>
+<pre class="highlight"><code class="language-assembly">func1: # 修改 a0, t0 和 s0。ra 指向 `main`。
+    # Checkpoint 1: 修改寄存器前应该做什么？
+    # 使用 a0、t0、s0的代码块
+    # Checkpoint 2: 调用其他函数前应该做什么？
+    # 输入参数在 a0，返回值也在 a0
+    jal ra, func2 # 调用 func2
+    # Checkpoint 3: 调用后应该做什么？
+    # 再次使用 a0、t0、s0代码块
+    # Checkpoint 4: 返回前应做什么？
+    jr ra # 返回主调函数</code></pre>
+<p>将值保存到栈中是通过使用 <code>sw</code> 指令将数据存入合适的栈指针（<code>sp</code>）位置来完成的。从栈中取回值则使用 <code>lw</code> 指令在相应的栈指针位置读取数据。每当你要将值压入栈时，需要调整栈指针(通过减小 sp 的值)。每当你要从栈中取回值时，也要相应地反向调整 sp 的值（即增大 sp）。遵循这一流程可以确保函数调用开始和结束时，sp 的值保持一致。这正是函数使用栈内存作为临时存储空间的方式。</p>
+<p>让我们尝试为代码中的每个Checkpoint填写相应的代码。</p>
+<p>在 Checkpoint 1 中，由于 <code>func1</code> 是被调用者（由 <code>main</code> 调用），它必须保存那些它将要修改的 callee 保存寄存器。代码中指出我们将会修改 <code>s0</code>，而 s0 是一个保存寄存器（saved register）。
+此外，由于 <code>func1</code> 还会调用另一个函数 <code>func2</code>，因此它还需要保存返回地址 <code>ra</code>。虽然 <code>ra</code> 是一个 caller saved register，但通常我们也会在这一步将其保存在栈中。由于我们要保存 2 个寄存器，因此需要将栈指针 <code>sp</code> 下调两个字（即 8 字节）。对应的代码如下所示：</p>
+<pre class="highlight"><code class="language-assembly"># Checkpoint 1：在开始修改寄存器之前你需要做什么？
+addi sp, sp, -8   # 将栈指针下移两个字（8 字节）
+sw ra, 0(sp)      # 保存返回地址寄存器 ra
+sw s0, 4(sp)      # 保存被调用者保存的寄存器 s0</code></pre>
+<p>在 Checkpoint 2，我们看到 <code>a0</code>、<code>t0</code> 和 <code>s0</code> 都已经被修改过，而我们现在即将调用 <code>func2</code>（此时 <code>func1</code> 成为调用者）。我们可以看到 <code>func2</code> 使用 <code>a0</code> 寄存器接收输入参数，并且也使用同一个寄存器返回结果。此外，我们还注意到，在代码后续（Checkpoint 3 之后），还会再次使用 <code>t0</code> 和 <code>s0</code> 寄存器。因此，从 <code>func1</code> 的角度来看，在调用 <code>func2</code> 前后，这两个寄存器的值应该保持不变。我们知道，如果 <code>func2</code> 遵循调用约定，它应该会将 <code>s0</code> 寄存器保存在栈上，并在返回之前恢复原值。这正是我们希望看到的。然而，<code>t0</code> 是调用者保存（caller-saved）寄存器，<code>func2</code> 并不会保存它，因此可以在函数内部自由修改它。因此，作为 <code>func2</code> 的调用者，<code>func1</code> 现在有责任将 <code>t0</code> 保存在栈上。
+因此，我们写出了如下代码：</p>
+<pre class="highlight"><code class="language-assembly"># Checkpoint 2：调用另一个函数之前你需要做什么？
+addi sp, sp, -4   # 将栈指针下移一个字（4 字节）
+sw t0, 0(sp)      # 保存临时寄存器 t0</code></pre>
+<p>在 Checkpoint 3，<code>func2</code> 已经返回，返回值存储在 <code>a0</code> 中。此时，<code>func1</code> 准备使用这个返回值（<code>a0</code>）以及 <code>t0</code> 和 <code>s0</code> 寄存器进行一些操作。同样地，如果 <code>func2</code> 遵循调用约定，从 <code>func1</code> 的角度来看，<code>s0</code> 寄存器的值应该保持不变。然而，<code>t0</code> 可能已经被修改。幸运的是，我们在调用 <code>func2</code> 之前已经将它保存到栈中了，现在只需要将它恢复即可。
+因此，我们有如下代码：</p>
+<pre class="highlight"><code class="language-assembly"># Checkpoint 3: 调用函数后你需要做什么？
+    lw t0 0(sp)     # 从栈中恢复保存的临时寄存器
+    addi sp sp 4    # 将栈指针上移一个字（4字节）</code></pre>
+<p>在 Checkpoint 4，我们现在处于 <code>func1</code> 完成操作即将返回到 <code>main</code> 的阶段。但是，在返回之前，它必须确保完成了作为被调用者（callee）的职责。在之前的 Checkpoint 1 中，我们将 <code>ra</code> 和 <code>s0</code> 寄存器保存到了栈上。现在是时候将它们取回了。在 <code>func1</code> 的执行过程中，<code>s0</code> 寄存器和 <code>ra</code> 寄存器都被修改过（由于调用了 <code>func2</code>）。作为被调用者，它有责任将它们恢复到原来的值，以便从 <code>main</code> 函数的角度来看，这些寄存器的值没有发生变化。
+因此，我们有如下代码：</p>
+<pre class="highlight"><code class="language-assembly"># Checkpoint 4：函数返回之前需要做什么？
+lw s0 4(sp)     # 从栈中恢复被保存的寄存器 s0
+lw ra 0(sp)     # 从栈中恢复原始返回地址寄存器 ra（指向 main 函数）
+addi sp sp 8    # 将栈指针上移两个字（8 字节）</code></pre>
+<p>到此为止，我们已经满足了 <code>func1</code> 的 RISC-V 调用约定。以下是完整代码：</p>
+<pre class="highlight"><code class="language-assembly">func1: # 修改了 a0、t0 和 s0。ra 指向 main 函数。
+    # checkpoint 1：开始修改寄存器之前需要做什么？
+    addi sp sp -8   # 将栈指针下移两个字（8 字节）
+    sw ra 0(sp)     # 保存返回地址寄存器 ra
+    sw s0 4(sp)     # 保存被保存寄存器 s0
+
+    # 使用 a0、t0 和 s0 的代码块
+    # checkpoint 2：调用另一个函数之前需要做什么？
+    addi sp sp -4   # 将栈指针下移一个字（4 字节）
+    sw t0 0(sp)     # 保存临时寄存器 t0
+
+    # 输入参数在 a0，返回值也放在 a0
+    jal ra, func2   # 调用 func2
+    # checkpoint 3：函数调用后需要做什么？
+    lw t0 0(sp)     # 从栈中恢复保存的临时寄存器 t0
+    addi sp sp 4    # 将栈指针上移一个字（4 字节）
+
+    # 使用 a0、t0 和 s0 的代码块
+    # checkpoint 4：函数返回之前需要做什么？
+    lw s0 4(sp)     # 从栈中恢复被保存的寄存器 s0
+    lw ra 0(sp)     # 从栈中恢复原始返回地址寄存器 ra（指向 main 函数）
+    addi sp sp 8    # 将栈指针上移两个字（8 字节）
+
+    jr ra           # 函数返回</code></pre>
+<p>假设在调用 <code>func1</code> 时，寄存器 <code>sp</code> 的初始值是 0x7FFFFFF0。</p>
+<details class="question">
+<summary><code>s0</code> 被保存在哪个内存地址？</summary>
+<p>栈指针向下调整了 8 字节，但 <code>s0</code> 存储在 <code>sp + 4</code> 的位置。因此，地址是 <code>0x7FFFFFF0 - 8 + 4 = 0x7FFFFFEC</code>。</p>
+</details>
+<details class="question">
+<summary><code>t0</code> 被保存在哪个内存地址？</summary>
+<p>栈指针先向下调整了 8 字节，然后在保存 <code>t0</code> 之前又向下调整了 4 字节。因此，地址是 <code>0x7FFFFFF0 - 8 - 4 = 0x7FFFFFE4</code>。</p>
+</details>
+<details class="question">
+<summary>在 <code>func1</code> 结束时（即 <code>jr ra</code> 这一行），栈指针指向哪里？</summary>
+<p>栈指针应该回到原始值，因为我们已经恢复了保存的数据并且相应地回收了栈空间。因此，地址是 <code>0x7FFFFFF0</code>。</p>
+</details>
+<details class="question">
+<summary>如果我们没有实现 Checkpoint 2 和 3 的代码，会出什么问题？</summary>
+<p>在 Checkpoint 3 之后，描述了 <code>func1</code> 会再次使用 <code>t0</code>。由于 <code>t0</code> 是调用者保存寄存器，作为被调用者的 <code>func2</code> 可以自由修改它，而不需要恢复原值。如果 <code>t0</code> 被 <code>func2</code> 修改了，那么 <code>func1</code> 的计算结果将是错误的，因为函数调用改变了它的临时变量之一。          </p>
+</details>
+<details class="question">
+<summary>如果我们根本没有保存 <code>ra</code>，会出什么问题？</summary>
+<p><code>ra</code> 指向调用函数的地址。在 <code>func1</code> 开始时，它指向 <code>main</code> 函数中的某个位置。每当执行 <code>jal</code> 指令时，<code>ra</code> 会被修改，指向该指令之后的下一条指令。这样，当执行 <code>jr ra</code> 时，就会跳转到 <code>ra</code> 指向的位置继续执行。<code>func1</code> 调用了 <code>func2</code>，这会改变 <code>ra</code>，使它指向紧跟调用 <code>func2</code> 的指令之后的位置（比如 <code>lw t0 0(sp)</code>）。这个位置现在是在 <code>func1</code> 内部。如果没有保存 <code>ra</code>，当 <code>func1</code> 在结尾执行 <code>jr ra</code> 时，会跳回到 <code>lw t0 0(sp)</code> 这条指令，导致程序流程错误，而不是跳回到 <code>main</code> 函数的正确位置。</p>
+</details>
+<h2 id="c-risc-v">示例：使用调用约定将 C 语言转换为 RISC-V<a class="headerlink" href="#c-risc-v" title="Permanent link">&para;</a></h2>
+<p>在本练习中，你将学习如何将下面的 C 程序翻译成 RISC-V 代码。如果你想挑战自己，可以先尝试翻译代码，再对照答案查看。</p>
+<pre class="highlight"><code class="language-C">int source[] = {3, 1, 4, 1, 5, 9, 0};
+int dest[10];
+
+int fun(int x) {
+    return -x * (x + 1);
+}
+
+int main() {
+    int k;
+    int sum = 0;
+    for (k = 0; source[k] != 0; k++) {
+        dest[k] = fun(source[k]);
+        sum += dest[k];
+    }
+    printf("sum: %d\n", sum);
+}</code></pre>
+<p>我们先从初始化 <code>source</code> 和 <code>dest</code> 数组开始。就像我们在实验 3 中做的那样，我们需要在 <code>.data</code> 段声明数组，如下所示：</p>
+<pre class="highlight"><code class="language-assembly">.data
+source:
+    .word   3
+    .word   1
+    .word   4
+    .word   1
+    .word   5
+    .word   9
+    .word   0
+dest:
+    .word   0
+    .word   0
+    .word   0
+    .word   0
+    .word   0
+    .word   0
+    .word   0
+    .word   0
+    .word   0
+    .word   0</code></pre>
+<p>接下来，我们开始编写 <code>fun</code> 函数。</p>
+<pre class="highlight"><code class="language-C">int fun(int x) {
+    return -x * (x + 1);
+}</code></pre>
+<p>调用约定规定：</p>
+<ul>
+<li><strong>参数 <code>x</code> 位于寄存器 <code>a0</code> 中</strong>  </li>
+<li><strong>返回值也必须放入寄存器 <code>a0</code></strong></li>
+</ul>
+<p>其余代码在下方的注释中解释。</p>
+<pre class="highlight"><code class="language-assembly">.text
+fun:
+    addi t0, a0, 1 # t0 = x + 1
+    sub t1, x0, a0 # t1 = -x
+    mul a0, t0, t1 # a0 = (x + 1) * (-x)
+    jr ra # return</code></pre>
+<details class="question">
+<summary>问问你自己：为什么我们在使用 <code>t1</code> 之前没有保存它？</summary>
+<p><code>t1</code> 是一个调用者保存寄存器。调用约定并不保证调用者保存的寄存器在函数调用后仍保持不变。因此，<code>fun</code> 可以在不保存旧值的情况下修改 <code>t1</code>。如果调用 <code>fun</code> 的函数在调用前在 <code>t1</code> 中存储了某个它希望在 <code>fun</code> 返回后继续使用的值，那它就必须在调用 <code>fun</code> 之前自行保存 <code>t1</code>。</p>
+</details>
+<p>接下来我们来看 <code>main</code> 函数。（暂时先忽略调用约定）</p>
+<pre class="highlight"><code class="language-C">int main() {
+    int k;
+    int sum = 0;</code></pre>
+<p>上述代码转换如下：</p>
+<pre class="highlight"><code class="language-assembly">main:
+    addi t0, x0, 0 # t0 = k = 0
+    addi s0, x0, 0 # s0 = sum = 0</code></pre>
+<p>我们必须将 <code>k</code> 初始化为 0，因为在 RISC-V 中无法声明一个变量而不为其赋初值。</p>
+<p>接下来，我们加载两个数组的地址。</p>
+<pre class="highlight"><code class="language-assembly">    la s1, source
+    la s2, dest</code></pre>
+<p>请记住，<code>la</code> 指令用于加载一个标签的地址。这是我们访问 <code>source</code> 和 <code>dest</code> 两个数组地址的唯一方式。现在，<code>s1</code> 是指向 <code>source</code> 数组的指针，<code>s2</code> 是指向 <code>dest</code> 数组的指针。</p>
+<p>接下来我们进入循环部分。</p>
+<pre class="highlight"><code class="language-C">for (k = 0; source[k] != 0; k++) {
+    dest[k] = fun(source[k]);
+    sum += dest[k];
+}</code></pre>
+<p>首先，我们构造循环的外部结构（即循环框架）。</p>
+<pre class="highlight"><code class="language-assembly">loop:
+#1  slli s3, t0, 2
+#2  add t1, s1, s3
+#3  lw t2, 0(t1)
+#4  beq t2, x0, exit
+    ...
+#5  addi t0, t0, 1
+#6  jal x0, loop
+exit:</code></pre>
+<ul>
+<li>
+<p><strong>1.第 1 到第 3 行是为了访问 <code>source[k]</code>。首先我们需要计算该元素的字节偏移量。由于我们处理的是 <code>int</code> 类型数组，每个元素占 4 字节，因此我们需要将 <code>t0</code>（即 <code>k</code>）乘以 4。要将一个值乘以 4，我们只需左移 2 位。</strong></p>
+</li>
+<li>
+<p><strong>2.接着，我们将偏移量加到数组指针上，来计算出 <code>source[k]</code> 的地址。</strong></p>
+</li>
+<li>
+<p><strong>3.现在我们已经有了地址，就可以从内存中加载对应的值。</strong></p>
+</li>
+<li>
+<p><strong>4.然后我们检查 <code>source[k]</code> 是否为 0。如果是，就跳转到循环的出口。</strong></p>
+</li>
+<li>
+<p><strong>5.在循环的结尾，我们将 <code>k</code> 加 1。</strong></p>
+</li>
+<li>
+<p><strong>6.最后跳回循环开头，继续执行。</strong></p>
+</li>
+</ul>
+<p>现在，我们来补全循环的其余部分（先暂时忽略调用约定）。</p>
+<pre class="highlight"><code class="language-assembly">loop:
+    slli s3, t0, 2
+    add t1, s1, s3
+    lw t2, 0(t1)
+    beq t2, x0, exit
+#1  add a0, x0, t2 # 1
+    ...
+#2  jal fun # 2
+    ...
+#3  add t3, s2, s3 # 4
+#4  sw a0, 0(t3) # 5
+#5  add s0, s0, a0 # 6
+    addi t0, t0, 1
+    jal x0, loop
+exit:</code></pre>
+<ul>
+<li>
+<p><strong>1.<code>fun</code> 接收参数 <code>x</code>，我们必须通过寄存器 <code>a0</code> 传递该参数，以便 <code>fun</code> 知道去哪里取值。</strong></p>
+</li>
+<li>
+<p><strong>2.调用 <code>fun</code>。<code>jal</code> 指令会自动将返回地址保存在 <code>ra</code> 寄存器中。</strong></p>
+</li>
+<li>
+<p><strong>3.接下来，我们要将返回值存储到 <code>dest</code> 数组中。首先需要计算存储位置的地址。记住，我们可以复用之前计算的偏移量（存储在 <code>s3</code> 中）。<code>s2</code> 是指向 <code>dest</code> 数组起始位置的指针。</strong></p>
+</li>
+<li>
+<p><strong>4.将值存储到 <code>dest[k]</code>。注意，<code>fun</code> 将返回值放在了 <code>a0</code> 中。</strong></p>
+</li>
+<li>
+<p><strong>5.将 <code>sum</code> 加上 <code>dest[k]</code> 的值。</strong></p>
+</li>
+</ul>
+<p>现在，让我们在调用 <code>jal fun</code> 周围添加正确的调用约定代码。在往下看之前，先思考一下我们需要添加哪些代码才能满足调用约定。</p>
+<p>为了满足调用约定（确保代码按预期运行），我们需要保存那些在调用 <code>fun</code> 后仍希望保持不变的调用者保存寄存器（caller-saved registers）。在本例中，我们可以看到 <code>main</code> 函数中使用了寄存器 <code>t0</code>、<code>t1</code>、<code>t2</code> 和 <code>t3</code>。</p>
+<details class="question">
+<summary>我们需要保存并恢复所有这些寄存器吗？</summary>
+<p>不需要，我们只需要保存并恢复 <code>t0</code>。虽然我们在调用 <code>fun</code> 之前使用了 <code>t1</code> 和 <code>t2</code>，但之后没有再用到它们。<code>t3</code> 是在调用 <code>fun</code> 之后写入的，因此它的旧值不重要。<code>t0</code> 是唯一一个调用者保存寄存器（caller-saved register），其值必须在调用 <code>fun</code> 前后保持不变。</p>
+</details>
+<p>现在，我们在 <code>jal fun</code> 周围添加符合调用约定的代码。</p>
+<pre class="highlight"><code class="language-assembly">addi sp, sp, -4
+sw t0, 0(sp)
+jal fun
+lw t0, 0(sp)
+addi sp, sp, 4</code></pre>
+<p>接下来，我们继续完成退出部分（暂时不考虑调用约定）。</p>
+<pre class="highlight"><code class="language-assembly">exit:
+    addi a0, x0, 1    # 传递给 ecall 的参数，1 表示打印整数
+    addi a1, s0, 0    # 传递给 ecall 的参数，要打印的值
+    ecall             # 执行打印整数的系统调用
+    addi a0, x0, 10   # 传递给 ecall 的参数，10 表示终止程序
+    ecall             # 执行终止程序的系统调用
+</code></pre>
+<p>最终的和存储在 <code>s0</code> 中。要打印该值，我们需要将其存储到 <code>a1</code> 中，<code>a1</code> 是传递给 <code>ecall</code> 的打印参数。</p>
+<p>现在，我们已经完成了程序的逻辑。接下来需要完善 <code>main</code> 函数的调用约定部分。</p>
+<details class="question">
+<summary>自己思考一下，调用约定中缺少了哪部分？</summary>
+<p>我们正在覆盖被调用者保存寄存器（callee-saved registers），但没有保存它们！记住，保证被调用者保存寄存器在函数开始和结束时保持相同的值是被调用者的责任。  </p>
+</details>
+<details class="question">
+<summary>我们需要保存哪些被调用者保存寄存器？</summary>
+<p>我们需要保存所有自己使用的被调用者保存寄存器。由于我们不知道调用我们的函数会使用哪些寄存器，所以必须保存所有被我们覆盖的寄存器。在本例中，就是寄存器 <code>s0</code> 到 <code>s3</code> 和 <code>ra</code>。</p>
+</details>
+<p>理解为什么需要保存 <code>ra</code> 可能有些棘手。请记住，有另一个函数调用了 <code>main</code>。当那个函数调用 <code>main</code> 时，会将返回地址存储在 <code>ra</code> 中，以便 <code>main</code> 执行完后知道返回的位置。</p>
+<p>当 <code>main</code> 调用 <code>fun</code> 时，也需要在 <code>ra</code> 中存储返回地址，以便 <code>fun</code> 执行完后知道返回的位置。因此，<code>main</code> 必须在覆盖 <code>ra</code> 之前保存它。</p>
+<p>下面是 <code>main</code> 的函数前序（prologue）和后序（epilogue）代码：</p>
+<pre class="highlight"><code class="language-assembly">main:
+    # 函数序言（Prologue）开始
+    addi sp, sp, -20     # 为保存寄存器在栈上开辟20字节空间
+    sw s0, 0(sp)         # 保存s0寄存器
+    sw s1, 4(sp)         # 保存s1寄存器
+    sw s2, 8(sp)         # 保存s2寄存器
+    sw s3, 12(sp)        # 保存s3寄存器
+    sw ra, 16(sp)        # 保存返回地址寄存器ra
+    # 函数序言（Prologue）结束
+
+    ...
+    ...                  # 主体代码省略
+
+exit:
+    addi a0, x0, 1       # 设置ecall参数，1表示打印整数
+    addi a1, s0, 0       # 设置要打印的值（s0中保存最终结果）
+    ecall                # 执行打印整数的系统调用
+
+    # 函数尾声（Epilogue）开始
+    lw s0, 0(sp)         # 恢复s0寄存器
+    lw s1, 4(sp)         # 恢复s1寄存器
+    lw s2, 8(sp)         # 恢复s2寄存器
+    lw s3, 12(sp)        # 恢复s3寄存器
+    lw ra, 16(sp)        # 恢复返回地址寄存器ra
+    addi sp, sp, 20      # 回收之前分配的栈空间
+    # 函数尾声（Epilogue）结束
+
+    addi a0, x0, 10      # 设置ecall参数，10表示退出程序
+    ecall                # 执行退出程序的系统调用</code></pre>
+<p>你可以在 <code>example_c_to_riscv.s</code> 文件中找到完整程序。</p>
+<h2 id="11">练习 1.1：调用约定检查器<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title"> 在尝试以下练习之前，请确保你理解了调用约定（实验幻灯片是一个很好的参考资料！）。</p>
+</div>
+<p>调用约定错误可能会在你的代码中引发难以发现的 bug。调用约定检查器（Calling Convention Checker）可以用于检测代码中违反调用约定的行为，但它并不全面。在这个练习中，你将使用调用约定检查器来修复一些调用约定方面的问题。</p>
+<p><strong>注意</strong>：Venus 的调用约定检查器并不能检测出所有的调用约定错误；它的主要作用是进行基础检查。最重要的一点是，<strong>它只会检查那些通过 .globl 指令导出的函数是否存在错误</strong>——.globl 的含义在 <a href="https://web.archive.org/web/20241219154533/https://cs61c.org/fa24/resources/venus-reference/#working-with-multiple-files">Venus 的参考文档</a>中有更详细的解释。</p>
+<p>1.要启用调用约定检查器，请**点击**页面顶部的 Venus 选项卡，在 Settings（设置）面板中找到 "Calling Convention" 这一行，然后**点击** "Enable" 启用它。
+    你也可以通过命令行使用 <code>-cc</code> 标志来运行调用约定检查器。例如：
+<pre class="highlight"><code class="language-assembly">java -jar tools/venus.jar -cc lab04/ex1.s</code></pre></p>
+<p>2.接下来，打开 <code>ex1.s</code> 文件到 Simulator 选项卡中。</p>
+<p>3.运行模拟器后，你应该会看到一些类似如下的错误信息。
+<pre class="highlight"><code class="language-assembly">[CC Violation]: (PC=0x0000004C) Setting of a saved register (s0) which has not been saved! ex1.s:54 li s0, 1
+[CC Violation]: (PC=0x00000054) Setting of a saved register (s0) which has not been saved! ex1.s:57 mul s0, s0, a0
+[CC Violation]: (PC=0x00000054) Setting of a saved register (s0) which has not been saved! ex1.s:57 mul s0, s0, a0
+[CC Violation]: (PC=0x00000054) Setting of a saved register (s0) which has not been saved! ex1.s:57 mul s0, s0, a0
+[CC Violation]: (PC=0x00000054) Setting of a saved register (s0) which has not been saved! ex1.s:57 mul s0, s0, a0
+[CC Violation]: (PC=0x00000054) Setting of a saved register (s0) which has not been saved! ex1.s:57 mul s0, s0, a0
+[CC Violation]: (PC=0x00000054) Setting of a saved register (s0) which has not been saved! ex1.s:57 mul s0, s0, a0
+[CC Violation]: (PC=0x00000054) Setting of a saved register (s0) which has not been saved! ex1.s:57 mul s0, s0, a0
+[CC Violation]: (PC=0x00000064) Save register s0 not correctly restored before return! Expected 0x00000000, Actual 0x00000080. ex1.s:65 jr ra
+[CC Violation]: (PC=0x00000070) Setting of a saved register (s0) which has not been saved! ex1.s:79 mv s0, a0 # Copy start of array to saved register
+[CC Violation]: (PC=0x00000074) Setting of a saved register (s1) which has not been saved! ex1.s:80 mv s1, a1 # Copy length of array to saved register
+[CC Violation]: (PC=0x000000A4) Setting of a saved register (s0) which has not been saved! ex1.s:117 addi s0, t1, 1
+Found 12 warnings!
+--------------------
+[ERROR] An error has occurred!
+
+Error:
+`StoreError: You are attempting to edit the text of the program though the program is set to immutable at address 0x00000006!</code></pre></p>
+<p>关于这些错误的更多信息可以在 <a href="https://web.archive.org/web/20241219154533/https://cs61c.org/fa24/resources/venus-reference/#calling-convention-checker">Venus 参考文档</a> 中找到。</p>
+<h2 id="1">练习1：检查代码<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>阅读 <code>ex1.s</code> 文件。确保你能回答以下这些问题。</p>
+<details class="question">
+<summary>next_test 是函数吗？</summary>
+<p>不是，它只是一个标签，用来跳过对 <code>failure</code> 的调用。如果一个标签是函数，我们会使用跳转并链接指令（jump and link）调用它，因为函数调用后通常会返回调用点。而这里，我们只是简单地跳转到了 <code>next_test</code>。</p>
+</details>
+<details class="question">
+<summary>为什么 <code>helper_fn</code> 中的调用约定错误没有被调用约定检查器报告？（提示：这在练习说明中提到过。）</summary>
+<p>因为它没有被声明为 <code>.globl</code>。调用约定检查器不会检测未声明为 <code>.globl</code> 的函数。<br />
+注意：<code>helper_fn</code> 中的错误最初会被检查器报告，但当调用它的函数中的错误被修复后，这个错误就不会再被报告了。</p>
+</details>
+<h2 id="12">练习 1.2：被调用者函数<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<p>请根据打印出的错误，修复 <code>pow</code> 和 <code>helper_fn</code> 函数中的调用约定错误。
+这些错误的修复（包括调用约定检查器报告的错误和它未能发现的错误）应当添加在起始代码中标有 <code>FIXME</code> 注释的行附近。修复完成后，你应当会看到调用约定检查器报告的错误信息减少。
+另外，确保你能够回答以下问题。</p>
+<details class="question">
+<summary>导致 Venus 调用约定检查器报告 <code>pow</code> 函数错误的原因是什么？</summary>
+<p>缺少函数的序言（prologue）和尾声（epilogue）。</p>
+</details>
+<details class="question">
+<summary>在 RISC-V 中，调用函数是通过跳转到函数并将返回地址存储在 <code>ra</code> 寄存器中实现的。调用约定是否适用于跳转到 <code>pow_loop</code> 或 <code>pow_end</code> 标签？</summary>
+<p>不适用，因为它们不是函数，我们不需要返回到调用它们的位置。</p>
+</details>
+<h2 id="13">练习 1.3：调用者与被调用者函数<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<p>请根据打印出的错误，修复 <code>inc_arr</code> 函数中的调用约定错误。</p>
+<p>这些错误的修复（包括调用约定检查器报告的错误和它未能发现的错误）应当添加在起始代码中标有 <code>FIXME</code> 注释的行附近。修复完成后，你的输出应类似于：</p>
+<pre class="highlight"><code class="language-assembly">Tests passed.
+Found 0 warnings!</code></pre>
+<p>在进入下一个练习之前，确保你已经回答了以下问题。</p>
+<details class="question">
+<summary>导致 Venus 调用约定检查器报告 <code>inc_arr</code> 函数错误的原因是什么？</summary>
+<p><code>inc_arr</code> 函数未在函数序言和尾声中保存 <code>s0</code>、<code>s1</code>，且在调用 <code>helper_fn</code> 之前未保存 <code>t0</code>。</p>
+</details>
+<details class="question">
+<summary>为什么我们需要在 <code>inc_arr</code> 的序言中保存 <code>ra</code>，而其他函数不需要？</summary>
+<p>因为 <code>inc_arr</code> 本身调用了其他函数，<code>ra</code> 保存返回地址，调用其他函数时会被覆盖，为了能正确返回 <code>inc_arr</code> 函数体，必须先保存 <code>ra</code>。</p>
+</details>
+<h2 id="2-s">练习 2：修复调用约定错误：保存 s 寄存器版本<a class="headerlink" href="#2-s" title="Permanent link">&para;</a></h2>
+<p>本练习的起始代码包含一个递归的 <code>pow</code> 函数，存在一个或多个我们过去学期中常见的调用约定错误。你的任务是修复这些错误，以避免在写 RISC-V 代码时出现类似问题。</p>
+<details class="warning">
+<summary>你只能添加代码，不能修改或删除已有代码行。</summary>
+</details>
+<p>1.打开 <code>ex2.s</code> 并在 Venus 中运行。请注意，程序不会退出，因为存在死循环。  </p>
+<p>2.阅读代码和注释，确保阅读以 “Note” 开头的注释。思考程序为何存在死循环，并寻找调用约定违规的地方。  </p>
+<p>3.修复调用约定错误。</p>
+<h2 id="3-t">练习 3：修复调用约定错误：保存 t 寄存器版本<a class="headerlink" href="#3-t" title="Permanent link">&para;</a></h2>
+<p>本练习类似上一个，起始代码包含一个递归的 <code>pow</code> 函数，也存在一个或多个常见调用约定错误。你的任务是修复这些错误，以避免在写 RISC-V 代码时出现类似问题。<br />
+注意本练习中的 <code>pow</code> 函数实现与上一个练习有所不同。</p>
+<details class="warning">
+<summary>你只能添加代码，不能修改或删除已有代码行。</summary>
+</details>
+<p>1.打开 <code>ex3.s</code> 并在 Venus 中运行。程序同样因为死循环而不会停止。  </p>
+<p>2.阅读代码和注释，确保阅读两个以 “Note” 开头的注释。思考程序为何存在死循环，寻找调用约定违规。<br />
+思考本练习中的 <code>pow</code> 函数与上一练习有何不同。  </p>
+<p>3.修复调用约定错误。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1275 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://puckbee.github.io/moli/CS61C/Projects/Project_4/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>项目 4: CS61kaChow - MOLI：提升实践能力的试炼之地</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-cs61kachow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOLI：提升实践能力的试炼之地
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              项目 4: CS61kaChow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  学习路线
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CS61C/" class="md-tabs__link">
+          
+  
+  
+  基础动手
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../MIT6.S081/MIT6.S081/" class="md-tabs__link">
+          
+  
+  
+  操作系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../AboutMOLI/" class="md-tabs__link">
+          
+  
+  
+  关于 MOLI
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MOLI：提升实践能力的试炼之地
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    学习路线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    基础动手
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            基础动手
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            CS61C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS61C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    讲义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MIT6.S081/MIT6.S081/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MIT6.S081
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PA/PA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    南京大学 ICS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            关于 MOLI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AboutMOLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="4-cs61kachow">项目 4: CS61kaChow<a class="headerlink" href="#4-cs61kachow" title="Permanent link">&para;</a></h1>
+<p><img alt="image" src="../images/proj4/image1.png" /></p>
+<details class="note">
+<summary><strong>注意：</strong> 在开始本项目之前，请确保已完成 Lab 0 的配置。Lab 7 是 Project 4 的前置要求，建议参考 Lecture 28-32、Discussion 10 和 Homework 8-9。</summary>
+</details>
+<hr />
+<h2 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本项目的主要目标之一是探索如何加速程序运行。然而，正如真实世界的性能测试一样，许多不同因素可能会影响程序的运行效率。</p>
+<p>本项目中，最重要的影响因素之一是 <strong>hive 机器的负载</strong>。Hive 机器的高负载可能会显著拖慢你的执行时间，甚至会严重误导你对代码性能的判断。</p>
+<p>为获得更一致的测试结果，建议如下：</p>
+<ol>
+<li><strong>尽早开始项目</strong>：越接近截止时间，使用 hive 的同学越多，系统负载越高。</li>
+<li><strong>使用 <a href="https://hivemind.eecs.berkeley.edu">Hivemind</a></strong>：选择负载低、CPU 使用率低、用户少的 hive 机器。</li>
+<li><strong>避开高峰时段</strong>：在其他同学不常使用 hive 的时间段进行测试，效果更稳定。</li>
+</ol>
+<hr />
+<h2 id="_2">环境配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary><strong>必须在 hive 机器上完成本项目</strong>，请参考 <a href="../../Labs/Lab_0/">Lab 0</a> 配置 hive。</summary>
+</details>
+<ol>
+<li>在 hive 机器上克隆你的仓库：</li>
+</ol>
+<pre class="highlight"><code class="language-bash">git clone git@github.com:61c-student/fa24-proj4-USERNAME.git 61c-proj4
+# 替换 USERNAME 为你的 GitHub 用户名</code></pre>
+<ol>
+<li>进入你的仓库：</li>
+</ol>
+<pre class="highlight"><code class="language-bash">cd 61c-proj4</code></pre>
+<p>3.. 添加官方起始代码仓库作为 remote：</p>
+<pre class="highlight"><code class="language-bash">git remote add starter https://github.com/61c-teach/fa24-proj4-starter.git</code></pre>
+<p>如遇到 Git 问题，可参考 <a href="https://cs61c.org/fa24/resources/common-errors/">常见错误页面</a>。</p>
+<hr />
+<h2 id="_3">测试配置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>起始代码中不包含任何测试用例。你可以运行以下命令下载课程组提供的测试：</p>
+<pre class="highlight"><code class="language-bash">python3 tools/create_tests.py</code></pre>
+<hr />
+<h2 id="_4">背景知识<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>这一节可能稍长，做题时可按需返回查看。</p>
+<h3 id="convolutions">卷积（Convolutions）<a class="headerlink" href="#convolutions" title="Permanent link">&para;</a></h3>
+<p>关于卷积的详细定义与用途，详见：<a href="#appendix-convolution">附录：可选 - 卷积简介</a></p>
+<h3 id="application-video-processing">应用场景：视频处理（Application: Video Processing）<a class="headerlink" href="#application-video-processing" title="Permanent link">&para;</a></h3>
+<p>本项目将卷积应用于 <strong>视频处理</strong>：模糊、锐化或其他滤镜操作。由于视频由一帧帧图像构成，每帧都可视为一个灰度矩阵（简化 RGB 为单通道），因此我们可以对每帧执行矩阵运算，比如卷积。</p>
+<p>通过卷积核计算周围像素的加权平均值，可以实现“模糊”效果（即 Gaussian Blur），这也是手机拍照模糊背景的原理。</p>
+<h3 id="vectors">向量（Vectors）<a class="headerlink" href="#vectors" title="Permanent link">&para;</a></h3>
+<p>本项目中，向量即 <code>int32_t</code> 类型数组（即 <code>int32_t *</code>）。</p>
+<h3 id="matrices">矩阵（Matrices）<a class="headerlink" href="#matrices" title="Permanent link">&para;</a></h3>
+<p>我们提供的 <code>matrix_t</code> 结构定义如下：</p>
+<pre class="highlight"><code class="language-c">typedef struct {
+  uint32_t rows;
+  uint32_t cols;
+  int32_t *data;
+} matrix_t;</code></pre>
+<ul>
+<li><code>rows</code>: 行数  </li>
+<li><code>cols</code>: 列数  </li>
+<li><code>data</code>: 存储矩阵数据的一维数组，采用 <strong>行优先（row-major）</strong> 格式</li>
+</ul>
+<p>例如，矩阵 <code>[[1, 2, 3], [4, 5, 6]]</code> 存储为 <code>[1, 2, 3, 4, 5, 6]</code>。</p>
+<h3 id="bin"><code>.bin</code> 文件格式<a class="headerlink" href="#bin" title="Permanent link">&para;</a></h3>
+<p>矩阵以 <code>.bin</code> 文件格式存储，文件中按顺序存储 4 字节的整数（与项目 2 相同）。文件中的第一个和第二个整数分别表示矩阵的行数和列数。其余的整数按行主序（row-major order）存储矩阵中的元素。</p>
+<p>要查看矩阵文件，你可以运行以下命令：</p>
+<pre class="highlight"><code class="language-bash">xxd -e matrix_file.bin</code></pre>
+<p>将 <code>matrix_file.bin</code> 替换为你想要查看的矩阵文件。输出应该类似于以下内容：</p>
+<pre class="highlight"><code>00000000: 00000003 00000003 00000001 00000002  ................
+00000010: 00000003 00000004 00000005 00000006  ................
+00000020: 00000007 00000008 00000009           ............</code></pre>
+<p>左列是字节偏移（例如第三行起始字节是 <code>0x20</code>）。中间列是实际数据（4 字节整数，little-endian 显示）。右侧为 ASCII 显示，非可打印字符以点号代替。</p>
+<p>文件的实际内容以 4 字节为一块列出，每行显示 4 块。第一行包含数字 3（行数）、3（列数）、1（第一个元素）和 2（第二个元素）。</p>
+<p>这个例子代表的是一个 <code>3x3</code> 矩阵：<code>[1, 2, 3, 4, 5, 6, 7, 8, 9]</code></p>
+<hr />
+<h2 id="task">任务概述（Task）<a class="headerlink" href="#task" title="Permanent link">&para;</a></h2>
+<h2 id="task_1">Task 数据结构<a class="headerlink" href="#task_1" title="Permanent link">&para;</a></h2>
+<p>在本项目中，我们提供了一个类型 <code>task_t</code>，定义如下：</p>
+<pre class="highlight"><code class="language-c">typedef struct {
+  char *path;
+} task_t;</code></pre>
+<p>每个任务表示一次卷积操作（我们稍后会讲解什么是卷积），并通过其 <code>path</code> 唯一标识。结构体 <code>task_t</code> 的 <code>path</code> 成员是包含该任务的文件夹的相对路径。</p>
+<hr />
+<h3 id="testing-framework">测试框架(testing-framework)<a class="headerlink" href="#testing-framework" title="Permanent link">&para;</a></h3>
+<p>项目的测试文件位于 <code>tests</code> 文件夹中。起始代码中不包含任何测试，但包含一个脚本 <code>tools/create_tests.py</code>，它可以生成 <code>tests</code> 目录和测试文件。</p>
+<p>如果你想添加自定义测试，请将其添加到 <code>tools/custom_tests.py</code> 中。你可以参考我们在 <code>tools/staff_tests.py</code> 中提供的示例。</p>
+<p>一旦你在 <code>custom_tests.py</code> 中定义了测试，可以使用相应任务提供的 <code>make</code> 命令运行测试，测试将根据你指定的参数生成。</p>
+<hr />
+<h3 id="_5">目录结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>运行上述测试生成脚本后，项目结构应如下所示：</p>
+<pre class="highlight"><code>61c-proj4/               # 项目根目录
+├── src/                 # 源代码文件夹
+├── tests/               # 测试用例文件夹
+│   └── my_custom_test/  # 一个具体的测试文件夹
+│       ├── input.txt        # 输入文件，包含任务数量和路径
+│       ├── task0/           # 第一个任务
+│       │   ├── a.bin        # 任务使用的矩阵 A
+│       │   ├── b.bin        # 任务使用的矩阵 B
+│       │   ├── ref.bin      # 我们脚本生成的参考输出矩阵
+│       │   └── out.bin      # 你的程序生成的输出矩阵
+│       ├── task1/           # 第二个任务，结构相同
+│       ├── ...
+│       └── task9/           # 第十个任务
+├── tools/               # 存放工具脚本的目录
+└── Makefile             # 编译和运行程序所用的 Makefile</code></pre>
+<p><code>task_t</code> 结构体中 <code>path</code> 对于 task0 的值将是 <code>tests/my_custom_test/task0</code>。</p>
+<hr />
+<h3 id="testing">测试(#testing)<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
+<p>项目使用 <code>Makefile</code> 来运行测试。<code>Makefile</code> 接收一个变量 <code>TEST</code>，用于指定包含 <code>input.txt</code> 的测试文件夹路径。</p>
+<p>例如，要运行上面生成的测试，并且你当前正在开发 task 1，可以使用以下命令：</p>
+<pre class="highlight"><code class="language-bash">make task_1 TEST=tests/my_custom_test</code></pre>
+<hr />
+<h3 id="debugging">调试(debugging)<a class="headerlink" href="#debugging" title="Permanent link">&para;</a></h3>
+<p>虽然 <code>cgdb</code> 和 <code>valgrind</code> 在此项目中可能不如 project 1 那么有用，但在排错时仍然非常有帮助。</p>
+<p>使用 <code>make</code> 命令运行测试时，它会输出实际执行的命令，例如：</p>
+<pre class="highlight"><code class="language-bash">Command: ./convolve_naive_naive tests/my_custom_test/input.txt</code></pre>
+<p>如果您想使用<code>cgdb</code>，请<code>cgdb</code>在打印的命令前添加。同样，对于<code>valgrind</code>，请在打印的命令前添加<code>valgrind</code>。例如:</p>
+<pre class="highlight"><code class="language-bash">cgdb --args ./convolve_naive_naive tests/my_custom_test/input.txt
+valgrind ./convolve_naive_naive tests/my_custom_test/input.txt</code></pre>
+<hr />
+<h2 id="1naive-convolutions">任务 1：朴素卷积（Naive Convolutions）<a class="headerlink" href="#1naive-convolutions" title="Permanent link">&para;</a></h2>
+<p>在本项目中，你将实现并优化二维卷积（2D Convolutions），这是一种具有广泛应用的数学运算。如果你从未接触过卷积，不必担心——它可以简化为一系列点积操作（详见任务 1.3）。</p>
+<h3 id="_6">概念概述：二维卷积<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>本项目中我们只考虑 <strong>离散卷积</strong> ，即输入向量和矩阵在 <strong>离散索引处</strong> 有值，与连续卷积不同（后者在实数域上有值）。如果你在其他课程中学习过卷积，下面的流程可能与你习惯的略有不同。</p>
+</blockquote>
+<p><strong>卷积</strong> 是将两个向量或矩阵相乘以判断它们 <strong>重叠程度</strong> 的一种方式，这种方式有很多不同的应用。首先让我们了解卷积的基本操作：</p>
+<p><img alt="image" src="../images/proj4/image2.png" /></p>
+<p>卷积（convolution）是指将两个向量或矩阵进行卷积操作，例如矩阵 A 和矩阵 B。我们假设矩阵 B 的尺寸总是小于矩阵 A。</p>
+<ol>
+<li>
+<p>将矩阵 B 在两个维度上 <strong>翻转</strong> 。注意，<strong>翻转 != 转置</strong> 。翻转保持维度不变（MxN → MxN），而转置会交换维度（MxN → NxM）。
+ <img alt="image" src="../images/proj4/image3.png" /></p>
+</li>
+<li>
+<p>将翻转后的 B 与矩阵 A 左上角重叠，执行 <strong>元素乘积并求和</strong> ，结果作为输出矩阵的第一个值。</p>
+</li>
+<li>将 B 向右滑动 1 个单位，重复此过程，直到 B 超出 A 的边界。此时，将 B 重置到 A 的第一列并向下移动一行。</li>
+<li>重复整个过程，直到覆盖 A 的右下角。完成后即得卷积结果。
+ <img alt="image" src="../images/proj4/image4.png" /></li>
+</ol>
+<p>你可以假设矩阵 B 的高度和宽度都小于或等于矩阵 A 的高度和宽度。</p>
+<details class="note">
+<summary>输出矩阵的尺寸通常与输入矩阵不同。建议你手动做几个卷积实例，了解它们之间的关系。</summary>
+</details>
+<hr />
+<h3 id="_7">实现<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>推荐阅读：<a href="#matrices">矩阵背景</a>，<a href="#task">任务结构背景</a></p>
+<p>你需要在 <code>compute_naive.c</code> 中实现 <code>convolve</code> 函数。可以假设 <code>b_matrix</code> 比 <code>a_matrix</code> 小（即如果 <code>a_matrix</code> 是 m×n，<code>b_matrix</code> 是 k×l，则 <code>k &lt; m</code> 且 <code>l &lt; n</code>）。</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>参数</td>
+<td><code>matrix_t* a_matrix</code></td>
+<td>指向第一个矩阵的指针</td>
+</tr>
+<tr>
+<td></td>
+<td><code>matrix_t* b_matrix</code></td>
+<td>指向第二个矩阵的指针</td>
+</tr>
+<tr>
+<td></td>
+<td><code>matrix_t** output_matrix</code></td>
+<td>输出结果矩阵的指针。你必须在 <code>convolve</code> 内部分配内存</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td><code>int</code></td>
+<td>成功返回 0，出错返回 -1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_8">测试与调试<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>推荐阅读：<a href="#testing-framework">测试框架背景</a>，<a href="#directory-structure">目录结构背景</a>，<a href="#testing">测试使用</a>, <a href="#debugging">调试</a>, </p>
+<p>你可以运行工作人员提供的测试用例来调试这个任务：</p>
+<pre class="highlight"><code class="language-bash">make task_1 TEST=tests/test_tiny  
+make task_1 TEST=tests/test_small  
+make task_1 TEST=tests/test_large</code></pre>
+<p>如果你还没有这些测试，请先拉取 starter 文件！</p>
+<p>如果你希望创建额外的测试，请参考 <a href="#testing-framework">测试框架</a>，以及 <a href="#testing">测试使用</a> 和 <a href="#debugging">调试</a> 部分来了解如何运行测试。</p>
+<p>请务必创建不同尺寸和维度的测试用例！自动评分器会使用各种大小的数据来测试你的程序的正确性和加速比。</p>
+<h1 id="task-2">Task 2: 优化<a class="headerlink" href="#task-2" title="Permanent link">&para;</a></h1>
+<p>此时你应该已经完成了 <code>compute_naive.c</code> 中的基本实现。你将在 <code>compute_optimized.c</code> 中实现所有优化。</p>
+<h2 id="21simd">任务 2.1：SIMD<a class="headerlink" href="#21simd" title="Permanent link">&para;</a></h2>
+<p><strong>推荐资源：</strong> <a href="https://cs61c.org/fa24/labs/lab07/">Lab 7</a>、<a href="https://cs61c.org/fa24/discussions/disc10/">Discussion 9</a>、<a href="https://us.prairielearn.com/pl/course_instance/149014/assessment/2390722">Homework 9</a></p>
+<p>在 <code>compute_optimized.c</code> 中使用 SIMD 指令优化你的 naive 解法。本项目使用的是 32 位整数，因此每个 256 位的 AVX 向量可以同时存储 8 个整数并执行 8 次操作。</p>
+<p>你可以参考 <a href="https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html">Intel Intrinsics Guide</a> 来查找所需的指令。你需要使用 <code>__m256i</code> 类型来保存 8 个整数，并通过 <code>_mm256_*</code> 指令进行操作。除非你对齐了内存，否则应使用非对齐版本的指令。</p>
+<details class="note">
+<summary>如果你的 <code>convolve</code> 函数依赖辅助函数，请一并用 SIMD 指令重写它们。不要忘记处理尾部元素（tail case）！</summary>
+</details>
+<details class="hint">
+<summary>你可能需要查看 AVX 指令集相关的内置函数（intrinsic functions），它在卷积过程中处理某些操作时会非常有帮助。我们知道这些函数数量很多，但**查阅文档并找到与你任务相关的信息是一个非常有用的技能。</summary>
+</details>
+<h2 id="22openmp">任务 2.2：OpenMP<a class="headerlink" href="#22openmp" title="Permanent link">&para;</a></h2>
+<p><strong>推荐资源：</strong> <a href="https://cs61c.org/fa24/labs/lab07/">Lab 7</a>、<a href="https://cs61c.org/fa24/discussions/disc10/">Discussion 10</a>、<a href="https://us.prairielearn.com/pl/course_instance/149014/assessment/2390722">Homework 9</a></p>
+<p>在 <code>compute_optimized.c</code> 中使用 OpenMP 指令进一步优化你的 SIMD 实现。并非所有函数都适合用 OpenMP 优化。你可以参考 <a href="https://inst.eecs.berkeley.edu/~cs61c/sp21/resources-pdfs/OpenMP3.0-SummarySpec.pdf">OpenMP Summary Card</a> 获取更多信息。</p>
+<h2 id="23">任务 2.3：算法优化<a class="headerlink" href="#23" title="Permanent link">&para;</a></h2>
+<p>如果你的 SIMD + OpenMP 解法还达不到预期速度提升，说明还有算法层面的优化空间。这一部分比前两小节更开放，优化方法将依赖你当前的实现方式与算法。</p>
+<h2 id="24">任务 2.4：测试与调试<a class="headerlink" href="#24" title="Permanent link">&para;</a></h2>
+<p><strong>推荐资源：</strong> <a href="#testing-framework">测试框架</a>、<a href="#directory-structure">目录结构</a>、<a href="#testing">测试</a>、<a href="#debugging">调试</a></p>
+<p>运行此任务的测试（注意使用 <code>make task_2</code> 而非 <code>task_1</code>）：</p>
+<pre class="highlight"><code class="language-bash">make task_2 TEST=tests/test_tiny
+make task_2 TEST=tests/test_small
+make task_2 TEST=tests/test_large</code></pre>
+<p>如果没有测试，请先拉 starter code！你也可以参考测试框架部分编写更多测试。
+如果你想创建额外的测试，请参考 <a href="#testing-framework">测试框架</a> 部分来了解如何编写测试，以及 <a href="#testing">测试</a> 和 <a href="#debugging">调试</a> 部分来获取运行测试的说明。</p>
+<p>在 CGDB 中可以直接打印向量：<code>print *(type_in_vector *)&amp;variable_name@num_elems_in_vector</code></p>
+<p>例如，如果你想打印一个 256-bit 宽度的向量中的值，你可以使用以下命令：</p>
+<pre class="highlight"><code class="language-gdb">(gdb) print *(int32_t *)&amp;my_vector@8
+$1 = {123, 123, 123, 123, 123, 123, 123, 123}</code></pre>
+<hr />
+<h1 id="benchmarks">Benchmarks（基准测试）<a class="headerlink" href="#benchmarks" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>⚠️ 运行时间与加速比可能受 Hive 机器负载影响。我们建议你查看 <a href="https://hivemind.eecs.berkeley.edu">Hivemind</a> 选择合适的服务器。更多性能一致性技巧见引言部分。</p>
+</blockquote>
+<p>我们会测试如下类型：</p>
+<ul>
+<li><strong>Optimized：</strong> 使用你写的 <code>compute_optimized.c</code> 和助教提供的 <code>compute_naive.c</code><ul>
+<li>默认限制使用 4 个线程进行 OpenMP 测试</li>
+</ul>
+</li>
+</ul>
+<h1 id="_9">加速要求<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>文件夹名称</th>
+<th>加速率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>随机</td>
+<td><code>test_ag_random</code></td>
+<td>8.70x</td>
+</tr>
+<tr>
+<td>增加</td>
+<td><code>test_ag_increasing</code></td>
+<td>8.05x</td>
+</tr>
+<tr>
+<td>减少</td>
+<td><code>test_ag_decreasing</code></td>
+<td>8.70x</td>
+</tr>
+</tbody>
+</table>
+<h1 id="_10">性能评分计算<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
+<p>自动评分器的性能部分评分使用以下公式计算：<br />
+<code>score = log(x) / log(t)</code><br />
+其中 <code>x</code> 是提交在特定基准测试中实现的加速率，<code>t</code> 是该基准的目标加速率。</p>
+<h1 id="ioo">附录：<code>io.o</code> 中的辅助函数<a class="headerlink" href="#ioo" title="Permanent link">&para;</a></h1>
+<p>我们提供了一些在 <code>io.o</code> 中的辅助函数。我们只提供了将在链接时与你的程序链接的目标文件，不提供源代码，以避免泄露其他项目的解法。</p>
+<h3 id="read_tasks"><code>read_tasks</code><a class="headerlink" href="#read_tasks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>参数 / 返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>参数</strong></td>
+<td><code>char *input_file</code></td>
+<td>输入文件的路径（<code>input.txt</code>）。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>int *num_tasks</code></td>
+<td>设置 <code>*num_tasks</code> 为输入文件中的任务数量。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>task_t ***tasks</code></td>
+<td>设置 <code>*tasks</code> 为一个 <code>task_t *</code> 数组，每个指向一个表示任务的 <code>task_t</code> 结构体。</td>
+</tr>
+<tr>
+<td><strong>返回值</strong></td>
+<td><code>int</code></td>
+<td>成功返回 0，出错返回 -1。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get_a_matrix_path"><code>get_a_matrix_path</code><a class="headerlink" href="#get_a_matrix_path" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>参数 / 返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>参数</strong></td>
+<td><code>task_t *task</code></td>
+<td>指向任务的指针。</td>
+</tr>
+<tr>
+<td><strong>返回值</strong></td>
+<td><code>char *</code></td>
+<td>给定任务的矩阵 A 的路径。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get_b_matrix_path"><code>get_b_matrix_path</code><a class="headerlink" href="#get_b_matrix_path" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>参数 / 返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>参数</strong></td>
+<td><code>task_t *task</code></td>
+<td>指向任务的指针。</td>
+</tr>
+<tr>
+<td><strong>返回值</strong></td>
+<td><code>char *</code></td>
+<td>给定任务的矩阵 B 的路径。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get_output_matrix_path"><code>get_output_matrix_path</code><a class="headerlink" href="#get_output_matrix_path" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>参数 / 返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>参数</strong></td>
+<td><code>task_t *task</code></td>
+<td>指向任务的指针。</td>
+</tr>
+<tr>
+<td><strong>返回值</strong></td>
+<td><code>char *</code></td>
+<td>给定任务的输出矩阵的路径。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="read_matrix"><code>read_matrix</code><a class="headerlink" href="#read_matrix" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>参数 / 返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>参数</strong></td>
+<td><code>char *path</code></td>
+<td>要读取矩阵的路径。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>matrix_t **matrix</code></td>
+<td>设置 <code>*matrix</code> 为存储在 <code>path</code> 中的矩阵。</td>
+</tr>
+<tr>
+<td><strong>返回值</strong></td>
+<td><code>int</code></td>
+<td>成功返回 0，出错返回 -1。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="write_matrix"><code>write_matrix</code><a class="headerlink" href="#write_matrix" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>参数 / 返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>参数</strong></td>
+<td><code>char *path</code></td>
+<td>要写入矩阵的路径。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>matrix_t *matrix</code></td>
+<td>要写入的矩阵。</td>
+</tr>
+<tr>
+<td><strong>返回值</strong></td>
+<td><code>int</code></td>
+<td>成功返回 0，出错返回 -1。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="_11">附录： (可选) 视频处理<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
+<h2 id="_12">查看输出<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>由于 Hive 机器是无头的（没有图形界面），你需要先将 GIF 文件复制到本地机器才能查看它们。</p>
+<ol>
+<li>
+<p><strong>查找</strong> 输出 GIF 的路径。通常是：
+   <pre class="highlight"><code>~/61c-proj4/tests/name_of_your_test/outX.gif</code></pre>
+   例如：
+   <pre class="highlight"><code>~/61c-proj4/tests/test_gif_kachow_blur/out0.gif</code></pre></p>
+</li>
+<li>
+<p>假设你的仓库文件夹名为 <code>61c-proj4</code>。如果不是，请相应替换。</p>
+</li>
+<li>
+<p>可以使用 <code>ls</code> 和 <code>cd</code> 命令在 Hive 上浏览文件。</p>
+</li>
+<li>
+<p><strong>打开</strong> 一个新的终端窗口。</p>
+</li>
+<li>
+<p><strong>导航</strong> 到你希望保存 GIF 的目录。</p>
+</li>
+<li>
+<p><strong>运行</strong> 以下命令（将 <code>cs61c-???</code> 替换为你的用户名，<code>path_to_gif</code> 替换为步骤 1 中找到的实际路径）：</p>
+</li>
+</ol>
+<pre class="highlight"><code class="language-bash">scp cs61c-???@hive1:path_to_gif .</code></pre>
+<p>现在该文件应该可以在你的本地机器上访问，你可以使用你选择的图像查看器打开它。</p>
+<h1 id="appendix-convolution">附录： 卷积(appendix-convolution)<a class="headerlink" href="#appendix-convolution" title="Permanent link">&para;</a></h1>
+<p>本附录中的内容不在本课程的范围之内。</p>
+<p>卷积是一个数学操作，广泛应用于信号处理与分析、计算机视觉、图像与音频处理、机器学习、概率与统计等领域。常见的应用包括 <a href="https://web.archive.org/web/20241212231541/https://en.wikipedia.org/wiki/Edge_detection">图像中的边缘检测</a>、<a href="https://web.archive.org/web/20241212231541/https://en.wikipedia.org/wiki/Bokeh">图像中的模糊（散景）</a>、<a href="https://web.archive.org/web/20241212231541/https://en.wikipedia.org/wiki/Reverberation">音频中的混响</a> 和创建 <a href="https://web.archive.org/web/20241212231541/https://en.wikipedia.org/wiki/Convolutional_neural_network">卷积神经网络</a> 等。</p>
+<p>本附录将仅概述一维离散时间卷积。离散时间意味着一个函数仅在离散的、等间隔的整数索引处定义。此外，下面的解释非常简略，可能有些复杂，因此对于本项目来说，不理解卷积是完全可以接受的。如果你想深入了解卷积及其如何与信号交互，务必选修 <a href="https://web.archive.org/web/20241212231541/https://www2.eecs.berkeley.edu/Courses/EE120/">EE120</a>。</p>
+<p>接下来，让我们开始吧 </p>
+<p>数学上，卷积是一种函数乘法，决定了两个函数的重叠程度。然而，在实际应用中，卷积是一个系统如何响应信号的方式。信号可以是任何数学函数，系统可以是任何接受此函数并提供输出的东西。该输出同样是一个函数。</p>
+<p>我们可以用以下方式描述信号和系统：</p>
+<pre class="highlight"><code>x(t) -&gt; H -&gt; y(t)</code></pre>
+<p>其中，x(t) 和 y(t) 是函数，H 是系统。</p>
+<p>卷积所需的重要系统特性是线性和时间不变性。</p>
+<p><strong>线性：</strong><br />
+线性的一项特性是，如果你将一个信号输入到一个被某个常数乘过的系统，它将以原始输出信号乘以同样的常数进行响应。</p>
+<pre class="highlight"><code>αx(t) = x̂(t) -&gt; H -&gt; ŷ(t) = αy(t)</code></pre>
+<p>此外，线性还意味着，如果你传递信号的和，系统将输出它们对应输出的和。</p>
+<pre class="highlight"><code>x_1(t) + x_2(t) = x̂(t) -&gt; H -&gt; ŷ(t) = y_1(t) + y_2(t)</code></pre>
+<p>将这两者结合起来：</p>
+<pre class="highlight"><code>αx_1(t) + βx_2(t) = x̂(t) -&gt; H -&gt; ŷ(t) = αy_1(t) + βy_2(t)</code></pre>
+<p><strong>时间不变性：</strong><br />
+时间不变性意味着，如果你将一个时间平移的输入信号传递给系统，它将以相同的时间平移响应。</p>
+<pre class="highlight"><code>αx(t - T) = x̂(t) -&gt; H -&gt; ŷ(t) = αy(t - T)</code></pre>
+<p>接下来，我们将仅检查线性和时间不变（LTI）系统。</p>
+<p>为了确定一个系统如何响应任何信号，可以将一个脉冲信号传递给系统。使用的脉冲函数称为克罗内克δ（Kronecker Delta），定义如下：</p>
+<pre class="highlight"><code>x(t) = 1 iff t = 0, else x(t) = 0 ∀ t | t ≠ 0</code></pre>
+<p>接下来，我们将此函数记作：𝛿(t)。</p>
+<p>𝛿(t) 的一个重要性质是，当它与另一个函数 x(t) 相乘时，结果是一个新函数，该函数在 t = 0 时等于 x(0)，而其他地方为 0。这是因为 𝛿(t) 在 t = 0 时等于 1，其他地方为 0。这个性质可以写作：</p>
+<pre class="highlight"><code>x(t)𝛿(t) = x(0)𝛿(t)</code></pre>
+<p>当 𝛿(t) 被某个值 T 移动时，这个性质仍然成立，因此更一般地：</p>
+<pre class="highlight"><code>x(t)𝛿(t - T) = x(T)𝛿(t-T)</code></pre>
+<p>这意味着，我们可以通过将函数与平移的 𝛿(t) 相乘，来获取函数在任何整数时间点 t 的单个值。知道这一点后，我们可以通过将包含单个点的函数相加来重建 x(t)。这意味着，x(t) 可以表示为一个带有缩放的 delta 函数的和，如下所示：</p>
+<pre class="highlight"><code>∑x(T)𝛿(t-T) from T = -∞ to ∞ = … + x(-1)𝛿(t + 1) + x(0)𝛿(t) + x(1)𝛿(t - 1) + …</code></pre>
+<p>这是 delta 函数的一个非常有用的性质，因为我们可以传递这个和，而不是传递 x(t) 本身，以此获得系统输出的更多信息，但首先我们必须研究系统如何响应 𝛿(t)。</p>
+<p>当 𝛿(x) 输入到系统时，输出被称为脉冲响应。</p>
+<pre class="highlight"><code>𝛿(t) -&gt; H -&gt; h(t)</code></pre>
+<p>有几种方法可以找到 h(t)，其中一种方法是物理测试系统，输入一个脉冲并测量输出。知道这一点后，让我们看看当我们传入缩放的 delta 函数和时会发生什么。由于系统是 LTI 的，传入的缩放输入和将产生相应的缩放输出和。此外，时间平移的输入将给出同样值的时间平移输出。这意味着：</p>
+<pre class="highlight"><code>x(t) = … + x(-1)𝛿(t + 1) + x(0)𝛿(t) + x(1)𝛿(t - 1) + … -&gt; H -&gt; … + x(-1)h(t + 1) + x(0)h(t) + x(1)h(t - 1) + … = y(t)</code></pre>
+<p>输出可以表示为：</p>
+<pre class="highlight"><code>∑x(T)h(t-T) from T = -∞ to ∞</code></pre>
+<p>这定义了 x(t) 和 h(t) 的卷积，运算符用符号 * 表示。系统通过将 x(t) 与脉冲响应进行卷积来响应 x(t)。卷积也是一个交换运算，尽管证明留给读者作为练习。和的表达式还表明，为什么练习 1.2 中的一个向量必须翻转才能直接将向量相乘。x(T) 从 -∞ 开始评估并与 h(t-T) 相乘，h(t-T) 从 +∞ 开始评估，因此如果不翻转，你必须有两个指针，一个从第一个向量的开始处开始，另一个从第二个向量的末尾处开始，朝相反方向前进。通过翻转 h(t - T) 为 h(-t + T)，它也从 -∞ 到 +∞ 进行评估，从而使两个向量能够直接相乘，找到 t 时的输出。由于卷积是交换的，这也不重要哪个向量被翻转。</p>
+<p>最后一点，注意到输入和：</p>
+<pre class="highlight"><code>∑x(T)𝛿(t-T) from T = -∞ to ∞</code></pre>
+<p>也是卷积，x(t) 和 𝛿(t) 之间的卷积，它等于 x(t)。这意味着 𝛿(t) 是卷积的单位元，对于任何 x(t)，都有：</p>
+<pre class="highlight"><code>x(t)*𝛿(t) = x(t)</code></pre>
+<p><img alt="image" src="../images/proj4/image5.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

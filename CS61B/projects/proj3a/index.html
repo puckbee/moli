@@ -1,0 +1,1052 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://puckbee.github.io/moli/CS61B/projects/proj3a/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>项目3A：世界生成 - MOLI：提升实践能力的试炼之地</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3a" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOLI：提升实践能力的试炼之地
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              项目3A：世界生成
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  学习路线
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CS61C/CS61C/" class="md-tabs__link">
+          
+  
+  
+  基础动手
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../MIT6.S081/MIT6.S081/" class="md-tabs__link">
+          
+  
+  
+  操作系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../AboutMOLI/" class="md-tabs__link">
+          
+  
+  
+  关于 MOLI
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MOLI：提升实践能力的试炼之地
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    学习路线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    基础动手
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            基础动手
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            CS61C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/CS61C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    讲义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MIT6.S081/MIT6.S081/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MIT6.S081
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PA/PA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    南京大学 ICS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            关于 MOLI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AboutMOLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="3a">项目3A：世界生成<a class="headerlink" href="#3a" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">MOLI：本次实验你将会学到什么</p>
+<ul>
+<li>构建一个复杂的软件项目</li>
+<li>根据一个种子生成一个伪随机的二维世界</li>
+</ul>
+</div>
+<h2 id="_1">代码概况<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="lab-9">Lab 9<a class="headerlink" href="#lab-9" title="Permanent link">&para;</a></h3>
+<p>在开始本项目之前，我们强烈建议你至少完成实验9的前3个任务。这些任务将向你介绍：</p>
+<ul>
+<li>项目3的瓦片引擎。</li>
+<li>StdDraw库。</li>
+<li>创建一个简单的用户界面和实时“游戏循环”。</li>
+<li>保存和加载模拟状态（任务4）。</li>
+</ul>
+<h3 id="_2">框架代码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="admonition info info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=A8NlkICBWL8">新架代码的演示在这里</a></li>
+<li>来自过去的学期，因此某些术语可能已过时（例如，“Phase 1”现在是“Project 3A”，“AutograderBuddy”现已弃用）。</li>
+</ul>
+</div>
+<p>在 <code>TileEngine</code> 包中，你会找到以下有用的文件：</p>
+<p><code>TERenderer.java</code> 包含与渲染相关的方法。
+<code>TETile.java</code> 代表一个瓦片（游戏中的基本图形单元）。
+<code>Tileset.java</code> 包含一些你可以使用的预制瓦片设计。
+在 <code>Utils</code> 包中，你会找到以下有用的文件：</p>
+<p><code>RandomUtils.java</code> 包含用于为你的世界生成随机性的方法。
+在 <code>Core</code> 包中，你将编写游戏代码。我们建议将所有代码都放在此包中（尽管这不是强制性的）。</p>
+<p><code>Main.java</code> 是用户启动整个系统的方式。
+<code>World.java</code> 代表你的世界！
+你也可以添加自己的其他类！
+本项目大量使用了 <code>StdDraw</code>，这是一个具有基本图形渲染功能的包。此外，它还支持通过键盘和鼠标点击进行用户交互。在项目的某些时候，你可能需要查阅StdDraw的API规范。<a href="https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html">API规范请参见此处</a>。</p>
+<h2 id="_3">导入<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>你的项目只能使用标准 Java 库，或我们随你的仓库和 <code>library-sp25</code> 一起提供的任何库。</p>
+<p>以下是允许导入的非详尽的列表</p>
+<ul>
+<li><code>java.util.List</code>, <code>java.util.ArrayList</code>, <code>java.util.Collections</code>, <code>java.awt.*</code>, <code>java.io.*</code>，或任何以 <code>java.</code> 开头的都可以。</li>
+<li><code>javax.sound</code>, javax.imageio, javax.swing.JOptionPane，或任何以 javax. 开头的都可以。</li>
+<li><code>edu.princeton.cs.algs4.StdDraw</code>, <code>edu.princeton.cs.algs4.StdAudio</code>，或任何以 <code>edu.princeton.cs.algs4.</code> 开头的都可以，因为它们包含在 <code>library-sp25</code> 中。</li>
+<li><code>tileengine.TETile</code>, <code>utils.RandomUtils</code>，或任何以 <code>tileengine.</code> 或 <code>utils.</code> 开头的都可以，因为它们是启动代码。</li>
+</ul>
+<h2 id="_4">概念概况<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">创建瓦片数组<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>总的来说，你的目标是创建一个 <code>TETile</code> 对象的二维数组，并用不同的瓦片填充该数组，以创建一个美观的世界。接着，你可以调用我们提供的库函数之一，将这个世界显示给用户。</p>
+<p>关于方向的重要说明：</p>
+<ul>
+<li><code>world[0][0]</code> 对应着世界的左下角瓦片。</li>
+<li>第一个坐标是 x 坐标。例如，<code>world[8][0]</code> 位于左下角瓦片右侧 8 个单位。</li>
+<li>第二个坐标是 y 坐标。例如，<code>world[0][3]</code> 位于左下角瓦片上方 3 个单位。</li>
+</ul>
+<p><img alt="coords" src="../images/proj3a/coords.png" /></p>
+<p>如果你不确定瓦片的布局，你应该完成实验9。在实验9中，你将编写一些简短的示例程序来绘制示例网格，以加深你的理解。如果你混淆了 x/y 坐标或上/下方向，那么在调试时你会感到极其困惑。</p>
+<p>二维数组的每个元素都可以用我们默认的 <code>Tileset.java</code> 瓦片库中的瓦片来填充。</p>
+<p>下面是一段代码片段，它创建了一个宽为5、高为3的世界，并填充了几个方块：
+<pre class="highlight"><code class="language-java">private static final int WIDTH = 5;
+private static final int HEIGHT = 3;
+
+// 创建瓦片网格（初始时全部为 null）。
+TETile[][] world = new TETile[WIDTH][HEIGHT];
+
+// 用 NOTHING 瓦片填充网格。
+for (int x = 0; x &lt; WIDTH; x++) {
+    for (int y = 0; y &lt; HEIGHT; y++) {
+        world[x][y] = Tileset.NOTHING;
+    }
+}
+
+// 在网格中添加一些瓦片。
+world[0][1] = Tileset.WALL;     // 井号（#）。
+world[3][0] = Tileset.FLOWER;   // 粉色花朵。
+world[2][2] = Tileset.MOUNTAIN; // 灰色三角形。</code></pre></p>
+<p>渲染后的世界将如下图所示：
+<img alt="filling-tiles" src="../images/proj3a/filling-tiles.png" /></p>
+<p>请注意，我们必须将未使用的方块明确赋值为 <code>Tileset.NOTHING</code>，即纯黑色的瓦片。如果你不初始化未使用的方块，当你尝试绘制世界时，将会得到一个 <code>NullPointerException</code>。</p>
+<h2 id="_6">渲染瓦片<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>有了二维世界数组后，就该将其展示给用户了！</p>
+<p>下面是一段代码片段，它接收一个二维世界数组，并将其显示给用户：
+<pre class="highlight"><code class="language-java">// 初始化瓦片渲染引擎，设置窗口大小为 WIDTH x HEIGHT。此方法只应调用一次。
+TERenderer ter = new TERenderer();
+ter.initialize(WIDTH, HEIGHT);
+
+// 创建并填充瓦片网格（初始时所有瓦片都为 null）。
+// 省略：此处应是填充瓦片网格的代码。
+TETile[][] world = new TETile[WIDTH][HEIGHT];
+...
+
+// 将二维网格绘制到屏幕上。每次重新绘制世界时都应调用此方法。
+ter.renderFrame(world);</code></pre></p>
+<p>注意：在项目的后期，你将需要为游戏添加动画效果（即用户移动时显示不同的世界）。务必只调用一次 <code>initialize</code> 来设置窗口。之后，你可以根据需要多次调用 <code>render</code>。</p>
+<p>渲染引擎会为你调用所有必要的 <code>StdDraw</code> 方法。我们不建议使用 <code>StdDraw</code> 命令，例如 <code>setXScale</code> 或 <code>setYScale</code>，除非你非常清楚自己在做什么，否则你可能会极大地改变或破坏系统的美感。</p>
+<h2 id="_7">伪随机数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>在 Java 中生成随机数，我们可以创建一个 <code>Random</code> 对象，它代表一个随机数生成器：
+<pre class="highlight"><code class="language-java">Random r = new Random(); // 完全随机。不要在项目3中这样做。
+System.out.println(r.nextInt());
+System.out.println(r.nextInt());
+System.out.println(r.nextInt());</code></pre>
+每次运行这个程序，你都会得到3个完全随机的整数。</p>
+<p>如果我们想控制随机数生成器的输出（例如，为了调试目的）怎么办？在这种情况下，我们可以向构造函数提供一个种子(seed):
+<pre class="highlight"><code class="language-java">Random r = new Random(1000); // 伪随机。在项目3中这样做。
+System.out.println(r.nextInt());
+System.out.println(r.nextInt());
+System.out.println(r.nextInt());</code></pre></p>
+<p><code>r</code> 现在是一个伪随机数生成器，因为它会根据你提供的种子生成一个确定性的、看起来随机的数字序列。</p>
+<p>如果你提供相同的种子，你将得到相同的数值序列。例如，每次运行这个程序，你都会得到相同的 3 个整数。</p>
+<p>这是另一个例子：
+<pre class="highlight"><code class="language-java">Random r = new Random(82731);
+System.out.println(r.nextInt());
+r = new Random(82731);
+System.out.println(r.nextInt());</code></pre></p>
+<p>这段代码片段总是会打印出两次相同的数字。如果你多次运行这个程序，你仍然会得到两次相同的数字。</p>
+<p>在项目 3 中，你应该始终为你的 <code>Random</code> 对象设置种子，这样你的世界看起来是随机的，但你可以为了调试和评分目的而一致地重新创建它们。<code>RandomUtils</code> 类提供了一些有用的方法，可以从 <code>Random</code> 对象中获取其他类型的随机性，例如：</p>
+<ul>
+<li><code>int uniform(Random random, int a, int b)</code>: 返回范围 <code>[a, b)</code> 内的一个整数。</li>
+<li><code>T randomChoice(Random random, List&lt;T&gt; items)</code>: 从 items 中返回一个随机项。</li>
+<li><code>void shuffle(Random random, Object[] a)</code>: 打乱给定数组。</li>
+<li><code>double gaussian(Random random, double mu, double sigma)</code>: 从高斯分布中获取一个样本。
+注意：大多数学生不会使用 <code>RandomUtils</code> 中的任何高级功能。</li>
+</ul>
+<h2 id="_8">世界要求<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>你在项目 3A 中的目标是编写一个世界生成器，它能够创建包含走廊和地板的伪随机世界。</p>
+<p>以下是一些有效世界的示例，其中 <code>#</code> 代表墙壁，. 或 ' 代表地板，空白方块代表空白空间（世界外部）。</p>
+<p><img alt="valid-world" src="../images/proj3a/valid-world.png" /></p>
+<p><img alt="valid-world-2" src="../images/proj3a/valid-world-2.png" /></p>
+<h2 id="_9">有效世界的要求<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>世界必须包含明确区分的房间和走廊。对于任何一个地板方块，都应该显而易见地判断出它属于房间还是走廊。</p>
+<p>偶尔生成一些少数方块模糊不清的世界是可以接受的，但绝大多数（&gt;90%）的地板方块应该能够清晰地识别出是房间还是走廊。</p>
+<p>房间重叠是允许的，只要明确这些方块属于房间而非走廊即可。</p>
+<details>
+<summary>（点击展开）无效世界的示例，因为无法区分房间和走廊。</summary>
+<p><img alt="invalid-indistinct-hallways" src="../images/proj3a/invalid-indistinct-hallways.png" />
+<img alt="invalid-indistinct-hallways2" src="../images/proj3a/invalid-indistinct-hallways2.png" /></p>
+</details>
+</li>
+<li>
+<p>至少有一些房间应该是矩形的。你也可以选择支持其他形状的房间。</p>
+</li>
+<li>
+<p>走廊的宽度应为1格或2格。然而，走廊必须在视觉上与房间区分开来。绝大多数学生使用1格宽的走廊。</p>
+<details>
+<summary>（点击展开）走廊宽度的示例。</summary>
+<p>下面是宽度为1的走廊(大多数走廊应该是这样的)<br>
+<img alt="width1-hallway" src="../images/proj3a/width1-hallway.png" /><br>
+下面是宽度为2的走廊<br>
+<img alt="width2-hallway" src="../images/proj3a/width2-hallway.png" /></p>
+</details>
+</li>
+<li>
+<p>你的世界生成器必须能够生成包含转弯的走廊（或者等效地，相互交叉的直线走廊）。随机生成的世界应高频率地包含转弯走廊，即大多数世界都应有转弯走廊。</p>
+</li>
+<li>
+<p>世界不应有任何死胡同走廊。走廊应始终通向房间。</p>
+<details>
+<summary>无效世界的示例，因为它有一个死胡同走廊。</summary>
+<p><img alt="invalid-dead-end-hallway" src="../images/proj3a/invalid-dead-end-hallway.png" /></p>
+</details>
+</li>
+<li>
+<p>墙壁、地板和空地都应在视觉上清晰可辨。</p>
+<p>最简单的方法是使用三种不同的图块类型：一种用于墙壁，一种用于地板，一种用于空地。</p>
+<details>
+<summary>无效世界的示例，因为我们无法区分墙壁和地板。</summary>
+<p><img alt="invalid-indistinct-walls" src="../images/proj3a/invalid-indistinct-walls.png" /></p>
+</details>
+</li>
+<li>
+<p>房间和走廊角落的墙壁是可选的。</p>
+<details>
+<summary>例如，所有这些房间和走廊都是有效的。</summary>
+<p>例如，左边的房间在角落处有墙体，但右边的房间没有。这两种情况都是允许的。（注意：这个世界本身是无效的，因为这两个房间是不连通的。）
+<img alt="room-corners" src="../images/proj3a/room-corners.png" />
+例如，这个走廊的左上角有一个墙壁图块，但右上角没有。这两种情况都是允许的。（注意：这个世界本身是无效的，因为它没有房间。）
+<img alt="hallway-corners" src="../images/proj3a/hallway-corners.png" /></p>
+</details>
+</li>
+<li>
+<p>所有地面方块（房间和走廊）都应彼此连通。注意：作为进阶功能的一部分，你最终可能会创建出仅在特定条件下可达的世界，例如通过使用传送器、上锁的门、可破坏的墙壁等。
+    换句话说，任意两个地面方块之间都应该能够找到一条由地面方块组成的路径。</p>
+</li>
+<li>所有墙壁“内部”的空间都应该是地面方块，而所有墙壁“外部”的空间都应该是空白空间方块。
+    换句话说，一个地面方块只能与地面方块或墙壁方块相邻。</li>
+<li>
+<p>房间不能超出世界边缘。换句话说，世界边缘不应该有任何地面方块。</p>
+<details>
+<summary>(点击展开) 这是一个无效世界的例子，因为它超出了世界边缘。</summary>
+<p><img alt="invalid-clipping-world" src="../images/proj3a/invalid-clipping-world.png" /></p>
+</details>
+</li>
+<li>
+<p>世界不应有过多的未使用的空间。没有严格要求，但请尽量确保世界至少50%的空间被房间和走廊填充。</p>
+<details>
+<summary>(点击展开) 这是一个无效世界的例子，因为房间太少。</summary>
+<p><img alt="invalid-insufficient-rooms" src="../images/proj3a/invalid-insufficient-rooms.png" /></p>
+</details>
+</li>
+</ol>
+<h2 id="_10">伪随机世界的要求：<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ol>
+<li>世界必须是伪随机的。
+    如果用户两次选择相同的种子，生成的世界必须完全一致。
+    如果用户选择两个不同的种子，生成的世界应该有所不同。</li>
+<li>不同的世界应该有不同数量的房间和走廊。
+    即使你的数量总是在一个固定范围内，也是可以接受的。例如，所有世界都包含8到12个房间是可以的，只要不同世界中的房间数量不同即可。8到12只是一个例子；你可以自由地设置更多或更少的房间。</li>
+<li>不同的世界中，房间和走廊的位置应有所差异。
+    例如，如果你生成的每个世界都在同一个精确位置有一个房间，那就不够随机。</li>
+<li>不同的房间应该有不同的宽度和高度。</li>
+<li>不同的走廊应该有不同的长度。</li>
+<li>世界每次生成都应有显著差异，即不应出现相同的基本布局和容易预测的特征。</li>
+<li>你可以选择任何你想要的窗口大小，只要窗口大小合理（例如，不是3×3这样微小的尺寸），并且整个窗口在你的电脑上是可见的。例如，固定且非随机的窗口大小是可以的。</li>
+</ol>
+<h2 id="_11">杂项边缘情况常见问题解答：<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>两个相邻的房间可以由一堵墙或两堵墙隔开。两种情况都可以。
+    同样地，如果一个房间和一条走廊相邻，或者两条走廊相邻，它们可以由一堵墙或两堵墙隔开。两种情况都可以。</p>
+<details>
+<summary>(点击展开) 这是一个无效世界的例子，因为房间太少。</summary>
+<p>请注意，无论你选择哪种选项（一堵墙或两堵墙），这两个房间都必须是连通的，即必须有通路连接两个房间。以下世界是无效的，因为房间之间没有连通。
+由一堵墙隔开的两个房间：<br>
+<img alt="single-wall" src="../images/proj3a/single-wall.png" /><br>
+由两堵墙隔开的两个房间：<br>
+<img alt="double-wall" src="../images/proj3a/double-wall.png" /></p>
+</details>
+</li>
+<li>
+<p>墙壁不应出现在房间内部，因为这会使人难以分辨哪些方块属于房间，哪些方块属于走廊。
+    偶尔发生这种情况是可以的，但不应该经常发生。</p>
+<details>
+<summary>(点击展开) 这是一个无效世界的例子，因为房间太少。</summary>
+<p>如果这种情况经常发生，则视为无效。
+<img alt="wall-inside-room" src="../images/proj3a/wall-inside-room.png" /></p>
+</details>
+</li>
+</ol>
+<h2 id="2">任务 2：设计文档<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>在开始编写任何代码之前，您需要先撰写一份设计文档！这能让您规划代码库的整体设计，从而将代码组织成更小的部分，并逐一解决问题。</p>
+<div class="admonition tip task">
+<p class="admonition-title">Tip</p>
+<p>请为项目 3 撰写一份设计文档。您的设计文档应至少有 1 到 2 页长。</p>
+</div>
+<p>在您的设计文档中，您可以明确您将在实现中使用的数据结构。您还可以编写伪代码或对您计划使用的算法进行概要性的描述。
+您可以按照自己喜欢的方式格式化文档。这里提供一个项目 3 的<a href="https://docs.google.com/document/d/1L6-O0oJYu_mD8Z5NFyYAEonhf4mGkwHCJYcgJnix2Wc/edit?usp=sharing">模板</a>，您可以直接使用或从中获取灵感。
+以下是您文档中可以包含的一些示例部分：
+1.类和数据结构：列出您将使用的所有类。对于每个类，列出其实例变量（如果有）。简要描述每个变量及其在该类中的作用。
+2.算法：这部分用于描述您的代码如何工作。对于每个类，提供该类中方法的高层描述。也就是说，不要包含代码的逐行细分，而是类似于你在方法上方编写 Javadoc 注释的内容，包括你考虑到的所有边界情况。
+    请尽量保持您的解释清晰简洁。包含您的程序将与之交互的所有组件——类、特定方法以及您可能创建的文件。</p>
+<p>您还可以为不同的任务设置单独的部分：世界生成（任务 3）、主菜单（任务 4）、交互性（任务 5）、HUD（任务 6）、保存与加载（任务 7）以及进阶功能（任务 8）。</p>
+<h2 id="3">任务 3：世界生成<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>您的设计文档完成后，现在是时候生成一些世界了！</p>
+<div class="admonition tip task">
+<p class="admonition-title">Tip</p>
+<p>实现代码，使其能够接收一个种子，生成一个伪随机的二维世界数组，并将该世界显示给用户。</p>
+</div>
+<p>对于项目 3A，当用户运行 <code>Main.java</code> 中的 <code>main</code> 方法时，应该会弹出一个世界。目前，您可以将种子硬编码在 <code>main</code> 方法中（并更改代码以查看不同种子的输出）。</p>
+<p>除了 <code>Main.main</code> 的要求外，您的世界生成代码可以放在仓库的任何位置（我们建议在 <code>Core</code> 包中创建自己的文件）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

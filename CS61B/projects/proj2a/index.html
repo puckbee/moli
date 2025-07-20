@@ -1,0 +1,998 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://puckbee.github.io/moli/CS61B/projects/proj2a/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>项目2A：Ngordnet（N元语法） - MOLI：提升实践能力的试炼之地</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2angordnetn" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-header__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOLI：提升实践能力的试炼之地
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              项目2A：Ngordnet（N元语法）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  学习路线
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CS61C/CS61C/" class="md-tabs__link">
+          
+  
+  
+  基础动手
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../MIT6.S081/MIT6.S081/" class="md-tabs__link">
+          
+  
+  
+  操作系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../AboutMOLI/" class="md-tabs__link">
+          
+  
+  
+  关于 MOLI
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MOLI：提升实践能力的试炼之地" class="md-nav__button md-logo" aria-label="MOLI：提升实践能力的试炼之地" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MOLI：提升实践能力的试炼之地
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/puckbee/moli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MOLI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LearnPath/LearnPath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    学习路线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    基础动手
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            基础动手
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS61C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            CS61C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/CS61C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS61C/Schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    讲义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MIT6.S081/MIT6.S081/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MIT6.S081
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PA/PA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    南京大学 ICS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            关于 MOLI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AboutMOLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于 MOLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    贡献说明
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="2angordnetn">项目2A：Ngordnet（N元语法）<a class="headerlink" href="#2angordnetn" title="Permanent link">&para;</a></h1>
+<h2 id="_1">常见问题解答<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>每份作业顶部都会附有FAQ链接。您也可以在URL末尾添加“/faq”直接访问。项目2A的FAQ详见<a href="https://sp25.datastructur.es/projects/proj2a/faq/">此处</a>。</p>
+<h2 id="_2">项目介绍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>本项目将构建一个基于浏览器的工具，用于探索英语词汇使用历史。我们已提供前端代码（JavaScript与HTML）用于收集用户输入并展示结果。您的Java代码将作为该工具的后端，负责处理输入数据并生成相应的输出结果。</p>
+<p>项目视频介绍可访问此<a href="https://www.youtube.com/watch?v=ri9BzE723QA&amp;list=PL8FaHk7qbOD7-899l1hKEd5aICB9u1wrm&amp;index=1">链接</a>。</p>
+<p>为支持该工具的运行，您需要编写一系列Java程序包来实现数据分析功能。在此过程中，我们将充分实践各类实用数据结构。项目前期（项目2a部分）会明确指导您编写具体函数和创建类，而后期（项目2b部分）则将开放更多自主设计空间。</p>
+<p>您可访问 <a href="https://ngordnet.datastructur.es/">ngordnet.datastructur.es</a> 查看该项目的官方参考实现。</p>
+<h2 id="_3">开始<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>请按照常规操作使用 <code>git pull skeleton main</code> 命令获取项目框架。</p>
+<p>由于文件体积限制，您还需另行下载项目2的数据文件（未通过GitHub提供）。</p>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>请通过此<a href="https://drive.google.com/file/d/1ZhMrVODwvW4h-Cl5QoZtCIYwP3aO8uGh/view?usp=sharing">链接</a>下载数据文件。</p>
+<p>您需要将该压缩文件解压至<code>proj2</code>目录下，确保解压后的<code>data</code>文件夹与<code>src</code>、<code>static</code>文件夹处于同级目录。</p>
+<ul>
+<li><a href="https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc#:~:text=To unzip files,folder to a new location.">Windows系统解压指南</a></li>
+<li><a href="https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac#:~:text=Unzip (expand) a compressed item,zip file.">Mac系统解压指南</a></li>
+</ul>
+</div>
+<p>完成此步骤后，您的 <code>proj2a</code>目录结构应如下所示：</p>
+<pre class="highlight"><code>proj2a
+├── data
+│   └── ngrams
+├── src
+├── static
+├── tests</code></pre>
+<p>请注意，我们已在框架代码中设置了隐藏的<code>.gitignore</code>文件，以确保Git不会上传这些数据文件。这是有意为之的设计。</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>若将数据文件上传至GitHub，将会给所有人带来诸多困扰，因此请勿修改任何名为<code>.gitignore</code>的文件。如需在多台设备上工作，请确保在每台设备上单独下载该压缩文件。</p>
+</div>
+<p>若<code>NgordnetQuery</code>无法编译，请确保您使用的是 Java 15（预览版）或更高版本（推荐 17+）。</p>
+<p>本项目环境配置视频指南可在此<a href="https://youtu.be/8uIt7pXua6Y">链接</a>.查看。请注意部分文件/文件名可能略有差异：视频中的 <code>hugbrowsermagic</code>目录在您获取的框架代码中已更名为 <code>browser</code>。</p>
+<h2 id="n">构建 N 元语法查看器<a class="headerlink" href="#n" title="Permanent link">&para;</a></h2>
+<p><a href="http://storage.googleapis.com/books/ngrams/books/datasetsv3.html">Google Ngram 数据集</a>提供了数 TB 级的英语词汇历史频率数据（更准确地说，是所有观测到的 <a href="http://en.wikipedia.org/wiki/N-gram">ngrams</a> 数据）。Google 官方提供的  <a href="https://books.google.com/ngrams/graph?content=global+warming%2Cto+the+moon&amp;year_start=1800&amp;year_end=2019&amp;corpus=en-2019&amp;smoothing=0">Google Ngram Viewer on the web</a>工具可可视化词汇历史流行度，例如上方链接展示了 "global warming"（二元语法）和 "to the moon"（三元语法）的加权流行度曲线。</p>
+<p>在项目 2A 中，您将构建仅处理一元语法的简化版本（即仅支持单个词汇分析）。我们将使用完整一元语法数据集的小型子集（约 300MB），因为处理更大数据集需要本课程范围外的复杂技术。</p>
+<h2 id="timeseries">TimeSeries<a class="headerlink" href="#timeseries" title="Permanent link">&para;</a></h2>
+<p><code>TimeSeries</code>是<code>TreeMap</code> 类的特化扩展，其键类型固定为<code>Integer</code>（年份），值类型固定为 <code>Double</code>（数值数据点）。您可在<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TreeMap.html">此处</a>查阅 <code>TreeMap API</code>了解可用方法。</p>
+<p>示例：以下代码创建<code>TimeSeries</code> 并存储 1992 年对应值 3.6，1993 年对应 9.2：</p>
+<pre class="highlight"><code class="language-java">TimeSeries ts = new TimeSeries();
+ts.put(1992,3.6);
+ts.put(1993,9.2);</code></pre>
+<p><code>TimeSeries</code> 类在继承 <code>TreeMap</code> 类的基础上，额外提供了一些实用工具方法。</p>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>请按照文件中提供的API规范完善<code>TimeSeries</code>类（位于<code>src/ngrams/TimeSeries.java</code>文件）。请务必仔细阅读每个方法上方的注释说明。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>关于<code>TimeSeries</code>对象的使用示例，请查看我们提供的<code>TimeSeriesTest.java</code>文件中的<code>testFromSpec()</code>测试用例。该测试创建了一个包含猫和狗种群数量的<code>TimeSeries</code>，然后计算它们的总和。请注意1993年没有对应数值，因为该年份在任何一个<code>TimeSeries</code>中都不存在。</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>您不得向此类添加任何额外的<code>public</code>方法。但欢迎根据需要添加<code>private</code>方法。</p>
+</div>
+<h3 id="timeseries_1">TimeSeries 实现要点<a class="headerlink" href="#timeseries_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>TimeSeries</code>对象不应包含任何实例变量。<code>TimeSeries</code> 是一个<code>TreeMap</code>。这意味着您的<code>TimeSeries</code>类也可以访问 <code>TreeMap</code> 的所有方法；请参阅  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TreeMap.html">TreeMap API</a>。</li>
+<li><strong>多个方法要求您比较两个 <code>TimeSeries</code>的数据。您不应包含任何在年份或数值不可用时自动填充零的代码。</strong></li>
+<li>提供的 <code>TimeSeriesTest</code>类包含对 <code>TimeSeries</code>类的基础测试。您可以自由添加自己的测试。</li>
+<li>请注意，我们提供的单元测试不评估<code>dividedBy</code>方法的正确性。</li>
+<li>您会注意到在<code>testFromSpec()</code> 中，我们没有直接比较 <code>expectedTotal</code>和<code>totalPopulation.data()</code>。这是因为双精度浮点数容易出现舍入误差（您将在 61C 课程中学习相关原理）。因此，当 <code>x</code>和<code>y</code>是双精度浮点数时，<code>ssertThat(x).isEqualTo(y)</code> 可能会意外返回 false。相反，您应该使用<code>assertThat(x).isWithin(1E-10).of(y)</code>，只要<code>x</code>和 <code>y</code>之间的差值小于 10<sup>-10</sup>就会返回 true。</li>
+<li>您可以假设<code>dividedBy</code>操作永远不会出现除以零的情况。</li>
+</ul>
+<h2 id="ngrammap">NGramMap 类说明<a class="headerlink" href="#ngrammap" title="Permanent link">&para;</a></h2>
+<p><code>NGramMap</code>类将提供多种便捷方法来处理 <code>Google NGram</code>数据集。这个任务比创建 <code>TimeSeries</code>类更具开放性和挑战性。与<code>TimeSeries</code> 类似，您需要完善现有 <code>NGramMap.java</code> 文件中的方法。<strong>注意：<code>NGramMap</code> 不应继承任何类。</strong></p>
+<p>当调用返回 <code>TimeSeries</code>的方法时，如果该方法调用没有可用数据，您应该返回一个空的 <code>TimeSeries</code>。例如：<code>ngm.weightHistory("asdfasdf")</code>应返回空 <code>TimeSeries</code>，因为 "asdfasdf" 不在数据集中<code>ngm.countHistory("adopt", 1400, 1410)</code> 同样应返回空 <code>TimeSeries</code>，因为<code>"adopt"</code>在这些年份没有数据</p>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>请根据文件中的API规范完善<code>NGramMap</code>类（位于<code>src/ngrams/NGramMap.java</code>文件）。再次提醒，请务必仔细阅读每个方法上方的注释说明。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>关于<code>NGramMap</code>的实际应用示例，<code>NGramMapTest</code>中的<code>testOnLargeFile()</code>测试会基于<code>top_14377_words.csv</code>和<code>total_counts.csv</code>文件（下文将详细介绍）创建一个<code>NGramMap</code>实例，然后对1850年至1933年间"fish"和"dog"这两个词的出现频率进行各种操作。</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>您不得向此类添加任何额外的<code>public</code>方法。但欢迎根据需要添加<code>private</code>方法。</p>
+</div>
+<h3 id="_4">输入文件格式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>NGram 数据集包含两种不同类型的文件。第一种是词汇文件（words file）。词汇文件的每一行都以制表符分隔的形式，提供了某个特定单词在英语中特定年份的历史信息。</p>
+<pre class="highlight"><code>airport     2007    175702  32788
+airport     2008    173294  31271
+request     2005    646179  81592
+request     2006    677820  86967
+request     2007    697645  92342
+request     2008    795265  125775
+wandered    2005    83769   32682
+wandered    2006    87688   34647
+wandered    2007    108634  40101
+wandered    2008    171015  64395</code></pre>
+<p>每行的第一个条目是单词。第二个条目是年份。第三个条目是该单词在当年所有书籍中出现的次数。第四个条目是包含该单词的不同来源的数量。<strong>你的程序应忽略这第四列</strong>。例如，从上面的文本文件中，我们可以看到 “wandered” 这个单词在 2008 年出现了 171,015 次，这些出现分布在 64,395 个不同的文本中。在本项目中，我们从不关心第四个条目（总卷数）。</p>
+<p>另一种类型的文件是计数文件 （counts file）。计数文件的每一行以逗号分隔的形式，提供了每个日历年可用的总语料库数据信息。</p>
+<pre class="highlight"><code>1470,984,10,1
+1472,117652,902,2
+1475,328918,1162,1
+1476,20502,186,2
+1477,376341,2479,2</code></pre>
+<p>每行的第一个条目是年份。第二个条目是当年所有文本中记录的总单词数。第三个数字是当年文本的总页数。第四个是当年的不同来源总数。你的程序应忽略第三列和第四列。例如，我们可以看到，谷歌有一份 1470 年的英语文本，其中包含 984 个单词和 10 页内容。就我们的项目而言，10 和 1 这两个数字是无关的。</p>
+<p>你可能会疑惑为什么一种文件用制表符分隔，另一种用逗号分隔。这不是我做的，是谷歌这么规定的。幸运的是，这种差异处理起来不会太困难。</p>
+<h3 id="ngrammap_1">NGramMap 提示<a class="headerlink" href="#ngrammap_1" title="Permanent link">&para;</a></h3>
+<p>本项目的这部分有很多需要考虑的地方。我们试图模拟现实世界中的情况，即你面临一个庞大且开放性的问题，必须从头开始构思解决方案。这可能会让人望而生畏！你可能需要花费一些时间并进行大量实验，才能找到前进的方向。为了降低难度，我们至少提供了一份需要实现的方法列表。请记住，在现实世界中（以及在 proj2b 和 proj3 中），甚至连方法列表都需要由你自己来决定。</p>
+<p>你的代码应该足够高效，能够使用<code>top_14377_words.csv</code>文件创建 <code>NGramMap</code>。加载时间应少于 60 秒（在较旧的计算机上可能会稍长一些）。如果你的计算机内存充足，还应该能够加载<code>top_49887_words.csv</code>文件。</p>
+<ul>
+<li>这个类的主要工作是实现构造函数。你需要解析提供的数据文件，并将这些数据存储在你选择的数据结构中。</li>
+<li>这个选择很重要，因为选择合适的数据结构可以让你在实现其他方法时事半功倍。因此，我们建议先查看一下其他方法，以帮助你决定哪种数据结构可能最合适；然后再开始实现构造函数。</li>
+<li>避免将 HashMap 或 TreeMap 用作你的映射的<a href="https://docs.google.com/presentation/d/1j2vivowiaZWepIjUoWj6Cx3CdJiyuYslxkg8GsT8kxM/pub?start=false&amp;loop=false&amp;delayms=3000&amp;slide=id.g631db3c57_38">实际类型参数</a>实际类型参数。这通常表明你实际上需要的是一个自定义类型。换句话说，如果你的实例变量包含一个嵌套映射，看起来像 <code>HashMap&lt;blah, HashMap&lt;blah, blah&gt;&gt;</code>，那么可以考虑使用<code>TimeSeries</code> 或你自己创建的其他类。</li>
+<li>我们尚未在 Java 中教授如何读取文件。我们建议使用 <code>In</code>类，官方文档可以在<a href="https://introcs.cs.princeton.edu/java/stdlib/javadoc/In.html">这里</a>找到。不过，你也可以使用从网上学到的任何技术。我们提供了一个示例类 <code>FileReaderDemo.java</code>，展示了如何使用<code>In</code> 类。</li>
+<li>如果你使用 <code>In</code>类，不要使用<code>readAllLines</code>或<code>readAllStrings</code> 方法。这些方法速度较慢。相反，应该逐块读取输入。有关示例，请参阅<code>src/main/FileReaderDemo.java</code></li>
+<li>此外，要检查文件中是否还有剩余行，应该使用 <code>hasNextLine</code>（而不是<code>isEmpty</code>）。</li>
+<li>我们提供的测试仅涵盖了部分方法，而且有些方法只在非常大的文件上进行测试。你需要编写额外的测试。</li>
+<li>建议不要使用大型输入文件（例如<code>top_14377_words.csv</code>），而是从较小的输入文件开始，例如<code>very_short.csv</code>或 <code>words_that_start_with_q.csv</code>。</li>
+<li><strong>与 TimeSeries 一样，如果某个值不可用，你不应编写任何填充零的代码。</strong></li>
+<li>如果有助于加快代码速度，你可以假设年份参数在 1400 到 2100 之间。这些变量在 <code>TimeSeries</code> 类中作为常量<code>MIN_YEAR</code>和 <code>MAX_YEAR</code>存储。</li>
+<li><code>NGramMap</code>不应继承任何其他类。</li>
+<li>你的方法应该简洁明了！如果你选择了合适的数据结构，这些方法应该相对简短。</li>
+<li>如果单词无效，返回一个空的 <code>TimeSeries</code>。</li>
+</ul>
+<h2 id="historytexthandler">历史文本处理器（HistoryTextHandler）<a class="headerlink" href="#historytexthandler" title="Permanent link">&para;</a></h2>
+<p>在项目 2A 的最后一部分，我们将进行一些软件工程工作，搭建一个能够处理 Ngordnet 查询的 Web 服务器。虽然这部分内容与数据结构没有直接关系，但能够将项目部署到实际应用中是非常重要的。</p>
+<p><strong>注意</strong>：只有当你相当确信 <code>TimeSeries</code>和<code>NGramMap</code>能够正常工作时，才应该开始这部分内容。</p>
+<ol>
+<li>
+<p>在你的 Web 浏览器中，打开<code>static</code>文件夹中的<code>ngordnet_2a.html</code>文件。你可以通过操作系统的文件管理器菜单来打开，也可以在 IntelliJ 中右键点击<code>ngordnet_2a.html</code>文件，选择 “Open in”（在... 中打开），然后选择 “Browser”（浏览器）。你可以使用任何浏览器，不过助教们最熟悉 Chrome。你会看到一个基于 Web 浏览器的界面，最终（当你完成项目时）用户可以在这个界面中输入单词列表并查看可视化结果。</p>
+</li>
+<li>
+<p>尝试在 “words” 框中输入 “cat, dog”，然后点击 <code>“History (Text)”</code> 按钮。你会发现没有显示任何有用的内容。（可选）如果你在 Web 浏览器中打开开发者工具（可通过 Google 搜索了解如何操作），会看到一个类似 “CONNECTION_REFUSED” 或 “INVALID_URL” 的错误。问题在于 Javascript 试图访问一个服务器来生成结果，但当前没有运行任何能够处理查看猫和狗历史请求的 Web 服务器。</p>
+</li>
+<li>
+<p>打开 <code>main.Main</code>类。这个类的 <code>main</code> 方法首先创建一个 <code>NgordnetServer</code>对象。这个类的 API 如下：首先，我们在 <code>NgordnetServer</code>对象上调用 <code>startUp</code>方法，然后使用 register 命令 “注册” 一个或多个<code>NgordnetQueryHandler</code>。
+    这里的具体细节超出了我们课程的范围。基本思路是，当你调用 <code>hns.register ("historytext", new DummyHistoryTextHandler (ngm))</code> 时，会创建一个 <code>DummyHistoryTextHandler</code>类型的对象，该对象将处理任何点击 <code>“History (Text)”</code> 按钮的操作。</p>
+</li>
+<li>
+<p>尝试运行<code>main.Main</code> 类。在 IntelliJ 的终端输出中，你应该会看到这样一行：<code>INFO org.eclipse.jetty.server.Server - Started...</code>，这意味着服务器已正确启动。现在再次打开 <code>ngordnet_2a.html</code> 文件，再次输入 “cat, dog”，然后点击<code>“History (Text)”</code>按钮。这次，你应该会看到一条消息，显示：
+   <pre class="highlight"><code>You entered the following info into the browser:
+ Words: [cat, dog]
+ Start Year: 2000
+ End Year: 2020</code></pre></p>
+</li>
+<li>
+<p>现在打开<code>main.DummyHistoryTextHandler</code>，你会看到一个 <code>handle</code>方法。每当用户点击<code>“History (Text)”</code>按钮时，就会调用这个方法。而对于上面的输入，预期的行为应该是：当用户点击 <code>“History (Text)”</code> 时，应该显示以下文本：</p>
+</li>
+</ol>
+<pre class="highlight"><code>cat: {2000=1.71568475416827E-5, 2001=1.6120939684412677E-5, 2002=1.61742010630623E-5, 2003=1.703155141714967E-5, 2004=1.7418408946715716E-5, 2005=1.8042211615010028E-5, 2006=1.8126126955841936E-5, 2007=1.9411504094739293E-5, 2008=1.9999492186117545E-5, 2009=2.1599428349729816E-5, 2010=2.1712564894218663E-5, 2011=2.4857238078766228E-5, 2012=2.4198586699546612E-5, 2013=2.3131865569578688E-5, 2014=2.5344693375481996E-5, 2015=2.5237182007765998E-5, 2016=2.3157514119191215E-5, 2017=2.482102172595473E-5, 2018=2.3556758130732888E-5, 2019=2.4581322086049953E-5}
+dog: {2000=3.127517699525712E-5, 2001=2.99511426723737E-5, 2002=3.0283458650225453E-5, 2003=3.1470761877596034E-5, 2004=3.2890514515432536E-5, 2005=3.753038415155302E-5, 2006=3.74430614362125E-5, 2007=3.987077208249744E-5, 2008=4.267197824115907E-5, 2009=4.81026086549733E-5, 2010=5.30567576173992E-5, 2011=6.048536820577008E-5, 2012=5.179787485962082E-5, 2013=5.0225599367200654E-5, 2014=5.5575537540090384E-5, 2015=5.44261096781696E-5, 2016=4.805214145459557E-5, 2017=5.4171157785607686E-5, 2018=5.206751570646653E-5, 2019=5.5807040409297486E-5}</code></pre>
+<p>要通过自动评分程序，输出的格式必须完全匹配。</p>
+<ul>
+<li>
+<p>所有文本行，包括最后一行，都应以换行符结尾。</p>
+</li>
+<li>
+<p>所有空白和标点（逗号、大括号、冒号）都应与上面的示例一致。</p>
+</li>
+</ul>
+<p><strong>这些数字代表特定年份中单词 cat 和 dog 的加权流行度历史</strong>。由于舍入误差，你的数字可能与上面显示的不完全相同。你的格式应与上面所示完全一致：具体来说，是单词，后跟一个冒号，再跟一个空格，接着是相应 <code>TimeSeries</code> 的字符串表示，其中键值对在大括号内以逗号分隔的列表形式呈现，键和值之间用等号连接。注意，你无需编写任何代码来生成每个 <code>TimeSeries</code> 的字符串表示，只需使用 <code>toString ()</code>方法即可。</p>
+<p>现在，该实现 “HistoryText” 按钮的功能了！</p>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>创建一个名为 <code>HistoryTextHandler.java</code>的新文件，该文件接收给定的 <code>NgordnetQuery</code> 并返回一个格式与上述示例相同的字符串。</p>
+<p>然后，修改<code>Main.java</code>，以便在有人点击 <code>History (Text)</code>按钮时使用你的 <code>HistoryTextHandler</code>。换句话说，你应该注册自己的 <code>HistoryTextHandler</code>类，而不是注册<code>DummyHistoryTextHandler</code>。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>你可能会注意到，当服务器启动时，<code>Main.java</code>会打印出一个链接。如果觉得更方便，你可以直接点击这个链接，而无需手动打开<code>ngordnet_2a.html</code>文件 。</p>
+</div>
+<h3 id="historytexthandler_1">HistoryTextHandler 提示<a class="headerlink" href="#historytexthandler_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>HistoryTextHandler</code>的构造函数应采用以下形式：<code>public HistoryTextHandler(NGramMap map)</code> 。</li>
+<li>以 <code>DummyHistoryTextHandler.java</code>为参考，在合适的地方进行模式匹配。能够修改示例代码并让其按你的需求运行，是一项在现实世界中极其重要的技能。大胆尝试吧，别怕把东西搞坏！</li>
+<li><strong>对于 Project 2A</strong>，你可以忽略 <code>NgordnetQuery</code>的 <code>k</code> 实例变量。</li>
+<li>使用从 <code>TreeMap</code> 继承而来、内置在 <code>TimeSeries</code>类中的<code>.toString()</code>方法 。</li>
+<li>为了让你的 <code>HistoryTextHandler</code>能发挥实际作用，它需要能够访问存储在<code>NGramMap</code> 中的数据。<strong>切勿将 NGramMap 设为静态变量</strong>！这就是所谓的 “全局变量”，对于任何问题，它都很少是恰当的解决方案。提示：你的 <code>HistoryTextHandler</code>类可以有一个构造函数 。</li>
+<li>如果单词无效，思考一下<code>NGramMap</code>是如何处理这种情况的。</li>
+</ul>
+<h2 id="historyhandler">历史处理器（HistoryHandler）<a class="headerlink" href="#historyhandler" title="Permanent link">&para;</a></h2>
+<p>上一部分中基于文本的历史记录除了用于对你的作业进行自动评分外，并没有太多实际用途。要真正使用我们的工具发现有趣的信息，就需要进行可视化处理。</p>
+<p><code>main.PlotDemo</code> 类提供了示例代码，该代码会使用你的<code>NGramMap</code> 生成一个可视化图表，展示 1900 年至 1950 年间单词 “cat” 和 “dog” 的加权流行度历史。尝试运行这个类。如果你的<code>NGramMap</code>类是正确的，你应该会看到一个非常长的字符串被打印到控制台，看起来可能像这样：</p>
+<pre class="highlight"><code>iVBORw0KGg...</code></pre>
+<p>这个字符串是图像文件的 Base64 编码。要将其可视化，请访问<a href="https://codebeautify.org/">codebeautify.org</a>网站。将整个字符串复制粘贴到该网站中，你应该会看到一个与下方所示类似的图表：</p>
+<p><img alt="image" src="../images/proj2a/image1.png" /></p>
+<p>这背后的原理是什么呢？你的代码打印出的字符串 <strong>就是图像本身</strong>。要知道，任何数据都可以表示为一串比特（位）。这个网站知道如何按照预定义的标准，将这个字符串解码为对应的图像。</p>
+<p>如果你查看绘图库的代码，会发现它依赖于<code>ngordnet.Plotter.generateTimeSeriesChart</code>方法，该方法接收两个参数。第一个是字符串列表，第二个是<code>List&lt;TimeSeries&gt;</code>（时间序列列表）。每个时间序列会以不同的颜色绘制，并且会被分配字符串列表中对应的标签。两个列表的长度必须相同（因为第 i 个字符串是第 i 个时间序列的标签）。</p>
+<p><code>ngordnet.Plotter.generateTimeSeriesChart</code>方法返回一个<code>XYChart</code>类型的对象。这个对象既可以通过<code>ngordnet.Plotter.encodeChartAsString</code>方法转换为 Base64 编码的字符串，也可以通过<code>ngordnet.Plotter.displayChart</code>方法直接显示在屏幕上。</p>
+<p>在你的网页浏览器中，再次打开 static 文件夹中的<code>ngordnet_2a.html</code>文件。在你的<code>main.Main</code>类运行的情况下，在 “words” 输入框中输入 “cat, dog”，然后点击 “history” 按钮。你会看到下面这个奇怪的图像：</p>
+<p><img alt="image" src="../images/proj2a/image2.png" /></p>
+<p>你会注意到，代码绘制的并不是 “cat” 和 “dog” 的历史数据，而是一条抛物线和一条正弦曲线。如果你打开<code>DummyHistoryHandler</code>，就会明白其中的原因。</p>
+<div class="admonition task">
+<p class="admonition-title">Task</p>
+<p>创建一个名为<code>HistoryHandler.java</code>的新文件，该文件接收给定的 <code>NgordnetQuery</code>，并返回一个包含相应图表的 base-64 编码图像的字符串。</p>
+<p>然后，修改 <code>Main.java</code>，以便在有人点击 “History” 按钮时调用你的 <code>HistoryHandler</code>。</p>
+</div>
+<h3 id="historyhandler_1">HistoryHandler 提示<a class="headerlink" href="#historyhandler_1" title="Permanent link">&para;</a></h3>
+<p><code>HistoryHandler</code>的构造函数应采用以下形式：<code>public HistoryHandler(NGramMap map)</code>。</p>
+<p>和之前一样，以<code>DummyHistoryHandler.java</code> 为参考。正如上一部分所提到的，我们非常希望你能掌握修改复杂库代码以实现所需功能的技能。</p>
+<h2 id="_5">交付成果与评分<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>你需要负责实现四个类：</p>
+<ul>
+<li><strong>时间序列（TimeSeries）（12 分）</strong>：正确实现 <code>TimeSeries.java</code>。</li>
+<li><strong>NGramMap 计数（8 分）</strong>：正确实现<code>NGramMap.java</code>中的 <code>countHistory ()</code>和<code>totalCountHistory ()</code>方法。</li>
+<li><strong>NGramMap 权重（12 分）</strong>：正确实现<code>NGramMap.java</code> 中的 <code>weightHistory ()</code>和<code>summedWeightHistory ()</code>方法。</li>
+<li><strong>历史文本处理器（HistoryTextHandler）（4 分）</strong>：正确实现 <code>HistoryTextHandler.java</code>。</li>
+<li><strong>历史处理器（HistoryHandler）（4 分）</strong>：正确实现 <code>HistoryHandler.java</code>。</li>
+</ul>
+<h2 id="_6">鸣谢<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>本作业中关于 WordNet 的部分大致改编自普林斯顿大学 Alina Ene 和 Kevin Wayne 的 <a href="http://www.cs.princeton.edu/courses/archive/fall14/cos226/assignments/wordnet.html">Wordnet 作业</a>  。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
