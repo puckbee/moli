@@ -174,7 +174,7 @@
   </tr>
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=22">22. 图的遍历与实现</a></td>
-    <td rowspan="4">项目2B：检查点</td>
+    <td rowspan="4"><a href = "https://www.gradescope.com/courses/961758/assignments/5737910">项目2B：检查点<br>（需伯克利账号）</a></td>
   </tr>
   <tr>
     <td><a href="https://www.bilibili.com/video/BV1hJ4m1M7ZA?p=23">23. 最短路径</a></td>
