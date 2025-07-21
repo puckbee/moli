@@ -5,6 +5,9 @@ ALLOWED_BRANCHES := main
 serve: mkdocs.yml
 	@mkdocs serve
 
+build:
+	@mkdocs build
+
 deploy: mkdocs.yml
 ifeq ($(filter $(CURRENT_BRANCH),$(ALLOWED_BRANCHES)),)
 	@echo "错误：仅允许在 main 分支部署！当前分支：$(CURRENT_BRANCH)"
@@ -19,4 +22,4 @@ mkdocs.yml: $(NAVFILES)
 clean:
 	rm mkdocs.yml
 
-.PHONY: clean serve deploy
+.PHONY: clean serve build deploy

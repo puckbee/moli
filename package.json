@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "command": "./common/cmd.sh"
+    },
+    "devDependencies": {
+        "colors": "^1.4.0"
+    },
+    "deploy": "moli"
+}
